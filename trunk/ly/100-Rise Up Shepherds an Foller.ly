@@ -1,0 +1,297 @@
+﻿\version "2.14.2"
+\include "../util.ly"
+\header {
+  title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Rise Up, Shepherds, and Follow"}}
+  poet = \markup\oldStyleNum"Traditional"
+  composer = \markup\oldStyleNum"Spiritual"
+  arranger = \markup\oldStyleNum"Arranged by Allen L. Richardson"
+  tagline = ""
+}
+\paper {
+  paper-height = 9\in
+  paper-width = 6\in
+  indent = 0\in
+  %system-system-spacing = #'((basic-distance . 10) (padding . 0))
+  ragged-last-bottom = ##f
+  ragged-bottom = ##f
+  two-sided = ##t
+  inner-margin = 0.5\in
+  outer-margin = 0.25\in
+  first-page-number = #100
+  print-first-page-number = ##t
+  headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
+  oddHeaderMarkup = \markup\fill-line{
+     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #8.5
+     \combine 
+        \fill-line{"" \on-the-fly #print-page-number-check-first
+        \oldStylePageNum""
+        }
+        \fill-line{\headerLine}
+  }
+  evenHeaderMarkup = \markup {
+     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #8.5
+     \combine
+        \on-the-fly #print-page-number-check-first
+        \oldStylePageNum""
+        \fill-line{\headerLine}
+  }
+}
+#(set-global-staff-size 15) \paper{ #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 15 20))) }
+global = {
+  \key ees \major
+  \time 4/4
+  \override DynamicLineSpanner #'staff-padding = #0.0
+  \override DynamicLineSpanner #'Y-extent = #'(-0.5 . 0.5)
+}
+
+sopMusic = \relative c'' {
+  \partial 4 ees8\noBeam^\mf c |
+  \slurDotted
+  ees4 ees8\noBeam( c) ees4 c8\noBeam( c) |
+  \slurSolid
+  c4 bes bes2 |
+  bes4^\p bes des8\noBeam des c4 |
+  bes8 bes4. bes4\rest ees8\noBeam^\f c | \break
+  
+  \slurDotted
+  ees4 c8\noBeam( c) ees4 c8\noBeam c |
+  \slurSolid
+  bes4 c g8[( f] ees4) |
+  g4^\mf g f8\noBeam f ees4 |
+  c8 ees4. bes'2\rest \bar "||" \break
+  
+  ees,4^\markup{\dynamic"f" \italic "più mosso"} g bes bes |
+  c-> c-> bes2-> |
+  bes4^\markup\italic"rit." bes des8\noBeam des c4 |
+  bes8 bes4. bes2\rest |
+  ees,4^\markup\italic"a tempo" g bes bes |
+  
+  c-> c-> bes2-> |
+  g4^\markup\italic"rit." g f8\noBeam f ees4 |
+  c8 ees4. bes'2\rest |
+  ees,4.(^\ff^\<^\markup\italic"a tempo" g8) bes2 |
+  bes bes |
+  
+  bes4\! bes des8\noBeam des^\> c4 |
+  bes8\! bes4. bes2\rest |
+  ees,4^\< g8.\noBeam g16 bes4 bes\! |
+  c^\> bes g8[( f] ees4) |
+  g\!^\markup{\dynamic "p" \italic"rit."} g f8\noBeam f ees4 |
+  c8 ees4.\fermata bes'4\rest \bar "|."
+}
+sopWords = \lyricmode {
+  
+}
+
+altoMusic = \relative c'' {
+  g8\noBeam aes |
+  \slurDotted
+  g4 g8\noBeam( aes) g4 g8\noBeam( g) |
+  \slurSolid
+  aes4 aes g2 |
+  f4 f e8\noBeam e ees4 |
+  d8 d4. s4 ees8\noBeam  f |
+  
+  \slurDotted
+  g4 aes8\noBeam( aes) f4 f8\noBeam f |
+  \slurSolid
+  d4 d d( ees) |
+  ees ees d8\noBeam  d c4 |
+  c8 bes4. s2 \bar "||"
+  
+  ees4 g bes bes |
+  c c bes2 |
+  f4 f e8\noBeam e ees4 |
+  d8 d4. s2 |
+  ees4 g bes bes |
+  
+  c c bes2 |
+  ees,4 ees d8\noBeam d c4 |
+  c8 bes4. s2 |
+  ees4.( g8) bes2 |
+  bes bes |
+  
+  f4 f e8\noBeam e ees4 |
+  d8 d4. s2 |
+  ees4 g8.\noBeam g16 bes4 bes |
+  c bes g8[( f] ees4) |
+  ees4 ees d8\noBeam d c4 |
+  c8 bes4. s4 \bar "|."
+}
+altoWords = \lyricmode {
+  \set stanza = #"1. "
+  \set ignoreMelismata = ##t
+  There’s a star in the East on _ Christ -- mas morn,
+  Rise up, shep -- herds, and fol -- low;
+  It -- ’ll lead to the place where the Sav -- ior’s born, _ _
+  Rise up, shep -- herds, and fol -- low;
+  
+  Leave your ewes and leave your lambs,
+  Rise up, shep -- herds, and fol -- low,
+  Leave your sheep and leave your rams,
+  Rise up, shep -- herds, and fol -- low.
+  Fol -- _ low, fol -- low,
+  Rise up, shep -- herds, and fol -- low;
+  Fol -- low the star of Beth -- le -- hem, _ _
+  Rise up, shep -- herds, and fol -- low.
+}
+altoWordsII = \lyricmode {
+%\markup\italic
+  \set stanza = #"2. "
+  \set ignoreMelismata = ##t
+  If you take good _ heed to the An -- gels’ words,
+  Rise up, shep -- herds, and fol -- low;
+  You’ll for -- get your _ flocks, you’ll for -- get your herds, _ _
+  Rise up, shep -- herds, and fol -- low.
+}
+altoWordsIII = \lyricmode {
+}
+altoWordsIV = \lyricmode {
+}
+altoWordsV = \lyricmode {
+}
+altoWordsVI = \lyricmode {
+}
+tenorMusic = \relative c' {
+  bes8\noBeam_\mf c |
+  \slurDotted
+  bes4 bes8\noBeam( c) bes4 c8\noBeam( c) |
+  \slurSolid
+  ees4 d ees2 |
+  des4_\p des bes8\noBeam bes a4 |
+  aes!8 aes4. s4 g8\noBeam_\f aes |
+  
+  \slurDotted
+  bes4 c8\noBeam( c) bes4 aes8\noBeam aes |
+  \slurSolid
+  bes4 aes aes( g) |
+  a4_\mf a aes8\noBeam aes aes4 |
+  aes8 g4. s2 \bar "||"
+  
+  ees4_\f g bes bes |
+  c c bes2 |
+  des4_\markup\italic"rit." des bes8\noBeam bes a4 |
+  aes!8 aes4. s2 |
+  ees4 g bes bes |
+  
+  c c bes2 |
+  a4_\markup\italic"rit." a aes8\noBeam aes aes4 |
+  aes8 g4. s2 |
+  ees4.(_\ff_\< g8) bes2 |
+  bes bes |
+  
+  des4\! des bes8\noBeam bes_\> a4 |
+  aes!8\! aes4. s2 |
+  ees4_\< g8.\noBeam g16 bes4 bes\! |
+  c4_\> bes g8[( f] ees4) |
+  bes'4_\p a aes8\noBeam aes aes4 |
+  aes8 g4. s4 \bar "|."
+}
+tenorWords = \lyricmode {
+
+}
+
+bassMusic = \relative c {
+ ees8\noBeam ees |
+ \slurDotted
+ ees4 ees8\noBeam( ees) ees4 e8\noBeam(e) |
+ \slurSolid
+ f4 bes ees,2 |
+ bes'4 aes g8\noBeam g fis4 |
+ f8 bes,4. d4\rest ees8\noBeam ees |
+ 
+ \slurDotted
+ ees4 ees8\noBeam( ees) ees4 ees8\noBeam ees |
+ \slurSolid
+ bes4 bes b( c) |
+ f f bes,8\noBeam bes bes4 |
+ ees8 ees4. d2\rest \bar "||"
+ 
+ ees4 g bes bes |
+ c-> c-> bes2-> |
+ bes4 aes g8\noBeam g fis4 |
+ f!8 bes,4. d2\rest |
+ ees4 g bes bes |
+ 
+ c-> c-> bes2-> |
+ f4 f bes,8\noBeam bes bes4 |
+ ees8 ees4. d2\rest |
+ ees4.( g8) bes2 |
+ bes bes |
+ 
+ bes4 aes g8\noBeam g fis4 |
+ f!8 bes,4. d2\rest |
+ ees4 g8.\noBeam g16 bes4 bes |
+ c bes g8[( f] ees4) |
+ ees4 f bes,8\noBeam bes bes4 |
+ ees8 ees4.\fermata d4\rest \bar "|."
+}
+bassWords = \lyricmode {
+
+}
+
+pianoRH = \relative c' {
+  
+}
+pianoLH = \relative c' {
+  
+}
+
+\score {
+  <<
+   \new ChoirStaff <<
+%    \new Lyrics = sopranos { s1 }
+    \new Staff = women <<
+      \new Voice = "sopranos" {
+        \voiceOne
+        << \global \sopMusic >>
+      }
+      \new Voice = "altos" {
+        \voiceTwo
+        << \global \altoMusic >>
+      }
+    >>
+    \new Lyrics = "altos" { s1 }
+    \new Lyrics = "altosII" { s1 }
+    \new Lyrics = "altosIII" { s1 }
+    \new Lyrics = "altosIV" { s1 }
+    \new Lyrics = "altosV" { s1 }
+    \new Lyrics = "altosVI" { s1 }
+ %   \new Lyrics = "tenors" { s1 }
+    \new Staff = men <<
+      \clef bass
+      \new Voice = "tenors" {
+        \voiceOne
+        << \global \tenorMusic >>
+      }
+      \new Voice = "basses" {
+        \voiceTwo << \global \bassMusic >>
+      }
+    >>
+%    \new Lyrics = basses { s1 }
+%    \context Lyrics = sopranos \lyricsto sopranos \sopWords
+    \context Lyrics = altos \lyricsto sopranos \altoWords
+    \context Lyrics = altosII \lyricsto sopranos \altoWordsII
+    \context Lyrics = altosIII \lyricsto sopranos \altoWordsIII
+    \context Lyrics = altosIV \lyricsto sopranos \altoWordsIV
+    \context Lyrics = altosV \lyricsto sopranos \altoWordsV
+    \context Lyrics = altosVI \lyricsto sopranos \altoWordsVI
+%    \context Lyrics = tenors \lyricsto tenors \tenorWords
+%    \context Lyrics = basses \lyricsto basses \bassWords
+   >>
+%    \new PianoStaff << \new Staff { \new Voice { \pianoRH } } \new Staff { \clef "bass" \pianoLH } >>
+  >>
+  \layout {
+    \context {
+      \Score
+      \override SpacingSpanner #'base-shortest-duration = #(ly:make-moment 1 4)
+      \override SpacingSpanner #'common-shortest-duration = #(ly:make-moment 1 4)
+    }
+    \context {
+      % a little smaller so lyrics
+      % can be closer to the staff
+      \Staff
+      \override VerticalAxisGroup #'minimum-Y-extent = #'(-3 . 3)
+    }
+  }
+}
