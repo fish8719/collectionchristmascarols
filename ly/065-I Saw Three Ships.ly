@@ -21,6 +21,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #065
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -47,11 +49,12 @@ global = {
   \autoBeamOff
   \override DynamicLineSpanner #'staff-padding = #0.0
   \override DynamicLineSpanner #'Y-extent = #'(-1 . 1)
+  \override DynamicText #'X-offset = #-6
 }
 
 sopMusic = \relative c' {
     \repeat volta 2 {
-    \partial 8 d8^\mf |
+    \partial 8 d8_\mf |
     \slurDotted  g4 g8\noBeam a\noBeam( a\noBeam) b |
     d4 b8 a4 c8 |
     
@@ -81,6 +84,7 @@ altoMusic = \relative c' {
   fis4. g4
 }
 altoWords = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"1. "
   \set ignoreMelismata = ##t
   I saw three ships __ _ come sail -- ing in,
@@ -97,6 +101,7 @@ altoWords = \lyricmode {
   On Christ -- mas day in the morn -- ing.
 }
 altoWordsII = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"2. "
   \set ignoreMelismata = ##t
   And what was in __ _ those ships all three,
@@ -113,6 +118,7 @@ altoWordsII = \lyricmode {
   On Christ -- mas day in the morn -- ing.
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"3. "
   \set ignoreMelismata = ##t
   The Vir -- gin Ma -- ry and Christ were there,
@@ -129,6 +135,7 @@ altoWordsIII = \lyricmode {
   On Christ -- mas day in the morn -- ing.
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"4. "
   \set ignoreMelismata = ##t
   Pray, whith -- er sailed _ those ships all three,
@@ -144,6 +151,7 @@ altoWordsIV = \lyricmode {
   On Christ -- mas day in the morn -- ing.
 }
 altoWordsV = \lyricmode {
+  \dropLyricsIX
   \repeat unfold 32 \skip1
   \set stanza = #"9. "
   \set ignoreMelismata = ##t
@@ -162,7 +170,7 @@ altoWordsIX = \lyricmode {
 }
 
 tenorMusic = \relative c {
-  d8_\mf |
+  d8^\mf |
   \slurDotted b'4 b8 c\noBeam( c\noBeam) b |
   a4 g8 fis4 a8 |
   
@@ -212,7 +220,7 @@ bassWords = \lyricmode {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.7)) } \lyricsto "sopranos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \repeat unfold2 \tenorMusic >> }

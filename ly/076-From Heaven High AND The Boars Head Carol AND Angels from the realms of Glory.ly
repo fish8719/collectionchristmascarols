@@ -21,6 +21,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #076
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -89,6 +91,7 @@ altoMusic = \relative c' {
   c8[ a] b4 c \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"1. "
   From heav -- en high I come to you,
   To bring you ti -- dings, strange and true.
@@ -96,6 +99,7 @@ altoWords = \lyricmode {
   Where of I now will say and sing.
 }
 altoWordsII = \lyricmode {
+  \dropLyricsIX
 %\markup\italic
   \set stanza = #"2. "
   To you this night is born a Child
@@ -104,6 +108,7 @@ altoWordsII = \lyricmode {
   Shall be the joy of all the earth.
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"3. "
   Glo -- ry to God in high -- est Heav’n,
   Who un -- to us His Son hath giv’n!
@@ -179,7 +184,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.5))} \lyricsto "sopranos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }
@@ -204,10 +209,10 @@ pianoLH = \relative c' {
   
   \header {
     title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"From Heaven High I Come to You"}}
-    poet = \markup\oldStyleNum"Martin Luther (1483-1546)"
-    meter = \markup\oldStyleNum"Translated by Catherine Winkworth (1827-1878)"
+    poet = \markup\oldStyleNum"Martin Luther (1483–1546)"
+    meter = \markup\oldStyleNum"Translated by Catherine Winkworth (1827–1878)"
     composer = \markup\oldStyleNum"Old German Melody Attributed to Martin Luther"
-    arranger = \markup\oldStyleNum"Adapted by J.S. Bach (1685-1750)"
+    arranger = \markup\oldStyleNum"Adapted by J.S. Bach (1685–1750)"
     tagline = \markup \concat{ "from " \italic "The English Hymnal" \oldStyleNum", 1906"}
   }
 }
@@ -285,6 +290,7 @@ altoMusic = \relative c' {
   \slurSolid d[ e] f4 e |
 }
 altoWords = {
+  \dropLyricsIX
   \lyricmode {
     \set stanza = #"1."
     \set ignoreMelismata = ##t
@@ -304,6 +310,7 @@ altoWords = {
   }
 }
 altoWordsII = {
+  \dropLyricsIX
   \set stanza = \markup{\dynamic"f " "2."}
   \lyricmode {
   %\markup\italic
@@ -316,6 +323,7 @@ altoWordsII = {
   }
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"3."
   \set ignoreMelismata = ##t
   Our stew -- ard hath _ pro -- vid -- ed this
@@ -346,7 +354,7 @@ tenorMusic = \relative c' {
   g4. g8 g4 g |
   g a \slurSolid c( b) |
   a a a4. a8 |
-  c4 b c\fermata |
+  c4 b c |
 }
 tenorWords = \lyricmode {
 
@@ -368,7 +376,7 @@ bassMusic = \relative c {
   c4. c8 g'4 g |
   c, a' g2 |
   a4 a8[ g] f[ e] d4 |
-  g4 g, c |
+  g4 g, c\fermata |
 }
 bassWords = \lyricmode {
 
@@ -400,7 +408,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "tenors" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "tenors" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "tenors" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "tenors" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.5))} \lyricsto "tenors" \altoWords
     \new Lyrics \with { alignAboveContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "tenors" \tenorWords
     \new Lyrics \with { alignBelowContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "basses" \bassWords
   >>
@@ -495,6 +503,7 @@ altoMusic = \relative c' {
   g4. f8 e2 \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"1. "
   An -- gels, from the realms of glo -- ry,
   Wing your flight o’er all the earth,
@@ -511,6 +520,7 @@ altoWords = \lyricmode {
   new -- born King.
 }
 altoWordsII = \lyricmode {
+  \dropLyricsIX
 %\markup\italic
   \set stanza = #"2. "
   Shep -- herds, in the field a -- bid -- ing, Watch -- ing o’er your flocks by night,
@@ -520,6 +530,7 @@ altoWordsII = \lyricmode {
   Yon -- der shines the in -- fant light;
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"3. "
   Sa -- ges, leave your con -- tem -- pla -- tions, Bright -- er vis -- ions beam a -- far;
   \set associatedVoice = "basses"
@@ -528,6 +539,7 @@ altoWordsIII = \lyricmode {
   Ye have seen His na -- tal star;
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"4. "
   Saints be -- fore the al -- tar bend -- ing,
     Watch -- ing long in hope and fear,
@@ -595,7 +607,7 @@ bassWords = \lyricmode {
     \context Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIV
     \context Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIII
     \context Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsII
-    \context Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWords
+    \context Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.5))} \lyricsto "sopranos" \altoWords
     \new Lyrics \with { alignAboveContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "tenors" \tenorWords
     \new Lyrics \with { alignBelowContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "basses" \bassWords
   >>
@@ -614,8 +626,8 @@ bassWords = \lyricmode {
   }
   \header {
     title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Angels, from the Realms of Glory"}}
-    poet = \markup\oldStyleNum"James Montgomery (1771-1854)"
-    composer = \markup\oldStyleNum"Henry Smart (1813-1879)"
+    poet = \markup\oldStyleNum"James Montgomery (1771–1854)"
+    composer = \markup\oldStyleNum"Henry Smart (1813–1879)"
     tagline = \markup { "from" \concat{\italic "Christmas Carols and Hymns for School and Choir" \oldStyleNum", 1910"}}
   }
 }

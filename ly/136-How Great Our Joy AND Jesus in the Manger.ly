@@ -21,6 +21,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #136
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -107,6 +109,7 @@ ees4 d8[ c] |
 bes2 \bar "|."
 }
 altoWords = {
+  \dropLyricsIX
   \lyricmode {
     \set stanza = #"1. "
     While by the sheep we watched at night,
@@ -138,17 +141,20 @@ altoWords = {
   }
 }
 altoWordsII = \lyricmode {
+  \dropLyricsIX
 %\markup\italic
   \set stanza = #"2. "
 There shall be born, so he did say,
 In Beth -- le -- hem a Child to -- day.
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"3. "
 There shall the Child lie in a stall,
 This Child who shall re -- deem us all.
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"4. "
 This gift of God we’ll cher -- ish well,
 That ev -- er joy our hearts shall fill.
@@ -248,7 +254,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.5)) } \lyricsto "altos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }
@@ -273,9 +279,9 @@ pianoLH = \relative c' {
   \header {
     title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"How Great Our Joy!"}}
     poet = \markup\oldStyleNum"German Carol"
-    meter = \markup\oldStyleNum"Translated by Theodore Baker (1851-1934)"
+    meter = \markup\oldStyleNum"Translated by Theodore Baker (1851–1934)"
     composer = \markup\oldStyleNum"German Melody"
-    arranger = \markup\oldStyleNum"Arranged by Hugo Jüngst (1853-1923)"
+    arranger = \markup\oldStyleNum"Arranged by Hugo Jüngst (1853–1923)"
     tagline = \markup { "from" \italic "CyberHymnal.org"}
   }
 }
@@ -356,14 +362,16 @@ altoMusicII = \relative c' {
   e e fis gis |
   gis a a fis |
   eis cis fis e8[ d] |
-  cis2.\fermata \bar "|."
+  cis2. \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsV
   \set stanza = #"1. "
   Why, Most High -- est, art Thou ly -- ing, In a man -- ger poor and low?
   Thou, the fires of heav’n sup -- ply -- ing, Come a sta -- ble’s cold to know?
 }
 altoWordsII = \lyricmode {
+  \dropLyricsV
 %\markup\italic
   \set stanza = #"2. "
   On a Moth -- er’s breast Thou sleep -- est,
@@ -372,6 +380,7 @@ altoWordsII = \lyricmode {
   Eyes, which Heav’n with glad -- ness fill.
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"3. "
   Weak the Strong, of strength the Giv -- er:
   Small, Whose arms cre -- a -- tion span;
@@ -440,7 +449,7 @@ bassMusicII = \relative c {
   s a, d d |
   d cis s d |
   cis s d s |
-  e2.\fermata \bar "|."
+  e2. \bar "|."
 }
 bassIIMusic = \relative c {
   a2\rest |
@@ -456,6 +465,7 @@ bassIIMusic = \relative c {
 }
 bassWords = \lyricmode {}
 bassWordsChorus = {
+  \dropLyricsV
   \set stanza = \markup\dynamic"f "
   \lyricmode {
     O what works of love stu -- pen -- dous,
@@ -566,7 +576,7 @@ pianoLH = \relative c' {
       \new Voice = "bassI" { \voiceOne s1*8 << \global \bassMusicII >> }
       \new Voice = "bassII" { \voiceTwo s1*8 << \global \bassIIMusic >> }
     >>
-    \new Lyrics \with { alignAboveContext = #"bassesII" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "bassI" \bassWordsChorus
+    \new Lyrics \with { alignBelowContext = #"tenorsII" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "bassI" \bassWordsChorus
     \new Lyrics \with { alignBelowContext = #"bassesII" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "bassII" \chorusWordsBass
     
    >>
@@ -597,8 +607,8 @@ pianoLH = \relative c' {
   }
   \header {
     title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Jesus in the Manger"}}
-    poet = \markup\oldStyleNum"Translated by Rev. H.R. Bramley (1833-1917) from Latin"
-    composer = \markup\oldStyleNum"Henry Smart (1813-1879)"
+    poet = \markup\oldStyleNum"Translated by Rev. H.R. Bramley (1833–1917) from Latin"
+    composer = \markup\oldStyleNum"Henry Smart (1813–1879)"
     tagline = \markup { "from" \italic {Christmas Carols, New and Old}}
   }
 }

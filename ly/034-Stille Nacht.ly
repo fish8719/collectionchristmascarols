@@ -2,8 +2,8 @@
 \include "../util.ly"
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Stille Nacht"}}
-  poet = \markup\oldStyleNum"Joseph Möhr (1792-1848)"
-  composer = \markup\oldStyleNum"Franz Gruber (1787-1863)"
+  poet = \markup\oldStyleNum"Joseph Möhr (1792–1848)"
+  composer = \markup\oldStyleNum"Franz Gruber (1787–1863)"
   tagline = \markup { "from" \concat{\italic "Christmas Carols and Hymns for School and Choir" \oldStyleNum", 1910"}}
 }
 \paper {
@@ -21,6 +21,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #034
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -89,6 +91,7 @@ altoMusic = \relative c' {
   bes4.~ bes4 s8 \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsV
   \set stanza = #"1. "
   Stil -- le Nacht!
   hei -- li -- ge Nacht!
@@ -103,6 +106,7 @@ altoWords = \lyricmode {
   Schlaf __ in himm -- li -- scher Ruh! __
 }
 altoWordsII = {
+  \dropLyricsV
   \set stanza = \markup\concat{\dynamic"p   " "2. "}
   \lyricmode {
     Stil -- le Nacht!
@@ -121,6 +125,7 @@ altoWordsII = {
   }
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"3. "
   Stil -- le Nacht!
   hei -- li -- ge Nacht!

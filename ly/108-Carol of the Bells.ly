@@ -3,8 +3,8 @@
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Carol of the Bells"}}
   subtitle = \markup{\override #'(font-name . "Garamond Premier Pro"){ \abs-fontsize #10.5 "(Ukrainian Carol)"}}
-  poet = \markup\oldStyleNum"Peter J. Wilhousky (1902-1978)"
-  composer = \markup\oldStyleNum"Mikola Dmytrovitch Leontovych (1877-1921)"
+  poet = \markup\oldStyleNum"Peter J. Wilhousky (1902–1978)"
+  composer = \markup\oldStyleNum"Mikola Dmytrovitch Leontovych (1877–1921)"
   tagline = \markup { "from" \italic {HymnsAndCarolsOfChristmas.com}}
 }
 \paper {
@@ -23,6 +23,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #108
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -194,6 +196,7 @@ altoMusic = \relative c'' {
 altoWords = {
   \lyricmode {
     Ding! Dong! Ding! Dong!
+    \dropLyricsV
     Ding! Dong! Ding! Dong!
     
     One seems to hear words of good cheer,
@@ -219,6 +222,7 @@ altoWords = {
     Ding! Dong!
     Ding! Dong!
     
+    \raiseLyrics
     Ding! Dong!
     Ding! Dong!
     Ding, dong, ding dong! __
@@ -353,7 +357,7 @@ pianoLH = \relative c' {
     \new Lyrics \with { alignAboveContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \sopWords
     \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWords
     \context Lyrics = "altos" \lyricsto "sopranos" \sopWordsBelow
-    \new Lyrics \with { alignAboveContext = #"men" } \lyricsto "tenors" \tenorWords
+    \new Lyrics \with { alignAboveContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "tenors" \tenorWords
     \new Lyrics \with { alignBelowContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "basses" \bassWords
   >>
 %    \new PianoStaff << \new Staff { \new Voice { \pianoRH } } \new Staff { \clef "bass" \pianoLH } >>

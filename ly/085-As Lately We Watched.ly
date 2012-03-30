@@ -21,6 +21,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #085
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -98,6 +100,7 @@ altoMusic = \relative c' {
   ees2 \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsV
   \set stanza = #"1. "
   As late -- ly we watch’d o’er our fields thro’ the night,
   A star there was seen of __ such glo -- ri -- ous light;
@@ -105,6 +108,7 @@ altoWords = \lyricmode {
   In ca -- rols, so sweet, of __ the __ birth of a King.
 }
 altoWordsII = \lyricmode {
+  \dropLyricsV
 %\markup\italic
   \set stanza = #"2. "
   A King of such beau -- ty __ was ne’er  be -- fore seen,
@@ -113,6 +117,7 @@ altoWordsII = \lyricmode {
   For Christ our dear Sav -- ior __ on __ earth now is born.
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"3. "
   His throne is a man -- ger, __ His court is a loft,
   But troops of bright an -- gels, in __ lays sweet and soft,
@@ -120,6 +125,7 @@ altoWordsIII = \lyricmode {
   And earth, sky and air straight are __ fill’d with His fame.
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsV
   \set stanza = #"4. "
   Then shep -- herds, be joy -- ful, __ sa -- lute your liege King,
   Let hills and dales ring to __ the __ song that ye sing,
@@ -203,7 +209,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "sopranos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }

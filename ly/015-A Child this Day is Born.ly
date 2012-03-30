@@ -34,6 +34,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #015
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -152,6 +154,7 @@ altoMusic = \relative c' {
   d2. \bar "||"
 }
 altoWords = \lyricmode {
+  \dropLyricsVII
   \set stanza = #"1. "
   A Child this day is born,
   A Child of high re -- nown;
@@ -178,6 +181,7 @@ altoWordsII = \lyricmode {
   
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsVII
   \set stanza = #"2. "
   These ti -- dings shep -- herds heard
   Whilst watch -- ing o’er their fold,
@@ -198,6 +202,7 @@ altoWordsIII = \lyricmode {
   And joy -- ful mel -- o -- dy.
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsVII
   \set stanza = #"3. "
   Then was there with the_An -- gel
   An host in -- con -- ti -- nent
@@ -318,7 +323,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }

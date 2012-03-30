@@ -2,11 +2,11 @@
 \include "../util.ly"
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Bring a Torch, Jeanette, Isabella!"}}
-  poet = \markup\concat{\italic"Un flambeau, Jeannette, Isabelle" \oldStyleNum", by Émile Blémont (1839-1927)"}
-  meter = \markup\oldStyleNum"English by Edward Cuthbert Nunn (1868-1914)"
+  poet = \markup\concat{\italic"Un flambeau, Jeannette, Isabelle" \oldStyleNum", by Émile Blémont (1839–1927)"}
+  meter = \markup\oldStyleNum"English by Edward Cuthbert Nunn (1868–1914)"
   composer = \markup\concat{\oldStyleNum"16th Century French Carol"}
-  arranger = \markup\oldStyleNum"Arranged by Edward Cuthbert Nunn (1868-1914)"
-  tagline = \markup\concat{"from " \italic"The Home and Community Song–Book" \oldStyleNum", 1922"}
+  arranger = \markup\oldStyleNum"Arranged by Edward Cuthbert Nunn (1868–1914)"
+  tagline = \markup\concat{"from " \italic"The Home and Community Song-Book" \oldStyleNum", 1922"}
 }
 \paper {
   paper-height = 9\in
@@ -23,6 +23,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #048
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -132,6 +134,7 @@ altoMusic = \relative c'' {
   g8 s4 \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsV
   \set stanza = #"1. "
   \set ignoreMelismata = ##t
   Bring a torch, __ _ Jean -- nette, Is -- a -- bel -- la!
@@ -142,6 +145,7 @@ altoWords = \lyricmode {
   Ah! ah! beau -- ti -- ful is her Son! __ _
 }
 altoWordsII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"2. "
   \set ignoreMelismata = ##t
   Who goes there __ _ a -- knock -- ing so loud -- ly?
@@ -152,6 +156,7 @@ altoWordsII = \lyricmode {
   Toc! toc! Come let us make good cheer! _
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"3. "
   \set ignoreMelismata = ##t
   It is wrong when the Child _ is sleep -- ing,
@@ -162,6 +167,7 @@ altoWordsIII = \lyricmode {
   Hush! hush! see __ _ how fast He sleeps! _
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsV
   \set stanza = #"4. "
   \set ignoreMelismata = ##t
   Soft -- ly to __ _ the lit -- _ tle sta -- ble,

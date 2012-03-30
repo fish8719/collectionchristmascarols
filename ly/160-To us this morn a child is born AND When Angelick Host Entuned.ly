@@ -24,6 +24,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #160
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -80,7 +82,8 @@ altoMusic = \relative c' {
   b4 cis8 d4 d8~ |
   d cis!4 d4 \bar "|."
 }
-altoWords = \lyricmode {
+altoWords = \lyricmode {  
+  \dropLyricsIX
   \set stanza = #"1. "
   To us this morn a Child is born,
   His Fa -- ther is none o -- ther
@@ -88,6 +91,7 @@ altoWords = \lyricmode {
   Maid Ma -- ry is His Mo -- ther.
 }
 altoWordsII = \lyricmode {
+  \dropLyricsIX
 %\markup\italic
   \set stanza = #"2. "
   Her Babe is Lord by all a -- dored
@@ -97,6 +101,7 @@ altoWordsII = \lyricmode {
   \set ignoreMelismata = ##t
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"3. "
   When Her -- od heard the Ma -- ges’ word,
   He smote the babes a -- sun -- der
@@ -105,6 +110,7 @@ altoWordsIII = \lyricmode {
   \set ignoreMelismata = ##t
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"4. "
   Now, faith -- ful quire, bless God the Sire,
   Bless God the Spi -- rit Ho -- ly,
@@ -177,7 +183,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "basses" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "basses" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "basses" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "basses" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.5))} \lyricsto "basses" \altoWords
     \new Lyrics \with { alignAboveContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "tenors" \tenorWords
     \new Lyrics \with { alignBelowContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "basses" \bassWords
   >>
@@ -196,9 +202,9 @@ pianoLH = \relative c' {
   }
   \header {
     title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"To Us This Morn a Child is Born"}}
-    poet = \markup\oldStyleNum"G.R. Woodward (1848-1934)"
+    poet = \markup\oldStyleNum"G.R. Woodward (1848–1934)"
     composer = \markup{\italic "Jog on, jog on the footpath way"}
-    arranger = \markup\oldStyleNum"Arranged by Charles Wood (1866-1926)"
+    arranger = \markup\oldStyleNum"Arranged by Charles Wood (1866–1926)"
   }
 }
 
@@ -244,6 +250,7 @@ altoMusic = \relative c' {
   d cis d2 \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"1. "
   When an An -- gel host en -- tuned
   An -- them sweet and ai -- ry
@@ -252,6 +259,7 @@ altoWords = \lyricmode {
   Of the Vir -- gin Ma -- ry;
 }
 altoWordsII = \lyricmode {
+  \dropLyricsIX
 %\markup\italic
   \set stanza = #"2. "
   When, with hon -- ey, herd -- men brought
@@ -262,6 +270,7 @@ altoWordsII = \lyricmode {
   \set ignoreMelismata = ##t
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"3. "
   When three pil -- grim kings un -- lockt
   Each his cas -- ket, spa -- ry
@@ -271,6 +280,7 @@ altoWordsIII = \lyricmode {
   \set ignoreMelismata = ##t
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"4. "
   ‘Glo -- ry be to God on high,
   God, who can -- not va -- ry!’
@@ -337,7 +347,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.5))} \lyricsto "altos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }
@@ -361,8 +371,8 @@ pianoLH = \relative c' {
   }
   \header {
     title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"When Angelick Host Entuned"}}
-    poet = \markup\oldStyleNum"G.R. Woodward (1848-1934)"
+    poet = \markup\oldStyleNum"G.R. Woodward (1848–1934)"
     composer = \markup\concat{\italic"Heinz, wiltu Christa han" \oldStyleNum", 1582"}
-    arranger = \markup\oldStyleNum"Arranged by G. R. Woodward (1848-1934)"
+    arranger = \markup\oldStyleNum"Arranged by G. R. Woodward (1848–1934)"
   }
 }

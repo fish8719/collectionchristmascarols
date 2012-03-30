@@ -4,7 +4,7 @@
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"When Christ was born of Mary free!"}}
   poet = \markup\oldStyleNum"15th Century Middle English Harleian Manuscript"
   composer = \markup\oldStyleNum"16th Century English Tune"
-  arranger = \markup\oldStyleNum"Arranged by Sir John Stainer (1840-1901)"
+  arranger = \markup\oldStyleNum"Arranged by Sir John Stainer (1840–1901)"
   tagline = \markup { "from" \italic {Christmas Carols, New and Old}}
 }
 \paper {
@@ -22,6 +22,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #017
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -47,7 +49,8 @@ global = {
   \time 4/4
   \autoBeamOff
   \override DynamicLineSpanner #'staff-padding = #0.0
-  \override DynamicLineSpanner #'Y-extent = #'(-0.5 . 0)
+  \override DynamicLineSpanner #'Y-extent = #'(1 . 1)
+  \override DynamicText #'X-offset = #-3.5
 }
 
 sopMusic = \relative c'' {
@@ -57,7 +60,7 @@ sopMusic = \relative c'' {
   fis[ e] <e' c>[ <d b>] <c a>[ <b g>] a[ g] |
   \partial 4*3 g4. fis8 g4 | \break
   
-  \mark \markup {\musicglyph #"scripts.segno"} \partial 4 g4^\f |
+  \mark \markup {\musicglyph #"scripts.segno"} \partial 4 g4_\f |
   \slurDotted d'8\noBeam(d) \slurSolid b4 g a8[ b] |
   c4 b8[ a] b4 b |
   a4. a8 b4 d |
@@ -65,10 +68,10 @@ sopMusic = \relative c'' {
   e d8[ cis] d2 |
   a4 a8\noBeam b8 c4 c |
   g4. a8 b2 |
-  d4.^\p e8 d4 c8[ b] |
+  d4._\p e8 d4 c8[ b] |
   
   a4. g8 g4 b4\rest | \bar "||" \break
-  d,4.^\ff d8 d4 d |
+  d,4. d8 d4 d |
   e g g2 |
   a4. b8 c4 c |
   
@@ -112,20 +115,27 @@ altoMusic = \relative c' {
   
   g fis g \bar "|."
 }
-altoWords = \lyricmode {
-  \repeat unfold 16 { \skip 1 }
-  \set stanza = #"1. "
-  When Christ was born of Ma -- ry free,
-  In Beth -- le -- hem, that fair ci -- ty,
-  An -- gels sang there with mirth and glee,
-  \markup\italic “In \markup\italic ex -- \markup\italic cel -- \markup\italic sis \markup\italic Glo -- \markup\italic ri -- \markup\italic a.”
-  
-  \markup\italic In \markup\italic ex -- \markup\italic cel -- \markup\italic sis \markup\italic Glo -- \markup\italic ri -- \markup\italic a,
-  \markup\italic In \markup\italic ex -- \markup\italic cel -- \markup\italic sis \markup\italic Glo -- \markup\italic ri -- \markup\italic a,
-  \markup\italic In \markup\italic ex -- \markup\italic cel -- \markup\italic sis \markup\italic Glo -- \markup\italic ri -- \markup\italic a,
-  \markup\italic In \markup\italic ex -- \markup\italic cel -- \markup\italic sis \markup\italic Glo -- \markup\italic ri -- \markup\italic a.
+altoWords = {
+  \dropLyricsVI
+  \lyricmode {
+    \repeat unfold 16 { \skip 1 }
+    \set stanza = #"1. "
+    When Christ was born of Ma -- ry free,
+    In Beth -- le -- hem, that fair ci -- ty,
+    An -- gels sang there with mirth and glee,
+    \markup\italic “In \markup\italic ex -- \markup\italic cel -- \markup\italic sis \markup\italic Glo -- \markup\italic ri -- \markup\italic a.”
+  }
+  \set stanza = \markup\dynamic"ff "
+  \lyricmode {
+    \dropLyricsIV
+    \markup\italic In \markup\italic ex -- \markup\italic cel -- \markup\italic sis \markup\italic Glo -- \markup\italic ri -- \markup\italic a,
+    \markup\italic In \markup\italic ex -- \markup\italic cel -- \markup\italic sis \markup\italic Glo -- \markup\italic ri -- \markup\italic a,
+    \markup\italic In \markup\italic ex -- \markup\italic cel -- \markup\italic sis \markup\italic Glo -- \markup\italic ri -- \markup\italic a,
+    \markup\italic In \markup\italic ex -- \markup\italic cel -- \markup\italic sis \markup\italic Glo -- \markup\italic ri -- \markup\italic a.
+  }
 }
 altoWordsII = \lyricmode {
+  \dropLyricsVI
   \repeat unfold 16 { \skip 1 }
   \set stanza = #"2. "
   \set ignoreMelismata = ##t
@@ -137,6 +147,7 @@ altoWordsII = \lyricmode {
   \markup\italic “In \markup\italic ex -- \markup\italic cel -- \markup\italic sis \markup\italic Glo -- \markup\italic ri -- \markup\italic a.”
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsVI
   \repeat unfold 16 { \skip 1 }
   \set stanza = #"3. "
   The King is come to save man -- kind, __ _
@@ -145,6 +156,7 @@ altoWordsIII = \lyricmode {
   \markup\italic “In \markup\italic ex -- \markup\italic cel -- \markup\italic sis \markup\italic Glo -- \markup\italic ri -- \markup\italic a.”
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsVI
   \repeat unfold 16 { \skip 1 }
   \set stanza = #"4. "
   _ Then dear Lord, for Thy great grace,
@@ -160,7 +172,7 @@ tenorMusic = \relative c' {
   g a,8[ b] c[ d] e4 |
   d d, g \bar "||"
   
-  b'_\f |
+  b'^\f |
   \slurDotted a8\noBeam( a) \slurSolid d4 b e |
   e d d d |
   d4. d8 d4 d |
@@ -168,10 +180,10 @@ tenorMusic = \relative c' {
   b a a2 |
   d4 d8\noBeam d e4 e |
   c c d2
-  d4._\p c8 d4 d |
+  d4.^\p c8 d4 d |
   
   d c b s \bar "||"
-  d,4._\ff d8 d4 d |
+  d,4. d8 d4 d |
   e g g2 |
   d'4. d8 e4 e |
   d d d2 |

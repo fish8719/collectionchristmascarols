@@ -19,6 +19,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #104
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -80,6 +82,7 @@ altoMusic = \relative c' {
   fis4 g
 }
 altoWords = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"1. "
   Glad Christ -- mas bells, your mu -- sic tells
     The sweet and pleas -- ant sto -- ry;
@@ -93,6 +96,7 @@ altoWords = \lyricmode {
     Lies in a sta -- ble yon -- der.
 }
 altoWordsII = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"2. "
   No pal -- ace hall its __ ceil -- ing tall
     His king -- ly head spread o -- ver,
@@ -106,6 +110,7 @@ altoWordsII = \lyricmode {
     There lies He, cra -- dled poor -- ly.”
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"3. "
   Nor rai -- ment gay, as __ there He lay,
     A -- dorn’d the in -- fant stran -- ger;
@@ -119,6 +124,7 @@ altoWordsIII = \lyricmode {
     A __ spec -- ta -- cle a -- maz -- ing.
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"4. "
   But from a -- far, a __ splen -- did star
     The wise men west -- ward turn -- ing;
@@ -132,6 +138,7 @@ altoWordsIV = \lyricmode {
     From end to end was ring -- ing.
 }
 altoWordsV = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"5. "
   Where on the hill, all __ safe and still,
     The fold -- ed flocks were ly -- ing,
@@ -206,7 +213,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.5)) } \lyricsto "sopranos" \altoWords
     \new Lyrics \with { alignAboveContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "tenors" \tenorWords
     \new Lyrics \with { alignBelowContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "basses" \bassWords
   >>

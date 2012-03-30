@@ -3,7 +3,7 @@
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Myn Lyking"}}
   poet = \markup\oldStyleNum"15th Century"
-  composer = \markup\oldStyleNum"Richard R. Terry (1865-1938)"
+  composer = \markup\oldStyleNum"Richard R. Terry (1865–1938)"
   tagline = \markup\concat{ "from " \italic"Twelve Christmas Carols" \oldStyleNum", 1912, via " \italic"HymnsAndCarolsOfChristmas.com"}
 }
 \paper {
@@ -21,6 +21,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #186
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}

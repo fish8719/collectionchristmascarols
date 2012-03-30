@@ -15,11 +15,11 @@
     #'((basic-distance . 0)
        (minimum-distance . 0)
        (padding . 0)
-       (stretchability . 100))
+       (stretchability . 75))
   top-markup-spacing =
     #'((basic-distance . 0)
        (minimum-distance . 0)
-       (padding . 0)
+       (padding . 0.3)
        (stretchability . 0))
   markup-system-spacing = 
     #'((basic-distance . 0)
@@ -36,7 +36,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
-  bottom-margin = 0.125\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #158
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -341,7 +342,7 @@ tenorMusic = \relative c' {
   g fis e d |
   a' b a g |
   fis2. d4 |
-  e b'a g |
+  e b' a g |
   fis g fis2 \bar "|."
 }
 tenorWords = \lyricmode {

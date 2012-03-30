@@ -3,7 +3,7 @@
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"The Virgin and Child"}}
   poet = \markup\oldStyleNum"Old English"
-  composer = \markup\oldStyleNum"Charles Steggall (1826-1905)"
+  composer = \markup\oldStyleNum"Charles Steggall (1826–1905)"
   tagline = \markup { "from" \italic {Christmas Carols, New and Old}}
 }
 \paper {
@@ -27,6 +27,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #086
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -52,7 +54,8 @@ global = {
   \time 4/4
   \autoBeamOff
   \override DynamicLineSpanner #'staff-padding = #0.0
-  \override DynamicLineSpanner #'Y-extent = #'(-1 . 1)
+  \override DynamicLineSpanner #'Y-extent = #'(1 . 1)
+  \override DynamicText #'X-offset = #-2.5
 }
 
 sopMusic = \relative c'' {
@@ -64,7 +67,7 @@ sopMusic = \relative c'' {
   d2~ d4 g, |
   c4. a8 b4 g |
   
-  c4.^\markup\italic"dim." a8 b4^\p g |
+  c4.^\markup\italic"dim." a8 b4_\p g |
   a e8[ f] g4 c,8[ d] |
   e4 f8[ d] e4 c8[ d] |
   e2. c8[ d] |
@@ -160,7 +163,8 @@ altoMusic = \relative c' {
   c2.
 }
 altoWords = {
-  \set stanza = \markup{\dynamic"mf" " 1."}
+  \dropLyricsIV
+  \set stanza = \markup{\dynamic"  mf" " 1."}
   \lyricmode {
     On yes -- ter night I saw a sight,
     A star as bright as day;
@@ -185,10 +189,11 @@ altoWords = {
   }
 }
 altoWordsII = {
+  \dropLyricsIV
   \lyricmode{
     \repeat unfold 32 \skip1
   }
-  \set stanza = \markup{\dynamic" f " "3."}
+  \set stanza = \markup{\dynamic"  f " "3."}
   \lyricmode {
   %\markup\italic
     The Child then spake whilst she did sing,
@@ -203,6 +208,7 @@ altoWordsII = {
   }
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsIV
   \repeat unfold 32 \skip1
   \set stanza = #"4."
   “Now, sweet -- est Lord, since Thou art King,
@@ -235,7 +241,7 @@ tenorMusic = \relative c' {
   b( a8[ c] b4) g |
   g c d b |
   
-  g c d_\p e |
+  g c d^\p e |
   c a g a |
   g a8[ f] g4 s |
   s a gis a |

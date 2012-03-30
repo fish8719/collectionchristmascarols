@@ -6,16 +6,18 @@
   paper-width = 6\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
-  %system-system-spacing =
-  %  #'((basic-distance . 0)
-  %     (minimum-distance . 0)
-  %     (padding . -0.35)
-  %     (stretchability . 100))
+  system-system-spacing =
+    #'((basic-distance . 0)
+       (minimum-distance . 0)
+       (padding . -5)
+       (stretchability . 100))
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #194
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -76,10 +78,12 @@ altoMusic = \relative c' {
   bes8 g f a g4 g \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsV
   Gau -- de -- te, gau -- de -- te,
   Chris -- tus est na -- tus
   ex Ma -- ri -- a Vir -- gi -- ne, Gau -- de -- te!
   
+  \dropLyricsIV
   \set stanza = #"1. "
   \set ignoreMelismata = ##t
   Tem -- pus ad -- est gra -- ti -- æ
@@ -88,6 +92,7 @@ altoWords = \lyricmode {
   de -- vo -- tæ re -- da -- mus.
 }
 altoWordsII = \lyricmode {
+  \dropLyricsIV
 %\markup\italic
   \repeat unfold 21 {\skip1}
   \set stanza = #"2. "
@@ -98,6 +103,7 @@ altoWordsII = \lyricmode {
   a Chris -- to re -- gnan -- te.
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsIV
   \repeat unfold 21 {\skip1}
   \set stanza = #"3. "
   E -- ze -- chie -- lis por -- ta
@@ -106,6 +112,7 @@ altoWordsIII = \lyricmode {
   sa -- lus in -- ve -- ni -- tur.
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsIV
   \repeat unfold 21 {\skip1}
   \set stanza = #"4. "
   \set ignoreMelismata = ##t
@@ -197,10 +204,9 @@ pianoLH = \relative c' {
     tagline = \markup\concat{"Chorus and text of verses from " \italic"Piæ Cantiones" \oldStyleNum", 1582, via " \italic"imslp.org" ", Melody of verses from " \italic "www.cpdl.org"}
   }
 }
-\markup \vspace #0.5
 \markup \fill-line {\center-column{
     \concat{"Chorus and text of verses from " \italic"Piæ Cantiones" \oldStyleNum", 1582, via " \italic"imslp.org" ", Melody of verses from " \italic "www.cpdl.org"}}}
-\markup\vspace#1.6
+\markup\vspace#2.2
 
 
 
@@ -328,6 +334,7 @@ altoMusic = \relative c' {
   e2 fis \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsV
   \set stanza = #"1. "
   Glo -- rious, beau -- teous, gol -- den -- bright,
   Shed -- ding soft -- est pu -- rest light,
@@ -350,6 +357,7 @@ altoWords = \lyricmode {
   Peace on earth to us for giv -- en.
 }
 altoWordsII = \lyricmode {
+  \dropLyricsV
 %\markup\italic
   \set stanza = #"2. "
   But the stars’ sweet gold -- en gleam
@@ -366,6 +374,7 @@ altoWordsII = \lyricmode {
   ’Mid the bright  -- ness lost their gold.
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsV
   \repeat unfold 35 { \skip 1 }
   \set stanza = #"5. "
   Now no more on Christ -- mas night, __ _
@@ -504,7 +513,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWords
      \new Lyrics \with { alignAboveContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "tenors" \tenorWords
     \new Lyrics \with { alignBelowContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "basses" \bassWords
   >>
@@ -524,7 +533,7 @@ pianoLH = \relative c' {
   \header {
     title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Glorious, Beauteous, Golden-Bright"}}
     poet = \markup\oldStyleNum"Anna M. E. Nichols"
-    composer = \markup\oldStyleNum"Maria Tiddeman (1837-1915)"
+    composer = \markup\oldStyleNum"Maria Tiddeman (1837–1915)"
     tagline = \markup { "from" \italic {Christmas Carols, New and Old}}
   }
 }

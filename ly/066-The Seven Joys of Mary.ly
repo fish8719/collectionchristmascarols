@@ -3,7 +3,7 @@
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"The Seven Joys of Mary"}}
   poet = \markup\oldStyleNum"Traditional"
-  %composer = \markup { \center-column { "Old English" \oldStyleNum"Arranged by Sir John Stainer (1840-1901)"}}
+  %composer = \markup { \center-column { "Old English" \oldStyleNum"Arranged by Sir John Stainer (1840–1901)"}}
   composer = \markup\oldStyleNum"Old English"
   tagline = \markup { "from" \italic {Christmas Carols, New and Old}}
 }
@@ -22,6 +22,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #066
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -108,6 +110,7 @@ altoMusic = \relative c' {
   d4. s4 \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsVII
   \set stanza = #"1. "
   The first good joy that Ma -- ry had, It was the joy of
   \set stanza = "1. "
@@ -121,7 +124,8 @@ altoWords = \lyricmode {
   Praise Fa -- ther, Son, and Ho -- ly Ghost To all e -- ter -- ni -- ty.
 }
 altoWordsII = \lyricmode {
-  \set stanza = #"2-7. "
+  \dropLyricsVII
+  \set stanza = #"2–7. "
   The next good joy that Ma -- ry had, It was the joy of
   \set stanza = "2. "
   two; __
@@ -132,6 +136,7 @@ altoWordsII = \lyricmode {
   "" Mak -- ing the lame to go,
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsVII
   \repeat unfold 13 { \skip 1}
   \set stanza = "3. "
   three; __ To see her own Son Je -- sus Christ,
@@ -141,14 +146,16 @@ altoWordsIII = \lyricmode {
   "" Mak -- ing the blind to see,
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsVII
   \repeat unfold 13 { \skip 1}
-  \set stanza = "4-7. " "four, five, etc.;" To see her own Son Je -- sus Christ,
+  \set stanza = "4–7. " "four, five, etc.;" To see her own Son Je -- sus Christ,
   \set stanza = "4. "
   \set ignoreMelismata = ##t
   "" Read -- ing the Bi -- _ ble o’er. __ _
   "" Read -- ing the Bi -- ble o’er,
 }
 altoWordsV = \lyricmode {
+  \dropLyricsVII
   \repeat unfold 22 { \skip 1}
   \set stanza = "5. "
   \set ignoreMelismata = ##t
@@ -156,12 +163,14 @@ altoWordsV = \lyricmode {
   "" Rais -- ing the dead to life,
 }
 altoWordsVI = \lyricmode {
+  \dropLyricsVII
   \repeat unfold 22 { \skip 1}
   \set stanza = "6. "
   Up -- on __ the Cru -- ci -- fix. __
   Up -- on __ the Cru -- ci -- fix,
 }
 altoWordsVII = \lyricmode {
+  \dropLyricsVII
   \repeat unfold 22 { \skip 1}
   \set stanza = "7. "
   A -- scend -- ing in -- to heav’n. __
@@ -244,7 +253,7 @@ bassWords = \lyricmode {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }

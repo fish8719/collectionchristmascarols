@@ -2,9 +2,9 @@
 \include "../util.ly"
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"New Prince, New Pompe"}}
-  poet = \markup\oldStyleNum"Robert Southwell (1560-1593)"
+  poet = \markup\oldStyleNum"Robert Southwell (1560–1593)"
   composer = \markup {"Tune of" \italic"We are poor frozen-out gardeners"}
-  arranger = \markup\oldStyleNum"Arranged by Charles Wood (1866-1926)"
+  arranger = \markup\oldStyleNum"Arranged by Charles Wood (1866–1926)"
   tagline = \markup \concat{ "from " \italic "The Cambridge Carol Book" \oldStyleNum", 1924"}
 }
 \paper {
@@ -23,6 +23,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #162
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -100,6 +102,7 @@ altoMusic = \relative c' {
   d2. \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsV
   \set stanza = #"1. "
   Be -- houlde a se -- ly ten -- der Babe
   In frees -- ing win -- ter nighte, __
@@ -111,6 +114,7 @@ altoWords = \lyricmode {
   In cribbe to shroude His headd.
 }
 altoWordsII = \lyricmode {
+  \dropLyricsV
 %\markup\italic
   \set stanza = #"2. "
   De -- spise not Him for ly -- ing there,
@@ -124,6 +128,7 @@ altoWordsII = \lyricmode {
   \set ignoreMelismata = ##t
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"3. "
   This sta -- ble is a Prin -- ce’s courte,
   The cribbe His chaire of state: __
@@ -136,6 +141,7 @@ altoWordsIII = \lyricmode {
   \set ignoreMelismata = ##t
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsV
   \set stanza = #"4. "
   With joye ap -- proch, O Christ -- en wighte,
   Do hom -- age to thy Kinge: __
@@ -227,7 +233,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "altos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }

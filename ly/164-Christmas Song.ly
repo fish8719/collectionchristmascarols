@@ -2,8 +2,8 @@
 \include "../util.ly"
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Christmas Song"}}
-  poet = \markup\oldStyleNum"William Bright (1824-1901)"
-  composer = \markup\oldStyleNum"John Bacchus Dykes (1823-1876)"
+  poet = \markup\oldStyleNum"William Bright (1824–1901)"
+  composer = \markup\oldStyleNum"John Bacchus Dykes (1823–1876)"
   tagline = \markup { "from" \italic {Christmas Carols, New and Old}}
 }
 \paper {
@@ -32,7 +32,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
-  bottom-margin = 0.125\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #164
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -134,10 +135,7 @@ altoMusic = \relative c' {
   c4 d8) c4.
 }
 dropLyrics = {
-  \override LyricText #'extra-offset = #'(0 . -0.5)
-  \override LyricHyphen #'extra-offset = #'(0 . -0.5)
-  \override LyricExtender #'extra-offset = #'(0 . -0.5)
-  \override StanzaNumber #'extra-offset = #'(0 . -0.5)
+  \dropLyricsXI
 }
 altoWords = \lyricmode {
   \dropLyrics
@@ -304,6 +302,7 @@ tenorMusic = \relative c' {
   g4^\p f8 g4 a8 |
   bes4 bes8 a4. |
   
+  \once\override DynamicText #'X-offset = #-4
   a4^\pp g8 a4 b8 |
   c4. b |
   g4 g8 c4 c8 |
@@ -386,7 +385,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.9))} \lyricsto "altos" \altoWords
     \new Lyrics \with { alignAboveContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "tenors" \tenorWords
     \new Lyrics \with { alignBelowContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "basses" \bassWords
   >>

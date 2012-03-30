@@ -24,6 +24,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #088
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -80,12 +82,14 @@ altoMusic = \relative c' {
   ees2.~  ees2 \bar"|."
 }
 altoWords = \lyricmode {
+  \dropLyricsIX
   This en -- dris night I saw a sight,
   A star as bright as day; __
   And e’er a -- mong, A maid -- en sung,
   “Lul -- lay, by by, lu -- lay.” __
 }
 altoWordsII = \lyricmode {
+  \dropLyricsIX
 %\markup\italic
   \set stanza = #"1."
   This love -- ly la -- dy sat and sang,
@@ -94,6 +98,7 @@ altoWordsII = \lyricmode {
   Why liest thou thus in hay?” __
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"2."
   “My sweet -- est bird, ’tis thus re -- quired,
   Though Thou be king ve -- ray, __
@@ -101,6 +106,7 @@ altoWordsIII = \lyricmode {
   To sing ‘By by, lul -- lay.’” __
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"3."
   The Child then spake in His talk -- ing,
   And to His mo -- ther said, __
@@ -108,6 +114,7 @@ altoWordsIV = \lyricmode {
   In crib though I be laid. __
 }
 altoWordsV = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"4."
   “For an -- gels bright down on me light;
   Thou know -- est ’tis no nay. __
@@ -171,7 +178,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.5)) } \lyricsto "sopranos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }
@@ -296,6 +303,7 @@ altoMusic = \relative c' {
   f2. s4 \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"1. "
   O du fröh -- li -- che, o du se -- li -- ge,
   Gna -- den -- bring -- en -- de Weih -- nachts -- zeit!
@@ -304,7 +312,8 @@ altoWords = \lyricmode {
   Freu -- e, freu -- e dich, o Christ -- en -- heit!
 }
 altoWordsII = {
-  \set stanza = \markup{\dynamic"f " "2. "}
+  \dropLyricsIX
+  \set stanza = \markup{\dynamic"f  " "2. "}
   \lyricmode {
     O du fröh -- li -- che, o du se -- li -- ge,
     Gna -- den -- bring -- en -- de Weih -- nachts -- zeit!
@@ -314,6 +323,7 @@ altoWordsII = {
   }
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"3. "
   O du fröh -- li -- che, o du se -- li -- ge,
   Gna -- den -- bring -- en -- de Weih -- nachts -- zeit!
@@ -396,7 +406,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.5)) } \lyricsto "sopranos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }
@@ -420,7 +430,7 @@ pianoLH = \relative c' {
   }
   \header {
     title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"O Du Fröhliche"}}
-    poet = \markup\oldStyleNum"Johannes Daniel Falk (1768-1826)"
+    poet = \markup\oldStyleNum"Johannes Daniel Falk (1768–1826)"
     composer = \markup\oldStyleNum"Sicilian Hymn"
     tagline = \markup \concat{ "from " \italic"The Wartburg Hymnal" \oldStyleNum", 1918, via " \italic"HymnsAndCarolsOfChristmas.com"}
   }

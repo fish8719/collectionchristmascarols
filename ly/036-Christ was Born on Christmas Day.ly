@@ -19,6 +19,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #036
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -186,6 +188,7 @@ altoMusic = \relative c' {
   f[ d] e f4. \bar"|."
 }
 altoWords = \lyricmode {
+  \dropLyricsV
   \set stanza = #" 1."
   Christ was born on Christ -- mas Day,
   Wreathe the hol -- ly twine the bay;
@@ -224,7 +227,7 @@ altoWords = \lyricmode {
   Ve -- ry ear -- ly, ve -- ry ear -- ly Christ was born.
 }
 altoWordsII = \lyricmode {
-
+  \dropLyricsV
   \set stanza = #" 2."
   He is born to set us free,
   He is born our Lord to be,
@@ -434,9 +437,9 @@ pianoLH = \relative c' {
   }
   \header {
     title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Christ Was Born on Christmas Day"}}
-    poet = \markup\oldStyleNum"John Mason Neale (1818-1866)"
+    poet = \markup\oldStyleNum"John Mason Neale (1818–1866)"
     composer = \markup\concat{\oldStyleNum"14th Century German melody, " \italic"Resonet in laudibus"}
-    arranger = \markup\oldStyleNum"Arranged chiefly by G. R. Woodward (1848-1934)"
+    arranger = \markup\oldStyleNum"Arranged chiefly by G. R. Woodward (1848–1934)"
     tagline = \markup \concat { "from " \italic "The Cowley Carol Book" \oldStyleNum", 1919"}
   }
 }

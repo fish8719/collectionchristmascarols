@@ -2,7 +2,7 @@
 \include "../util.ly"
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Carol of the Shepherds"}}
-  poet = \markup\oldStyleNum"English by Eda Lou Walton (1894-1961)"
+  poet = \markup\oldStyleNum"English by Eda Lou Walton (1894–1961)"
   composer = \markup\oldStyleNum"Bohemian Folk Song"
   tagline = ""
 }
@@ -21,6 +21,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #054
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -86,6 +88,7 @@ altoMusic = \relative c'' {
   d2 \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsV
   \set stanza = #"1. "
   Come, all __ ye __ shep -- herds and __ be not __ dis -- mayed,
   Seek where the __ low -- ly __ sweet ba -- by __ is __ laid;
@@ -96,6 +99,7 @@ altoWords = \lyricmode {
   In Christ -- mas __ joy.
 }
 altoWordsII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"2. "
   As we __ were __ watch -- ing __ our __ flocks where they __ lay,
   Shown a __ great glo -- ry __ as __ bright as __ the __ day.
@@ -104,6 +108,7 @@ altoWordsII = \lyricmode {
   Christ -- mas __ is __ come.
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"3. "
   Now we __ have __ found Him __ in __ Beth -- le -- hem __ stall,
   Sing the __ glad __ ti -- dings, oh, __ sing them to __ all!

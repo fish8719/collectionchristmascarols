@@ -3,7 +3,7 @@
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Christmas is Coming"}}
   %poet = \markup\oldStyleNum"Old Rhyme"
-  composer = \markup\oldStyleNum"H. Walford Davies (1869-1941)"
+  composer = \markup\oldStyleNum"H. Walford Davies (1869–1941)"
   tagline = ""
 }
 \paper {
@@ -21,6 +21,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #010
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -193,6 +195,7 @@ altoMusic = \relative c' {
   ees1 \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsVII
   Christ -- mas is com -- ing, the geese are get -- ting fat,
   Please to put a pen -- ny in the old man’s hat.
   old man’s hat. __
@@ -204,7 +207,7 @@ altoWords = \lyricmode {
   Christ -- mas is com -- ing, the geese are get -- ting fat,
   Please to put a pen -- ny in the old man’s hat.
   If you have -- n’t got a pen -- ny, a ha’ -- p’ny -- ’ll do,
-  If you have -- n’t got a ha’ -- p’ny, a far -- thing -- ’ll do,
+  If you have -- n’t got a ha’ -- p’ny, a \pageBreak far -- thing -- ’ll do,
   If you have -- n’t got a far -- thing,
   
   God bless you! __
@@ -398,7 +401,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }

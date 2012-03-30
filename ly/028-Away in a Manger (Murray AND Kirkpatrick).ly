@@ -34,7 +34,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
-  bottom-margin = 0.125\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #028
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -108,6 +109,7 @@ altoMusic = \relative c' {
   a2 \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsIV
   \set stanza = #"1. "
   A -- way in a man -- ger,
   No crib for His bed,
@@ -119,6 +121,7 @@ altoWords = \lyricmode {
   A -- sleep in the hay.
 }
 altoWordsII = \lyricmode {
+  \dropLyricsIV
   \set stanza = #"2. "
   The cat -- tle are low -- ing,
   The poor ba -- by wakes,
@@ -130,6 +133,7 @@ altoWordsII = \lyricmode {
   Till mor -- ning is nigh.
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsIV
   \set stanza = #"3. "
   Be near me, Lord Je -- sus,
   I ask Thee to stay
@@ -232,7 +236,7 @@ bassWords = \lyricmode {
   \header {
     title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Away In A Manger"}}
     poet = \markup\oldStyleNum"Anonymous"
-    composer = \markup\oldStyleNum"James Ramsey Murray (1841-1905)"
+    composer = \markup\oldStyleNum"James Ramsey Murray (1841–1905)"
     tagline = ""%\markup { "from" \italic {ChristmasCarolMusic.org}}
   }
 }
@@ -317,6 +321,7 @@ altoMusic = \relative c' {
   c2 \bar"|."
 }
 altoWords = \lyricmode {
+  \dropLyricsIV
   \set stanza = #"1. "
   A -- way in a  man -- ger,
   No crib for His bed,
@@ -328,6 +333,7 @@ altoWords = \lyricmode {
   A -- sleep in the hay.
 }
 altoWordsII = \lyricmode {
+  \dropLyricsIV
   \set stanza = #"2. "
   The cat -- tle are low -- ing,
   The poor ba -- by wakes,
@@ -339,6 +345,7 @@ altoWordsII = \lyricmode {
   Till mor -- ning is nigh.
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsIV
   \set stanza = #"3. "
   Be near me, Lord Je -- sus,
   I __ ask Thee to stay
@@ -424,7 +431,7 @@ bassWords = \lyricmode {
 %    \new PianoStaff << \new Staff { \new Voice { \pianoRH } } \new Staff { \clef "bass" \pianoLH } >>
   >>
   \layout {
-    #(layout-set-staff-size 14)
+    #(layout-set-staff-size 15)
     #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 14 20)))
     \context {
       \Score
@@ -439,6 +446,6 @@ bassWords = \lyricmode {
   \header {
     title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Away In A Manger"}}
     poet = \markup\oldStyleNum"Anonymous"
-    composer = \markup\oldStyleNum"William Kirkpatrick (1838-1921)"
+    composer = \markup\oldStyleNum"William Kirkpatrick (1838–1921)"
   }
 }

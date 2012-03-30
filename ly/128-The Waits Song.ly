@@ -22,6 +22,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #128
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -208,6 +210,7 @@ altoMusic = \relative c' {
   
 }
 altoWords = \lyricmode {
+  \dropLyricsV
   \set stanza = #"1. "
   \set ignoreMelismata = ##t
   The moon shines bright and the stars _ give a light
@@ -245,6 +248,7 @@ altoWords = \lyricmode {
   Will all to -- geth -- er __ meet.
 }
 altoWordsII = \lyricmode {
+  \dropLyricsV
 %\markup\italic
   \set stanza = #"2. "
   A -- wake, a -- wake, good peo -- ple __ all,

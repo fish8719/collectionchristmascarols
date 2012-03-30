@@ -3,8 +3,8 @@
 \version "2.14.2"
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"In the Bleak Midwinter"}}
-  poet = \markup\oldStyleNum"Christina Rosetti (1830-1894)"
-  composer = \markup\oldStyleNum"Harold Darke (1888-1976)"
+  poet = \markup\oldStyleNum"Christina Rosetti (1830–1894)"
+  composer = \markup\oldStyleNum"Harold Darke (1888–1976)"
   tagline = \markup { "from" \italic {cpdl.org}}
 }
 
@@ -24,6 +24,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #180
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -181,6 +183,7 @@ altoMusic = \relative c' {
   <d g>1^\pp |
 }
 altoWords = {
+  \dropLyricsV
   \set stanza = \markup {\normal-text\italic "Soprano Solo" "1. "}
   \lyricmode {
     _ In the bleak mid -- win -- ter,
@@ -227,6 +230,7 @@ altoWordsII = \lyricmode {
   
 }
 altoWordsIII = {
+  \dropLyricsIV
   \set stanza = \markup {\normal-text\italic "Tenor Solo" "3. "}
   \lyricmode {
     \set ignoreMelismata = ##t
@@ -427,7 +431,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWords
     \new Lyrics \with { alignAboveContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "tenors" \tenorWords
     \new Lyrics \with { alignBelowContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "basses" \bassWords
   >>

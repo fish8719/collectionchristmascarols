@@ -20,6 +20,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #003
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCaps advent}
@@ -143,13 +145,14 @@ altoMusic = \relative c' {
   g2. |
 }
 altoWords = \lyricmode {
+  \dropLyricsVII
   \set stanza = #"1. "
   Ve -- ni ve -- ni, Em -- ma -- nu -- el
   cap -- ti -- vum sol -- ve Is -- ra -- el,
   qui ge -- mit in ex -- si -- li -- o,
   pri -- va -- tus De -- i Fi -- li -- o.
   
-  Gau -- de! Gau -- de! Em -- man -- u -- el,
+  Gau -- de! Gau -- de! Em -- ma -- nu -- el,
   na -- sce -- tur pro te Is -- ra -- el!
   
   
@@ -160,6 +163,7 @@ altoWords = \lyricmode {
   et clau -- de vi -- as in -- fe -- rum.
 }
 altoWordsII = \lyricmode {
+  \dropLyricsVII
   \set stanza = #"2. "
   Ve -- ni, O Sa -- pi -- en -- ti -- a,
   quæ hic dis -- po -- nis om -- ni -- a,
@@ -174,6 +178,7 @@ altoWordsII = \lyricmode {
   di -- ras -- que mor -- tis te -- ne -- bras.
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsVII
   \set stanza = #"3. "
   Ve -- ni, ve -- ni, A -- do -- na -- i,
   qui po -- pu -- lo in Si -- na -- i
@@ -188,6 +193,7 @@ altoWordsIII = \lyricmode {
   pec -- ca -- ti si -- bi con -- sci -- os.
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsVII
   \set stanza = #"4. "
   Ve -- ni, O Ies -- se vir -- gu -- la,
   ex hos -- tis tu -- os un -- gu -- la,
@@ -313,7 +319,7 @@ bassWords = \lyricmode {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "sopranos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "sopranos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "sopranos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "sopranos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }

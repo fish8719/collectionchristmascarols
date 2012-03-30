@@ -3,7 +3,7 @@
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Shiloh"}}
   poet = \markup { "from" \italic "The Suffolk Harmony" "(1786)"}
-  composer = \markup\oldStyleNum"William Billings (1746-1800)"
+  composer = \markup\oldStyleNum"William Billings (1746–1800)"
   tagline = \markup { "from" \italic {www.cpdl.org}}
 }
 \paper {
@@ -22,6 +22,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #184
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -130,6 +132,7 @@ altoMusic = \relative c' {
   }
 }
 altoWords = {
+  \dropLyricsIX
   \set stanza = \markup {\normal-text\italic "1st Shepherd" "1. "}
     \lyricmode {
     Me -- thinks I see an heav’n -- ly Host of An -- gels on the Wing;
@@ -160,6 +163,7 @@ altoWords = {
   }
 }
 altoWordsII = {
+  \dropLyricsIX
   \set stanza = \markup {\normal-text\italic "Narrator   " "5. "}
   \lyricmode {
     Then learn from hence, ye ru -- ral Swains, the meek -- ness of your God,
@@ -190,6 +194,7 @@ altoWordsII = {
   }
 }
 altoWordsIII = {
+  \dropLyricsIX
   \lyricmode {
     \repeat unfold 34{\skip1}
   }
@@ -332,7 +337,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "tenors" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "tenors" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "tenors" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "tenors" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.5))} \lyricsto "tenors" \altoWords
     \new Lyrics \with { alignAboveContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "tenors" \tenorWords
     \new Lyrics \with { alignBelowContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "basses" \bassWordsIII
     \new Lyrics \with { alignBelowContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "basses" \bassWordsII

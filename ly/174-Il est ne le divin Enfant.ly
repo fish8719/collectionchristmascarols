@@ -23,6 +23,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #174
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -47,30 +49,39 @@ global = {
   \key a \major
   \time 4/4
   \autoBeamOff
+  \set Score.voltaSpannerDuration = #(ly:make-moment 4 4)
 }
 
 sopMusic = \relative c' {
-  e4 a a cis8 a |
-  e4 a a2 |
-  a4 a8 b cis4 d8 cis |
-  b4 a b b |
-  e, a a cis8 a |
-  e4 a a2 |
-  
-  a4 b cis d8 cis |
-  b4 e a,2 |
-  cis4 d e d8 cis |
-  d4 fis e2 |
-  cis4 d e fis8 e |
-  d4 cis cis b |
-  
-  cis d e d8 cis |
-  d4 fis e2 |
-  cis4 d e fis8 e |
-  d4 cis b2 |
-  a4 b cis d8 cis |
-  b2 e |
-  a1\fermata \bar "||"
+  \repeat volta 4 {
+    e4 a a cis8 a |
+    e4 a a2 |
+    a4 a8 b cis4 d8 cis |
+    b4 a b b |
+    e, a a cis8 a |
+    e4 a a2 |
+    
+    a4 b cis d8 cis |
+    b4 e a,2 |
+  }
+  \alternative {
+    {
+      cis4 d e d8 cis |
+      d4 fis e2 |
+      cis4 d e fis8 e |
+      d4 cis cis b |
+      
+      cis d e d8 cis |
+      d4 fis e2 |
+      cis4 d e fis8 e |
+      d4 cis b2 |
+    }
+    {
+      a4 b cis d8 cis |
+      b2 e |
+      a1\fermata \bar "|."
+    }
+  }
 }
 sopWords = \lyricmode {
   
@@ -96,31 +107,42 @@ altoMusic = \relative c' {
   a4 a a a8 a |
   a4 e8[ fis] gis2 |
   cis,4 gis' e e8 a |
-  a2. gis4 | <e a>1\fermata \bar "||"
+  a2. gis4 | <e a>1\fermata \bar "|."
 }
 altoWords = \lyricmode {
-  \set stanza = #"1. "
+  \dropLyricsV
+  Il est né le di -- vin En -- fant,
+  Jou -- ez haut -- bois, ré -- son -- nez mu -- set -- tes!
+  Il est né le di -- vin En -- fant.
+  Chan -- tons tous son a -- vè -- ne -- ment.
+  \break
+\set stanza = #"1. "
+  De -- puis plus de qua -- tre mille ans,
+  Nous le pro -- met -- taient les pro -- phè -- tes,
+  De -- puis plus de qua -- tre mille ans,
+  Nous at -- ten -- dions cet heu -- reux temps.
   
-Il est né le di -- vin En -- fant,
-Jou -- ez haut -- bois, ré -- son -- nez mu -- set -- tes!
-Il est né le di -- vin En -- fant.
-Chan -- tons tous son a -- vè -- ne -- ment.
-De -- puis plus de qua -- tre mille ans,
-nous le pro -- met -- taient les pro -- phè -- tes,
-De -- puis plus de qua -- tre mille ans,
-Nous at -- ten -- dions cet heu -- reux temps.
-Une é -- table est son lo -- ge -- ment,
-Un peu de paille est sa cou -- chet -- te,
-Une é -- table est son lo -- ge -- ment,
-pour un Dieu, quel -- (e) dé -- nue -- ment!
-O Jésus, ô roi tout puissant,
-Tout petit enfant que vous êtes,
-O Jésus, ô roi tout puissant,
-Régnez sur nous entièrement.
+  
+  Chan -- tons tous son a -- vè -- ne -- ment.
+
 }
 altoWordsII = \lyricmode {
+  \dropLyricsV
+  \repeat unfold 34 ""
+  \set stanza = #"2. "
+  Une é -- tabl’ est son lo -- ge -- ment,
+  Un peu de paille est sa cou -- chet -- te,
+  Une é -- tabl’ est son lo -- ge -- ment,
+  pour un Dieu, quel -- "(e)" dé -- nue -- ment!
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsV
+  \repeat unfold 34 ""
+  \set stanza = #"3. "
+  O Jé -- sus, ô roi tout puis -- sant,
+  Tout pe -- tit en -- fant que vous ê -- tes,
+  O Jé -- sus, ô roi tout puis -- sant,
+  Ré -- gnez sur nous en -- tiè -- re -- ment.
 }
 altoWordsIV = \lyricmode {
 }
@@ -153,7 +175,7 @@ bassMusic = \relative c {
   b4 a e2 |
   fis4 e a b8 cis |
   d2 e |
-  a,1\fermata \bar "||"
+  a,1\fermata \bar "|."
 }
 bassWords = \lyricmode {
 

@@ -2,8 +2,8 @@
 \include "../util.ly"
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Joy to the World!"}}
-  poet = \markup\oldStyleNum"Isaac Watts (1674-1748)"
-  composer = \markup\oldStyleNum"Lowell Mason (1792-1872)"
+  poet = \markup\oldStyleNum"Isaac Watts (1674–1748)"
+  composer = \markup\oldStyleNum"Lowell Mason (1792–1872)"
   tagline = \markup { "from" \concat{\italic "Hymns of the Kingdom of God" \oldStyleNum", 1910, via " \italic"HymnsAndCarolsOfChristmas.com"}}
 }
 \paper {
@@ -21,6 +21,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #014
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -86,7 +88,7 @@ altoMusic = \relative c' {
   g4. g8 |
   
   g4. g8 |
-  fis4.\fermata fis8 |
+  fis4. fis8 |
   fis8[ a] g[ fis] |
   fis8.[ e16 d8] fis |
   fis[ a] g[ fis] |
@@ -103,27 +105,39 @@ altoMusic = \relative c' {
   d2
 }
 altoWords = \lyricmode {
+  \dropLyricsV
   \set stanza = #"1. "
-  Joy to the world! the Lord is come; Let earth re -- ceive her King; Let ev -- ’ry __ heart __ pre -- pare __ Him __ room, __
+  Joy to the world! the Lord is come; Let earth re -- ceive her King; Let ev -- ’ry __ heart __ pre -- pare __ Him
+  \raiseLyrics
+  room, __
   And heav’n and na -- ture sing,
   And heav’n and na -- ture sing,
+  \dropLyricsIX
   And heav’n, and heav’n __ and na -- ture sing.
 }
 altoWordsII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"2. "
   Joy to the world! the Sav -- ior reigns; Let men their songs em -- ploy;
-  While fields and __ floods, __ rocks, hills __ and __ plains __
+  While fields and __ floods, __ rocks, hills __ and __
+  \raiseLyrics
+  plains __
   
   Re -- peat the sound -- ing joy,
   Re -- peat the sound -- ing joy,
+  \dropLyricsIX
   Re -- peat, __ re -- peat __ the sound -- ing joy.
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"3. "
-  He rules the world with truth and grace And makes the na -- tions prove The glo -- ries __ of __ His right -- eous -- ness, __
+  He rules the world with truth and grace And makes the na -- tions prove The glo -- ries __ of __ His right -- eous --
+  \raiseLyrics
+  ness, __
   
   And won -- ders of His love,  
   And won -- ders of His love,
+  \dropLyricsIX
   And won -- ders, won -- ders of His love.
 }
 altoWordsIV = \lyricmode {
@@ -137,7 +151,7 @@ tenorMusic = \relative c' {
   d4. d8 |
   
   a4. a8 |
-  a4.\fermata a8 |
+  a4. a8 |
   a4 d |
   d( a8)\noBeam a8 |
   a4 d |
@@ -198,7 +212,7 @@ bassWords = \lyricmode {
 bassWordsII = \lyricmode {
   \repeat unfold 28 { \skip 1 }
   Re -- peat the sound -- ing joy,
-  Re -- peat __ the sound -- ing joy.
+  Re -- peat the sound -- ing joy.
 }
 bassWordsIII = \lyricmode {
   \repeat unfold 28 { \skip 1 }
@@ -218,7 +232,7 @@ bassWordsIII = \lyricmode {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }

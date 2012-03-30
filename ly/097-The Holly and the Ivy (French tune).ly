@@ -32,7 +32,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
-  bottom-margin = 0.125\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #097
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -147,6 +148,7 @@ altoMusic = \relative c' {
   a4.~ a4 s8 |
 }
 altoWords = {
+  \dropLyricsIX
   \lyricmode {
     \set stanza = #"1, 6."
     The Hol -- ly and the I -- vy,
@@ -175,13 +177,14 @@ altoWords = {
     \unset ignoreMelismata
     As sharp as an -- y thorn, __
   }
-  \set stanza = \markup\dynamic"f  "
+  \set stanza = \markup\dynamic"f "
   \lyricmode {
     And Ma -- ry bore sweet Je -- sus Christ,
     On Christ -- mas day_in the morn. __
   }
 }
 altoWordsII = {
+  \dropLyricsIX
   \set stanza = \markup{\dynamic"mf " "2."}
   \lyricmode {
     The Hol -- ly bears a blos -- som,
@@ -204,6 +207,7 @@ altoWordsII = {
   }
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"3."
   The Hol -- ly bears a ber -- ry,
   As red as an -- y blood, __
@@ -328,7 +332,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.5))} \lyricsto "sopranos" \altoWords
     \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }

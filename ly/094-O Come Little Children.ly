@@ -2,8 +2,8 @@
 \include "../util.ly"
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"O Come, Little Children"}}
-  poet = \markup\concat{\italic"Ihr Kinderlein kommet" ", by Christoph von Schmid (1768-1854)"}
-  composer = \markup\oldStyleNum"Johann A. P. Schulz (1747-1800)"
+  poet = \markup\concat{\italic"Ihr Kinderlein kommet" ", by Christoph von Schmid (1768–1854)"}
+  composer = \markup\oldStyleNum"Johann A. P. Schulz (1747–1800)"
   tagline = \markup{from \italic"HymnsAndCarolsOfChristmas.com"}
 }
 \paper {
@@ -22,6 +22,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #094
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -99,6 +101,7 @@ altoMusic = \relative c'' {
   bes4 s8 \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"1. "
   O come, lit -- tle chil -- dren, O come one and all,
   To Beth -- le -- hem haste, to the man -- ger so small,
@@ -106,6 +109,7 @@ altoWords = \lyricmode {
   To be your re -- deem -- er, your joy __ and de -- light.
 }
 altoWordsII = \lyricmode {
+  \dropLyricsIX
 %\markup\italic
   \set stanza = #"2. "
   He’s born in a sta -- ble for you and for me,
@@ -114,6 +118,7 @@ altoWordsII = \lyricmode {
   And pur -- er than an -- gels the heav -- en -- ly child.
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"3. "
   See Ma -- ry and Jo -- seph with love beam -- ing eyes
   Are gaz -- ing up -- on the rude bed where He lies,
@@ -121,6 +126,7 @@ altoWordsIII = \lyricmode {
   While an -- gels sing loud al -- le -- lu -- ias a -- bove.
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"4. "
   Kneel down and a -- dore Him with shep -- herds to -- day,
   Lift up lit -- tle hands now and praise Him as they;
@@ -204,7 +210,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.5)) } \lyricsto "altos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }

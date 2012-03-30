@@ -21,6 +21,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #192
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -273,6 +275,7 @@ altoMusic = \relative c' {
   d1 \bar "|."
 }
 altoWords = {
+  \dropLyricsV
   \set stanza = \markup\dynamic"f   "
   \lyricmode {
     Tol -- li -- te hos -- ti -- as.
@@ -280,6 +283,7 @@ altoWords = {
     Do -- mi -- num in a -- tri -- o
     san -- cto e -- jus.
   }
+  \raiseLyrics
   \lyricmode {
     \set associatedVoice = "tenors"
     Læ -- ten -- tur cœ -- li, et ex -- ul -- tet ter -- ra
@@ -578,7 +582,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWords
    \new Lyrics \with { alignAboveContext = #"men" } \lyricsto "tenors" \tenorWords
     \new Lyrics \with { alignBelowContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "basses" \bassWords
   >>
@@ -598,7 +602,7 @@ pianoLH = \relative c' {
   }
   \header {
     title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Tollite Hostias"}}
-    composer = \markup\oldStyleNum"Camille Saint-Saëns (1835-1921)"
+    composer = \markup\oldStyleNum"Camille Saint-Saëns (1835–1921)"
     tagline = \markup { "from" \italic "cpdl.org"}
   }
 }

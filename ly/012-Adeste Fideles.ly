@@ -2,7 +2,7 @@
 \include "../util.ly"
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Adeste Fideles"}}
-  poet = \markup\oldStyleNum"John Francis Wade (1711-1786)"
+  poet = \markup\oldStyleNum"John Francis Wade (1711–1786)"
   composer = \markup\concat{"from " \italic"Cantus Diversi" \oldStyleNum", 1751"}
   tagline = \markup { "from" \concat{\italic "Christmas Carols and Hymns for School and Choir" \oldStyleNum", 1910"}}
 }
@@ -21,6 +21,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #012
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -67,11 +69,11 @@ sopMusic = \relative c'' {
   b4 cis a b |
   \slurSolid \partial 4*3 gis4.( fis8) e4 | \break
   
-  \partial 4 a4^\mf |
+  \partial 4 a4 |
   a gis a b |
-  a2 e4 cis'4^\f |
+  a2 e4 cis'4 |
   cis b cis d |
-  cis2 b4 \bar""\break cis^\ff |
+  cis2 b4 \bar""\break cis |
   
   d cis b a |
   gis2 a4( d) |
@@ -109,18 +111,32 @@ altoMusic = \relative c' {
   e2( d4.) cis8 |
   \partial 4*3 cis2. \bar "|."
 }
-altoWords = \lyricmode {
-  \set stanza = #"1. "
-\set ignoreMelismata = ##t
-  Ad -- e -- ste fi -- de -- les, Læ -- ti tri -- um -- phan -- _ tes,
-  Ve -- ni -- te, ve -- ni -- _ te in Beth -- _ le -- hem; Na -- tum vi -- de -- te,
-  Re -- gem an -- ge -- lo -- _ rum;
-\unset ignoreMelismata
-  Ve -- ni -- te a -- do -- re -- mus,
-  Ve -- ni -- te a -- do -- re -- mus,
-  Ve -- ni -- te a -- do -- re -- mus, __ Do -- mi -- num.
+altoWords = {
+  \dropLyricsV
+  \lyricmode {
+    \set stanza = #"1. "
+  \set ignoreMelismata = ##t
+    Ad -- e -- ste fi -- de -- les, Læ -- ti tri -- um -- phan -- _ tes,
+    Ve -- ni -- te, ve -- ni -- _ te in Beth -- _ le -- hem; Na -- tum vi -- de -- te,
+    Re -- gem an -- ge -- lo -- _ rum;
+  \unset ignoreMelismata
+  }
+  \set stanza = \markup\dynamic"mf  "
+  \lyricmode {
+    Ve -- ni -- te a -- do -- re -- mus,
+  }
+  \set stanza = \markup\dynamic" f "
+  \lyricmode {
+    Ve -- ni -- te a -- do -- re -- mus,
+  }
+  \set stanza = \markup\dynamic"ff  "
+  \lyricmode {
+    \raiseLyrics
+    Ve -- ni -- te a -- do -- re -- mus, __ Do -- mi -- num.
+  }
 }
 altoWordsII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"2. "
   \set ignoreMelismata = ##t
   _ De -- um de De -- o, lu -- _ men de lu -- mi -- ne, ""
@@ -128,6 +144,7 @@ altoWordsII = \lyricmode {
   De -- um __ _ ve -- rum, ge -- ni -- tum non fac -- _ tum.
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"3. "
   \set ignoreMelismata = ##t
   _ Can -- tet nunc ‘I -- o,’ cho -- rus an -- ge -- lo -- _ rum_; ""
@@ -135,6 +152,7 @@ altoWordsIII = \lyricmode {
   Glo -- ri -- _ a! __ _ So -- li De -- o Glo -- ri -- a!
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsV
   \set stanza = #"4. "
   \set ignoreMelismata = ##t
   _ Er -- go qui na -- tus di -- e ho -- di -- er -- _ na. ""
@@ -158,11 +176,11 @@ tenorMusic = \relative c' {
   e4 a, cis d |
   \slurSolid \partial 4*3 b4.( a8) gis4 |
   
-  \partial 4 cis4_\mf |
+  \partial 4 cis4 |
   cis b cis d |
-  cis2. a4_\f |
+  cis2. a4 |
   a gis a b |
-  a2 gis4 e'_\ff |
+  a2 gis4 e' |
   
   e e b b |
   b2 a |

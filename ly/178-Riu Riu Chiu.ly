@@ -2,7 +2,7 @@
 \include "../util.ly"
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Riu Riu Chiu"}}
-  composer = \markup\oldStyleNum"Mateo Flecha el Viejo (1481-1553)"
+  composer = \markup\oldStyleNum"Mateo Flecha el Viejo (1481–1553)"
   tagline = \markup { "from" \italic {cpdl.org}}
 }
 \paper {
@@ -21,6 +21,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #178
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -93,10 +95,25 @@ altoMusic = \relative c' {
   d4 c8 a4 a8 a a |
   a4 a \bar "|."
 }
+
+dropLyrics = {
+  \override LyricText #'extra-offset = #'(0 . -2.0)
+  \override LyricHyphen #'extra-offset = #'(0 . -2.0)
+  \override LyricExtender #'extra-offset = #'(0 . -2.0)
+  \override StanzaNumber #'extra-offset = #'(0 . -2.0)
+}
 altoWords = \lyricmode {
+  \dropLyrics
   Ri -- u, ri -- u Chi -- u la guar -- da ri -- be -- ra.
-  Dios guar -- do el lo -- bo,_el lo -- bo de nues -- tra cor -- de -- ra.
-  Dios guar -- do el lo -- bo,_el lo -- bo de nues -- tra cor -- de -- ra.
+  \dropLyricsIV
+  Dios guar -- do el lo -- bo,_el
+  \dropLyrics
+  lo -- bo de nues -- tra cor -- de -- ra.
+  
+  \dropLyricsIV
+  Dios guar -- do el lo -- bo,_el
+  \dropLyrics
+  lo -- bo de nues -- tra cor -- de -- ra.
   
 }
 altoWordsII = \lyricmode {
@@ -375,7 +392,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }

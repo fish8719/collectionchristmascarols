@@ -21,6 +21,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #019
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -103,9 +105,11 @@ altoWords = \lyricmode {
   Glo -- ry to the new -- born King,
   Je -- sus, the Light of the world.
   
+  \dropLyricsIV
   We’ll walk in the light,
   beau -- ti -- ful light,
   Come where the dew -- drops of mer -- cy are bright,
+  \raiseLyrics
   Shine all a -- round us by day and by night,
   Je -- sus, the Light of the world.
 }

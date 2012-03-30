@@ -3,7 +3,7 @@
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Angels We Have Heard on High"}}
   poet = \markup\concat{\italic"Les Anges dans nos Campagnes" \oldStyleNum", 18th Century"}
-  meter = \markup\oldStyleNum"Translated by Bishop James Chadwick (1813-1882)"
+  meter = \markup\oldStyleNum"Translated by Bishop James Chadwick (1813–1882)"
   composer = \markup\oldStyleNum"18th Century French Carol"
   tagline = \markup \concat{ "from " \italic "Carols Old and Carols New" \oldStyleNum", 1916, via " \italic"HymnsAndCarolsOfChristmas.com"}
 }
@@ -22,6 +22,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #022
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -61,7 +63,7 @@ sopMusic = \relative c'' {
   b4 a b d |
   b4. a8 g2 |
 
-  d'2(^\p e8[ d c b] |
+  d'2( e8[ d c b] |
   c2 d8[ c b a] |
   b2 c8[ b a g] |
   a4.) d,8 d2 |
@@ -109,6 +111,7 @@ altoMusic = \relative c'' {
   d2. s4 \bar "|."
 }
 altoWords = {
+  \dropLyricsV
   \lyricmode {
     \set stanza = #"1. "
     An -- gels we have heard on high,
@@ -116,6 +119,7 @@ altoWords = {
     And the moun -- tains in re -- ply
     Ech -- o -- ing their joy -- ous strains.
   }
+  \raiseLyrics
   \set stanza = \markup\dynamic"mf  "
   \lyricmode {
     \markup\italic Glo -- \markup\italic ri -- \markup\italic a \markup\italic in \markup\italic ex -- \markup\italic cel -- \markup\italic sis \markup\italic De -- \markup\italic o, __
@@ -126,6 +130,7 @@ altoWords = {
   }
 }
 altoWordsII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"2. "
   Shep -- herds, why this ju -- bi -- lee?
   Why your joy -- ous songs pro -- long?
@@ -133,6 +138,7 @@ altoWordsII = \lyricmode {
   Which in -- spire your heav’n -- ly song?
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"3. "
   Come to Beth -- le -- hem and see
   Him whose birth the an -- gels sing;
@@ -140,6 +146,7 @@ altoWordsIII = \lyricmode {
   Christ, the Lord, our new -- born King.
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsV
   \set stanza = #"4. "
   See Him in a man -- ger laid,
   Whom the choirs of an -- gels praise;
@@ -158,7 +165,7 @@ tenorMusic = \relative c' {
   d4 e d b |
   d c b2 |
   
-  b2(_\p e~ |
+  b2( e~ |
   e d~ |
   d c |
   a4) g fis2 |

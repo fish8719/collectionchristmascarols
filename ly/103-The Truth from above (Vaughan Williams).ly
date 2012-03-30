@@ -4,7 +4,7 @@
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"The Truth From Above"}}
   subtitle = \markup{\override #'(font-name . "Garamond Premier Pro"){ \abs-fontsize #10.5 "(Herefordshire Carol)"}}
   poet = \markup\oldStyleNum"Traditional"
-  composer = \markup\oldStyleNum"Arranged by Ralph Vaughan Williams (1872-1958)"
+  composer = \markup\oldStyleNum"Arranged by Ralph Vaughan Williams (1872–1958)"
   tagline = ""
 }
 \paper {
@@ -23,6 +23,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #103
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -119,6 +121,7 @@ altoMusic = \relative c' {
   g8[ a] g[ fis] e2
 }
 altoWords = \lyricmode {
+  \dropLyricsV
   \set stanza = #"1. "
   This is the truth sent from a -- bove,
   The truth of God, the God of love.
@@ -132,6 +135,7 @@ altoWords = \lyricmode {
   and ma -- ny thou -- sands He did teach.
 }
 altoWordsII = \lyricmode {
+  \dropLyricsV
 %\markup\italic
   \set stanza = #"2. "
   The first things which I do re -- late
@@ -147,6 +151,7 @@ altoWordsII = \lyricmode {
   Be pleased to hear what He did say.
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"3. "
   Thus we were heirs to end -- less woes,
   Till God the Lord did in -- ter -- pose;
@@ -249,7 +254,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "sopranos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }

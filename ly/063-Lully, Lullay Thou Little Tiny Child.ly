@@ -4,7 +4,7 @@
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"The Coventry Carol"}}
   poet = \markup\oldStyleNum"Robert Croo, 1534"
   composer = \markup\oldStyleNum"16th Centry English Carol"
-  arranger = \markup\oldStyleNum"Arranged by Martin Fallas Shaw (1875-1958)"
+  arranger = \markup\oldStyleNum"Arranged by Martin Fallas Shaw (1875–1958)"
   tagline = \markup { "from" \italic {ChristmasCarolMusic.org}}
 }
 \paper {
@@ -22,6 +22,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #063
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -102,6 +104,7 @@ altoMusic = \relative c' {
   g2. \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsIX
   Lul -- ly, lul -- lay, Thou lit -- tle ti -- ny Child,
   By, by, lul -- ly, lul -- lay;
   
@@ -112,6 +115,7 @@ altoWords = \lyricmode {
   By, by, lul -- ly, lul -- lay?
 }
 altoWordsII = \lyricmode {
+  \dropLyricsIX
   \repeat unfold 16 { \skip 1 }
   \set stanza = #"2. "
   Her -- od, the king, in his rag -- ing,
@@ -120,6 +124,7 @@ altoWordsII = \lyricmode {
   All chil -- dren young to slay.
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsIX
   \repeat unfold 16 { \skip 1 }
   \set stanza = #"3. "
   Then woe is me, poor Child, for Thee!
@@ -203,7 +208,7 @@ bassWords = \lyricmode {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.5)) } \lyricsto "sopranos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }

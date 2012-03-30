@@ -2,8 +2,8 @@
 \include "../util.ly"
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"The Manger Throne"}}
-  poet = \markup\oldStyleNum"William Chatterson Dix (1837-1898)"
-  composer = \markup\oldStyleNum"Charles Steggall (1826-1905)"
+  poet = \markup\oldStyleNum"William Chatterson Dix (1837–1898)"
+  composer = \markup\oldStyleNum"Charles Steggall (1826–1905)"
   tagline = \markup { "from" \italic {Christmas Carols, New and Old}}
 }
 \paper {
@@ -22,6 +22,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #118
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -119,6 +121,7 @@ altoMusic = \relative c' {
   fis2. \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsV
   \set stanza = #"1. "
   \set ignoreMelismata = ##t
   Like sil -- ver lamps in a 
@@ -143,6 +146,7 @@ altoWords = \lyricmode {
   As __ _ this __ _ which has end -- ed our sighs.
 }
 altoWordsII = \lyricmode {
+  \dropLyricsV
 %\markup\italic
   \set stanza = #"4. "
   The stars of heav’n still
@@ -168,6 +172,7 @@ altoWordsII = \lyricmode {
   Whom the pro -- phets of __ _ God __ _ fore -- tell.
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"5. "
   \set ignoreMelismata = ##t
   Faith sees no long -- er the

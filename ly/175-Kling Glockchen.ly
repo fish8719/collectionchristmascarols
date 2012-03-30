@@ -2,7 +2,7 @@
 \include "../util.ly"
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Kling Glöckchen"}}
-  poet = \markup\oldStyleNum"Karl Enslin (1819-1875)"
+  poet = \markup\oldStyleNum"Karl Enslin (1819–1875)"
   composer = \markup\oldStyleNum"P. Heinrici"
   tagline = \markup \concat { "from " \italic "The Wartburg Hymnal" \oldStyleNum", 1918"}
 }
@@ -22,6 +22,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #175
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle christmas}
@@ -98,6 +100,7 @@ altoMusic = \relative c' {
   g2 s \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsV
   Kling, Glöck -- chen kling -- e -- ling -- e -- ling!
   Kling, Glöck -- chen kling!
   
@@ -111,6 +114,7 @@ altoWords = \lyricmode {
   Kling, Glöck -- chen kling!
 }
 altoWordsII = \lyricmode {
+  \dropLyricsV
 %\markup\italic
   %Kling, Glöck -- chen kling -- e -- ling -- e -- ling!
   %Kling, Glöck -- chen kling!
@@ -125,6 +129,7 @@ altoWordsII = \lyricmode {
   %Kling, Glöck -- chen kling!
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsV
   %Kling, Glöck -- chen kling -- e -- ling -- e -- ling!
   %Kling, Glöck -- chen kling!
   \repeat unfold 12 \skip1
@@ -220,7 +225,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women"  \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }

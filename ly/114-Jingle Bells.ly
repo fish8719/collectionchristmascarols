@@ -2,8 +2,8 @@
 \include "../util.ly"
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Jingle Bells"}}
-  poet = \markup\oldStyleNum"James Lord Pierpont (1822-1893)"
-  composer = \markup\oldStyleNum"James Lord Pierpont (1822-1893)"
+  poet = \markup\oldStyleNum"James Lord Pierpont (1822–1893)"
+  composer = \markup\oldStyleNum"James Lord Pierpont (1822–1893)"
   tagline = \markup \concat{ "from " \italic"The One Horse Open Sleigh" \oldStyleNum", 1857"}
 }
 \paper {
@@ -27,7 +27,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
-  bottom-margin = 0.125\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #114
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -144,8 +145,11 @@ altoWords = \lyricmode {
     Mak -- ing spir -- its bright;
   \skip1 O what sport to ride and sing
     A sleigh -- ing song to -- night.
+}
+altoChorusWords = \lyricmode {
+  \dropLyricsXII
+  \repeat unfold 50 ""
   
-  \set associatedVoice = "altos"
   Jin -- gle bells,
     Jin -- gle bells,
     Jin -- gle all the way;
@@ -304,7 +308,7 @@ pianoRH = \relative c' {
   f[ des des' des,] c'[ des, bes' des,] |
   aes'[ c, ees c] d[ c ees c] |
   g'[ f ees des] c[ bes aes g] |
-  aes8 r \ottava #0 <aes, ees c>4 \bar "|."
+  aes8 \ottava #0 r <aes, ees c>4 \bar "|."
 }
 pianoLH = \relative c {
   \mergeDifferentlyHeadedOn
@@ -388,7 +392,8 @@ pianoLH = \relative c {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . 0.5))} \lyricsto "sopranos" \altoWords
+    \new Lyrics = "altosChorus"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -1))} \lyricsto "sopranos" \altoChorusWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }

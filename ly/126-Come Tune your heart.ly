@@ -2,9 +2,9 @@
 \include "../util.ly"
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Come! Tune Your Heart"}}
-  poet = \markup\concat{\italic"Auf, schicke dich" ", by Christian Fürchtegott Gellert (1715-1769)"}
-  meter = \markup\oldStyleNum"Translated by Frances E. Cox (1812-1897)"
-  composer = \markup\oldStyleNum"Sir Frederick A. G. Ouseley (1825-1889)"
+  poet = \markup\concat{\italic"Auf, schicke dich" ", by Christian Fürchtegott Gellert (1715–1769)"}
+  meter = \markup\oldStyleNum"Translated by Frances E. Cox (1812–1897)"
+  composer = \markup\oldStyleNum"Sir Frederick A. G. Ouseley (1825–1889)"
   tagline = \markup { "from" \italic {Christmas Carols, New and Old}}
 }
 \paper {
@@ -23,6 +23,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #126
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -47,7 +49,7 @@ global = {
   \key ees \major
   \time 2/2
   \override DynamicLineSpanner #'staff-padding = #0.0
-  \override DynamicLineSpanner #'Y-extent = #'(0 . 0)
+  \override DynamicLineSpanner #'Y-extent = #'(-0.5 . 0.5)
 }
 
 sopMusic = \relative c' {
@@ -120,6 +122,7 @@ altoMusic = \relative c' {
   ees2 \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"1. "
   Come! tune your heart, To bear its part,
   And ce -- le -- brate Mes -- si -- ah’s feast with prais -- es, with prais -- es;
@@ -130,6 +133,7 @@ altoWords = \lyricmode {
   it rais -- es.
 }
 altoWordsII = \lyricmode {
+  \dropLyricsIX
 %\markup\italic
   \set stanza = #"2. "
   Ex -- alt His Name; With joy pro -- claim,
@@ -141,6 +145,7 @@ altoWordsII = \lyricmode {
   to save __ us!
 }
 altoWordsIII = {
+  \dropLyricsIX
   \set stanza = \markup{\dynamic"mf " "3. "}
   \lyricmode {
     Your ref -- uge place In His free grace,
@@ -152,6 +157,7 @@ altoWordsIII = {
   }
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"4. "
   O Christ, to prove For Thee, my love,
   In breth -- ren Thee my hands shall clothe and cher -- ish, and cher -- ish;
@@ -161,6 +167,7 @@ altoWordsIV = \lyricmode {
   to per -- ish.
 }
 altoWordsV = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"5. "
   Come! praise the Lord; In Heav’n are stored
   Rich gifts for those who here His Name e -- steem -- ed, e -- steem -- ed;
@@ -273,7 +280,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.5))} \lyricsto "altos" \altoWords
     \new Lyrics \with { alignAboveContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "tenors" \tenorWords
     \new Lyrics \with { alignBelowContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "basses" \bassWords
   >>

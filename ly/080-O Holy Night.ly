@@ -3,7 +3,7 @@
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"O Holy Night"}}
   subtitle = \markup{\override #'(font-name . "Garamond Premier Pro"){ \abs-fontsize #10.5 "(Cantique de Noël)"}}
-  composer = \markup\oldStyleNum"Adolphe Adam (1803-1856)"
+  composer = \markup\oldStyleNum"Adolphe Adam (1803–1856)"
   tagline = \markup { "from" \concat{\italic "Christmas Carols and Hymns for School and Choir" \oldStyleNum", 1910"}}
 }
 \paper {
@@ -31,6 +31,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #080
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -166,6 +168,7 @@ chorusWords = \lyricmode {
   O night di -- vine!
   \unset associatedVoice
   
+  \dropLyricsV
   Fall on your knees, Oh, hear __ the an -- gel voi -- ces!
   O night __ di -- vine, __
   O night __ when Christ was born!
@@ -184,6 +187,7 @@ chorusWordsII = {
   }
   \set stanza = \markup\dynamic"f"
   \lyricmode {
+    \dropLyricsV
     He knows our need, Our weak -- ness is no stran -- ger.
     Be -- hold __ your King, __ be -- fore __ Him low -- ly bend!
     Be -- hold your King, __ be -- fore Him low -- ly bend!
@@ -197,6 +201,7 @@ chorusWordsIII = \lyricmode {
   His pow’r and glo -- ry ev -- er -- more pro -- claim!
   \unset associatedVoice
   
+  \dropLyricsV
   Christ is the Lord, Oh, praise __ His name for -- ev -- er!
   His pow’r __ and glo -- ry ev -- er -- more pro -- claim!
   His pow’r and glo -- ry __ ev -- er -- more pro -- claim!

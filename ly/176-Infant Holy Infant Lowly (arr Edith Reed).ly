@@ -4,9 +4,9 @@
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Infant Holy, Infant Lowly"}}
   subtitle = \markup{\override #'(font-name . "Garamond Premier Pro"){ \abs-fontsize #10.5 "(W Zlobie Lezy)"}}
   poet = \markup\oldStyleNum"Traditional Polish Carol"
-  meter = \markup\oldStyleNum"Translated by Edith M. G. Reed (1885-1933)"
+  meter = \markup\oldStyleNum"Translated by Edith M. G. Reed (1885–1933)"
   composer = \markup\oldStyleNum"Traditional Polish Carol"
-  arranger = \markup\oldStyleNum"Arranged by Edith M. G. Reed (1885-1933)"
+  arranger = \markup\oldStyleNum"Arranged by Edith M. G. Reed (1885–1933)"
   tagline = \markup { "from" \italic "CyberHymnal.org"}
 }
 \paper {
@@ -25,6 +25,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #176
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -94,6 +96,7 @@ altoMusic = \relative c' {
   d2 \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsV
   \set stanza = #"1. "
   In -- fant ho -- ly, in -- fant low -- ly
 For his bed a cat -- tle stall;
@@ -105,6 +108,7 @@ tid -- ings bring -- ing:
 Christ the babe is Lord of all.
 }
 altoWordsII = \lyricmode {
+  \dropLyricsV
 %\markup\italic
   \set stanza = #"2. "
 Flocks were sleep -- ing, shep -- herds keep -- ing
@@ -194,7 +198,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }

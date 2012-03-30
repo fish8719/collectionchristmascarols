@@ -4,7 +4,7 @@
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"God Rest You Merry, Gentlemen"}}
   poet = \markup\oldStyleNum"Traditional"
   composer = \markup\oldStyleNum"Traditional"
-  arranger = \markup\oldStyleNum"Arranged by Sir John Stainer (1840-1901)"
+  arranger = \markup\oldStyleNum"Arranged by Sir John Stainer (1840–1901)"
   tagline = \markup { "from" \italic {Christmas Carols, New and Old}}
 }
 \paper {
@@ -22,6 +22,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #052
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -50,7 +52,7 @@ global = {
 }
 
 sopMusic = \relative c' {
-  \partial 4 e4^\mf |
+  \partial 4 e4 |
   e b' b a |
   \slurDotted g( fis) e d |
   \slurSolid e fis g a |
@@ -110,6 +112,7 @@ altoMusic = \relative c' {
   e2. \bar "|."
 }
 altoWords = {
+  \dropLyricsV
   \lyricmode {
     \set stanza = #"1. "
     God rest you mer -- ry, \set ignoreMelismata = ##t
@@ -140,20 +143,24 @@ altoWords = {
     O __ ti -- dings of com -- fort and joy, com -- fort and joy, O __ ti -- dings of com -- fort and joy.
   }
 }
-altoWordsII = \lyricmode {
-  \set stanza = #"2. "
-  In Beth -- le -- hem in Jew -- ry, This bless -- ed Babe was born,
-  And laid with -- in a man -- ger, Up -- on this bless -- ed Morn;
-  The which His Moth -- er Ma -- ry, Did noth -- ing take in scorn.
-  
-  \repeat unfold 20\skip1
-  \set stanza = #"5. "
-  The shep -- herds at those ti -- dings Re -- joic -- ed much in mind,
-  And left their flocks a -- feed -- ing, In tem -- pest, storm, and wind:
-  \set ignoreMelismata = ##t
-  And went to Beth -- le -- hem straight way, The Son of God to find.
+altoWordsII = {
+  \dropLyricsV
+  \set stanza = \markup{\dynamic"  mf " "2. "}
+  \lyricmode {
+    In Beth -- le -- hem in Jew -- ry, This bless -- ed Babe was born,
+    And laid with -- in a man -- ger, Up -- on this bless -- ed Morn;
+    The which His Moth -- er Ma -- ry, Did noth -- ing take in scorn.
+    
+    \repeat unfold 20\skip1
+    \set stanza = #"5. "
+    The shep -- herds at those ti -- dings Re -- joic -- ed much in mind,
+    And left their flocks a -- feed -- ing, In tem -- pest, storm, and wind:
+    \set ignoreMelismata = ##t
+    And went to Beth -- le -- hem straight way, The Son of God to find.
+  }
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"3. "
   From God our Heav’n -- ly Fa -- ther, A bless -- ed An -- gel came;
   And un -- to cer -- tain Shep -- herds Brought ti -- dings of the same:
@@ -191,7 +198,7 @@ altoWordsVII = \lyricmode {
 }
 
 tenorMusic = \relative c {
-  e4_\mf |
+  e4 |
   g e fis b |
   \slurDotted b( b) g g |
   \slurSolid
@@ -271,7 +278,7 @@ bassWords = \lyricmode {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "altos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \repeat unfold 2 \tenorMusic >> }

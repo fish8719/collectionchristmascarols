@@ -21,6 +21,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #112
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -96,6 +98,7 @@ altoMusic = \relative c' {
   f4 e f2 \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsV
   \set stanza = #"1. "
   Deck the hall with boughs of hol -- ly, Fa la la la la, la la la la.
   ’Tis the sea -- son to be jol -- ly, Fa la la la la, la la la la.
@@ -103,6 +106,7 @@ altoWords = \lyricmode {
   Troll the an -- cient Yule -- tide car -- ol, Fa la la la la, la la la la.
 }
 altoWordsII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"2. "
   See the blaz -- ing Yule be -- fore us, Fa la la la la, la la la la.
   Strike the harp and join the cho -- rus, Fa la la la la, la la la la.
@@ -110,6 +114,7 @@ altoWordsII = \lyricmode {
   While I tell of Yule -- tide treas -- ure, Fa la la la la, la la la la.
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"3. "
   Fast a -- way the old year pass -- es, Fa la la la la, la la la la.
   Hail the new, ye lads and lass -- es, Fa la la la la, la la la la.
@@ -182,7 +187,7 @@ bassWords = \lyricmode {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "sopranos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }

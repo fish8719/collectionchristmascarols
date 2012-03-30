@@ -2,8 +2,8 @@
 \include "../util.ly"
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Carol for Christmas Day"}}
-  poet = \markup\oldStyleNum"William Austin (1587-1634)"
-  composer = \markup\oldStyleNum"Sir Arthur S. Sullivan (1842-1900)"
+  poet = \markup\oldStyleNum"William Austin (1587–1634)"
+  composer = \markup\oldStyleNum"Sir Arthur S. Sullivan (1842–1900)"
   tagline = \markup { "from" \italic {Christmas Carols, New and Old}}
 }
 \paper {
@@ -31,7 +31,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
-  bottom-margin = 0.125\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #142
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -57,7 +58,8 @@ global = {
   \time 4/4
   \autoBeamOff
   \override DynamicLineSpanner #'staff-padding = #0.0
-  \override DynamicLineSpanner #'Y-extent = #'(0 . 0)
+  \override DynamicLineSpanner #'Y-extent = #'(0.25 . 1)
+  \override DynamicText #'X-offset = #-3
 }
 
 sopMusic = \relative c' {
@@ -149,6 +151,7 @@ altoMusic = \relative c' {
   f1 \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsXI
   \set stanza = #"1. "
   \set associatedVoice = "basses" 
   All this night bright an -- gels sing,
@@ -170,6 +173,7 @@ altoWords = \lyricmode {
   God and man, we do con -- fess: Hail, O Sun of Right -- eous -- ness!
 }
 altoWordsII = \lyricmode {
+  \dropLyricsXI
 %\markup\italic
   \set stanza = #"2. "
   \set associatedVoice = "basses" 
@@ -316,7 +320,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.9))} \lyricsto "altos" \altoWords
     \new Lyrics \with { alignAboveContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "tenors" \tenorWords
     \new Lyrics \with { alignBelowContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "basses" \bassWords
   >>

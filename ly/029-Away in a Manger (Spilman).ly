@@ -3,7 +3,7 @@
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Away In A Manger"}}
   poet = \markup\oldStyleNum"Anonymous"
-  composer = \markup\oldStyleNum"Jonathan E. Spilman (1812-1896)"
+  composer = \markup\oldStyleNum"Jonathan E. Spilman (1812–1896)"
   tagline = \markup { "from" \concat{\italic "Christmas Carols and Hymns for School and Choir" \oldStyleNum", 1910"}}
 }
 \paper {
@@ -14,13 +14,15 @@
   system-system-spacing =
     #'((basic-distance . 0)
        (minimum-distance . 0)
-       (padding . 0)
+       (padding . -5)
        (stretchability . 100))
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #029
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -132,6 +134,7 @@ altoMusic = \relative c' {
   cis2 \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsVII
   \set stanza = #"1. "
   A -- way in a man -- ger,
   No crib for His bed,
@@ -152,6 +155,7 @@ altoWords = \lyricmode {
   Till mor -- ning is nigh.
 }
 altoWordsII = \lyricmode {
+  \dropLyricsVII
   \set stanza = #"2. "
   Be near me, Lord Je -- sus,
   I ask Thee to stay
@@ -162,7 +166,7 @@ altoWordsII = \lyricmode {
   And take us to heav -- en
   To live with Thee there.
   
-  A -- way in a __ man -- ger,
+  A -- way in a man -- ger,
   No crib for His bed,
   The lit -- tle Lord Je -- sus
   Laid down His sweet head:
@@ -274,7 +278,7 @@ bassWords = \lyricmode {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "sopranos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }

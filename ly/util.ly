@@ -1,7 +1,68 @@
 ﻿\version "2.14.2"
-\include "../util.ly"
-\version "2.14.2"
 % Michael's utilities
+
+dropLyricsIV = {
+  \override LyricText #'extra-offset = #'(0 . -0.4)
+  \override LyricHyphen #'extra-offset = #'(0 . -0.4)
+  \override LyricExtender #'extra-offset = #'(0 . -0.4)
+  \override StanzaNumber #'extra-offset = #'(0 . -0.4)
+}
+
+dropLyricsV = {
+  \override LyricText #'extra-offset = #'(0 . -0.5)
+  \override LyricHyphen #'extra-offset = #'(0 . -0.5)
+  \override LyricExtender #'extra-offset = #'(0 . -0.5)
+  \override StanzaNumber #'extra-offset = #'(0 . -0.5)
+}
+dropLyricsVI = {
+  \override LyricText #'extra-offset = #'(0 . -0.6)
+  \override LyricHyphen #'extra-offset = #'(0 . -0.6)
+  \override LyricExtender #'extra-offset = #'(0 . -0.6)
+  \override StanzaNumber #'extra-offset = #'(0 . -0.6)
+}
+
+dropLyricsVII = {
+  \override LyricText #'extra-offset = #'(0 . -0.7)
+  \override LyricHyphen #'extra-offset = #'(0 . -0.7)
+  \override LyricExtender #'extra-offset = #'(0 . -0.7)
+  \override StanzaNumber #'extra-offset = #'(0 . -0.7)
+}
+
+dropLyricsVIII = {
+  \override LyricText #'extra-offset = #'(0 . -0.8)
+  \override LyricHyphen #'extra-offset = #'(0 . -0.8)
+  \override LyricExtender #'extra-offset = #'(0 . -0.8)
+  \override StanzaNumber #'extra-offset = #'(0 . -0.8)
+}
+
+dropLyricsIX = {
+  \override LyricText #'extra-offset = #'(0 . -0.9)
+  \override LyricHyphen #'extra-offset = #'(0 . -0.9)
+  \override LyricExtender #'extra-offset = #'(0 . -0.9)
+  \override StanzaNumber #'extra-offset = #'(0 . -0.9)
+}
+
+dropLyricsXI = {
+  \override LyricText #'extra-offset = #'(0 . -1.1)
+  \override LyricHyphen #'extra-offset = #'(0 . -1.1)
+  \override LyricExtender #'extra-offset = #'(0 . -1.1)
+  \override StanzaNumber #'extra-offset = #'(0 . -1.1)
+}
+
+dropLyricsXII = {
+  \override LyricText #'extra-offset = #'(0 . -1.2)
+  \override LyricHyphen #'extra-offset = #'(0 . -1.2)
+  \override LyricExtender #'extra-offset = #'(0 . -1.2)
+  \override StanzaNumber #'extra-offset = #'(0 . -1.2)
+}
+
+
+raiseLyrics = {
+  \revert LyricText #'extra-offset
+  \revert LyricHyphen #'extra-offset
+  \revert LyricExtender #'extra-offset
+  \revert StanzaNumber #'extra-offset
+}
 
 #(define (splitUp chars pred)
        (define (helper chars pred lists)
@@ -93,7 +154,7 @@ smallCapsACodeLL = ##xE051
                (tosc (map (lambda (c)
                                (if (and (<= c 127) (test? (integer->char c)))
                                    (ly:wide-char->utf-8 (+ c offset))
-                                   (if (and (<= c 255) (>= c 224))
+                                   (if (and (not (eq? test? char-numeric?)) (and (<= c 255) (>= c 224)))
                                        (ly:wide-char->utf-8 (+ c offset))
                                        (if (= c #x0153)
                                            (ly:wide-char->utf-8 #xF6FA)

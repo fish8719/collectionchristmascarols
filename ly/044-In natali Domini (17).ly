@@ -23,6 +23,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #044
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -161,6 +163,7 @@ altoMusic = \relative c' {
   d2. \bar "||"
 }
 altoWords = \lyricmode {
+  \dropLyricsIV
   \set stanza = #"1. "
   In na -- tá -- li Dó -- mi -- ni,
   Gau -- dent om -- nes Án -- ge -- li 
@@ -181,6 +184,7 @@ altoWords = \lyricmode {
   A pa -- tre pro -- cés -- _ sit.
 }
 altoWordsII = \lyricmode {
+  \dropLyricsIV
   \set stanza = #"2. "
   Nun -- ti -- á -- vit Án -- ge -- lus
   Gáu -- di -- um pas -- tó -- ri -- bus, 

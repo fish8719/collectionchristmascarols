@@ -2,8 +2,8 @@
 \include "../util.ly"
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Christmas Day"}}
-  poet = \markup\oldStyleNum"Translated by Rev. H.R. Bramley (1833-1917) from Latin"
-  composer = \markup\oldStyleNum"Sir John Stainer (1840-1901)"
+  poet = \markup\oldStyleNum"Translated by Rev. H.R. Bramley (1833–1917) from Latin"
+  composer = \markup\oldStyleNum"Sir John Stainer (1840–1901)"
   tagline = \markup { "from" \italic {Christmas Carols, New and Old}}
 }
 \paper {
@@ -27,7 +27,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
-  bottom-margin = 0.125\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #084
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -114,6 +115,7 @@ altoMusic = \relative c' {
   e dis e2 \bar "|."
 }
 altoWords = {
+  \dropLyricsIX
   \lyricmode {
     \set stanza = #"1. "
     Wake all mu -- sic’s ma -- gic pow’rs,
@@ -123,11 +125,13 @@ altoWords = {
     Gi -- ant in the race He tow’rs,
     Toil and dan -- ger scorn -- ing.
   }
+  \dropLyricsIV
   \set stanza = \markup\dynamic"p "
   \lyricmode {
     O that bless -- ed go -- ing out, __
     Which sal -- va -- tion brought a -- bout,
   }
+  \dropLyricsIX
   \set stanza = \markup\dynamic "ff  "
   \lyricmode {
     O that bless -- ed go -- ing out, __
@@ -135,6 +139,7 @@ altoWords = {
   }
 }
 altoWordsII = \lyricmode {
+  \dropLyricsIX
 %\markup\italic
   \set stanza = #"2. "
   Let this glo -- rious hol -- i -- day
@@ -145,6 +150,7 @@ altoWordsII = \lyricmode {
   With our con -- course blend -- ing.
 }
 altoWordsIII = {
+  \dropLyricsIX
   \set stanza = \markup{\dynamic"mf  " "3. "}
   \lyricmode {
     Give we glo -- ry to this Feast,
@@ -171,6 +177,7 @@ altoWordsIII = {
   }
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"4. "
   O how bright is this day made,
   Day with ra -- diance glow -- ing,
@@ -180,6 +187,7 @@ altoWordsIV = \lyricmode {
   Bright -- ness o’er us throw -- ing!
 }
 altoWordsV = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"5. "
   Ris’n to -- day in splen -- dor bright,
   Shin -- ing to all a -- ges,
@@ -277,7 +285,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.8))} \lyricsto "altos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }

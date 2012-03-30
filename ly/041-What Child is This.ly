@@ -2,9 +2,9 @@
 \include "../util.ly"
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"What Child is This?"}}
-  poet = \markup\oldStyleNum"William C. Dix (1837-1898)"
+  poet = \markup\oldStyleNum"William C. Dix (1837–1898)"
   composer = \markup\oldStyleNum"16th Century English Air"
-  arranger = \markup\oldStyleNum"Arranged by Sir John Stainer (1840-1901)"
+  arranger = \markup\oldStyleNum"Arranged by Sir John Stainer (1840–1901)"
   tagline = \markup { "from" \italic {Christmas Carols, New and Old}}
 }
 \paper {
@@ -23,6 +23,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #041
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle christmas}
@@ -100,6 +102,7 @@ altoMusic = \relative c' {
   b4. b4 \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsV
   \set stanza = #"1."
   What Child is this, Who, laid
   \set associatedVoice = "altos"
@@ -117,6 +120,7 @@ altoWords = \lyricmode {
   Christ the King;
   \unset associatedVoice
   Whom shep -- herds guard and an -- gels sing:
+  \raiseLyrics
   Haste, haste to
   \set associatedVoice = "altos"
   bring Him laud,
@@ -124,6 +128,7 @@ altoWords = \lyricmode {
   The Babe, the Son __ of Ma -- ry!
 }
 altoWordsII = {
+  \dropLyricsV
   \set stanza = \markup{\dynamic"  mf " "2."}
   \lyricmode {
     Why lies He in __ such
@@ -144,6 +149,7 @@ altoWordsII = {
     pierce Him through,
     \unset associatedVoice
     The Cross be borne, for me, for you:
+  \raiseLyrics
     Hail, hail __ the
     \set associatedVoice = "altos"
     Word made flesh,
@@ -152,6 +158,7 @@ altoWordsII = {
   }
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"3."
   So bring Him in -- cense,
   \set associatedVoice = "altos"
@@ -169,6 +176,7 @@ altoWordsIII = \lyricmode {
   song on high
   \unset associatedVoice
   The Vir -- gin sings her lul -- la -- by:
+  \raiseLyrics
   Joy, joy __ for
   \set associatedVoice = "altos"
   Christ is born,

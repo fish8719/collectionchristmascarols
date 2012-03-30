@@ -2,7 +2,7 @@
 \include "../util.ly"
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"O Come, O Come Emmanuel"}}
-  poet = \markup\oldStyleNum"Translated by John Mason Neale (1818-1866)"
+  poet = \markup\oldStyleNum"Translated by John Mason Neale (1818–1866)"
   composer = \markup\oldStyleNum"15th Century French"
   tagline = \markup ""
 }
@@ -21,6 +21,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #002
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle advent}
@@ -142,6 +144,7 @@ altoMusic = \relative c' {
   g2. |
 }
 altoWords = \lyricmode {
+  \dropLyricsVII
   \set stanza = #"1. "
   O come, O come, Em -- man -- u -- el,  And ran -- som cap -- tive Is -- ra -- el,
   That mourns in lone -- ly ex -- ile here  Un -- til the Son of God __ ap -- pear.
@@ -153,6 +156,7 @@ altoWords = \lyricmode {
   Make safe the way that leads __ on high, And close the path to mis -- er -- y.
 }
 altoWordsII = \lyricmode {
+  \dropLyricsVII
 %\markup\italic
   \set stanza = #"2. "
   O come, O come, Thou Lord __ of might, Who to Thy tribes, on Si -- nai’s height,
@@ -165,6 +169,7 @@ altoWordsII = \lyricmode {
   
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsVII
   \set stanza = #"3. "
   O come, Thou Rod of Jes -- se, free Thine own from Sa -- tan’s ty -- ran -- ny;
   From depths of hell thy peo -- ple save, And give them vic -- t’ry o’er __ the grave.
@@ -288,7 +293,7 @@ bassWords = \lyricmode {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "sopranos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "sopranos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "sopranos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "sopranos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }

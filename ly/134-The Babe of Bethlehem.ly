@@ -20,13 +20,19 @@
        (minimum-distance . 0)
        (padding . 0.1)
        (stretchability . 0))
+  last-bottom-spacing =
+    #'((basic-distance . 0)
+       (minimum-distance . 0)
+       (padding . 0.1)
+       (stretchability . 0))
        
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
-  bottom-margin = 0.125\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #134
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -130,6 +136,7 @@ altoMusic = \relative c' {
   c2. s4 \bar "||"
 }
 altoWords = {
+  \dropLyricsXI
   \lyricmode {
     \set stanza = #"1."
     The Babe in Beth -- lem’s man -- ger laid,
@@ -139,8 +146,9 @@ altoWords = {
   }
   \set stanza = \markup\dynamic"ff   "
   \lyricmode{
+    \set associatedVoice = "sopranos"
     No -- ël, no -- ël, __
-    Now sing a Sav -- ior’s Birth;
+    Now \unset associatedVoice sing a Sav -- ior’s Birth;
     All hail, all hail His com -- ing down to earth,
     Who rais -- es us to Heav’n!
     
@@ -153,6 +161,7 @@ altoWords = {
   }
 }
 altoWordsII = {
+  \dropLyricsXI
   \set stanza = \markup{\dynamic"  mf " "2."}
   \lyricmode {
     A Sav -- ior! sin -- ners all a -- round
@@ -172,6 +181,7 @@ altoWordsII = {
   }
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsXI
   \set stanza = #"3."
   For not to sit on Da -- vid’s throne
   With world -- ly pomp and joy,
@@ -295,7 +305,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.9))} \lyricsto "altos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }

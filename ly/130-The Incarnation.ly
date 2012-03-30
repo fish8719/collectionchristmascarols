@@ -2,7 +2,7 @@
 \include "../util.ly"
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"The Incarnation"}}
-  poet = \markup\oldStyleNum"Rev. H. R. Bramley (1833-1917)"
+  poet = \markup\oldStyleNum"Rev. H. R. Bramley (1833–1917)"
   composer = \markup\oldStyleNum"Traditional"
   tagline = \markup { "from" \italic {Christmas Carols, New and Old}}
 }
@@ -22,6 +22,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #130
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -125,6 +127,7 @@ altoMusic = \relative c' {
   }
 }
 altoWords = {
+  \dropLyricsV
   \lyricmode {
     \set stanza = #"1. "
     The great God of Hea -- ven is come down to earth,
@@ -132,7 +135,7 @@ altoWords = {
     The Fa -- ther e -- ter -- nal His Fa -- ther a -- lone:
     He sleeps in the man -- ger; He reigns on the Throne.
   }
-  \set stanza = \markup\dynamic"ff "
+  \set stanza = \markup\dynamic"  ff "
   \lyricmode {  
     Then let us a -- dore Him, and praise His great love,
     To save us poor sin -- ners He came from a -- bove.
@@ -143,14 +146,15 @@ altoWords = {
     Be -- hold Him now wear -- ing the like -- ness of man,
     Weak, help -- less, and speech -- less, in mea -- sure a span.
   }
-  \set stanza = \markup\dynamic"ff "
+  \set stanza = \markup\dynamic"  ff "
   \lyricmode {
     Then let us a -- dore Him, and praise His great love,
     To save us poor sin -- ners He came from a -- bove.
   }
 }
 altoWordsII = {
-  \set stanza = \markup{\dynamic"mf " "2. "}
+  \dropLyricsV
+  \set stanza = \markup{\dynamic"  mf " "2. "}
   \lyricmode {
     A Babe on the breast of a maid -- en he lies,
     Yet sits with the Fa -- ther on high in the skies;
@@ -159,7 +163,7 @@ altoWordsII = {
     
     \repeat unfold 22 {\skip1}
   }
-  \set stanza = \markup{\dynamic"mf " "5. "}
+  \set stanza = \markup{\dynamic"  mf " "5. "}
   \lyricmode{
     Oh! won -- der of won -- ders, which none can un -- fold;
     The An -- cient of days is an hour or two old;
@@ -168,6 +172,7 @@ altoWordsII = {
   }
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"3. "
   Lo! here is Em -- man -- u -- el, here is the Child,
   The Son that was prom -- ised to Ma -- ry so mild;
@@ -285,7 +290,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women"} \lyricsto "altos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women"} \lyricsto "altos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women"} \lyricsto "altos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women"} \lyricsto "altos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "altos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }

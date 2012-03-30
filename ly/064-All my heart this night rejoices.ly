@@ -4,7 +4,7 @@
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"All my heart this night rejoices"}}
   poet = \markup\concat{\italic"Fröhlich soll mein Herze springen" ", by Paul Gerhardt, 1653"}
   meter = \markup\oldStyleNum"Translated by Catherine Winkworth, 1858"
-  composer = \markup\oldStyleNum"Johann Georg Ebeling (1637-76)"
+  composer = \markup\oldStyleNum"Johann Georg Ebeling (1637–76)"
   tagline = \markup { "from" \italic "CantateDomino.org"}
 }
 \paper {
@@ -23,6 +23,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #064
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -94,6 +96,7 @@ altoMusic = \relative c' {
   d( c) a2 \bar "||"
 }
 altoWords = \lyricmode {
+  \dropLyricsV
   \set stanza = #"1. "
   All my heart this night re -- joi -- ces,
   As I hear, Far and near,
@@ -105,6 +108,7 @@ altoWords = \lyricmode {
   Now with joy is ring -- ing.
 }
 altoWordsII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"2. "
   Hark! a voice from yon -- der man -- ger,
   Soft and sweet, Doth en -- treat,
@@ -116,6 +120,7 @@ altoWordsII = \lyricmode {
   I will sure -- ly give you.”
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"3. "
   Come then let us hast -- en yon -- der;
   Here let all, Great and small,
@@ -127,6 +132,7 @@ altoWordsIII = \lyricmode {
   bright with hope is burn -- ing.
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsV
   \set stanza = #"4. "
   Thee, dear Lord, with thee I cher -- ish;
   Live to thee, and with thee, Dy -- ing shall not per -- ish;
@@ -200,7 +206,7 @@ bassWords = \lyricmode {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "basses" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "basses" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "basses" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "basses" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "basses" \altoWords
     \new Lyrics \with { alignAboveContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "tenors" \tenorWords
     \new Lyrics \with { alignBelowContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "basses" \bassWords
   >>

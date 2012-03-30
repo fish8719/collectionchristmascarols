@@ -5,7 +5,7 @@
   subtitle = \markup \center-column { \italic"of" "Melchior, Casper and Balthazar" }
   poet = \markup\oldStyleNum"Traditional"
   composer = \markup\oldStyleNum"English"
-  arranger = \markup\oldStyleNum"Arranged by Sir John Stainer (1840-1901)"
+  arranger = \markup\oldStyleNum"Arranged by Sir John Stainer (1840–1901)"
   tagline = \markup\concat{"from "\italic"Carols Old and Carols New" \oldStyleNum", 1916, via " \italic"HymnsAndCarolsOfChristmas.com"}
 }
 \paper {
@@ -24,6 +24,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #105
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -102,6 +104,7 @@ altoMusic = \relative c' {
   f4. f4 \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsV
   \set stanza = #"1. "
   We saw a light shine out a -- far, On Christ -- mas in the morn -- ing,
   And straight we knew it was Christ’s star, Bright beam -- ing in the morn -- ing.
@@ -109,6 +112,7 @@ altoWords = \lyricmode {
   And prais’d the Lord, who’d let us see, His glo -- ry at its dawn -- ing.
 }
 altoWordsII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"2. "
   Oh! ev -- er thought be of His Name, On Christ -- mas in the morn -- ing,
   Who bore for us both grief and shame, Af -- flic -- tion’s sharp -- est scorn -- ing.

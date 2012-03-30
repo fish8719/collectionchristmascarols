@@ -4,7 +4,7 @@
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"On the Birthday of the Lord"}}
   poet = \markup\concat{\italic"In natali Domini" \oldStyleNum", 14th Century"}
   meter = \markup\oldStyleNum"Translated by Rev. H. R. Bramley (1833–1917) from Latin"
-  composer = \markup\oldStyleNum"John Bacchus Dykes (1823-1876)"
+  composer = \markup\oldStyleNum"John Bacchus Dykes (1823–1876)"
   tagline = \markup { "from" \italic {Christmas Carols, New and Old}}
 }
 \paper {
@@ -23,6 +23,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #045
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -47,25 +49,26 @@ global = {
   \key d \major
   \time 4/4
   \override DynamicLineSpanner #'staff-padding = #0.0
-  \override DynamicLineSpanner #'Y-extent = #'(0 . 0.5)
+  \override DynamicLineSpanner #'Y-extent = #'(1 . 1)
+  \override DynamicText #'X-offset = #-4
 }
 
 sopMusic = \relative c' {
-  d2^\f fis4( g) |
+  d2_\f fis4( g) |
   a2 a |
   b4( cis) d2 |
   d1 \bar "||"
-  a2^\p b |
+  a2_\p b |
   b4( a) g( fis) |
   
   g2 a |
   fis1 \bar "||"
-  d2^\f fis4( g) |
+  d2_\f fis4( g) |
   a2 a |
   b4( cis) d2 |
   d1 \bar "||"
   
-  a2^\ff b |
+  a2_\ff b |
   cis2. cis4 |
   cis2 cis |
   cis1 |
@@ -88,7 +91,7 @@ sopMusic = \relative c' {
   d1^\< d2\! |
   d1.~ |
   d2( cis b) |
-  a1^\pp fis2 e1 a2 |
+  a1_\pp fis2 e1 a2 |
   d,1. \bar "|."
 }
 sopWords = \lyricmode {
@@ -139,6 +142,7 @@ altoMusic = \relative c' {
   d1. \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"1. "
   On the Birth -- day of __ \set associatedVoice = "sopranos" the Lord \unset associatedVoice
   An -- gels joy in glad ac -- cord,
@@ -147,13 +151,14 @@ altoWords = \lyricmode {
   
   Glo -- ry be \set associatedVoice = "sopranos" to __ God a -- lone. \unset associatedVoice
   
-  God is born of maid -- en fair,
+  God is born of maid -- en fair, __
   Ma -- ry doth the Sav -- ior bear;
   \set associatedVoice = "sopranos"
   Ma -- ry ev -- er pure, __
   Ma -- ry ev -- er pure.
 }
 altoWordsII = \lyricmode {
+  \dropLyricsIX
 %\markup\italic
   \set stanza = #"2. "
   These good news an An -- \set associatedVoice = "sopranos" gel told \unset associatedVoice
@@ -163,6 +168,7 @@ altoWordsII = \lyricmode {
   Told them of \set associatedVoice = "sopranos" the __ joy for earth.
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"3. "
   Born is __ now Em -- man -- \set associatedVoice = "sopranos" u -- el, \unset associatedVoice
   He, an -- nounced by Ga -- bri -- el,
@@ -171,6 +177,7 @@ altoWordsIII = \lyricmode {
   Com -- eth from \set associatedVoice = "sopranos" His __ Fa -- ther’s Breast.
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"4. "
   Born to -- day is Christ \set associatedVoice = "sopranos" the Child, \unset associatedVoice
   Born of Ma -- ry un -- de -- filed,
@@ -187,22 +194,22 @@ altoWordsVI = \lyricmode {
   \set ignoreMelismata = ##t
 }
 tenorMusic = \relative c {
-  d2_\f fis4( g) |
+  d2^\f fis4( g) |
   a2 a |
   b4( cis) d2 |
   d1 \bar "||"
   
-  d2_\p g, |
+  d2^\p g, |
   a d |
   
   c4( b) a( g) |
   a1 \bar "||"
-  d,2_\f fis4( g) |
+  d,2^\f fis4( g) |
   a2 d |
   d cis4( b) |
   a1 \bar "||"
   
-  a4(_\ff g) fis( gis) |
+  a4(^\ff g) fis( gis) |
   a2. a4 |
   gis2 gis |
   a1 |
@@ -226,7 +233,7 @@ tenorMusic = \relative c {
   a1 ais2 |
   b1.~ |
   b2( cis d) |
-  d1_\pp a2 |
+  d1^\pp a2 |
   g1 g2 |
   fis1. \bar "|."
 }
@@ -302,7 +309,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 0))} \lyricsto "altos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 0))} \lyricsto "altos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 0))} \lyricsto "altos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.5))} \lyricsto "altos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }

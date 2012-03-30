@@ -2,9 +2,9 @@
 \include "../util.ly"
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Masters in This Hall"}}
-  poet = \markup\oldStyleNum"William Morris (1834-1896)"
-  composer = \markup\concat{\italic"Marche pour les Matelots" \oldStyleNum", by Marin Marais (1656-1728)"}
-  arranger = \markup\oldStyleNum"Arranged by Edmund Sedding (1836-1868)"
+  poet = \markup\oldStyleNum"William Morris (1834–1896)"
+  composer = \markup\concat{\italic"Marche pour les Matelots" \oldStyleNum", by Marin Marais (1656–1728)"}
+  arranger = \markup\oldStyleNum"Arranged by Edmund Sedding (1836–1868)"
   tagline = \markup\concat{"from " \italic\oldStyleNum"The Musical times and singing-class circular, Volume 52" \oldStyleNum", November 1, 1911, via " \italic"books.google.com"}
 }
 \paper {
@@ -22,6 +22,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #023
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -118,6 +120,7 @@ altoMusic = \relative c' {
   }
 }
 altoWords = {
+  \dropLyricsV
   \lyricmode {
     \set stanza = #"1. "
     Mas -- ters in this hall, __
@@ -127,6 +130,7 @@ altoWords = {
   }
   \set stanza = \markup\dynamic"f "
   \lyricmode{
+    \dropLyricsVII
     No -- ël! No -- ël! No -- ël! 
     No -- ël sing we clear! Holp -- en are all folk on earth __
     Born __ is God’s Son so dear:
@@ -138,6 +142,7 @@ altoWords = {
   }
 }
 altoWordsII = \lyricmode {
+  \dropLyricsV
 %\markup\italic
   \set stanza = #"2. "
   This is Christ, the Lord, __

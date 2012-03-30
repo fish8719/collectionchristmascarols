@@ -13,16 +13,18 @@
   paper-width = 6\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
-  %system-system-spacing =
-  %  #'((basic-distance . 0)
-  %     (minimum-distance . 0)
-  %     (padding . -0.35)
-  %     (stretchability . 100))
+  system-system-spacing =
+    #'((basic-distance . 0)
+       (minimum-distance . 0)
+       (padding . -5)
+       (stretchability . 100))
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #154
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -107,6 +109,7 @@ altoMusic = \relative c' {
   d2
 }
 altoWords = \lyricmode {
+  \dropLyricsV
   \set stanza = #"1. "
   Pu -- er na -- tus in Beth -- le -- hem,
   Al -- le -- lu -- ia.
@@ -132,6 +135,7 @@ altoWords = \lyricmode {
   Al -- le -- lu -- ia.
 }
 altoWordsII = \lyricmode {
+  \dropLyricsV
 %\markup\italic
   \set stanza = #"2. "
   As -- sum -- sit car -- nem ho -- mi -- nis,
@@ -160,6 +164,7 @@ altoWordsII = \lyricmode {
   Al -- le -- lu -- ia.
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"3. "
   Per Ga -- bri -- e -- lis nun -- ti -- um,
   Al -- le -- lu -- ia.
@@ -185,6 +190,7 @@ altoWordsIII = \lyricmode {
   Al -- le -- lu -- ia.
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsV
   \set stanza = #"4. "
   De ma -- tre na -- tus vir -- gi -- ne,
   Al -- le -- lu -- ia.
@@ -278,7 +284,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "altos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \repeat unfold4\tenorMusic >> }

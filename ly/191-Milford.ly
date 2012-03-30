@@ -2,8 +2,8 @@
 \include "../util.ly"
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Milford"}}
-  poet = \markup\oldStyleNum"Sir John Stepheson (1772-1833)"
-  composer = \markup\oldStyleNum"Sir John Stepheson (1772-1833)"
+  poet = \markup\oldStyleNum"Sir John Stepheson (1772–1833)"
+  composer = \markup\oldStyleNum"Sir John Stepheson (1772–1833)"
   tagline = \markup \concat { "from " \italic "Original Sacred Harp" \oldStyleNum", 1911, via " \italic "books.google.com"}
 }
 \paper {
@@ -22,6 +22,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #191
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
