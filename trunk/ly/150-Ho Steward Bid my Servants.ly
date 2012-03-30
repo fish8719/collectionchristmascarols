@@ -2,9 +2,9 @@
 \include "../util.ly"
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Ho! Steward, Bid My Servants"}}
-  poet = \markup\oldStyleNum"John Mason Neale (1818-1866)"
+  poet = \markup\oldStyleNum"John Mason Neale (1818–1866)"
   composer = \markup\oldStyleNum"Ancient ecclesiastical pre-Reformation melody"
-  arranger = \markup\oldStyleNum"Arranged by Charles Wood (1866-1926)"
+  arranger = \markup\oldStyleNum"Arranged by Charles Wood (1866–1926)"
   tagline = \markup \concat{ "from " \italic "The Cambridge Carol Book" \oldStyleNum", 1924"}
 }
 \paper {
@@ -23,6 +23,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #150
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -102,6 +104,7 @@ altoMusic = \relative c' {
   d2.
 }
 altoWords = \lyricmode {
+  \dropLyricsV
   \set stanza = #"1. "
   ‘Ho! stew -- ard, bid my ser -- vants
   Go forth, and hith -- er call,
@@ -128,6 +131,7 @@ altoWords = \lyricmode {
   And ris -- eth with the lark.’
 }
 altoWordsII = \lyricmode {
+  \dropLyricsV
 %\markup\italic
   \set stanza = #"2. "
   ‘Sire, shall I bid the no -- ble,
@@ -155,6 +159,7 @@ altoWordsII = \lyricmode {
   And born was in a stall.
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"3. "
   ‘Sire, shall I bid in Di -- vès,
   For it is ver -- y plain,
@@ -257,7 +262,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \repeat unfold2\tenorMusic >> }

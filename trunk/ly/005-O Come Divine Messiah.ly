@@ -3,10 +3,10 @@
 #(set-global-staff-size 15) \paper{ #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 15 20))) }
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"O Come, Divine Messiah"}}
-  poet = \markup\oldStyleNum"Abbé Simon J. Pellegrin (1663-1745)"
-  meter = \markup\oldStyleNum"Translated by Sister Mary of St. Philip, SND (1825-1904)"
+  poet = \markup\oldStyleNum"Abbé Simon J. Pellegrin (1663–1745)"
+  meter = \markup\oldStyleNum"Translated by Sister Mary of St. Philip, SND (1825–1904)"
   composer = \markup\oldStyleNum"16th Century French Carol"
-  %arranger = \markup\oldStyleNum"Edited by Benjamin Bloomfield (1984-)"
+  %arranger = \markup\oldStyleNum"Edited by Benjamin Bloomfield (1984–)"
   tagline = ""
 }
 \paper {
@@ -25,6 +25,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #005
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCaps advent}
@@ -119,23 +121,29 @@ altoMusic = \relative c' {
   d8( c4 b4.)\fermata \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsVII
   \set stanza = #"1. "
   O come, di -- vine Mes -- si -- ah!
   The world in si -- lence waits the day
   When hope shall sing its tri -- umph,
   And sad -- ness flee a -- way. __
   
+  \dropLyricsV
   Dear Sav -- ior haste;
   Come, come to earth,
   Dis -- pel the night and show Your face,
   And bid us hail the dawn of grace.
 
   O come, di -- vine Mes -- si -- ah!
-  The world in si -- lence waits the day
+  The world in si -- lence
+  \break
+  \dropLyricsVII
+  waits the day
   When hope shall sing its tri -- umph,
   And sad -- ness flee a -- way. __
 }
 altoWordsII = \lyricmode {
+  \dropLyricsVII
 %\markup\italic
   \set stanza = #"2. "
   O Christ, whom na -- tions sigh for,
@@ -144,6 +152,7 @@ altoWordsII = \lyricmode {
   Re -- deem the long -- lost fold. __
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsVII
   \set stanza = #"3. "
   You come in peace and meek -- ness,
   And low -- ly will Your cra -- dle be;
@@ -247,12 +256,12 @@ pianoLH = \relative c' {
       \new Voice = "altos" { \voiceTwo << \global \altoMusic >> }
     >>
     \new Lyrics \with { alignAboveContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \sopWords
-    \new Lyrics = "altosVI"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsVI
-    \new Lyrics = "altosV"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsV
-    \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIV
-    \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIII
-    \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWords
+    \new Lyrics = "altosVI"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "altos" \altoWordsVI
+    \new Lyrics = "altosV"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "altos" \altoWordsV
+    \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "altos" \altoWordsIV
+    \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "altos" \altoWordsIII
+    \new Lyrics = "altosII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "altos" \altoWordsII
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "altos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }

@@ -2,7 +2,7 @@
 \include "../util.ly"
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Corde Natus"}}
-  poet = \markup\oldStyleNum"Marcus Aurelius Clemens Prudentius (348-413?)"
+  poet = \markup\oldStyleNum"Marcus Aurelius Clemens Prudentius (348–413?)"
   composer = \markup\concat{\italic"Divinum Mysterium" \oldStyleNum", 13th Century Melody"}
   tagline = \markup\center-column{
     \concat{"from " \italic"Great Hymns of the Church Compiled by the Late Right Reverend John Freeman Young" \oldStyleNum", 1887,"}
@@ -25,6 +25,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #122
   print-first-page-number = ##t
   oddLine = ""
@@ -85,6 +87,7 @@ altoMusic = \relative c' {
   f'2. f4 f2 e e f e1( f)
 }
 altoWords = \lyricmode {
+  \dropLyricsIX
   \set associatedVoice = "sopranos"
   \set stanza = #"1. "
   Cor -- de na -- tus ex pa -- ren -- tis
@@ -115,6 +118,7 @@ altoWords = \lyricmode {
   Sæ -- cu -- lo -- rum sæ -- cu -- lis. __
 }
 altoWordsII = \lyricmode {
+  \dropLyricsIX
 %\markup\italic
   \set associatedVoice = "sopranos"
   \set stanza = #"2. "
@@ -145,6 +149,7 @@ altoWordsII = \lyricmode {
   Sæ -- cu -- lo -- rum sæ -- cu -- lis. __
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsIX
   \set associatedVoice = "sopranos"
   \set stanza = #"3. "
   Cor -- po -- ris for -- mam ca -- du -- ci,
@@ -249,7 +254,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.5))} \lyricsto "altos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \repeat unfold3\tenorMusic >> }

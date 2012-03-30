@@ -22,6 +22,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #172
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -111,6 +113,7 @@ altoMusic = \relative c' {
   e2 \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsV
   \set ignoreMelismata = ##t
   \set stanza = #"1. "
   Twen -- ty -- fifth day of De -- cem -- ber,
@@ -129,6 +132,7 @@ altoWords = \lyricmode {
   
 }
 altoWordsII = \lyricmode {
+  \dropLyricsV
   \set ignoreMelismata = ##t
 %\markup\italic
   \set stanza = #"2. "
@@ -253,7 +257,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }

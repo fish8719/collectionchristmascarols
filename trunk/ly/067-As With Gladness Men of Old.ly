@@ -2,8 +2,8 @@
 \include "../util.ly"
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"As With Gladness Men of Old"}}
-  poet = \markup\oldStyleNum"William C. Dix (1837-1898)"
-  composer = \markup\oldStyleNum"Konrad Kocher (1786-1872)"
+  poet = \markup\oldStyleNum"William C. Dix (1837–1898)"
+  composer = \markup\oldStyleNum"Konrad Kocher (1786–1872)"
   tagline = \markup { "from" \concat{\italic "Christmas Carols and Hymns for School and Choir" \oldStyleNum", 1910"}}
 }
 \paper {
@@ -16,6 +16,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #067
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -84,6 +86,7 @@ altoMusic = \relative c' {
   ees4. des8 c2 \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"1. "
   As with __ glad -- ness men of old
   Did the guid -- ing star be -- hold;
@@ -93,6 +96,7 @@ altoWords = \lyricmode {
   Ev -- er -- more be led to Thee.
 }
 altoWordsII = \lyricmode {
+  \dropLyricsIX
 %\markup\italic
   \set stanza = #"2. "
   As with __ joy -- ful steps they sped
@@ -103,6 +107,7 @@ altoWordsII = \lyricmode {
   Ev -- er seek Thy mer -- cy seat.
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"3. "
   As they __ of -- fer’d gifts most rare
   At that man -- ger rude and bare;
@@ -112,6 +117,7 @@ altoWordsIII = \lyricmode {
   Christ, to Thee, our heav’n -- ly King.
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"4. "
   Ho -- ly __ Je -- sus, ev -- ’ry day
   Keep us in the nar -- row way;
@@ -121,6 +127,7 @@ altoWordsIV = \lyricmode {
   Where no clouds Thy glo -- ry hide.
 }
 altoWordsV = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"5. "
   In the __ heav’n -- ly coun -- try bright
   Need they no cre -- a -- ted light;
@@ -192,7 +199,7 @@ bassWords = \lyricmode {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "tenors" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "tenors" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "tenors" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "tenors" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.7)) } \lyricsto "tenors" \altoWords
     \new Lyrics \with { alignAboveContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "tenors" \tenorWords
     \new Lyrics \with { alignBelowContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "basses" \bassWords
   >>

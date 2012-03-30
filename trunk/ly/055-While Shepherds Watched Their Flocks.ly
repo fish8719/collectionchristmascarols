@@ -32,7 +32,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
-  bottom-margin = 0.125\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #055
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -100,6 +101,7 @@ altoMusic = \relative c' {
   d2. \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"1. "
   While shep -- herds watch’d their flocks by night;
     All seat -- ed on the ground;
@@ -108,6 +110,7 @@ altoWords = \lyricmode {
     And glo -- ry shone a -- round.
 }
 altoWordsII = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"2. "
   “To you, in Da -- vid’s town, this day
     Is born of Da -- vid’s line,
@@ -116,6 +119,7 @@ altoWordsII = \lyricmode {
     And this shall be the sign:
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"3. "
   The heav’n -- ly Babe you there shall find,
     To hu -- man view dis -- play’d,
@@ -124,6 +128,7 @@ altoWordsIII = \lyricmode {
     And in a man -- ger laid.”
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"4. "
   “All glo -- ry be to God on high,
     And to the earth be peace;
@@ -186,7 +191,7 @@ bassWords = \lyricmode {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.5)) } \lyricsto "sopranos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }
@@ -212,7 +217,7 @@ bassWords = \lyricmode {
   }
   \header {
     title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"While Shepherds Watched Their Flocks"}}
-    poet = \markup\oldStyleNum"Nahum Tate (1652-1715)"
+    poet = \markup\oldStyleNum"Nahum Tate (1652–1715)"
     composer = \markup\oldStyleNum"Adapted from George F. Handel"
   }
 }
@@ -233,7 +238,7 @@ bassWords = \lyricmode {
 
 
 \header {
-  tagline = \markup\concat { "from " \italic "Church Sunday School Hymn–Book" \oldStyleNum", 1892, via " \italic"HymnsAndCarolsOfChristmas.com"}
+  tagline = \markup\concat { "from " \italic "Church Sunday School Hymn-Book" \oldStyleNum", 1892, via " \italic"HymnsAndCarolsOfChristmas.com"}
 }
 global = {
   \key g \major
@@ -278,6 +283,7 @@ altoMusic = \relative c' {
   d2. \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"1. "
   While shep -- herds watch’d their flocks by night,
     All seat -- ed on the ground,
@@ -286,6 +292,7 @@ altoWords = \lyricmode {
     And glo -- ry shone a -- round.
 }
 altoWordsII = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"2. "
   “Fear not,” said he, for might -- y dread
     Had seized their troub -- led mind;
@@ -294,6 +301,7 @@ altoWordsII = \lyricmode {
     To you and all man -- kind.
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"3. "
   “To you, in Da -- vid’s town, this day,
     Is born of Da -- vid’s line,
@@ -302,6 +310,7 @@ altoWordsIII = \lyricmode {
     And this shall be the sign:
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"4. "
   “The heav’n -- ly Babe you there shall find
     To hu -- man view dis -- play’d,
@@ -311,6 +320,7 @@ altoWordsIV = \lyricmode {
 }
 
 altoWordsV = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"5. "
   Thus spake the ser -- aph, and forth -- with
     Ap -- peared a shin -- ing throng
@@ -320,6 +330,7 @@ altoWordsV = \lyricmode {
 }
 
 altoWordsVI = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"6. "
   “All glo -- ry be to God on high
     And to the earth be peace;
@@ -381,7 +392,7 @@ bassWords = \lyricmode {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.5)) } \lyricsto "sopranos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }
@@ -407,7 +418,7 @@ bassWords = \lyricmode {
   }
   \header {
     title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"While Shepherds Watched Their Flocks"}}
-    poet = \markup\oldStyleNum"Nahum Tate (1652-1715)"
-    composer = \markup\concat{\italic"Winchester Old" \oldStyleNum", by George Kirbye (c. 1565-1634)"}
+    poet = \markup\oldStyleNum"Nahum Tate (1652–1715)"
+    composer = \markup\concat{\italic"Winchester Old" \oldStyleNum", by George Kirbye (c. 1565–1634)"}
   }
 }

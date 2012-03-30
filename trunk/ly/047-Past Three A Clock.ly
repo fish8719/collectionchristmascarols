@@ -2,9 +2,9 @@
 \include "../util.ly"
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Past Three a Clock"}}
-  poet = \markup\oldStyleNum"G. R. Woodward (1848-1934)"
+  poet = \markup\oldStyleNum"G. R. Woodward (1848–1934)"
   composer = \markup{\italic"London Waits"}
-  arranger = \markup\oldStyleNum"Arranged by Charles Wood (1866-1926)"
+  arranger = \markup\oldStyleNum"Arranged by Charles Wood (1866–1926)"
   tagline = \markup { "from" \italic {The Cambridge Carol Book}}
 }
 \paper {
@@ -22,6 +22,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #047
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -124,11 +126,13 @@ altoMusic = \relative c' {
   g g2 \bar "||"
 }
 altoWords = \lyricmode {
+  \dropLyricsIV
   Past three a clock,
   And a cold frost -- y morn -- ing,
   Past three a clock;
   Good mor -- row, mas -- ters all!
   
+  \dropLyricsVII
   \set stanza = #"1. "
   \set associatedVoice = "sopranos"
   Born is a Ba -- by, Gen -- tle as may be,
@@ -142,6 +146,7 @@ altoWords = \lyricmode {
   But -- ter and hon -- ey.
 }
 altoWordsII = \lyricmode {
+  \dropLyricsVII
 %\markup\italic
   \repeat unfold 21 {\skip1}
   \set stanza = #"2. "
@@ -156,6 +161,7 @@ altoWordsII = \lyricmode {
   Wor -- ship and greet Him.
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsVII
   \repeat unfold 21 {\skip1}
   \set stanza = #"3. "
   Mid earth re -- joic -- es
@@ -171,6 +177,7 @@ altoWordsIII = \lyricmode {
   Nug -- get with -- hol -- den.
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsVII
   \repeat unfold 21 {\skip1}
   \set stanza = #"4. "
   Hinds o’er the pear -- ly
@@ -296,7 +303,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . 0))} \lyricsto "altos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }

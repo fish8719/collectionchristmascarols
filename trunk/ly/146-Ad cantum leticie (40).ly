@@ -3,7 +3,7 @@
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Ad cantum leticie"}}
   poet = \markup\oldStyleNum"13th Century Manuscript at Stuttgart"
-  meter = \markup\oldStyleNum"English by G. R. Woodward (1848-1934)"
+  meter = \markup\oldStyleNum"English by G. R. Woodward (1848–1934)"
   composer = \markup\concat  {"As found in " \italic "Piæ Cantiones" \oldStyleNum", 1582"}
   tagline = \markup\concat { "from " \italic "The Cowley Carol Book" \oldStyleNum", 1919"}
 }
@@ -23,6 +23,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #146
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}

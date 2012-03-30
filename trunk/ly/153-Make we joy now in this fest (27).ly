@@ -4,7 +4,7 @@
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Make we joy now in this fest"}}
   poet = \markup\oldStyleNum"Old English Carol"
   %composer = \markup\oldStyleNum"Old English Carol"
-  composer = \markup\oldStyleNum"Arranged by G.R. Woodward (1848-1934)"
+  composer = \markup\oldStyleNum"Arranged by G.R. Woodward (1848–1934)"
   tagline = \markup\concat { "from " \italic "The Cowley Carol Book" \oldStyleNum", 1919"}
 }
 \paper {
@@ -28,6 +28,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #153
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -182,6 +184,7 @@ altoMusic = \relative c' {
   e4 e( dis) e2. \bar "||"
 }
 altoWords = \lyricmode {
+  \dropLyricsV
   Make we joy now in this fest
   \markup\italic In \markup\italic quo \markup\italic Chris -- \markup\italic tus \markup\italic na -- \markup\italic tus \markup\italic est.
   \markup\italic E -- \markup\italic ia. __
@@ -200,6 +203,7 @@ altoWords = \lyricmode {
   \markup\italic Con -- \markup\italic sors \markup\italic pa -- \markup\italic ter -- \markup\italic ni \markup\italic lu -- \markup\italic mi -- \markup\italic nis.
 }
 altoWordsII = \lyricmode {
+  \dropLyricsV
   \repeat unfold 16{\skip1}
   \set stanza = #"2. "
   \markup\italic Ag -- \markup\italic no -- \markup\italic scat \markup\italic o -- \markup\italic mne \markup\italic sæ -- \markup\italic cu -- \markup\italic lum,
@@ -215,6 +219,7 @@ altoWordsII = \lyricmode {
   \markup\italic Glo -- \markup\italic ri -- \markup\italic a \markup\italic Ti -- \markup\italic bi, \markup\italic Do -- \markup\italic mi -- \markup\italic ne.
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsV
   \repeat unfold 16{\skip1}
   \set stanza = #"3. "
   \markup\italic A \markup\italic so -- \markup\italic lis \markup\italic or -- \markup\italic tus \markup\italic car -- \markup\italic di -- \markup\italic ne
@@ -374,7 +379,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "altos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }

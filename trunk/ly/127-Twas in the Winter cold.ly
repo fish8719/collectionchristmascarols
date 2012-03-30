@@ -3,8 +3,8 @@
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"’Twas in the winter cold"}}
   subtitle = \markup{\override #'(font-name . "Garamond Premier Pro"){ \abs-fontsize #10.5 "A Christmas Morning Hymn"}}
-  poet = \markup\oldStyleNum"Rev. Charles I. Black (1821-1896)"
-  composer = \markup\oldStyleNum"Joseph Barnby (1838-1896)"
+  poet = \markup\oldStyleNum"Rev. Charles I. Black (1821–1896)"
+  composer = \markup\oldStyleNum"Joseph Barnby (1838–1896)"
   tagline = \markup { "from" \italic {Christmas Carols, New and Old}}
 }
 \paper {
@@ -28,6 +28,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #127
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -103,6 +105,7 @@ altoMusic = \relative c' {
   d1 \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"1. "
   ’Twas in the win -- ter cold, when earth Was de -- so -- late and wild,
   That An -- gels wel -- comed at His Birth The ev -- er -- last -- ing Child.
@@ -110,6 +113,7 @@ altoWords = \lyricmode {
   He came, with hu -- man kind to stay, All low -- li -- ness and love.
 }
 altoWordsII = \lyricmode {
+  \dropLyricsIX
 %\markup\italic
   \set stanza = #"2. "
   Then in the man -- ger the poor beast
@@ -122,6 +126,7 @@ altoWordsII = \lyricmode {
   Bend low the rev -- ’rent knee.
 }
 altoWordsIII = {
+  \dropLyricsIX
   \set stanza = \markup{\dynamic"mf " "3. "}
   \lyricmode {
     But I have not, it makes me sigh,
@@ -138,6 +143,7 @@ altoWordsIII = {
   }
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"4. "
   Grant me Thy -- self, O Sav -- ior kind,
   The Spi -- rit un -- de -- filed,
@@ -149,6 +155,7 @@ altoWordsIV = \lyricmode {
   Keep ev -- er close to God.
 }
 altoWordsV = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"5. "
   Light of the ev -- er -- last -- ing morn,
   Deep through my spi -- rit shine;
@@ -239,7 +246,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "tenors" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "tenors" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "tenors" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "tenors" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.5))} \lyricsto "tenors" \altoWords
     \new Lyrics \with { alignAboveContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "tenors" \tenorWords
     \new Lyrics \with { alignBelowContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "basses" \bassWords
   >>

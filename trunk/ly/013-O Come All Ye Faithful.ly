@@ -2,8 +2,8 @@
 \include "../util.ly"
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"O Come, All Ye Faithful"}}
-  poet = \markup\oldStyleNum"Translated by Frederick Oakley (1802-1880)"
-  composer = \markup\oldStyleNum"John Francis Wade (1711-1786)"
+  poet = \markup\oldStyleNum"Translated by Frederick Oakley (1802–1880)"
+  composer = \markup\oldStyleNum"John Francis Wade (1711–1786)"
   tagline = \markup { "from" \concat{\italic "Christmas Carols and Hymns for School and Choir" \oldStyleNum", 1910"}}
 }
 \paper {
@@ -21,6 +21,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #013
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -66,11 +68,11 @@ sopMusic = \relative c'' {
   b4( cis) a( b) |
   \slurSolid \partial 4*3 gis4.( fis8) e4 | \break
   
-  \partial 4 a4^\mf |
+  \partial 4 a4 |
   a gis a b |
-  a2 e4 cis'4^\f |
+  a2 e4 cis'4 |
   cis b cis d |
-  cis2 b4 \bar""\break cis^\ff |
+  cis2 b4 \bar""\break cis |
   
   d cis b a |
   gis2 a4( d) |
@@ -108,14 +110,30 @@ altoMusic = \relative c' {
   e2( d4.) cis8 |
   \partial 4*3 cis2. \bar "|."
 }
-altoWords = \lyricmode {
-  \set stanza = #"1. "
-  \set ignoreMelismata = ##t
-  O come, all ye faith -- ful, Joy -- ful and tri -- um -- phant, O come ye, O come _ ye to Beth -- _ le -- hem; Come and be -- hold Him, Born the King of an -- _ gels;
-  \unset ignoreMelismata
-  O come, let us a -- dore Him, O come, let us a -- dore Him, O come, let us a -- dore Him, __ Christ, __ the Lord!
+altoWords = {
+  \dropLyricsV
+  \lyricmode {
+    \set stanza = #"1. "
+    \set ignoreMelismata = ##t
+    O come, all ye faith -- ful, Joy -- ful and tri -- um -- phant, O come ye, O come _ ye to Beth -- _ le -- hem; Come and be -- hold Him, Born the King of an -- _ gels;
+  }
+  \set stanza = \markup\dynamic"mf  "
+  \lyricmode {
+    \unset ignoreMelismata
+    O come, let us a -- dore Him,
+  }
+  \set stanza = \markup\dynamic" f "
+  \lyricmode {
+    O come, let us a -- dore Him,
+  }
+  \set stanza = \markup\dynamic"ff  "
+  \lyricmode {
+    \raiseLyrics
+    O come, let us a -- dore Him, __ Christ, __ the Lord!
+  }
 }
 altoWordsII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"2. "
   \set ignoreMelismata = ##t
   _ God, of __ _ God, __ _
@@ -125,6 +143,7 @@ altoWordsII = \lyricmode {
   Be -- got -- ten, not cre -- at -- _ ed:
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"3. "
   \set ignoreMelismata = ##t
   _ Sing, choirs of an -- gels, Sing with ex -- ul -- ta -- tions, ""
@@ -132,6 +151,7 @@ altoWordsIII = \lyricmode {
   Glo -- ry to God __ _ in __ _ the __ _ high -- _ est;
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsV
   \set stanza = #"4. "
   \set ignoreMelismata = ##t
   _ Yea, Lord, we greet Thee, Born this hap -- py morn -- ing, ""
@@ -155,11 +175,11 @@ tenorMusic = \relative c' {
   e4( a,) cis( d) |
   \slurSolid \partial 4*3 b4.( a8) gis4 |
   
-  \partial 4 cis4_\mf |
+  \partial 4 cis4 |
   cis b cis d |
-  cis2. a4_\f |
+  cis2. a4 |
   a gis a b |
-  a2 gis4 e'_\ff |
+  a2 gis4 e' |
   
   e e b b |
   b2 a |

@@ -12,16 +12,18 @@
   paper-width = 6\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
-  %system-system-spacing =
-  %  #'((basic-distance . 0)
-  %     (minimum-distance . 0)
-  %     (padding . -0.35)
-  %     (stretchability . 100))
+  system-system-spacing =
+    #'((basic-distance . 0)
+       (minimum-distance . 0)
+       (padding . -5)
+       (stretchability . 100))
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #147
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -113,21 +115,9 @@ altoMusic = \relative c' {
   a8 c f4. e8 |
   e c4. s4 \bar "|."
 }
-dropLyrics =
-{
-    \override LyricText #'extra-offset = #'(0 . -0.7)
-    \override LyricHyphen #'extra-offset = #'(0 . -0.7)
-    \override LyricExtender #'extra-offset = #'(0 . -0.7)
-}
-
-raiseLyrics =
-{
-    \revert LyricText #'extra-offset
-    \revert LyricHyphen #'extra-offset
-    \revert LyricExtender #'extra-offset
-}
 
 altoWords = \lyricmode {
+  \dropLyricsV
   \set stanza = #"1. "
    Christ -- mas time is come a -- gain, \skip1
     Christ -- mas plea -- sures bring -- ing;
@@ -138,7 +128,7 @@ altoWords = \lyricmode {
   An -- gel bands o’er Beth -- lem’s plains,
     Sang the songs of heav -- en.
 
-  \dropLyrics
+  \dropLyricsVII
   
   Glo -- ry be to God on high!
     Peace, good -- will to
@@ -149,6 +139,7 @@ altoWords = \lyricmode {
 
 }
 altoWordsII = \lyricmode {
+  \dropLyricsV
 %\markup\italic
   \set stanza = #"2. "
   An -- gels sang; let men re -- ply,
@@ -264,7 +255,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "altos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }

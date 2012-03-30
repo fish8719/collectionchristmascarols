@@ -2,9 +2,9 @@
 \include "../util.ly"
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Good King Wenceslas"}}
-  poet = \markup\oldStyleNum"John Mason Neale (1818-1866)"
+  poet = \markup\oldStyleNum"John Mason Neale (1818–1866)"
   composer = \markup \concat{ \italic "Tempus adest floridum" ", from " \italic "Piæ Cantiones" \oldStyleNum", 1582"}
-  arranger = \markup\oldStyleNum"Arranged by G.R. Woodward (1848-1934)"
+  arranger = \markup\oldStyleNum"Arranged by G.R. Woodward (1848–1934)"
   tagline = \markup \concat { "from " \italic "The Cowley Carol Book" \oldStyleNum", 1919"}
 }
 \paper {
@@ -22,6 +22,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #043
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -102,6 +104,7 @@ altoMusic = \relative c' {
   ees1 \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"1. "
   Good King Wen -- ces -- las look’d out
   On the Feast of Steph -- en,
@@ -113,6 +116,7 @@ altoWords = \lyricmode {
   Gath -- ’ring win -- ter fu -- el.
 }
 altoWordsII = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"2. "
   “Hith -- er, page, and stand by me,
   If thou know’st it, tell -- ing;
@@ -124,6 +128,7 @@ altoWordsII = \lyricmode {
   By Saint Ag -- nes’ foun -- tain.
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"3. "
   “Bring me flesh, and bring me wine,
   Bring me pine -- logs hith -- er;
@@ -135,6 +140,7 @@ altoWordsIII = \lyricmode {
   And the bit -- ter weath -- er.
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"4. "
   “Sire, the night is dark -- er now,
   And the wind blows strong -- er;
@@ -146,6 +152,7 @@ altoWordsIV = \lyricmode {
   Freeze thy blood less cold -- ly.”
 }
 altoWordsV = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"5. "
   In his mas -- ter’s steps he trod,
   Where the snow lay dint -- ed;
@@ -221,7 +228,7 @@ bassWords = \lyricmode {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.5)) } \lyricsto "sopranos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }

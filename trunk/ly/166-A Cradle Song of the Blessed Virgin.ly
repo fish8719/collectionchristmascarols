@@ -2,8 +2,8 @@
 \include "../util.ly"
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"A Cradle-Song of the Blessed Virgin"}}
-  poet = \markup\oldStyleNum"Translated by Rev. H.R. Bramley (1833-1917) from Latin"
-  composer = \markup\oldStyleNum"Joseph Barnby (1838-1896)"
+  poet = \markup\oldStyleNum"Translated by Rev. H.R. Bramley (1833–1917) from Latin"
+  composer = \markup\oldStyleNum"Joseph Barnby (1838–1896)"
   tagline = \markup { "from" \italic {Christmas Carols, New and Old}}
 }
 \paper {
@@ -22,6 +22,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #166
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -121,6 +123,7 @@ altoMusic = \relative c' {
   e~ e4
 }
 altoWords = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"1. "
   The Vir -- gin stills the cry -- ing
   Of Je -- sus, sleep -- less ly -- ing;
@@ -137,6 +140,7 @@ altoWords = \lyricmode {
   O lis -- ten to Thy Mo -- ther!
 }
 altoWordsII = \lyricmode {
+  \dropLyricsIX
 %\markup\italic
   \set stanza = #"2. "
   O Lamb, my love in -- vit -- ing,
@@ -153,6 +157,7 @@ altoWordsII = \lyricmode {
   Ho! An -- gels, raise your chant -- ing!
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"3. "
   My Child, of Might in -- dwell -- ing,
   My Sweet, all sweets ex -- cell -- ing,
@@ -264,7 +269,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.5)) } \lyricsto "sopranos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }

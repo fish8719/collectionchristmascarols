@@ -2,8 +2,8 @@
 \include "../util.ly"
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Christians, Awake, Salute the Happy Morn"}}
-  poet = \markup\oldStyleNum"John Byrom (1692-1763)"
-  composer = \markup\oldStyleNum"John Wainwright (1723-1768)"
+  poet = \markup\oldStyleNum"John Byrom (1692–1763)"
+  composer = \markup\oldStyleNum"John Wainwright (1723–1768)"
   tagline = \markup \concat{ "from " \italic "The English Hymnal" \oldStyleNum", 1906"}
 }
 \paper {
@@ -21,6 +21,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #060
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -113,6 +115,7 @@ altoMusic = \relative c' {
   e1
 }
 altoWords = \lyricmode {
+  \dropLyricsVII
   \set stanza = #"1. "
   \set associatedVoice = "altos"
   Christ -- ians, a -- wake, sa -- lute the hap -- py morn,
@@ -134,6 +137,7 @@ altoWords = \lyricmode {
   The ear -- liest her -- alds of the Sav -- ior’s name.
 }
 altoWordsII = \lyricmode {
+  \dropLyricsVII
   \set stanza = #"2. "
   \set associatedVoice = "altos"
   Then to the watch -- ful shep -- herds it was told,
@@ -155,6 +159,7 @@ altoWordsII = \lyricmode {
   Till man’s first heav’n -- ly state a -- gain takes place.
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsVII
   \set stanza = #"3. "
   \set associatedVoice = "altos"
   He spake; and straight -- way the ce -- les -- tial choir

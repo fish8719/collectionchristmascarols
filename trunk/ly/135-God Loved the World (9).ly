@@ -4,7 +4,7 @@
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"God Loved the World"}}
   subtitle = \markup{\override #'(font-name . "Garamond Premier Pro"){ \abs-fontsize #10.5 "(Also hat Gott die Welt geliebt)"}}
   poet = \markup\oldStyleNum"from the Trier Gesangbuch, 1871"
-  composer = \markup\oldStyleNum"Arranged by B. Luard Selby (1853-1918)"
+  composer = \markup\oldStyleNum"Arranged by B. Luard Selby (1853–1918)"
   tagline = \markup \concat { "from " \italic "The Cowley Carol Book" \oldStyleNum", 1919"}
 }
 \paper {
@@ -23,6 +23,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #135
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -141,6 +143,7 @@ altoMusic = \relative c' {
   e s \bar "||"
 }
 altoWords = {
+  \dropLyricsV
   \lyricmode {
     \set stanza = #"1. "
     God loved the world so that He gave
@@ -170,6 +173,7 @@ altoWords = {
   }
 }
 altoWordsII = \lyricmode {
+  \dropLyricsV
 %\markup\italic
   \set stanza = #"2. "
   Our Sav -- ior He, and chief -- est good,
@@ -181,6 +185,7 @@ altoWordsII = \lyricmode {
   Sure, this of love the ve -- ry height.
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"3. "
   The same that sit -- teth thron’d on high,
   A Babe in low -- ly crib doth lie.
@@ -191,6 +196,7 @@ altoWordsIII = \lyricmode {
   But now no need of Cher -- ub -- guard.
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsV
   \set stanza = #"4. "
   See, the Al -- migh -- ty Lord of all
   Doth on the garb of com -- mon thrall.
@@ -317,7 +323,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "altos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }

@@ -2,8 +2,8 @@
 \include "../util.ly"
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Watchman, Tell Us of the Night"}}
-  poet = \markup\oldStyleNum"John Bowring (1792-1872)"
-  composer = \markup\concat{\italic "Aberystwyth" \oldStyleNum", Joseph Parry (1842-1903)"}
+  poet = \markup\oldStyleNum"John Bowring (1792–1872)"
+  composer = \markup\concat{\italic "Aberystwyth" \oldStyleNum", Joseph Parry (1842–1903)"}
   tagline = \markup { "from" \italic {ChristmasCarolMusic.org}}
 }
 \paper {
@@ -22,6 +22,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #069
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -97,6 +99,7 @@ altoMusic = \relative c' {
   d cis a2 \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsV
   \set stanza = #"1. "
   Watch -- man, tell us of the night,
   What its signs of prom -- ise are.
@@ -108,6 +111,7 @@ altoWords = \lyricmode {
   Prom -- ised day of Is -- ra -- el.
 }
 altoWordsII = \lyricmode {
+  \dropLyricsV
 %\markup\italic
   \set stanza = #"2. "
   Watch -- man, tell us of the night;
@@ -120,6 +124,7 @@ altoWordsII = \lyricmode {
   See, it bursts o’er all the earth.
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"3. "
   Watch -- man, tell us of the night,
   For the morn -- ing seems to dawn.
@@ -212,7 +217,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }

@@ -3,7 +3,7 @@
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Personent hodie"}}
   poet = \markup \concat{"Words from " \italic "Piæ Cantiones" \oldStyleNum", 1582"}
-  composer = \markup\oldStyleNum"Arranged by Gustav Holst (1874-1934)"
+  composer = \markup\oldStyleNum"Arranged by Gustav Holst (1874–1934)"
   tagline = ""
 }
 \paper {
@@ -22,6 +22,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #196
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -174,17 +176,16 @@ pianoRH = \relative c' {
       <f bes>4 <ees aes> <d g> <c f> |
       b'4\rest <aes ees'> <g d'> <ees bes'> |
       c'4 <c f> <aes ees'> <f c'> |
-      bes,4 r <g c> r
     } \\
     {
-      <g bes>2 q|
+      <g, bes>2 q|
       <f aes>4 <g bes> <aes c>2 |
       q q |
       <g ees>4 <aes f> <bes g>2 |
       <aes f>4 <bes g> <c aes>2 |
-      <g ees' g>4 <f f'> <f f'> <ees ees'> |
     }
   >>
+  <g bes ees g>4 <f f'> <f g c f> <ees ees'> |
   <f a c f>2 q \bar "||"
 }
 pianoLH = \relative c' {

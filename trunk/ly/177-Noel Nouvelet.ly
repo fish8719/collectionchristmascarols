@@ -22,6 +22,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #177
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -64,7 +66,7 @@ sopMusic = \relative c'' {
   bes' bes a g |
   a2 | \break
   
-  g8 d'e c |
+  g8 d' e c |
   d4 bes |
   c8 c16[ d] bes8 a |
   g2 \bar "|."
@@ -95,6 +97,7 @@ altoMusic = \relative c' {
   d2 \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsV
   \set stanza = #"1. "
   \markup\italic “No -- \markup\italic ël \markup\italic nou -- \markup\italic ve -- \markup\italic let,”
   come let us sing \markup\italic “no -- \markup\italic ël;”
@@ -109,6 +112,7 @@ altoWords = \lyricmode {
   come let us sing \markup\italic “no -- \markup\italic ël.”
 }
 altoWordsII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"2. "
   Prais -- es to our Lord, our Sav -- ior Je -- sus Christ,
   \set ignoreMelismata = ##t
@@ -118,6 +122,7 @@ altoWordsII = \lyricmode {
   
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsV
   \markup\italic No -- \markup\italic ël \markup\italic nou -- \markup\italic ve -- \markup\italic let, \markup\italic No -- \markup\italic ël \markup\italic chan -- \markup\italic tons \markup\italic i -- \markup\italic ci,
   \markup\italic Dé -- \markup\italic vo -- \markup\italic tes \markup\italic gens, \markup\italic cri -- \markup\italic ons \markup\italic à \markup\italic Dieu \markup\italic mer -- \markup\italic ci!
   
@@ -130,7 +135,7 @@ altoWordsIV = \lyricmode {
 tenorMusic = \relative c' {
   g8 bes c c |
   bes4 d |
-  c8 g d'd |
+  c8 g d' d |
   bes2 |
   
   g8[ bes] c c |
@@ -140,7 +145,7 @@ tenorMusic = \relative c' {
   
   bes4 c8 c |
   a[ g fis] d |
-  bes'bes c c |
+  bes' bes c c |
   fis,([ g] a4) |
   
   g8 bes c c |
@@ -188,7 +193,7 @@ bassWords = \lyricmode {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "sopranos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }

@@ -4,7 +4,7 @@
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"The Wexford Carol"}}
   poet = \markup\oldStyleNum"Traditional, 16th Century or earlier"
   composer = \markup\oldStyleNum"Traditional"
-  %arranger = \markup\oldStyleNum"Edited by Benjamin Bloomfield (1984-)"
+  %arranger = \markup\oldStyleNum"Edited by Benjamin Bloomfield (1984–)"
   tagline = \markup { \center-column { \concat{"from "\italic"free-scores.com" ", with additional verses from"} \concat{\italic"Some Ancient Christmas Carols with the Tunes To Which They Were Formerly Sung in the West of England" \oldStyleNum", 1822,"} \concat{"via "\italic"books.google.com"}}}
 }
 \paper {
@@ -23,6 +23,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #056
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -154,6 +156,7 @@ altoMusic = \relative c' {
   e d b4.
 }
 altoWords = \lyricmode {
+  \dropLyricsV
   \set stanza = #"1. "
   \set associatedVoice = "tenors"
   Good peo -- ple all, __ this Christ -- mas time,
@@ -184,6 +187,7 @@ altoWords = \lyricmode {
   A prince -- ly babe sweet Je -- sus born.”
 }
 altoWordsII = \lyricmode {
+  \dropLyricsV
 %\markup\italic
   \set stanza = #"2. "
   \set associatedVoice = "tenors"
@@ -210,6 +214,7 @@ altoWordsII = \lyricmode {
   Who came to earth to end all strife.
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"3. "
   \set associatedVoice = "tenors"
   Let all your songs __ and prais -- es be,
@@ -376,7 +381,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWords
     \new Lyrics \with { alignAboveContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "tenors" \tenorWords
     \new Lyrics \with { alignBelowContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "basses" \bassWords
   >>

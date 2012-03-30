@@ -5,7 +5,7 @@
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"The Twelve Days of Christmas"}}
   poet = \markup\oldStyleNum"Traditional"
   composer = \markup\oldStyleNum"Traditional"
-  %arranger = \markup\oldStyleNum"Edited by Benjamin Bloomfield (1984-)"
+  %arranger = \markup\oldStyleNum"Edited by Benjamin Bloomfield (1984–)"
   tagline = ""
 }
 \paper {
@@ -24,6 +24,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #024
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -166,18 +168,13 @@ altoMusic = \relative c' {
 }
 dropLyrics =
 {
-    \override LyricText #'extra-offset = #'(0 . -1)
-    \override LyricHyphen #'extra-offset = #'(0 . -1)
-    \override LyricExtender #'extra-offset = #'(0 . -1)
+    \override LyricText #'extra-offset = #'(0 . -1.4)
+    \override LyricHyphen #'extra-offset = #'(0 . -1.4)
+    \override LyricExtender #'extra-offset = #'(0 . -1.4)
 }
 
-raiseLyrics =
-{
-    \revert LyricText #'extra-offset
-    \revert LyricHyphen #'extra-offset
-    \revert LyricExtender #'extra-offset
-}
 altoWords = \lyricmode {
+  \dropLyricsIV
   \set stanza = #"1. "
   On the first day of Christ -- mas my true love sent to me
   A part -- ridge in a pear tree. __
@@ -210,6 +207,7 @@ altoWords = \lyricmode {
 
 }
 altoWordsII = \lyricmode {
+  \dropLyricsIV
 %\markup\italic
   \repeat unfold 46 \skip1
   \set stanza = #"4. "
@@ -219,7 +217,7 @@ altoWordsII = \lyricmode {
   %two tur -- tle -- doves, and a part -- ridge in a pear tree. __
   
   \repeat unfold 15 \skip1
-  \set stanza = #"6-12."
+  \set stanza = #"6–12."
   On the "etc."
 }
 altoWordsIII = \lyricmode {

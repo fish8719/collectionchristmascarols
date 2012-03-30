@@ -24,6 +24,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #004
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCaps advent}
@@ -77,12 +79,14 @@ altoMusic = \relative c' {
   ees4 ees8[ des] c2 \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsVII
   \set stanza = #"1. "
   Come, thou long ex -- pect -- ed Je -- sus,
   born to set __ thy peo -- ple free;
   from our fears and sins re -- lease us, let us find our rest in thee.
 }
 altoWordsII = \lyricmode {
+  \dropLyricsVII
 %\markup\italic
   \set stanza = #"2. "
   Is -- rael’s strength and con -- so -- la -- tion,
@@ -90,11 +94,13 @@ altoWordsII = \lyricmode {
   dear de -- sire of ev -- ’ry na -- tion, joy of ev -- ’ry long -- ing heart.
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsVII
   \set stanza = #"3. "
   Born thy peo -- ple to de -- liv -- er, born a child, and yet a king,
   born to reign in us for ev -- er, now thy gra -- cious king -- dom bring.
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsVII
   \set stanza = #"4. "
   By thine own e -- ter -- nal Spir -- it rule in all __ our hearts a -- lone;
   by thy grace, help us to mer -- it life e -- ter -- nal at thy throne.
@@ -152,12 +158,12 @@ pianoLH = \relative c' {
       \new Voice = "altos" { \voiceTwo << \global \altoMusic >> }
     >>
     \new Lyrics \with { alignAboveContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \sopWords
-    \new Lyrics = "altosVI"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsVI
-    \new Lyrics = "altosV"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsV
-    \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIV
-    \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIII
-    \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWords
+    \new Lyrics = "altosVI"  \with { alignBelowContext = #"women"  \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWordsVI
+    \new Lyrics = "altosV"  \with { alignBelowContext = #"women"  \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWordsV
+    \new Lyrics = "altosIV"  \with { alignBelowContext = #"women"  \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWordsIV
+    \new Lyrics = "altosIII"  \with { alignBelowContext = #"women"  \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWordsIII
+    \new Lyrics = "altosII"  \with { alignBelowContext = #"women"  \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWordsII
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women"  \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }
@@ -181,8 +187,8 @@ pianoLH = \relative c' {
   }
   \header {
     title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Come Thou Long Expected Jesus"}}
-    poet = \markup\oldStyleNum"Charles Wesley (1707-1788)"
-    composer = \markup\concat{\italic"Cross of Jesus" \oldStyleNum", Sir John Stainer (1840-1901)"}
+    poet = \markup\oldStyleNum"Charles Wesley (1707–1788)"
+    composer = \markup\concat{\italic"Cross of Jesus" \oldStyleNum", Sir John Stainer (1840–1901)"}
   }
 }
 \markup\fill-line \center-align {\concat{"from "\italic"The Church Hymnary" \oldStyleNum", 1902, via " \italic"HymnsAndCarolsOfChristmas.com"}}
@@ -249,12 +255,14 @@ altoMusic = \relative c' {
   d d d2 \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsVII
   \set stanza = #"1. "
   Come, thou long ex -- pect -- ed Je -- sus,
   born to set thy peo -- ple free;
   from our fears and sins re -- lease us, let us find our rest in thee.
 }
 altoWordsII = \lyricmode {
+  \dropLyricsVII
 %\markup\italic
   \set stanza = #"2. "
   Is -- rael’s strength and con -- so -- la -- tion,
@@ -262,11 +270,13 @@ altoWordsII = \lyricmode {
   dear de -- sire of ev -- ’ry na -- tion, joy of ev -- ’ry long -- ing heart.
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsVII
   \set stanza = #"3. "
   Born thy peo -- ple to de -- liv -- er, born a child, and yet a king,
   born to reign in us for ev -- er, now thy gra -- cious king -- dom bring.
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsVII
   \set stanza = #"4. "
   By thine own e -- ter -- nal Spir -- it rule in all our hearts a -- lone;
   by thy grace, help us to mer -- it life e -- ter -- nal at thy throne.
@@ -324,12 +334,12 @@ pianoLH = \relative c' {
       \new Voice = "altos" { \voiceTwo << \global \altoMusic >> }
     >>
     \new Lyrics \with { alignAboveContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \sopWords
-    \new Lyrics = "altosVI"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsVI
-    \new Lyrics = "altosV"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsV
-    \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIV
-    \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIII
-    \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWords
+    \new Lyrics = "altosVI"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWordsVI
+    \new Lyrics = "altosV"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWordsV
+    \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWordsIV
+    \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWordsIII
+    \new Lyrics = "altosII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWordsII
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }
@@ -353,9 +363,9 @@ pianoLH = \relative c' {
   }
   \header {
     title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Come Thou Long Expected Jesus"}}
-    poet = \markup\oldStyleNum"Charles Wesley (1707-1788)"
-    composer = \markup\concat{\italic"Stuttgart" \oldStyleNum", Christian F. Witt (c. 1660-1716)"}
-    arranger = \markup\oldStyleNum"Adapted by Henry J. Gauntlett (1805-1876)"
+    poet = \markup\oldStyleNum"Charles Wesley (1707–1788)"
+    composer = \markup\concat{\italic"Stuttgart" \oldStyleNum", Christian F. Witt (c. 1660–1716)"}
+    arranger = \markup\oldStyleNum"Adapted by Henry J. Gauntlett (1805–1876)"
     tagline = \markup { "from" \italic "CyberHymnal.org"}
   }
 }

@@ -21,6 +21,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #090
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -78,6 +80,7 @@ altoMusic = \relative c'' {
   e2.( d2)
 }
 altoWords = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"1. "
   Con -- gau -- de -- at __ tur -- ba fi -- de -- li -- um, __
   Vir -- go ma -- ter pe -- pe -- rit fi -- li -- um
@@ -90,6 +93,7 @@ altoWords = \lyricmode {
   in Beth -- le -- hem. __
 }
 altoWordsII = \lyricmode {
+  \dropLyricsIX
 %\markup\italic
   \set stanza = #"2. "  
   Ad pa -- sto -- res __ de -- scen -- dit an -- ge -- lus, __
@@ -103,6 +107,7 @@ altoWordsII = \lyricmode {
   in Beth -- le -- hem. __
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"3. "
   Lo -- que -- ban -- tur __ pa -- sto -- res in -- vi -- cem, __
   Tan -- se -- a -- mus ad no -- vum ho -- mi -- nem
@@ -115,6 +120,7 @@ altoWordsIII = \lyricmode {
   in Beth -- le -- hem. __
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"4. "
   Ad præ -- se -- pe __ stant bos et a -- si -- nus, __
   Co -- gno -- ve -- runt quis es -- set Do -- mi -- nus
@@ -197,7 +203,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.5))} \lyricsto "sopranos" \altoWords
     \context Lyrics = tenors \lyricsto tenors \tenorWords
 %    \context Lyrics = basses \lyricsto basses \bassWords
    >>

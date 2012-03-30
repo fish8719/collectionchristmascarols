@@ -27,6 +27,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #070
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -101,6 +103,7 @@ altoMusic = \relative c' {
 
 }
 altoWords = \lyricmode {
+  \dropLyricsV
   \set stanza = #"1. "
   \markup\italic In \markup\italic dul -- \markup\italic ci \markup\italic ju -- \markup\italic bi -- \markup\italic lo __
   Nun sing -- et und seid froh! __ ""
@@ -113,6 +116,7 @@ altoWords = \lyricmode {
 
 }
 altoWordsII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"2. "
   \markup\italic O \markup\italic Je -- \markup\italic su, \markup\italic par -- \markup\italic vu -- \markup\italic le, __
   Nach Dir ist mir so weh. __ ""
@@ -124,6 +128,7 @@ altoWordsII = \lyricmode {
   \markup\italic Tra -- \markup\italic he \markup\italic me \markup\italic post \markup\italic te! __
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"3. "
   \markup\italic O \markup\italic pa -- \markup\italic tris \markup\italic ca -- \markup\italic ri -- \markup\italic tas! __
   \markup\italic O \markup\italic na -- \markup\italic ti \markup\italic lem -- \markup\italic i -- \markup\italic tas! __
@@ -135,6 +140,7 @@ altoWordsIII = \lyricmode {
   \markup\italic Quan -- \markup\italic ta \markup\italic gra -- \markup\italic ti -- \markup\italic a! __
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsV
   \set stanza = #"4. "
   \markup\italic U -- \markup\italic bi \markup\italic sunt \markup\italic gau -- \markup\italic di -- \markup\italic a __ ""
   Nir -- gend mehr denn da, __ ""
@@ -211,7 +217,7 @@ bassWords = \lyricmode {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "sopranos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }
@@ -236,7 +242,7 @@ bassWords = \lyricmode {
   \header {
     title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"In ducli jubilo"}}
     poet = \markup\oldStyleNum"14th Century German-Latin Carol"
-    composer = \markup\oldStyleNum"Arranged by J.S. Bach (1685-1750)"
+    composer = \markup\oldStyleNum"Arranged by J.S. Bach (1685–1750)"
     
     tagline = \markup \concat { "from " \italic "The Cowley Carol Book" \oldStyleNum", 1919"}
   }
@@ -316,6 +322,7 @@ altoMusic = \relative c' {
 
 }
 altoWords = \lyricmode {
+  \dropLyricsV
   \set stanza = #"1. "
   \markup\italic In \markup\italic dul -- \markup\italic ci \markup\italic ju -- \markup\italic bi -- \markup\italic lo __ Now sing with hearts a -- glow! __
   Our de -- light and plea -- sure Lies \markup\italic in \markup\italic præ -- \markup\italic se -- \markup\italic pi -- \markup\italic o, __
@@ -325,6 +332,7 @@ altoWords = \lyricmode {
   \markup\italic Al -- \markup\italic pha \markup\italic es \markup\italic et \markup\italic O!
 }
 altoWordsII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"2. "
   \markup\italic O \markup\italic Je -- \markup\italic su, \markup\italic par -- \markup\italic vu -- \markup\italic le, __
   For thee I long al -- way; __
@@ -336,6 +344,7 @@ altoWordsII = \lyricmode {
   \markup\italic Tra -- \markup\italic he \markup\italic me \markup\italic post \markup\italic te!
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"3. "
   \markup\italic O \markup\italic pa -- \markup\italic tris \markup\italic ca -- \markup\italic ri -- \markup\italic tas! __
   \markup\italic O \markup\italic na -- \markup\italic ti \markup\italic lem -- \markup\italic i -- \markup\italic tas! __
@@ -346,6 +355,7 @@ altoWordsIII = \lyricmode {
   O that we were there! O that we were there! 
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsV
   \set stanza = #"4. "
   \markup\italic U -- \markup\italic bi \markup\italic sunt \markup\italic gau -- \markup\italic di -- \markup\italic a __
   In an -- y place  but there?
@@ -419,7 +429,7 @@ bassWords = \lyricmode {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "sopranos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }

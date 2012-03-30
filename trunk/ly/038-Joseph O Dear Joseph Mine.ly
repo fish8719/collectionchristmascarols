@@ -22,6 +22,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #038
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -47,11 +49,13 @@ global = {
   \time 6/8
   \autoBeamOff
   \override DynamicLineSpanner #'staff-padding = #0.0
-  \override DynamicLineSpanner #'Y-extent = #'(-1 . 1)
+  \override DynamicLineSpanner #'Y-extent = #'(0 . 1.5)
+  \override DynamicText #'X-offset = #-3
 }
 
 sopMusic = \relative c'' {
-  c4^\mf a8 f4 a8 |
+  \once\override DynamicText #'X-offset = #-5
+  c4_\mf a8 f4 a8 |
   c4 d8 c4. |
   c4 a8 f4 a8 |
   c4 d8 c4. | \break
@@ -63,8 +67,8 @@ sopMusic = \relative c'' {
   
   f2. |
   f2. |
-  c'4.^\f a |
-  c^\p a |
+  c'4._\f a |
+  c_\p a |
   c2. |
   a |
   
@@ -125,21 +129,33 @@ altoMusic = \relative c' {
   f4.)(^\> e4) c8 |
   <<c2. {s8 s\! s2}>> \bar "|."
 }
-altoWords = \lyricmode {
-  \set stanza = #"1. "
-  Jo -- seph, O dear Jo -- seph mine,
-  Help me rock the Child di -- vine,
-  God re -- ward both thee and thine,
-  In par -- a -- dise, So prays the moth -- er,
-  
-  Ma -- ry.  E -- ia, E -- ia, E -- ia.
-  He came down at Christ -- mas time,
-  In the town of Beth -- le -- hem, in Beth -- le -- hem.
-  Bring -- ing to men far and wide,
-  Love’s di -- a -- dem,
-  E -- ia, E -- ia, Lull -- a -- by.
+altoWords = {
+  \lyricmode {
+    \dropLyricsIV
+    \set stanza = #"1. "
+    Jo -- seph, O dear Jo -- seph mine,
+    Help me rock the Child di -- vine,
+    God re -- ward both thee and thine,
+    In par -- a -- dise, So prays the moth -- er,
+    
+    \raiseLyrics
+    Ma -- ry.
+  }
+  %\set stanza = \markup\dynamic"f "
+  \lyricmode {
+    E -- ia,
+  }
+  %\set stanza = \markup\dynamic"p "
+  \lyricmode {E -- ia, E -- ia.
+    He came down at Christ -- mas time,
+    In the town of Beth -- le -- hem, in Beth -- le -- hem.
+    Bring -- ing to men far and wide,
+    Love’s di -- a -- dem,
+    E -- ia, E -- ia, Lull -- a -- by.
+  }
 }
 altoWordsII = \lyricmode {
+  \dropLyricsIV
 %\markup\italic
   \set stanza = #"2. "
   I will glad -- ly, la -- dy mine,
@@ -156,7 +172,8 @@ altoWordsV = \lyricmode {
 altoWordsVI = \lyricmode {
 }
 tenorMusic = \relative c' {
-  a4_\mf c8 a4 f8 |
+  \once\override DynamicText #'X-offset = #-5
+  a4^\mf c8 a4 f8 |
   g4 bes8 a4. |
   c4 c8 a4 a8 |
   g4 bes8 a4. |
@@ -168,8 +185,8 @@ tenorMusic = \relative c' {
   
   bes4.( g) |
   a2. |
-  c4._\f c |
-  c_\p d |
+  c4.^\f c |
+  c^\p d |
   e2. |
   c |
   

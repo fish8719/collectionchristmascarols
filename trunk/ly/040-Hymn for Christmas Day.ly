@@ -3,8 +3,8 @@
 #(set-global-staff-size 15) \paper{ #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 15 20))) }
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Hymn for Christmas Day"}}
-  poet = \markup\oldStyleNum"Edward Caswall (1814-1878)"
-  composer = \markup\oldStyleNum"Sir John Goss (1800-1880)"
+  poet = \markup\oldStyleNum"Edward Caswall (1814–1878)"
+  composer = \markup\oldStyleNum"Sir John Goss (1800–1880)"
   tagline = \markup { "from" \italic {Christmas Carols, New and Old}}
 }
 \paper {
@@ -29,6 +29,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #040
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -83,7 +85,7 @@ altoMusic = \relative c' {
   g4. a8 g4 fis |
   e4. d8 d2 |
   g4 a b c |
-  a4. g8 g2 \bar "||"
+  a4. g8 g2 \bar "||" \break
 
   \voiceTwo
   
@@ -98,6 +100,7 @@ altoMusic = \relative c' {
   fis fis g2 \bar "|."
 }
 altoWords = {
+  \dropLyricsV
   \lyricmode {
     \set stanza = #"1. "
     See a -- mid the win -- ter’s snow,
@@ -105,15 +108,19 @@ altoWords = {
     See the ten -- der Lamb ap -- pears,
     Prom -- ised from e -- ter -- nal years.
   }
+  \break
   \set stanza = \markup\dynamic"ff "
   \lyricmode{
+    \dropLyricsVII
     Hail! Thou ev -- er bless -- ed morn!
     Hail, Re -- demp -- tion’s hap -- py dawn!
+    \dropLyricsIV
     Sing through all Je -- ru -- sa -- lem,
     Christ is born in Beth -- le -- hem.
   }
 }
 altoWordsII = \lyricmode {
+  \dropLyricsV
 %\markup\italic
   \set stanza = #"2. "
   Lo, with -- in a man -- ger lies
@@ -122,6 +129,7 @@ altoWordsII = \lyricmode {
   Sits a -- mid the Cher -- u -- bim!
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"3. "
   Say, ye ho -- ly Shep -- herds, say,
   What your joy -- ful news to -- day;
@@ -129,6 +137,7 @@ altoWordsIII = \lyricmode {
   On the lone -- ly moun -- tain steep?
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsV
   \set stanza = #"4. "
   “As we watched at dead of night,
   Lo, we saw a won -- drous light;
@@ -136,6 +145,7 @@ altoWordsIV = \lyricmode {
   Told us of the Sav -- ior’s  Birth.”
 }
 altoWordsV = \lyricmode {
+  \dropLyricsV
   \set stanza = #"5. "
   Sa -- cred In -- fant, all Di -- vine,
   What a ten -- der love was Thine;
@@ -143,6 +153,7 @@ altoWordsV = \lyricmode {
   Down to such a world as this!
 }
 altoWordsVI = \lyricmode {
+  \dropLyricsV
   \set stanza = #"6. "
   Teach, O teach us, Ho -- ly Child,
   By Thy Face so meek and mild,
@@ -255,7 +266,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women"} \lyricsto "altos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }

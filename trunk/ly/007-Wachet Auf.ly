@@ -4,10 +4,10 @@
 #(set-global-staff-size 15) \paper{ #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 15 20))) }
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Wake, O Wake! with Tidings Thrilling"}}
-  poet = \markup\concat{\italic"Wachet Auf!" \oldStyleNum" by P. Nicolai (1556-1608)"}
+  poet = \markup\concat{\italic"Wachet Auf!" \oldStyleNum" by P. Nicolai (1556–1608)"}
   meter = \markup\oldStyleNum"Translated by F.C.B."
-  composer = \markup\oldStyleNum"P. Nicolai (1556-1608)"
-  arranger = \markup\oldStyleNum"Adapted and arranged by J.S. Bach (1685-1750)"
+  composer = \markup\oldStyleNum"P. Nicolai (1556–1608)"
+  arranger = \markup\oldStyleNum"Adapted and arranged by J.S. Bach (1685–1750)"
   tagline = \markup \concat{ "from " \italic "The English Hymnal" \oldStyleNum", 1906"}
 }
 \paper {
@@ -31,6 +31,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #007
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCaps advent}
@@ -131,6 +133,7 @@ altoMusic = \relative c' {
   d cis a2 \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsVI
   \set stanza = #"1. "
   Wake, o wake! with tid -- ings thrill -- ing
   The watch -- men all the air are fill -- ing,
@@ -147,6 +150,7 @@ altoWords = \lyricmode {
   Go forth and join the fest -- al throng.
 }
 altoWordsII = \lyricmode {
+  \dropLyricsVI
 %\markup\italic
   Mid -- night strikes! no more de -- lay -- ing,
   ‘The hour has come!’ we hear them say -- ing.
@@ -154,6 +158,7 @@ altoWordsII = \lyricmode {
   Where are ye all, ye vir -- gins wise?
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsVI
   \set stanza = #"2. "
   Zi -- on hears the watch -- men shout -- ing,
   Her heart leaps up with joy un -- doubt -- ing,
@@ -170,12 +175,14 @@ altoWordsIII = \lyricmode {
   Where in thy sup -- per we may share.
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsVI
   See her Friend from heav’n de -- scend -- ing,
   A -- dorned with truth and grace un -- end -- ing!
   \set associatedVoice = "sopranos"
   Her light burns clear, her star doth rise.
 }
 altoWordsV = \lyricmode {
+  \dropLyricsVI
   \set stanza = #"3. "
   Ev -- ’ry soul in Thee re -- joi -- ces;
   From men and from an -- gel -- ic voi -- ces
@@ -192,6 +199,7 @@ altoWordsV = \lyricmode {
   The tri -- umph -- cho -- rus of Thy praise.
 }
 altoWordsVI = \lyricmode {
+  \dropLyricsVI
   Now the gates of pearl re -- ceive us,
   Thy pre -- sence nev -- er more shall leave __ us,
   \set associatedVoice = "sopranos"
@@ -292,12 +300,12 @@ pianoLH = \relative c' {
       \new Voice = "basses" { \voiceTwo << \global \bassMusic >> }
     >>
     \new Lyrics \with { alignAboveContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \sopWords
-    \new Lyrics = "altosVI"  \with { alignBelowContext = #"women" } \lyricsto "tenors" \altoWordsVI
-    \new Lyrics = "altosV"  \with { alignBelowContext = #"women" } \lyricsto "tenors" \altoWordsV
-    \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "tenors" \altoWordsIV
-    \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "tenors" \altoWordsIII
-    \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "tenors" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "tenors" \altoWords
+    \new Lyrics = "altosVI"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "tenors" \altoWordsVI
+    \new Lyrics = "altosV"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "tenors" \altoWordsV
+    \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "tenors" \altoWordsIV
+    \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "tenors" \altoWordsIII
+    \new Lyrics = "altosII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "tenors" \altoWordsII
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "tenors" \altoWords
     \new Lyrics \with { alignAboveContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "tenors" \tenorWords
     \new Lyrics \with { alignBelowContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "basses" \bassWords
   >>

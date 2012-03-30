@@ -2,9 +2,9 @@
 \include "../util.ly"
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Ding Dong Merrily on High"}}
-  poet = \markup\oldStyleNum"George Ratcliffe Woodward (1848-1934)"
+  poet = \markup\oldStyleNum"George Ratcliffe Woodward (1848–1934)"
   composer = \markup\oldStyleNum"16th century French melody"
-  arranger = \markup\oldStyleNum"Arranged by Charles Wood (1866-1926)"
+  arranger = \markup\oldStyleNum"Arranged by Charles Wood (1866–1926)"
   
   tagline = \markup \concat{ "from " \italic "The Cambridge Carol Book" \oldStyleNum", 1924"}
 
@@ -25,6 +25,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #032
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -91,17 +93,20 @@ altoMusic = \relative c' {
   f2 f \bar "||"
 }
 altoWords = \lyricmode {
+  \dropLyricsVII
   \set stanza = #"1. "
   Ding dong! mer -- ri -- ly on high in heav’n the bells are ring -- ing:
   Ding dong!  Ve -- ri -- ly the sky is riv’n with an -- gel sing -- ing.
   \markup\italic Glo -- \markup\italic ri -- \markup\italic a, \markup\italic ho -- \markup\italic san -- \markup\italic na \markup\italic in \markup\italic ex -- \markup\italic cel -- \markup\italic sis!
 }
 altoWordsII = \lyricmode {
+  \dropLyricsVII
   \set stanza = #"2. "
   E’en so here be -- low, be -- low, let stee -- ple bells be swung -- en.
   And i -- o, i -- o, i -- o by priest and peo -- ple sung -- en.
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsVII
   \set stanza = #"3. "
   Pray ye du -- ti -- ful -- ly prime your ma -- tin chime, ye ring -- ers;
   may ye beau -- ti -- ful -- ly rime your eve -- time song, ye sing -- ers.
@@ -160,7 +165,7 @@ bassWords = \lyricmode {
     \new Lyrics \with { alignAboveContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \sopWords
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }

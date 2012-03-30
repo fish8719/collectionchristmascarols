@@ -21,6 +21,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #111
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -45,25 +47,26 @@ global = {
   \key g \major
   \time 3/4
   \override DynamicLineSpanner #'staff-padding = #0.0
-  \override DynamicLineSpanner #'Y-extent = #'(-1 . 1)
+  \override DynamicLineSpanner #'Y-extent = #'(1 . 1)
+  \override DynamicText #'X-offset = #-5
 }
 
 sopMusic = \relative c' {
   \once \override Score.RehearsalMark #'self-alignment-X = #LEFT
   \mark "Moderately"
-  \partial 8 d8^\mp |
+  \partial 8 d8_\mp |
   g8.\noBeam g16 g4 a |
   b8.\noBeam b16 b4. b8 |
   a8\noBeam b c4 fis, | \break
   
   \partial 8*5 a g b8\rest \bar ":|"
-  \partial 8 d8^\mf |
+  \partial 8 d8_\mf |
   d\noBeam b e4. d8 |
   d\noBeam c c4. c8 | \break
   
   c8\noBeam a d4. c8 |
   c\noBeam b b4 d, |
-  g8.\noBeam^\mp g16 g4 a | \break
+  g8.\noBeam_\mp g16 g4 a | \break
   
   b8.\noBeam b16 b4. b8 |
   a\noBeam b c4 fis, |
@@ -92,7 +95,8 @@ altoMusic = \relative c' {
   e\noBeam g g4 fis |
   fis g s8 \bar "|."
 }
-altoWords = \lyricmode {
+altoWords = \lyricmode {  
+  \dropLyricsV
   \set stanza = #"1. "
   O Tan -- nen -- baum, o Tan -- nen -- baum,
   Wie treu sind dei -- ne Blät -- ter!
@@ -102,6 +106,7 @@ altoWords = \lyricmode {
   Wie treu sind dei -- ne Blät -- ter!
 }
 altoWordsII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"2. "
   O Tan -- nen -- baum, o Tan -- nen -- baum,
   Du kannst mir sehr ge -- fal -- len!
@@ -111,13 +116,14 @@ altoWordsII = \lyricmode {
   Du kannst mir sehr ge -- fal -- len!
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"3. "
   O Tan -- nen -- baum, o Tan -- nen -- baum,
   Dein Kleid will mich was lehr -- en:
   Die Hoff -- nung und Be -- ständ -- ig -- keit
   Gibt Mut und Kraft zu je -- der Zeit!
   O Tan -- nen -- baum, o Tan -- nen -- baum,
-  Dein Kleid will mich was lehr -- en:
+  Dein Kleid will mich was lehr -- en!
 }
 altoWordsIV = \lyricmode {
   \set stanza = #"4. "
@@ -126,19 +132,19 @@ altoWordsV = \lyricmode {
 }
 
 tenorMusic = \relative c' {
-  d8_\mp |
+  d8^\mp |
   b8.\noBeam b16 b4 d |
   d8.\noBeam d16 d4. d8 |
   d\noBeam d d4 a |
   
   c b s8 |
-  b8_\mf |
+  b8^\mf |
   b\noBeam d c4. b8 |
   b\noBeam a a4. a8 |
   
   a\noBeam a a4. d8 |
   d\noBeam d d4 b |
-  b8.\noBeam_\mp b16 b4 d |
+  b8.\noBeam^\mp b16 b4 d |
   
   d8.\noBeam d16 d4. d8 |
   c\noBeam d e4 c |

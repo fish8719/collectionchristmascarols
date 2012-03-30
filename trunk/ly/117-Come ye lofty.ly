@@ -2,8 +2,8 @@
 \include "../util.ly"
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Come Ye Lofty"}}
-  poet = \markup\oldStyleNum"Rev. Archer Gurney (1820-1887)"
-  composer = \markup\oldStyleNum"G.J. Elvey (1816-1893)"
+  poet = \markup\oldStyleNum"Rev. Archer Gurney (1820–1887)"
+  composer = \markup\oldStyleNum"G.J. Elvey (1816–1893)"
   tagline = \markup { "from" \italic {Christmas Carols, New and Old}}
 }
 \paper {
@@ -22,6 +22,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #117
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -96,6 +98,7 @@ altoMusic = \relative c' {
   d cis d2 \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"1. "
   Come ye lof -- ty, come ye low -- ly,
   Let your songs of glad -- ness ring;
@@ -107,6 +110,7 @@ altoWords = \lyricmode {
   Pi -- ous hears that love the Lord.
 }
 altoWordsII = \lyricmode {
+  \dropLyricsIX
 %\markup\italic
   \set stanza = #"2. "
   Come ye poor, no pomp of sta -- tion
@@ -119,6 +123,7 @@ altoWordsII = \lyricmode {
   That the Prince of Life lies there.
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"3. "
   Come ye chil -- dren blithe and mer -- ry,
   This one Child your mod -- el make;
@@ -130,6 +135,7 @@ altoWordsIII = \lyricmode {
   Weak and might -- y, young and old.
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"4. "
   High a -- bove a star is shin -- ing,
   And the wise men haste from far: __
@@ -141,6 +147,7 @@ altoWordsIV = \lyricmode {
   All in all draw nigh to gaze.
 }
 altoWordsV = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"5. "
   Hark the Heav’n of heav’ns is ring -- ing:
   Christ the Lord to man is born!
@@ -226,7 +233,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.5))} \lyricsto "altos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }

@@ -24,6 +24,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #163
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -100,6 +102,7 @@ altoMusic = \relative c' {
   c2. \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"1. "
   Quem pas -- to -- res lau -- da -- ve -- re,
   Qui -- bus an -- ge -- li di -- xe -- re,
@@ -108,6 +111,7 @@ altoWords = \lyricmode {
   Rex glo -- ri -- æ.”
 }
 altoWordsII = \lyricmode {
+  \dropLyricsIX
 %\markup\italic
   \set stanza = #"2. "
   Ad quem ma -- gi am -- bu -- la -- bant,
@@ -117,6 +121,7 @@ altoWordsII = \lyricmode {
   vic -- to -- ri -- æ.
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"3. "
   Ex -- ul -- te -- mus cum Ma -- ri -- a
   In cœ -- les -- ti hei -- rar -- chi -- a
@@ -125,6 +130,7 @@ altoWordsIII = \lyricmode {
   et glo -- ri -- a.
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"4. "
   Chris -- to re -- gi, De -- o na -- to,
   Per Ma -- ri -- am no -- bis da -- to,
@@ -212,7 +218,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.5))} \lyricsto "sopranos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }
@@ -316,6 +322,7 @@ altoMusic = \relative c' {
   c2. \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"1. "
   Quem pas -- to -- res lau -- da -- ve -- re,
   Qui -- bus an -- ge -- li di -- xe -- re,
@@ -323,6 +330,7 @@ altoWords = \lyricmode {
   Na -- tus est rex glo -- ri -- æ.”
 }
 altoWordsII = \lyricmode {
+  \dropLyricsIX
 %\markup\italic
   \set stanza = #"2. "
   Ad quem ma -- gi am -- bu -- la -- bant,
@@ -331,6 +339,7 @@ altoWordsII = \lyricmode {
   Le -- o -- ni vic -- to -- ri -- æ.
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"3. "
   Ex -- ul -- te -- mus cum Ma -- ri -- a
   In cœ -- les -- ti hei -- rar -- chi -- a
@@ -338,6 +347,7 @@ altoWordsIII = \lyricmode {
   Laus, ho -- nor et glo -- ri -- a.
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"4. "
   Chris -- to re -- gi, De -- o na -- to,
   Per Ma -- ri -- am no -- bis da -- to,
@@ -420,7 +430,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.5)) } \lyricsto "altos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }
@@ -446,7 +456,7 @@ pianoLH = \relative c' {
     title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Quem Pastores"}}
 %    poet = \markup\oldStyleNum"Anonymous, 14th Century"
 %    composer = \markup\oldStyleNum"14th Century German"
-    composer = \markup\oldStyleNum"Arranged by Ralph Vaughan Williams (1872-1958)"
+    composer = \markup\oldStyleNum"Arranged by Ralph Vaughan Williams (1872–1958)"
     tagline = \markup { "from" \italic {ChristmasCarolMusic.org}}
   }
 }

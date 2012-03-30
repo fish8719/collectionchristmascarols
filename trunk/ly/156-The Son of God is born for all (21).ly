@@ -3,9 +3,9 @@
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"The Son of God is born for all"}}
   subtitle = \markup{\override #'(font-name . "Garamond Premier Pro"){ \abs-fontsize #10.5 "(Geborn ist Gottes Sönelein)"}}
-  poet = \markup\oldStyleNum"Michael Praetorius (1571-1621)"
+  poet = \markup\oldStyleNum"Michael Praetorius (1571–1621)"
   composer = \markup{"Variation of" \italic"Puer nobis nascitur" from \italic "Piæ Cantiones"}
-  arranger = \markup\oldStyleNum"Arranged by G.R. Woodward (1848-1934)"
+  arranger = \markup\oldStyleNum"Arranged by G.R. Woodward (1848–1934)"
   tagline = \markup\concat { "from " \italic "The Cowley Carol Book" \oldStyleNum", 1919"}
 }
 \paper {
@@ -24,6 +24,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #156
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -101,6 +103,7 @@ altoMusic = \relative c' {
   bes2
 }
 altoWords = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"1. "
   The Son of God is born for all
   At Beth -- lem in a cat -- tle -- stall:
@@ -132,6 +135,7 @@ altoWords = \lyricmode {
   Em -- ma -- nu -- el, my Bro -- ther blest.
 }
 altoWordsII = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"2. "
   Re -- joice to -- day for Je -- su’s sake,
   With -- in your hearts His cra -- dle make:
@@ -245,7 +249,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.5))} \lyricsto "altos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \repeat unfold 5 \tenorMusic >> }

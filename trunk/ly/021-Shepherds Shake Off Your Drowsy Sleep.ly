@@ -4,7 +4,7 @@
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Shepherds! Shake Off Your Drowsy Sleep"}}
   poet = \markup\oldStyleNum"Traditional"
   composer = \markup\oldStyleNum"Besançon Carol"
-  arranger = \markup\oldStyleNum"Arranged by Sir John Stainer (1840-1901)"
+  arranger = \markup\oldStyleNum"Arranged by Sir John Stainer (1840–1901)"
   tagline = \markup \concat{ "from " \italic"Carols Old and Carols New" \oldStyleNum", 1916, via " \italic"HymnsAndCarolsOfChristmas.com" }
 }
 \paper {
@@ -22,6 +22,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #021
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -52,7 +54,7 @@ global = {
 
 sopMusic = \relative c' {
   \tempo \markup\italic "Vivace"
-  \partial 4. f8\noBeam^\mf f\noBeam f |
+  \partial 4. f8\noBeam f\noBeam f |
   c'4 c8 d4 e8 |
   f4. f4 f8 |
   
@@ -63,7 +65,7 @@ sopMusic = \relative c' {
   a4 g8 a[ bes] a |
   g[ f] g a[ bes] a |
   \partial 4. g4-> f8 \bar "||" \break 
-  \partial 4. c'8\noBeam^\ff d\noBeam e |
+  \partial 4. c'8\noBeam d\noBeam e |
   
   f4 c8 c4 bes8 |
   a4. c4^\markup\italic"poco rit." g8 |
@@ -92,15 +94,22 @@ altoMusic = \relative c' {
   f4 f8 e[ d] e |
   f4. \bar "|."
 }
-altoWords = \lyricmode {
-  \set stanza = #"1. "
-  Shep -- herds! shake off your drow -- sy sleep,
-  Rise and leave your sil -- ly sheep;
-  An -- gels from heav’n a -- round loud sing -- ing,
-  Ti -- dings of __ great joy __ are bring -- ing.
-  Shep -- herds! the cho -- rus come and swell! Sing No -- ël, O sing No -- ël!
+altoWords = {
+  \dropLyricsIX
+  \lyricmode {
+    \set stanza = #"1. "
+    Shep -- herds! shake off your drow -- sy sleep,
+    Rise and leave your sil -- ly sheep;
+    An -- gels from heav’n a -- round loud sing -- ing,
+    Ti -- dings of __ great joy __ are bring -- ing.
+  }
+  \set stanza = \markup\dynamic"ff "
+  \lyricmode {
+    Shep -- herds! the cho -- rus come and swell! Sing No -- ël, O sing No -- ël!
+  }
 }
 altoWordsII = \lyricmode {
+  \dropLyricsIX
 %\markup\italic
   \set stanza = #"2. "
   Hark! e -- ven now the bells ring round,
@@ -108,14 +117,18 @@ altoWordsII = \lyricmode {
   Hark! how the birds’ new songs are mak -- ing,
   As __ if win -- ter’s chains were break -- ing.
 }
-altoWordsIII = \lyricmode {
-  \set stanza = #"3. "
-  See how the flow’rs all burst a -- new,
-  Think -- ing snow is sum -- mer dew;
-  See how the stars a -- fresh are glow -- ing,
-  All __ their bright -- est beams be -- stow -- ing.
+altoWordsIII = {
+  \dropLyricsIX
+  \set stanza = \markup{\dynamic" mf " "3. "}
+  \lyricmode {
+    See how the flow’rs all burst a -- new,
+    Think -- ing snow is sum -- mer dew;
+    See how the stars a -- fresh are glow -- ing,
+    All __ their bright -- est beams be -- stow -- ing.
+  }
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"4. "
   Com -- eth at length the age of peace,
   Strife and sor -- row now __ shall cease;
@@ -123,6 +136,7 @@ altoWordsIV = \lyricmode {
   Of __ this Heav’n born Prince of Glo -- ry.
 }
 altoWordsV = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"5. "
   Shep -- herds! then up and quick a -- way,
   Seek the Babe ere break of day;
@@ -132,7 +146,7 @@ altoWordsV = \lyricmode {
 altoWordsVI = \lyricmode {
 }
 tenorMusic = \relative c {
-  f8\noBeam_\mf f\noBeam f |
+  f8\noBeam f\noBeam f |
   c'4 c8 bes4 bes8 |
   c4. c4 c8 |
   
@@ -142,7 +156,7 @@ tenorMusic = \relative c {
   
   c4 c8 c4 c8 |
   d4 d8 c[ d] c |
-  bes4-> a8 c\noBeam_\ff c\noBeam c |
+  bes4-> a8 c\noBeam c\noBeam c |
   
   c4 f8 d4 d8 |
   c4. c4 c8 |
@@ -189,7 +203,7 @@ bassWords = \lyricmode {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.5))} \lyricsto "sopranos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }

@@ -4,9 +4,9 @@
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"To us is born a little Child"}}
   subtitle = \markup{\override #'(font-name . "Garamond Premier Pro"){ \abs-fontsize #10.5 "(Parvulus nobis nascitur)"}}
   poet = \markup\oldStyleNum"15th Century"
-  meter = \markup\oldStyleNum"Translated by Wm. John Blew (1808-1894)"
+  meter = \markup\oldStyleNum"Translated by Wm. John Blew (1808–1894)"
   composer = \markup{\italic "Ach! bleib bei uns, Herr Jesu Christ"}
-  arranger = \markup\oldStyleNum"J.S. Bach (1685-1750)"
+  arranger = \markup\oldStyleNum"J.S. Bach (1685–1750)"
   tagline = \markup\concat { "from " \italic "The Cowley Carol Book" \oldStyleNum", 1919"}
 }
 \paper {
@@ -25,6 +25,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #159
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -104,6 +106,7 @@ altoMusic = \relative c' {
   cis2. \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"1. "
   To us is born a lit -- tle Child
   Of Ma -- ry, maid -- en -- mo -- ther mild;
@@ -113,6 +116,7 @@ altoWords = \lyricmode {
   With Ho -- ly Ghost, __ for ev -- er -- more.
 }
 altoWordsII = \lyricmode {
+  \dropLyricsIX
 %\markup\italic
   \set stanza = #"2. "
   Our King of Glo -- ry, Him have we,
@@ -121,6 +125,7 @@ altoWordsII = \lyricmode {
   Light -- ’ning the a -- ges as they run.
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"3. "
   That dear, through Him, to God we be,
   From death de -- liv -- er’d and set free:
@@ -128,6 +133,7 @@ altoWordsIII = \lyricmode {
   That dark old Dra -- gon’s dead -- ly bite.
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"4. "
   Now, mas -- ters all, full sweet -- ly sing
   Ho -- sa -- na to __ our Ba -- by -- king;
@@ -215,7 +221,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.5)) } \lyricsto "sopranos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }

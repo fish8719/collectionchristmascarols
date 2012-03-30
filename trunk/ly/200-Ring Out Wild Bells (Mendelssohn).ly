@@ -2,8 +2,8 @@
 \include "../util.ly"
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Ring Out, Wild Bells"}}
-  poet = \markup\oldStyleNum"Alfred Lord Tennyson (1809-1892)"
-  composer = \markup\oldStyleNum"Felix Mendelssohn (1809-1847)"
+  poet = \markup\oldStyleNum"Alfred Lord Tennyson (1809–1892)"
+  composer = \markup\oldStyleNum"Felix Mendelssohn (1809–1847)"
   tagline = \markup\concat { "from " \italic"The Life Hymnal" \oldStyleNum", 1904"}
 }
 \paper {
@@ -22,6 +22,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #200
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"new year"}
@@ -102,6 +104,7 @@ altoMusic = \relative c' {
   bes2. \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsV
   \set stanza = #"1. "
   Ring out, wild bells, \set ignoreMelismata = ##t to the \unset ignoreMelismata wild sky,
   The fly -- ing cloud, the frost -- y light:
@@ -112,6 +115,7 @@ altoWords = \lyricmode {
   Ring out, wild bells, and let __ him __ die.
 }
 altoWordsII = \lyricmode {
+  \dropLyricsV
 %\markup\italic
   \set stanza = #"2. "
   Ring out the old, ring in the new,
@@ -123,6 +127,7 @@ altoWordsII = \lyricmode {
   Ring out the false, ring in __ the __ true.
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"3. "
   Ring in the val -- iant man and free,
   The lar -- ger heart, the kind -- lier hand;
@@ -214,7 +219,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }

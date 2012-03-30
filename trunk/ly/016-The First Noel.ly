@@ -21,6 +21,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #016
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -116,6 +118,7 @@ altoMusic = \relative c' {
   d2 \bar "|."
 }
 altoWords = {
+  \dropLyricsVI
   \lyricmode {
     \set stanza = #"1. "
     The __ first __ No -- ël the
@@ -133,6 +136,7 @@ altoWords = {
   }
   \set stanza = \markup\dynamic"ff   "
   \lyricmode {
+    \dropLyricsIV
     No -- ël, __ No -- ël, No -- ël,
     \set associatedVoice = "altos"
     No -- ël, __
@@ -141,6 +145,7 @@ altoWords = {
   }
 }
 altoWordsII = \lyricmode {
+  \dropLyricsVI
   \set stanza = #"2. "
   They look -- ed __ up and
   \set ignoreMelismata = ##t
@@ -155,6 +160,7 @@ altoWordsII = \lyricmode {
   And _ so it con -- tin -- ued both day __ _ and night.
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsVI
   \set stanza = #"3. "
   And __ by __ the __ light of __ that __ same Star
   Three wise men came __ from coun -- try far;
@@ -167,6 +173,7 @@ altoWordsIII = \lyricmode {
   And to fol -- low the star _ where e’er __ _ it went.
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsVI
   \set stanza = #"4. "
   This __ star __ drew nigh to __ 
   \set ignoreMelismata = ##t
@@ -181,6 +188,7 @@ altoWordsIV = \lyricmode {
   Right _ o -- ver the place _ where Je -- _ sus lay.
 }
 altoWordsV = \lyricmode {
+  \dropLyricsVI
   \set stanza = #"5. "
   Then en -- ter’d in those
   \set ignoreMelismata = ##t
@@ -195,6 +203,7 @@ altoWordsV = \lyricmode {
   Their _ gold __ _ and myrrh _ and frank -- _ in -- cense.
 }
 altoWordsVI = \lyricmode {
+  \dropLyricsVI
   \set stanza = #"6. "
   Then let __ us __ all with one __ ac -- cord,
   Sing prais -- es to __ our

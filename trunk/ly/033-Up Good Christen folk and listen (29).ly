@@ -2,9 +2,9 @@
 \include "../util.ly"
  \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Up! Good Christen folk and listen"}}
-  poet = \markup\oldStyleNum"G. R. Woodward (1848-1934)"
+  poet = \markup\oldStyleNum"G. R. Woodward (1848–1934)"
   composer = \markup \concat{ \italic "O quam mundum" ", from " \italic "Piæ Cantiones" \oldStyleNum", 1582"}
-  arranger = \markup\oldStyleNum"G. R. Woodward (1848-1934)"
+  arranger = \markup\oldStyleNum"G. R. Woodward (1848–1934)"
   tagline = \markup\concat { "from " \italic "The Cowley Carol Book" \oldStyleNum", 1919"}
 }
 \paper {
@@ -23,6 +23,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #033
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -112,6 +114,7 @@ altoMusic = \relative c' {
   g1 \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsV
   Ding dong, ding
   Ding -- a dong -- a ding
   Ding dong, ding dong
@@ -123,6 +126,7 @@ altoWords = \lyricmode {
   And from stee -- ple bid good peo -- ple
   Come a -- dore the new __ born King.
   
+  \raiseLyrics
   Born of mo -- ther, blest o’er o -- ther,
   \markup\italic ex \markup\italic Ma -- \markup\italic ri -- \markup\italic a
   \markup\italic Vir -- \markup\italic gi -- \markup\italic ne
@@ -130,6 +134,7 @@ altoWords = \lyricmode {
   \markup\italic Chris -- \markup\italic tus \markup\italic na -- \markup\italic tus \markup\italic ho -- \markup\italic di -- \markup\italic e.
 }
 altoWordsII = \lyricmode {
+  \dropLyricsV
 %\markup\italic 
   \repeat unfold 16 {\skip1}
   \set stanza = #"2. "

@@ -2,9 +2,9 @@
 \include "../util.ly"
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Ring Out, Wild Bells"}}
-  poet = \markup\oldStyleNum"Alfred Lord Tennyson (1809-1892)"
+  poet = \markup\oldStyleNum"Alfred Lord Tennyson (1809–1892)"
   composer = \markup\concat{"Adapted from " \italic "Kyrie" \oldStyleNum", 12th Mass"}
-  arranger = \markup\oldStyleNum"W.A. Mozart (1756-1791)"
+  arranger = \markup\oldStyleNum"W.A. Mozart (1756–1791)"
   tagline = \markup { "from" \italic {HymnWiki.org}}
 }
 \paper {
@@ -23,6 +23,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #198
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"new year"}
@@ -54,6 +56,7 @@ global = {
 }
 sopWords = \lyricmode
 {
+  \dropLyricsV
 	\set stanza = "1. "
 	%\set vocalName = "Men/Women/Unison/SATB"
   Ring out, wild bells, \set ignoreMelismata = ##t to the \unset ignoreMelismata wild sky,
@@ -70,6 +73,7 @@ sopWords = \lyricmode
 }
 sopWordsTwo = \lyricmode
 {
+  \dropLyricsV
 	\set stanza = "2. "
   Ring out the old, ring in the new,
   Ring, hap -- py bells a -- cross the snow:
@@ -84,6 +88,7 @@ sopWordsTwo = \lyricmode
 }
 sopWordsThree = \lyricmode
 {
+  \dropLyricsV
 	\set stanza = "3. "
   Ring out the grief that \set ignoreMelismata = ##t saps the \unset ignoreMelismata mind,
   For those that here we see no more:
@@ -99,6 +104,7 @@ sopWordsThree = \lyricmode
 }
 sopWordsFour = \lyricmode
 {
+  \dropLyricsV
 	\set stanza = "4. "
   Ring out a slow -- ly \set ignoreMelismata = ##t dy -- ing \unset ignoreMelismata cause,
   And an -- cient forms of par -- ty strife:
@@ -190,7 +196,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "altos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \repeat unfold2 \tenorMusic >> }

@@ -3,7 +3,7 @@
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"In Terra Pax"}}
   poet = \markup\oldStyleNum"Mrs. Alderson"
-  composer = \markup\oldStyleNum"John Bacchus Dykes (1823-1876)"
+  composer = \markup\oldStyleNum"John Bacchus Dykes (1823–1876)"
   tagline = \markup { "from" \italic {Christmas Carols, New and Old}}
 }
 \paper {
@@ -22,6 +22,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #188
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -46,8 +48,9 @@ global = {
   \key f \major
   \time 6/4
   \autoBeamOff
-  \override DynamicLineSpanner #'staff-padding = #0.0
-  \override DynamicLineSpanner #'Y-extent = #'(-1 . 1)
+  \override DynamicLineSpanner #'staff-padding = #-1.0
+  \override DynamicLineSpanner #'Y-extent = #'(-0.35 . 1)
+  \override DynamicText #'X-offset = #-4
 }
 
 sopMusic = \relative c' {
@@ -89,10 +92,10 @@ sopMusic = \relative c' {
   
   % verse 4
   c,4 f a c2 a4 |
-  \partial 4*5 a( g) a f2 \bar "||"
-  \partial 4 f4 |
+  a( g) a f2 \bar "||"
+  f4 |
   f2 f4 c'( a) d |
-  d2.(^> g,) \bar "||"
+  d2.^> g, \bar "||"
   
   g4 g a bes( c) d |
   d( c) a g2. \bar "||"
@@ -149,14 +152,20 @@ sopWords = {
   \lyricmode {
     \markup\italic In \markup\italic ter -- \markup\italic ra \markup\italic Pax \markup\italic ho -- \markup\italic mi -- \markup\italic ni -- \markup\italic bus, __ \markup\italic Pax __
   }
-  \set stanza = \markup\dynamic"pp"
   \lyricmode {
-    \markup\italic Pax.”
+    ""
     
     \repeat unfold 47 {\skip 1}
-    \repeat unfold 36 {\skip 1}
+    \repeat unfold 37 {\skip 1}
     \markup\italic Et \markup\italic in \markup\italic Ex -- \markup\italic cel -- \markup\italic sis, __
   }
+}
+
+dropLyrics = {
+  \override LyricText #'extra-offset = #'(0 . -2.0)
+  \override LyricHyphen #'extra-offset = #'(0 . -2.0)
+  \override LyricExtender #'extra-offset = #'(0 . -2.0)
+  \override StanzaNumber #'extra-offset = #'(0 . -2.0)
 }
 
 altoMusic = \relative c' {
@@ -249,44 +258,56 @@ altoMusic = \relative c' {
   e)~ e2 f4 |
   f1. \bar "|."
 }
-altoWords = \lyricmode {
-  \set stanza = #"1. "
-  In -- fant of days, yet Lord of Life,
-  Sweet Prince of Peace, All hail! __
-  Oh! we are wea -- ry of the strife,
-  The din with which earth’s fields are rife,
-  And we would list the tale __
-  That chimes its Christ -- mas news for us,
-  
-  \markup\italic “In \markup\italic ter -- \markup\italic ra __ \markup\italic Pax, __
-  \markup\italic In \markup\italic ter -- \markup\italic ra \markup\italic Pax, \markup\italic Pax __ \markup\italic Pax __ \markup\italic ho -- \markup\italic mi -- \markup\italic ni -- \markup\italic bus, __
-  \markup\italic Pax, __ \markup\italic Pax __ \markup\italic In \markup\italic ter -- \markup\italic ra \markup\italic Pax, __ \markup\italic Pax.” __
-  
-  O hear Thy Church, with one ac -- cord,
-  Her long -- lost Peace im -- plor -- ing:
-  Be it ac -- cord -- ing to Thy word:
-  Thy Reign of Peace bring in, dear Lord;
-  Heav’n’s Peace to earth re -- sto -- ring.
-  And Peace E -- ter -- nal, Je -- su, grant, we pray.
-  
-  \markup\italic “In \markup\italic Cæ -- \markup\italic lo __ \markup\italic Pax, __
-  \set associatedVoice = "sopranos"
-  \markup\italic Et __ \markup\italic in \unset associatedVoice \markup\italic Ex -- \markup\italic cel -- \markup\italic sis,
-  \set associatedVoice = "sopranos"
-  \markup\italic Glo -- \markup\italic ri -- \markup\italic a,
-  \markup\italic Et \markup\italic in \markup\italic Ex -- \markup\italic cel -- \markup\italic sis \markup\italic Glo -- \markup\italic ri -- \markup\italic a,
-  
-  \markup\italic Et \markup\italic in \markup\italic Ex -- \markup\italic cel -- \markup\italic sis, \markup\italic Glo -- \markup\italic ri -- \markup\italic a.
-  
-  \markup\italic Et \markup\italic in \markup\italic Ex -- \markup\italic cel --
-  \set associatedVoice = "tenors"
-  \markup\italic sis, "" \markup\italic Glo -- _ \markup\italic ri -- _ \set associatedVoice = "altos" \markup\italic a,
-  
-  \markup\italic Et \markup\italic in \markup\italic Ex -- \markup\italic cel -- \markup\italic sis, \markup\italic Glo -- 
-  \set associatedVoice = "sopranos"
-  \markup\italic ri -- \markup\italic a.”
+altoWords = {
+  \lyricmode {
+    \dropLyricsV
+    \set stanza = #"1. "
+    In -- fant of days, yet Lord of Life,
+    Sweet Prince of Peace, All hail! __
+    Oh! we are wea -- ry of the strife,
+    The din with which earth’s fields are rife,
+    And we would list the tale __
+    That chimes its Christ -- mas news for us,
+    
+    \markup\italic “In \markup\italic ter -- \markup\italic ra __ \markup\italic Pax, __
+    \markup\italic In \markup\italic ter -- \markup\italic ra \markup\italic Pax, \markup\italic Pax __ \markup\italic Pax __ \markup\italic ho -- \markup\italic mi -- \markup\italic ni -- \markup\italic bus, __
+    \markup\italic Pax, __ \markup\italic Pax __ \markup\italic In \markup\italic ter -- \markup\italic ra
+    
+    \dropLyrics
+    \markup\italic Pax, __
+  }
+  \set stanza = \markup\dynamic"pp"
+  \lyricmode{
+    \markup\italic Pax.” __
+    
+    \dropLyricsV
+    O hear Thy Church, with one ac -- cord,
+    Her long -- lost Peace im -- plor -- ing:
+    Be it ac -- cord -- ing to Thy word:
+    Thy Reign of Peace bring in, dear Lord;
+    Heav’n’s Peace to earth re -- sto -- ring.
+    And Peace E -- ter -- nal, Je -- su, grant, we pray.
+    
+    \markup\italic “In \markup\italic Cæ -- \markup\italic lo __ \markup\italic Pax, __
+    \set associatedVoice = "sopranos"
+    \markup\italic Et __ \markup\italic in \unset associatedVoice \markup\italic Ex -- \markup\italic cel -- \markup\italic sis,
+    \set associatedVoice = "sopranos"
+    \markup\italic Glo -- \markup\italic ri -- \markup\italic a,
+    \markup\italic Et \markup\italic in \markup\italic Ex -- \markup\italic cel -- \markup\italic sis \markup\italic Glo -- \markup\italic ri -- \markup\italic a,
+    
+    \markup\italic Et \markup\italic in \markup\italic Ex -- \markup\italic cel -- \markup\italic sis, \markup\italic Glo -- \markup\italic ri -- \markup\italic a.
+    
+    \markup\italic Et \markup\italic in \markup\italic Ex -- \markup\italic cel --
+    \set associatedVoice = "sopranos"
+    \markup\italic sis, \markup\italic Glo -- \markup\italic ri -- \set associatedVoice = "altos" \markup\italic a,
+    
+    \markup\italic Et \markup\italic in \markup\italic Ex -- \markup\italic cel -- \markup\italic sis, \markup\italic Glo -- 
+    \set associatedVoice = "sopranos"
+    \markup\italic ri -- \markup\italic a.”
+  }
 }
 altoWordsII = \lyricmode {
+  \dropLyricsV
 %\markup\italic 
   \set stanza = #"2. "
   “Peace I leave with you,” was a -- gain
@@ -297,6 +318,7 @@ altoWordsII = \lyricmode {
   When An -- gel choirs hymned forth to us
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"3. "
   O ol -- ive Branch! O Dove of Peace!
   Brood -- ing o’er storm -- y
@@ -358,7 +380,7 @@ tenorMusic = \relative c' {
   bes2) bes4 bes2 bes4 |
   a2.~ a |
   s1. |
-  <c a>2.~_\pp q \bar "||"
+  <c a>2.~ q \bar "||"
   
   
   %verse 4
@@ -418,7 +440,7 @@ tenorWords = \lyricmode {
   \repeat unfold 44 {\skip 1}
   \repeat unfold 7 {\skip 1}
   \markup\italic Pax, __ \markup\italic In \markup\italic ter -- \markup\italic ra \markup\italic Pax \markup\italic ho -- \markup\italic mi -- \markup\italic ni -- \markup\italic bus, __
-  \markup\italic ho -- \markup\italic mi -- \markup\italic ni -- \markup\italic bus __ \markup\italic In \markup\italic ter -- \markup\italic ra \markup\italic Pax, __ \markup\italic Pax.” __ ""
+  \markup\italic ho -- \markup\italic mi -- \markup\italic ni -- \markup\italic bus __ \markup\italic In \markup\italic ter -- \markup\italic ra "" "" ""
   
   \repeat unfold 51 {\skip 1}
   \markup\italic Et __ \markup\italic in \markup\italic Ex -- \markup\italic cel -- \markup\italic sis, \markup\italic Glo -- \markup\italic ri -- \markup\italic a, __

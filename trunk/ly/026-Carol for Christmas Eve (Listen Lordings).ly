@@ -2,8 +2,8 @@
 \include "../util.ly"
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Carol for Christmas Eve"}}
-  poet = \markup\oldStyleNum"Rev. H. R. Bramley (1833-1917)"
-  composer = \markup\oldStyleNum"Sir Frederick A. G. Ouseley (1825-1889)"
+  poet = \markup\oldStyleNum"Rev. H. R. Bramley (1833–1917)"
+  composer = \markup\oldStyleNum"Sir Frederick A. G. Ouseley (1825–1889)"
   tagline = \markup { "from" \italic {Christmas Carols, New and Old}}
 }
 \paper {
@@ -22,6 +22,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #026
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -120,6 +122,7 @@ altoMusic = \relative c' {
   e4 s
 }
 altoWords = \lyricmode {
+  \dropLyricsVII
   \set stanza = #"1. "
   Lis -- ten, Lord -- ings, un -- to me, a tale I will you tell;
   Which, as on this night of glee, in Da -- vid’s town be -- fel.
@@ -147,6 +150,7 @@ altoWords = \lyricmode {
   That Christ is born in -- deed.
 }
 altoWordsII = \lyricmode {
+  \dropLyricsVII
 %\markup\italic
   \set stanza = #"2. "
   In the Inn they found no room; a scan  -- ty bed they made:

@@ -2,8 +2,8 @@
 \include "../util.ly"
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Once in Royal David’s City"}}
-  poet = \markup\oldStyleNum"Cecil Frances Alexander (1818-1895)"
-  composer = \markup\oldStyleNum"Henry J. Gauntlett (1805-1876)"
+  poet = \markup\oldStyleNum"Cecil Frances Alexander (1818–1895)"
+  composer = \markup\oldStyleNum"Henry J. Gauntlett (1805–1876)"
   tagline = \markup { "from" \concat{\italic "Christmas Carols and Hymns for School and Choir" \oldStyleNum", 1910"}}
 }
 \paper {
@@ -21,6 +21,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #046
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -88,6 +90,7 @@ altoMusic = \relative c' {
   d( d) \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"1. "
   \set ignoreMelismata = ##t
   Once in roy -- al Da -- _ vid’s _ cit -- y
@@ -99,6 +102,7 @@ altoWords = \lyricmode {
   Je -- sus Christ _ _ her lit -- _ tle _ Child. _
 }
 altoWordsII = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"2. "
   \set ignoreMelismata = ##t
   He came down to earth _ from _ heav -- en,
@@ -110,6 +114,7 @@ altoWordsII = \lyricmode {
   Lived on earth _ _ our Sav -- _ ior _ ho -- ly.
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"3. "
   And, through all his won -- drous child -- hood,
     He would hon -- or and o -- bey,
@@ -120,6 +125,7 @@ altoWordsIII = \lyricmode {
   Mild, o -- be -- dient, good as He. __
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"4. "
   \set ignoreMelismata = ##t
   Je -- sus is our child -- _ hood’s _ pat -- tern,
@@ -131,6 +137,7 @@ altoWordsIV = \lyricmode {
   And He shar -- _ _ eth in _ our _ glad -- ness.
 }
 altoWordsV = \lyricmode {
+  \dropLyricsIX
   \set ignoreMelismata = ##t
   \set stanza = #"5. "
   And our eyes at last _ shall _ see Him,
@@ -202,7 +209,7 @@ bassWords = \lyricmode {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.5)) } \lyricsto "sopranos" \altoWords
     \new Lyrics \with { alignAboveContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "tenors" \tenorWords
     \new Lyrics \with { alignBelowContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "basses" \bassWords
   >>

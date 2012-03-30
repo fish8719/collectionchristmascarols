@@ -2,8 +2,8 @@
 \include "../util.ly"
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"From far away"}}
-  poet = \markup\oldStyleNum"William Morris (1834-1896)"
-  composer = \markup\oldStyleNum"John Bacchus Dykes (1823-1876)"
+  poet = \markup\oldStyleNum"William Morris (1834–1896)"
+  composer = \markup\oldStyleNum"John Bacchus Dykes (1823–1876)"
   tagline = \markup { "from" \italic {Christmas Carols, New and Old}}
 }
 \paper {
@@ -22,6 +22,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #138
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -64,6 +66,7 @@ sopMusic = \relative c' {
     b8^\p b b c[ d] c |
     
     bes a g f4. |
+    \once\override DynamicText #'X-offset = #'-3
     f^>^\f f8 f f |
     f4 bes8\rest bes4\rest  \bar""
     f8^\mf |
@@ -99,6 +102,7 @@ sopMusic = \relative c' {
     b8^\p b b c[ d] c |
     
     bes a g f4. |
+    \once\override DynamicText #'X-offset = #'-3
     f^>^\f f8 f f |
     f4 bes8\rest bes4\rest  \bar""
     f8^\mf |
@@ -136,6 +140,7 @@ sopMusic = \relative c' {
     b8^\p b b c[ d] c |
     
     bes a g f4. |
+    \once\override DynamicText #'X-offset = #'-3
     f^>^\f f8 f f |
     f4 bes8\rest bes4\rest  \bar""
     f8^\mf |
@@ -270,14 +275,8 @@ altoMusic = \relative c' {
   d4.( ees4 c8 |
   d4.)~ d4
 }
-dropLyrics = {
-  \override LyricText #'extra-offset = #'(0 . -0.6)
-  \override LyricHyphen #'extra-offset = #'(0 . -0.6)
-  \override LyricExtender #'extra-offset = #'(0 . -0.6)
-  \override StanzaNumber #'extra-offset = #'(0 . -0.6)
-}
 altoWords = \lyricmode {
-  \dropLyrics
+  \dropLyricsIX
   \set stanza = #"1. "
   From far a -- way we come to you,
   
@@ -339,7 +338,7 @@ altoWords = \lyricmode {
   the lit -- tle One. __
 }
 altoWordsII = \lyricmode {
-  \dropLyrics
+  \dropLyricsIX
 %\markup\italic 
   \set stanza = #"2. "
   For as we wan -- dered far and wide,
@@ -399,7 +398,7 @@ altoWordsII = \lyricmode {
   and healed __ our care,” __
 }
 altoWordsIII = \lyricmode {
-  \dropLyrics
+  \dropLyricsIX
   \set stanza = #"3. "
   \skip1
   \set ignoreMelismata = ##t
@@ -496,6 +495,7 @@ tenorMusic = \relative c {
   aes_\p g aes a4 a8 |
   
   g a bes a4. |
+  \once\override DynamicText #'X-offset = #'-3
   f4._\f d'8 c bes |
   a4 s4. f8_\mf |
   bes( bes) bes8 a8( a) a8 |
@@ -532,6 +532,7 @@ tenorMusic = \relative c {
   aes_\p g aes a4 a8 |
   
   g a bes a4. |
+  \once\override DynamicText #'X-offset = #'-3
   f4._\f d'8 c bes |
   a4 s4. f8_\mf |
   bes( bes) bes8 a8( a) a8 |
@@ -570,6 +571,7 @@ tenorMusic = \relative c {
   aes_\p g aes a4 a8 |
   
   g a bes a4. |
+  \once\override DynamicText #'X-offset = #'-3
   f4._\f d'8 c bes |
   a4 s4. f8_\mf |
   bes( bes) bes8 a8( a) a8 |
@@ -719,7 +721,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.5))} \lyricsto "altos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }

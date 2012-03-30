@@ -2,8 +2,8 @@
 \include "../util.ly"
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Sleep, Holy Babe!"}}
-  poet = \markup\oldStyleNum"Edward Caswall (1814-1878)"
-  composer = \markup\oldStyleNum"John Bacchus Dykes (1823-1876)"
+  poet = \markup\oldStyleNum"Edward Caswall (1814–1878)"
+  composer = \markup\oldStyleNum"John Bacchus Dykes (1823–1876)"
   tagline = \markup { "from" \italic {Christmas Carols, New and Old}}
 }
 \paper {
@@ -22,6 +22,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #101
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -109,50 +111,58 @@ altoMusic = \relative c' {
   bes4( ees d c bes1) |
 }
 altoWords = \lyricmode {
+  \dropLyricsIX
   \repeat unfold 7 { \skip 1}
   \set stanza = #"1. "
   Sleep, Ho -- ly Babe!
-  up -- on Thy moth -- er’s breast;
-}
-altoWordsII = \lyricmode {
-%\markup\italic
-  \repeat unfold 7 { \skip 1}
-  \set stanza = #"2. "
-  Sleep, Ho -- ly Babe!
-  Thine An -- gels watch a -- round,
-}
-altoWordsIII = \lyricmode {
-  \repeat unfold 7 { \skip 1}
-  \set stanza = #"3. "
-  Sleep, Ho -- ly Babe!
-  while I with Ma -- ry gaze,
-}
-altoWordsIV = \lyricmode {
-  \repeat unfold 7 { \skip 1}
-  \set stanza = #"4. "
-  Sleep, Ho -- ly Babe!
-  ah! take Thy brief re -- pose;
-}
-altoWordsi = \lyricmode {
-  \repeat unfold 28 { \skip 1}
+  up --
+  \set associatedVoice = "tenors"
+  on Thy moth -- er’s breast;
+  
+  \set associatedVoice = "sopranos"
   Great Lord of earth, and sea, and sky, How sweet it is to see Thee lie
   In such a place of rest,
   In such a place of rest. __ 
 }
-altoWordsiII = \lyricmode {
-  \repeat unfold 28 { \skip 1}
+altoWordsII = \lyricmode {
+  \dropLyricsIX
+%\markup\italic
+  \repeat unfold 7 { \skip 1}
+  \set stanza = #"2. "
+  Sleep, Ho -- ly Babe!
+  Thine 
+  \set associatedVoice = "tenors"
+  An -- gels watch a -- round,
+  
+  \set associatedVoice = "sopranos"
   All bend -- ing low with fold -- ed wings, Be -- fore th’In -- car -- nate King of kings,
   In rev -- ’rent awe pro -- found,
   In rev -- ’rent awe pro -- found. __
 }
-altoWordsiIII = \lyricmode {
-  \repeat unfold 28 { \skip 1}
+altoWordsIII = \lyricmode {
+  \dropLyricsIX
+  \repeat unfold 7 { \skip 1}
+  \set stanza = #"3. "
+  Sleep, Ho -- ly Babe!
+  while 
+  \set associatedVoice = "tenors"
+  I with Ma -- ry gaze,
+  
+  \set associatedVoice = "sopranos"
   In joy up -- on that Face a -- while, Up -- on the lov -- ing in -- fant smile
   Which there di -- vine -- ly plays,
   Which there di -- vine -- ly plays. __
 }
-altoWordsiIV = \lyricmode {
-  \repeat unfold 28 { \skip 1}
+altoWordsIV = \lyricmode {
+  \dropLyricsIX
+  \repeat unfold 7 { \skip 1}
+  \set stanza = #"4. "
+  Sleep, Ho -- ly Babe!
+  ah! 
+  \set associatedVoice = "tenors"
+  take Thy brief re -- pose;
+  
+  \set associatedVoice = "sopranos"
   Too quick -- ly will Thy slum -- bers break,
   And Thou to length -- en’d pains a -- wake,
   That death a -- lone shall close,
@@ -238,54 +248,33 @@ pianoLH = \relative c' {
 \score {
   <<
    \new ChoirStaff <<
-%    \new Lyrics = sopranos { s1 }
+%    \new Lyrics = sopranos \with { \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) }
     \new Staff = women <<
-      \new Voice = "sopranos" {
-        \voiceOne
-        << \global \sopMusic >>
-      }
-      \new Voice = "altos" {
-        \voiceTwo
-        << \global \altoMusic >>
-      }
+      \new Voice = "sopranos" { \voiceOne << \global \sopMusic >> }
+      \new Voice = "altos" { \voiceTwo << \global \altoMusic >> }
     >>
-    \new Lyrics = "altos" { s1 }
-    \new Lyrics = "altosII" { s1 }
-    \new Lyrics = "altosIII" { s1 }
-    \new Lyrics = "altosIV" { s1 }
-    \new Lyrics = "altosV" { s1 }
-    \new Lyrics = "altosVI" { s1 }
- %   \new Lyrics = "tenors" { s1 }
-    \new Staff = men <<
+   \new Staff = men <<
       \clef bass
-      \new Voice = "tenors" {
-        \voiceOne
-        << \global \tenorMusic >>
-      }
-      \new Voice = "basses" {
-        \voiceTwo << \global \bassMusic >>
-      }
+      \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }
+      \new Voice = "basses" { \voiceTwo << \global \bassMusic >> }
     >>
-%    \new Lyrics = basses { s1 }
-%    \context Lyrics = sopranos \lyricsto sopranos \sopWords
-    \context Lyrics = altos \lyricsto altos \altoWords
-    \context Lyrics = altosII \lyricsto altos \altoWordsII
-    \context Lyrics = altosIII \lyricsto altos \altoWordsIII
-    \context Lyrics = altosIV \lyricsto altos \altoWordsIV
-    \context Lyrics = altos \lyricsto sopranos \altoWordsi
-    \context Lyrics = altosII \lyricsto sopranos \altoWordsiII
-    \context Lyrics = altosIII \lyricsto sopranos \altoWordsiIII
-    \context Lyrics = altosIV \lyricsto sopranos \altoWordsiIV
-%    \context Lyrics = tenors \lyricsto tenors \tenorWords
-%    \context Lyrics = basses \lyricsto basses \bassWords
-   >>
+    \new Lyrics \with { alignAboveContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \sopWords
+    \new Lyrics = "altosVI"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsVI
+    \new Lyrics = "altosV"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsV
+    \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIV
+    \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIII
+    \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsII
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.5)) } \lyricsto "altos" \altoWords
+    \new Lyrics \with { alignAboveContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "tenors" \tenorWords
+    \new Lyrics \with { alignBelowContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "basses" \bassWords
+  >>
 %    \new PianoStaff << \new Staff { \new Voice { \pianoRH } } \new Staff { \clef "bass" \pianoLH } >>
   >>
   \layout {
     \context {
       \Score
-      \override SpacingSpanner #'base-shortest-duration = #(ly:make-moment 1 2)
-      \override SpacingSpanner #'common-shortest-duration = #(ly:make-moment 1 2)
+      \override SpacingSpanner #'base-shortest-duration = #(ly:make-moment 1 4)
+      \override SpacingSpanner #'common-shortest-duration = #(ly:make-moment 1 4)
     }
     \context {
       % a little smaller so lyrics

@@ -3,9 +3,9 @@
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"In ducli jubilo"}}
   poet = \markup\oldStyleNum"14th Century German-Latin Carol"
-  meter = \markup\oldStyleNum"Translated by Robert Lucas de Pearsall (1795-1856)"
+  meter = \markup\oldStyleNum"Translated by Robert Lucas de Pearsall (1795–1856)"
   composer = \markup\oldStyleNum"15th century German melody"
-  arranger = \markup\oldStyleNum"Arranged by Robert Lucas de Pearsall (1795-1856)"
+  arranger = \markup\oldStyleNum"Arranged by Robert Lucas de Pearsall (1795–1856)"
   tagline = \markup { "from" \italic "CantateDomino.org" }
 }
 \paper {
@@ -24,6 +24,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #072
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -112,6 +114,7 @@ altoMusic = \relative c' {
 
 }
 altoWords = \lyricmode {
+  \dropLyricsV
   \set stanza = #"1. "
   \markup\italic In \markup\italic dul -- \markup\italic ci \markup\italic ju -- \markup\italic bi -- \markup\italic lo __ Let us our hom -- age show: __
   Our heart’s joy re -- clin -- eth "" \markup\italic In \markup\italic præ -- \markup\italic se -- \markup\italic pi -- \markup\italic o, __
@@ -125,6 +128,7 @@ altoWords = \lyricmode {
   \markup\italic Al -- \markup\italic pha \markup\italic es \markup\italic et \markup\italic O! __
 }
 altoWordsII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"2. "
   \markup\italic O \markup\italic Je -- \markup\italic su, \markup\italic par -- \markup\italic vu -- \markup\italic le, __
   I yearn for Thee al -- way; __
@@ -139,6 +143,7 @@ altoWordsII = \lyricmode {
   \markup\italic Tra -- \markup\italic he \markup\italic me \markup\italic post \markup\italic te! __
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"3. "
   \markup\italic O \markup\italic pa -- \markup\italic tris \markup\italic ca -- \markup\italic ri -- \markup\italic tas! __
   \markup\italic O \markup\italic na -- \markup\italic ti \markup\italic lem -- \markup\italic i -- \markup\italic tas! __
@@ -153,6 +158,7 @@ altoWordsIII = \lyricmode {
     \markup\italic Qua -- \markup\italic lis \markup\italic glo -- \markup\italic ri -- \markup\italic a! __
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsV
   \set stanza = #"4. "
   \markup\italic U -- \markup\italic bi \markup\italic sunt \markup\italic gau -- \markup\italic di -- \markup\italic a __
   "" If they be not there? __
@@ -242,7 +248,7 @@ bassWords = \lyricmode {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }

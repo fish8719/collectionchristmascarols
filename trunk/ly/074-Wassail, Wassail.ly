@@ -27,6 +27,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #074
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -155,6 +157,7 @@ altoMusic = \relative c' {
   b2
 }
 altoWords = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"1."
   \set ignoreMelismata = ##t
   Was -- sail, __ _ was -- sail __ _ all o -- ver the town, _
@@ -172,6 +175,7 @@ altoWords = \lyricmode {
   With the was -- sail -- ing bowl we’ll drink un -- to thee.
 }
 altoWordsII = {
+  \dropLyricsIX
   \set stanza = \markup{\dynamic"mf " "2."}
   \lyricmode {
   %\markup\italic
@@ -191,6 +195,7 @@ altoWordsII = {
   }
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"3."
   \set ignoreMelismata = ##t
   And here is to Dob -- bin and to his right eye, __ _
@@ -328,7 +333,7 @@ bassWords = \lyricmode {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.5)) } \lyricsto "sopranos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }

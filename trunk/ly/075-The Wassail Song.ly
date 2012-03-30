@@ -21,6 +21,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #075
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -145,9 +147,9 @@ altoMusic = \relative c' {
 }
 dropLyrics =
 {
-    \override LyricText #'extra-offset = #'(0 . -0.9)
-    \override LyricHyphen #'extra-offset = #'(0 . -0.9)
-    \override LyricExtender #'extra-offset = #'(0 . -0.9)
+    \override LyricText #'extra-offset = #'(0 . -1.8)
+    \override LyricHyphen #'extra-offset = #'(0 . -1.8)
+    \override LyricExtender #'extra-offset = #'(0 . -1.8)
 }
 
 raiseLyrics =
@@ -157,6 +159,7 @@ raiseLyrics =
     \revert LyricExtender #'extra-offset
 }
 altoWords = {
+  \dropLyricsIX
   \lyricmode {
     \set stanza = #"1. "
     \set ignoreMelismata = ##t
@@ -172,6 +175,7 @@ altoWords = {
   }
 }
 altoWordsII = {
+  \dropLyricsIX
   \set stanza = \markup{\dynamic"mf  " "2. "}
   \lyricmode {
     \set ignoreMelismata = ##t
@@ -182,13 +186,15 @@ altoWordsII = {
   \set stanza = \markup\dynamic"f "
   \lyricmode {
     \set associatedVoice = "altos"
-    Love and joy come to you, And to you your was -- sail too,
+    Love and joy come to you, And to
+    \raiseLyrics
+    you your was -- sail too,
     And God bless you, and send you a hap -- py new year,
     \unset associatedVoice
     And God
     \dropLyrics
     send you a hap -- py new year.
-    \raiseLyrics
+    \dropLyricsIX
     
     \set stanza = #"5. "
     \set ignoreMelismata = ##t
@@ -197,6 +203,7 @@ altoWordsII = {
   }
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"3. "
   \set ignoreMelismata = ##t
   Good Mas -- ter and good Mis -- _ tress, As you sit by the fire, __ _
@@ -209,6 +216,7 @@ altoWordsIII = \lyricmode {
   Bring us out a cheese, __ _ _ And of your Christ -- mas loaf.
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsIX
   \repeat unfold 58\skip1
   \set stanza = #"7. "
   \set ignoreMelismata = ##t
@@ -330,7 +338,7 @@ bassWords = \lyricmode {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.5)) } \lyricsto "sopranos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }

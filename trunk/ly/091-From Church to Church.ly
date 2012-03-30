@@ -21,6 +21,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #091
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -78,6 +80,7 @@ altoMusic = \relative c'' {
   e2.( d2)
 }
 altoWords = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"1. "
   From church __ to church the bells’ glad tid -- ings run: __
   A Vir -- gin hath con -- ceiv’d and borne a Son __ In Beth -- le -- hem. __
@@ -89,6 +92,7 @@ altoWords = \lyricmode {
   In Beth -- le -- hem. __
 }
 altoWordsII = \lyricmode {
+  \dropLyricsIX
 %\markup\italic
   \set stanza = #"2. "
   And an -- gel hosts __ the mid -- night of __ His birth, __
@@ -101,6 +105,7 @@ altoWordsII = \lyricmode {
   In Beth -- le -- hem. __
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"3. "
   “Now go __ we forth, __ and see __ this won -- drous thing,”
   The shep -- herds said, “and seek the new __ born King” In Beth -- le -- hem. __
@@ -112,6 +117,7 @@ altoWordsIII = \lyricmode {
   In Beth -- le -- hem. __
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"4. "
   Then Her -- od sought the Roy -- al Son to slay, __
   Who ra -- ther should have come to kneel and pray
@@ -194,7 +200,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.5))} \lyricsto "sopranos" \altoWords
     \context Lyrics = tenors \lyricsto tenors \tenorWords
 %    \context Lyrics = basses \lyricsto basses \bassWords
    >>
@@ -216,7 +222,7 @@ pianoLH = \relative c' {
   \header {
     title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"From Church to Church"}}
     poet = \markup\concat{\italic "Congaudeat turba fidelium" \oldStyleNum", from an 11th Century Manuscript"}
-    meter = \markup\oldStyleNum"Versified by John Mason Neale (1818-1866)"
+    meter = \markup\oldStyleNum"Versified by John Mason Neale (1818–1866)"
     composer = \markup\oldStyleNum"Old Melody in Hypo-Dorian Mode"
     arranger = \markup\oldStyleNum"Arranged by G. H. Palmer"
     tagline = \markup\concat{ "from " \italic"The Cowley Carol Book" \oldStyleNum", 1919"}

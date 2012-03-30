@@ -2,8 +2,8 @@
 \include "../util.ly"
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"There’s a Song in the Air!"}}
-  poet = \markup\oldStyleNum"Josiah G. Holland (1819-1881)"
-  composer = \markup\oldStyleNum"Karl P. Harrington (1861-1953)"
+  poet = \markup\oldStyleNum"Josiah G. Holland (1819–1881)"
+  composer = \markup\oldStyleNum"Karl P. Harrington (1861–1953)"
   tagline = \markup { "from" \italic {HymnsAndCarolsOfChristmas.com}}
 }
 \paper {
@@ -22,6 +22,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #095
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -94,6 +96,7 @@ altoMusic = \relative c' {
   d2 \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsV
   \set stanza = #"1. "
   There’s a song in the air!
   There’s a star in the sky!
@@ -103,6 +106,7 @@ altoWords = \lyricmode {
   For the man -- ger of Beth -- le -- hem cra -- dles a King!
 }
 altoWordsII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"2. "
   There’s a tu -- mult of joy
   O’er the won -- der -- ful birth,
@@ -112,6 +116,7 @@ altoWordsII = \lyricmode {
   For the man -- ger of Beth -- le -- hem cra -- dles a King!
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"3. "
   In the light of that star
   Lie the a -- ges im -- pearled,
@@ -121,6 +126,7 @@ altoWordsIII = \lyricmode {
   In the homes of the na -- tions that Je -- sus is King!
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsV
   \set stanza = #"4. "
   We re -- joice in the light,
   And we ech -- o the song
@@ -204,7 +210,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }

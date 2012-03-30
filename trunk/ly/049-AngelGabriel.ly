@@ -2,7 +2,7 @@
 \include "../util.ly"
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"The Angel Gabriel"}}
-  poet = \markup\oldStyleNum"Translated and Adapted by Sabine Baring-Gould (1834-1924)"
+  poet = \markup\oldStyleNum"Translated and Adapted by Sabine Baring-Gould (1834–1924)"
   composer = \markup\oldStyleNum"Basque Carol"
   tagline = \markup { "from" \italic {NetHymnal.org}}
 }
@@ -22,6 +22,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #049
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -82,6 +84,7 @@ altoMusic = \relative c' {
   d2.~ d4. s4 \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsV
   \set stanza = #"1. "
   The an -- gel Ga -- bri -- el from heav -- en came, __
   His wings as drif -- ted snow, his eyes __ a -- flame; __
@@ -89,6 +92,7 @@ altoWords = \lyricmode {
   Most high -- ly fa -- vored la -- dy,” Glo -- ri -- a! __
 }
 altoWordsII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"2. "
   “For know a bles -- sed Mo -- ther thou shalt be, __
   All ge -- ne -- ra -- tions laud and hon -- or thee, __
@@ -101,6 +105,7 @@ altoWordsII = \lyricmode {
   Glo -- ri -- a! __
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"3. "
   Then gen -- tle Ma -- ry meek -- ly bowed her head, __
   “To me be as it plea -- seth God,” __ she said, __
@@ -113,6 +118,7 @@ altoWordsIII = \lyricmode {
   Glo -- ri -- a! __
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsV
   \set stanza = #"4. "
   Of her, Em -- man -- u -- el, the Christ, was born __
   In Beth -- le -- hem, all on a Christ -- mas morn, __

@@ -26,7 +26,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
-  bottom-margin = 0.125\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #089
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -87,6 +88,7 @@ altoMusic = \relative c' {
   g4 fis d2 \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"1. "
   \set ignoreMelismata = ##t
   Whence comes this rush of wings a -- _ far,
@@ -95,6 +97,7 @@ altoWords = \lyricmode {
   Beth -- le -- hem seek this _ Ho -- ly Night.
 }
 altoWordsII = \lyricmode {
+  \dropLyricsIX
 %\markup\italic
   \set stanza = #"2. "
   \set ignoreMelismata = ##t
@@ -104,6 +107,7 @@ altoWordsII = \lyricmode {
   And all our sweet -- est _ mu -- sic bring.”
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"3. "
   Hark how the Green -- finch bears his part,
   Phi -- lo -- mel, too, with ten -- der heart,
@@ -111,6 +115,7 @@ altoWordsIII = \lyricmode {
   \markup\italic Re, \markup\italic mi, \markup\italic fa, \markup\italic sol, in ac -- cents sweet.
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"4. "
   \set ignoreMelismata = ##t
   An -- gels and shep -- herds, birds of the sky,
@@ -177,7 +182,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.5))} \lyricsto "altos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }
@@ -266,27 +271,32 @@ altoMusic = \relative c' {
   d4. d8 ees4 \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"1. "
   I heard the bells on Christ -- mas Day Their old fa -- mil -- iar car -- ols play,
   And wild and sweet the words re -- peat Of peace on earth, good will to men.
 }
 altoWordsII = \lyricmode {
+  \dropLyricsIX
 %\markup\italic
   \set stanza = #"2. "
   I though how, as the day had come, The bel -- fries of all Chris -- ten -- dom
   Had rolled a -- long th’un -- bro -- ken song Of peace on earth, good will to men.
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"3. "
   And in de -- spair I bowed my head, “There is no peace on earth,” I said,
 For hate is strong, and mocks the song Of peace on earth, good will to men.
 }
 altoWordsIV = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"4. "
   Then pealed the bells more loud and deep: “God is not dead, nor doth He sleep;
   The wrong shall fail, the right pre -- vail, With peace on earth, good will to men.
 }
 altoWordsV = \lyricmode {
+  \dropLyricsIX
   \set stanza = #"5. "
   Till, ring -- ing, sing -- ing on its way, The world re -- volved from night to day,
   A voice, a chime, a chant sub -- lime, Of peace on earth, good will to men.
@@ -348,7 +358,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.5)) } \lyricsto "sopranos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }
@@ -372,9 +382,8 @@ pianoLH = \relative c' {
   }
   \header {
     title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"I Heard the Bells on Christmas Day"}}
-    %subtitle = \markup{\override #'(font-name . "Garamond Premier Pro"){ \abs-fontsize #10.5 "(Here We Come A-Wassailing)"}}
-    poet = \markup\oldStyleNum"Henry Wadsworth Longfellow (1807-1882)"
-    composer = \markup\oldStyleNum"John Baptiste Calkin (1827-1905)"
+    poet = \markup\oldStyleNum"Henry Wadsworth Longfellow (1807–1882)"
+    composer = \markup\oldStyleNum"John Baptiste Calkin (1827–1905)"
     tagline = \markup\concat{"from "\italic"HymnsAndCarolsOfChristmas.com"}
   }
 }

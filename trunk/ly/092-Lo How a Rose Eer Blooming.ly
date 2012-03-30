@@ -29,6 +29,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #092
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -105,6 +107,7 @@ altoMusic = \relative c'' {
   d4) d d2 \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsV
   \set stanza = #"1. "
   Es ist ein Ros ent -- sprung -- en,
   aus ein -- er Wur -- zel zart,
@@ -115,6 +118,7 @@ altoWords = \lyricmode {
   wohl zu der halb -- en Nacht.
 }
 altoWordsII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"2. "
   Das Rös -- lein, das ich mein -- e,
   da -- von Je -- sai -- a sagt,
@@ -125,6 +129,7 @@ altoWordsII = \lyricmode {
   und blieb ein rei -- ne Magd.
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"3. "
   Das Blüm -- e -- lein, so klein -- e,
   das duf -- tet uns __ so süß,
@@ -226,7 +231,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "altos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }
@@ -254,7 +259,7 @@ pianoLH = \relative c' {
   \header {
     title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Es ist ein Ros entsprungen"}}
     poet = \markup\oldStyleNum"15th Century German"
-    composer = \markup\oldStyleNum"Arranged by Michael Praetorius (1571-1621)"
+    composer = \markup\oldStyleNum"Arranged by Michael Praetorius (1571–1621)"
     tagline = \markup { "from" \concat{\italic "Christmas Carols and Hymns for School and Choir" \oldStyleNum", 1910"}}
   }
 }
@@ -323,6 +328,7 @@ altoMusic = \relative c'' {
   d4) d d2 \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsV
   \set stanza = #"1. "
   Flos de ra -- di -- ce Jes -- se, est na -- tus ho -- di -- e.
   Quem no -- bis jam ad -- es -- se, læ -- ta -- mur u -- ni -- ce.
@@ -330,6 +336,7 @@ altoWords = \lyricmode {
   Ma -- ri -- a Vir -- go ra -- dix de qua flos or -- tus est.
 }
 altoWordsII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"2. "
   Hunc I -- sa -- ias flo -- rem, præ -- sa -- gi -- is ce -- ci -- nit.
   Ad e -- jus nos a -- mo -- rem, Na -- scen -- tis al -- li -- cit.
@@ -337,6 +344,7 @@ altoWordsII = \lyricmode {
   cœ -- li ter -- ræ -- que ci -- ves, Flos il -- le re -- cre -- at.
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"3. "
   Est cam -- pi flos pu -- di -- ci, est flos con -- val -- li -- um.
   Pul -- crum -- que pot -- est di -- ci, in spi -- nis li -- li -- um.
@@ -440,7 +448,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "altos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }
@@ -465,7 +473,7 @@ pianoLH = \relative c' {
   }
   \header {
     title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Flos de radice Jesse"}}
-    composer = \markup\oldStyleNum"Arranged by Michael Praetorius (1571-1621)"
+    composer = \markup\oldStyleNum"Arranged by Michael Praetorius (1571–1621)"
     %tagline = \markup { "from" \italic {HymnsAndCarolsOfChristmas.com}}
   }
 }
@@ -533,6 +541,7 @@ altoMusic = \relative c'' {
   d4) d d2 \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsV
   \set stanza = #"1. "
   Lo, how a Rose e’er bloom -- ing
   From ten -- der stem __ has sprung!
@@ -543,6 +552,7 @@ altoWords = \lyricmode {
   When half -- spent was __ the night.
 }
 altoWordsII = {
+  \dropLyricsV
   \set stanza = \markup{"2. "}
   \lyricmode {
     I -- sa -- iah ’twas fore -- told it,
@@ -555,6 +565,7 @@ altoWordsII = {
   }
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"3. "
   O Flow’r, whose fra -- grance ten -- der
   With sweet -- ness fills __ the air,
@@ -654,7 +665,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "altos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }
@@ -682,8 +693,8 @@ pianoLH = \relative c' {
   \header {
     title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Lo, How a Rose E’er Blooming"}}
     poet = \markup\oldStyleNum"15th Century German"
-    meter = \markup\oldStyleNum"Translated by Theodore Baker (1851-1934)"
-    composer = \markup\oldStyleNum"Arranged by Michael Praetorius (1571-1621)"
+    meter = \markup\oldStyleNum"Translated by Theodore Baker (1851–1934)"
+    composer = \markup\oldStyleNum"Arranged by Michael Praetorius (1571–1621)"
     tagline = \markup { "from" \concat{\italic "Christmas Carols and Hymns for School and Choir" \oldStyleNum", 1910"}}
   }
 }

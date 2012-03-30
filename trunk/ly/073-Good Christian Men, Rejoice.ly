@@ -2,7 +2,7 @@
 \include "../util.ly"
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Good Christian Men, Rejoice"}}
-  poet = \markup\oldStyleNum"John Mason Neale (1818-1866)"
+  poet = \markup\oldStyleNum"John Mason Neale (1818–1866)"
   composer = \markup\oldStyleNum"15th Century German Melody"
   tagline = \markup { "from" \italic {Christmas Carols, New and Old}}
 }
@@ -16,6 +16,8 @@
   two-sided = ##t
   inner-margin = 0.5\in
   outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #073
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -94,6 +96,7 @@ altoMusic = \relative c' {
   f4. s4 \bar "|."
 }
 altoWords = \lyricmode {
+  \dropLyricsV
   \set stanza = #"1. "
   Good Chris -- tian men, re -- joice __
   With heart, and soul and voice; __
@@ -106,6 +109,7 @@ altoWords = \lyricmode {
   Christ is born to -- day!
 }
 altoWordsII = {
+  \dropLyricsV
   \set stanza = \markup{\dynamic"  mf " "2. "}
   \lyricmode {
   %\markup\italic
@@ -126,6 +130,7 @@ altoWordsII = {
   }
 }
 altoWordsIII = \lyricmode {
+  \dropLyricsV
   \set stanza = #"3. "
   Good Chris -- tian men, re -- joice __
   With heart, and soul and voice; __
