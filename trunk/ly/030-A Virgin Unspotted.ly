@@ -9,7 +9,7 @@
 }
 \paper {
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -20,10 +20,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #030
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -53,37 +53,39 @@ global = {
 }
 
 sopMusic = \relative c'' {
-  \partial 4 a8[ bes] |
-  c4 d c8[ bes] |
-  a4 g c8[ a] |
-  bes[ c] d4 c |
-  f,2 a8[ bes] |
-  c4 d c8[ bes] | \break
-  
-  a4 g c8[ a] |
-  bes[ c] d4 c |
-  f,2 f8[ g] |
-  a4 g c |
-  bes8[ a] g4 d' | \break
-  
-  c f8[ e] d4 |
-  c2 a8[ bes] |
-  c4 d c8[ bes] |
-  a4 g c8[ a] |
-  bes[ c] d4 c |
-  \partial 2 f,2 \bar "||" \break
-  
-  %chorus
-  \partial 4 f8\noBeam g8 |
-  a4 g c |
-  bes8[ a] g4 d' |
-  c f8[ e] d4 |
-  
-  c2 a8[ bes] | \break
-  c4 d c8[ bes] |
-  a4 g c8[ a] |
-  bes[ c] d4 c |
-  \partial 2 f,2 \bar "|." \break
+  \repeat volta 4 {
+    \partial 4 a8[ bes] |
+    c4 d c8[ bes] |
+    a4 g c8[ a] |
+    bes[ c] d4 c |
+    f,2 a8[ bes] |
+    c4 d c8[ bes] | \break
+    
+    a4 g c8[ a] |
+    bes[ c] d4 c |
+    f,2 f8[ g] |
+    a4 g c |
+    bes8[ a] g4 d' | \break
+    
+    c f8[ e] d4 |
+    c2 a8[ bes] |
+    c4 d c8[ bes] |
+    a4 g c8[ a] |
+    bes[ c] d4 c |
+    f,2 \bar "||" \break
+    
+    %chorus
+    f8\noBeam g8 |
+    a4 g c |
+    bes8[ a] g4 d' |
+    c f8[ e] d4 |
+    
+    c2 \bar""\break a8[ bes] | 
+    c4 d c8[ bes] |
+    a4 g c8[ a] |
+    bes[ c] d4 c |
+    \partial 2 f,2 \break
+  }
 }
 sopWords = \lyricmode {
   
@@ -120,7 +122,7 @@ altoMusic = \relative c' {
   f d g |
   f e f |
   f d e |
-  f2 \bar "|."
+  f2
 }
 altoWords = {
     \dropLyricsIX
@@ -128,48 +130,53 @@ altoWords = {
     \set stanza = #"1. "
     %\set ignoreMelismata = ##t
     %\unset ignoreMelismata
-    A __ Vir -- gin un -- spot -- ted, the proph -- et fore -- told,
-    Should bring forth a __ Sav -- ior, which now __ we be -- hold,
+    A __ Vir -- gin un -- spot -- ted, the pro -- phet fore -- told,
+    Should bring forth a __ Sav -- ior, which now we be -- hold,
     To __ be our Re -- deem -- er from death, hell __ and sin,
     Which Ad -- am’s trans -- gres -- sion had wrapp -- ped us in.
   }
   \set stanza = \markup\dynamic"ff "
   \lyricmode {
+    \set associatedVoice = "sopranos"
+    Aye 
     \set associatedVoice = "altos"
-    Aye and there -- fore
+    and there -- fore
     \unset associatedVoice
     be mer -- ry, set sor -- row a -- side,
-    Christ Je -- sus, our __ Sav -- ior, was __ born __ on this tide.
+    Christ Je -- sus, our Sav -- ior, was born on this tide.
 
     \set stanza = #"5. "
-    The King of all __ kings  to this world be -- ing brought,
+    The King of all kings  to this world be -- ing brought,
     Small store of fine lin -- en to __ wrap Him was sought,
-    But when she had swad -- dled her young Son __ so sweet,
-    With -- in an ox __ man -- ger she laid __ Him to sleep.
+    But when she had swad -- dled her young Son so sweet,
+    With -- in an ox man -- ger she laid __ Him to sleep.
   }
   \set stanza = \markup\dynamic"ff "
   \lyricmode {
     \set associatedVoice = "altos"
-    Aye and there -- fore
+    \set associatedVoice = "sopranos"
+    Aye 
+    \set associatedVoice = "altos"
+    and there -- fore
     \unset associatedVoice
     be mer -- ry, set sor -- row a -- side,
-    Christ Je -- sus, our __ Sav -- ior, was __ born __ on this tide.
+    Christ Je -- sus, our Sav -- ior, was born on this tide.
   }
 }
 altoWordsII = \lyricmode {
     \dropLyricsIX
   \set stanza = #"2. "
-  At Beth -- le -- hem ci -- ty in Jew -- ry it was
+  At __ Beth -- le -- hem ci -- ty in Jew -- ry it was
   That Jo -- seph and Ma -- ry to -- geth -- er did pass,
   All __ for to be tax -- ed with ma -- ny __ one moe.
   Great Cae -- sar com -- mand -- ed the same should be so.
 
   \repeat unfold 23 {\skip1}
   \set stanza = #"6. "
-  Then God sent an __ an -- gel from heav -- en so high,
+  Then God sent an an -- gel from heav -- en so high,
   To __ cer -- tain poor shep -- herds in __ fields where they lie,
-  And bade them no long -- er in sor -- row __ to stay,
-  Be -- cause that our __ Sav -- ior was born on this day.
+  And bade them no long -- er in sor -- row to stay,
+  Be -- cause that our Sav -- ior was born on this day.
 }
 altoWordsIII = \lyricmode {
     \dropLyricsIX
@@ -177,29 +184,29 @@ altoWordsIII = \lyricmode {
   But when they had en -- tered the ci -- ty so fair,
   A __ num -- ber of __ peo -- ple so __ might -- y was there,
   That Jo -- seph and Ma -- ry, whose sub -- stance was small,
-  Could find in the inn there no __ lodg -- ing at all.
+  Could find in the inn there no lodg -- ing at all.
 
   \repeat unfold 23 {\skip1}
   \set stanza = #"7. "
   Then pres -- ent -- ly __ af -- ter the shep -- herds did spy
   Vast num -- bers of __ an -- gels to __ stand in the sky;
   They joy -- ful -- ly talk -- ed and sweet -- ly __ did sing:
-  “To __ God be all __ glo -- ry, our heav -- en -- ly King.”
+  “To God be all glo -- ry, our heav -- en -- ly King.”
 }
 altoWordsIV = \lyricmode {
     \dropLyricsIX
   \set stanza = #"4. "
-  Then were they con -- strained in a __ sta -- ble to lie,
+  Then were they con -- strain’d in a __ sta -- ble to lie,
   Where hors -- es and ass -- es they used for to tie:
   Their lodg -- ing so sim -- ple they took it __ no scorn,
   But_a -- gainst the next morn -- ing our Sav -- ior was born.
 
   \repeat unfold 23 {\skip1}
   \set stanza = #"8. "
-  To teach us hu -- mil -- i -- ty __ all __ this was done,
+  To __ teach us hu -- mil -- i -- ty __ all __ this was done,
   And learn we from thence haugh -- ty __ pride for to shun;
-  A __ man -- ger His cra -- dle who came from a -- bove,
-  The great God of __ mer -- cy, of __ peace, and of love.
+  A __ man -- ger His cra -- dle Who came from a -- bove,
+  The great God of mer -- cy, of __ peace, and of love.
 }
 tenorMusic = \relative c' {
   c8[ bes] |
@@ -232,7 +239,7 @@ tenorMusic = \relative c' {
   a4 f d' |
   c c c |
   f, bes bes |
-  a2 \bar "|."
+  a2
 }
 tenorWords = \lyricmode {
 
@@ -269,7 +276,7 @@ bassMusic = \relative c {
   a bes g |
   c c a |
   d bes c |
-  f2 \bar "|."
+  f2
 }
 bassWords = \lyricmode {
 

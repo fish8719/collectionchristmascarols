@@ -6,7 +6,7 @@
 \paper {
   print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   %system-system-spacing =
@@ -17,10 +17,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #104
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -113,8 +113,8 @@ altoWordsIII = \lyricmode {
   \dropLyricsIX
   \set stanza = #"3. "
   Nor rai -- ment gay, as __ there He lay,
-    A -- dorn’d the in -- fant stran -- ger;
-  Poor, hum -- ble child of __ moth -- er mild,
+    A -- dorn’d the in -- fant Stran -- ger;
+  Poor, hum -- ble Child of __ moth -- er mild,
     She laid Him in a man -- ger.
   
   \set stanza = #"8. "
@@ -149,7 +149,7 @@ altoWordsV = \lyricmode {
   “Glo -- ry to Thee for -- ev -- er be,
     God in the high -- est, glo -- ry!
   Good will to men, and peace a -- gain
-    O __ earth is beam -- ing o’er thee!”
+    O __ earth is beam -- ing o’er Thee!”
 }
 altoWordsVI = \lyricmode {
 }

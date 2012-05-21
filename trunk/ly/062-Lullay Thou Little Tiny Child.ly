@@ -9,7 +9,7 @@
 }
 \paper {
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   %system-system-spacing =
@@ -20,10 +20,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #062
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -52,7 +52,7 @@ global = {
 }
 
 sopMusic = \relative c'' {
-  <g d>4^\p <g ees> <fis d> |
+  <g d>4^\p <g d> <fis d> |
   <g d>2 <bes d,>4 |
   <a f>2 <g d>4 |
   <fis d>2. |
@@ -106,7 +106,7 @@ altoMusic = \relative c' {
   d2. \bar "|."
 }
 altoWords = \lyricmode {
-  \dropLyricsIX
+  \dropLyricsXI
   \repeat unfold 14 \skip 1
   \set stanza = #"1. "
   Lul -- lay, Thou lit -- tle ti -- ny Child,
@@ -115,7 +115,7 @@ altoWords = \lyricmode {
   By, by, lul -- ly, lul -- lay. __
 }
 altoWordsII = \lyricmode {
-  \dropLyricsIX
+  \dropLyricsXI
   \repeat unfold 14 \skip 1
   \set stanza = #"2. "
   O sis -- ters too, how may we do,
@@ -124,7 +124,7 @@ altoWordsII = \lyricmode {
   By, by, lul -- ly, lul -- lay? __
 }
 altoWordsIII = \lyricmode {
-  \dropLyricsIX
+  \dropLyricsXI
   \repeat unfold 14 \skip 1
   \set stanza = #"3. "
   Her -- od, the king, in his rag -- ing,
@@ -133,7 +133,7 @@ altoWordsIII = \lyricmode {
   All chil -- dren young to slay. __
 }
 altoWordsIV = \lyricmode {
-  \dropLyricsIX
+  \dropLyricsXI
   \repeat unfold 14 \skip 1
   \set stanza = #"4. "
   Then woe is me, poor Child, for Thee,

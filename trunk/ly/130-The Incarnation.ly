@@ -9,7 +9,7 @@
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -20,10 +20,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #130
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -130,7 +130,7 @@ altoWords = {
   \dropLyricsV
   \lyricmode {
     \set stanza = #"1. "
-    The great God of Hea -- ven is come down to earth,
+    The great God of Hea -- ven is __ come down to earth,
     His moth -- er a Vir -- gin, and sin -- less His Birth;
     The Fa -- ther e -- ter -- nal His Fa -- ther a -- lone:
     He sleeps in the man -- ger; He reigns on the Throne.
@@ -156,7 +156,7 @@ altoWordsII = {
   \dropLyricsV
   \set stanza = \markup{\dynamic"  mf " "2. "}
   \lyricmode {
-    A Babe on the breast of a maid -- en he lies,
+    A Babe on the breast of a __ maid -- en he lies,
     Yet sits with the Fa -- ther on high in the skies;
     Be -- fore Him their fa -- ces the Ser -- a -- phim hide,
     While Jo -- seph stands wait -- ing, un -- scared, by His side.
@@ -167,14 +167,16 @@ altoWordsII = {
   \lyricmode{
     Oh! won -- der of won -- ders, which none can un -- fold;
     The An -- cient of days is an hour or two old;
-    The Ma -- ker of all things is made of the earth,
-    Man_is wor -- shipped by an -- gels, and God comes to birth.
+    The Ma -- ker of all things is made of the \set associatedVoice = "sopranos"
+    earth,
+    \set ignoreMelismata = ##t
+    Man \unset associatedVoice \unset ignoreMelismata is wor -- shipped by an -- gels, and God comes to birth.
   }
 }
 altoWordsIII = \lyricmode {
   \dropLyricsV
   \set stanza = #"3. "
-  Lo! here is Em -- man -- u -- el, here is the Child,
+  Lo! here is Em -- man -- u -- el, __ here is the Child,
   The Son that was prom -- ised to Ma -- ry so mild;
   Whose pow’r and do -- min -- ion shall ev -- er in -- crease,
   The Prince that shall rule o’er a king -- dom of peace.
@@ -184,8 +186,12 @@ altoWordsIII = \lyricmode {
   \set stanza = #"6. "
   The Word in the bliss of the God -- head re -- mains,
   Yet_in flesh comes to suf -- fer the keen -- est of pains;
-  He is that He was, and for -- ev -- er shall be,
-  But_be -- comes that He was not, for you and for me.
+  He is that He was, and for -- ev -- er shall \set associatedVoice = "sopranos"
+  be,
+  
+  \set ignoreMelismata = ##t
+  But \unset associatedVoice be -- \unset ignoreMelismata 
+  comes that He was not, for you and for me.
 }
 altoWordsIV = \lyricmode {
 }

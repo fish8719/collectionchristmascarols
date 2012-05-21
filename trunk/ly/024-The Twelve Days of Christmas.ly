@@ -11,7 +11,7 @@
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   %system-system-spacing =
@@ -22,10 +22,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #024
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -58,18 +58,18 @@ sopMusic = \relative c' {
   d4 g8 g g4 fis8 g |
   a b c a b4. c8 |
   
-  d4 e8[ c] b g a4 |
-  \partial 4*3 g2~ g8 b\rest \bar "||"
-  \partial 4 d,8 d |
+  d4 e8[ c] b g a4 | \break
+  g2~ g8 b\rest \bar "||"
+  d,8 d |
   d8 g g g g4 fis8 g |
   
-  a b c a b2 |
+  a b c a b2 | \break
   d4 a8 b c4 b8 c |
   d4 e8[ c] b g a4 |
-  \partial 4*3 g2~g8 b\rest | \break
+  g2~g8 b\rest | \break
   
   \repeat volta 2 {
-    \partial 4 d,8 d |
+    d,8 d |
     d4 g8 g g4 fis8 g |
     a b c a b2 |
     \time 3/4 d4 a8 b c4 |
@@ -78,7 +78,7 @@ sopMusic = \relative c' {
     
     d4 a8 b c4 b8 c |
     d4 e8[ c] b g a4 |
-    \partial 4*3 g2~g8 b8\rest |
+    g2~g8 b8\rest |
   }
   \break
   
@@ -177,16 +177,16 @@ altoWords = \lyricmode {
   \dropLyricsIV
   \set stanza = #"1. "
   On the first day of Christ -- mas my true love sent to me
-  A part -- ridge in a pear tree. __
-  \set stanza = #"2. "
+  A par -- tridge in a pear tree. __
+  \set stanza = #"2."
   On the sec -- ond day of Christ -- mas my true love sent to me
-  Two tur -- tle -- doves and a part -- ridge in a pear tree. __
+  Two tur -- tle -- doves and a par -- tridge in a pear tree. __
   
   \set stanza = #"3. "
   On the third day of Christ -- mas my true love sent to me
   \markup\italic"skip to next measure" _ _ _
   Three French hens,
-  two tur -- tle -- doves, and a part -- ridge in a pear tree. __
+  two tur -- tle -- doves, and a par -- tridge in a pear tree. __
   
   \set stanza = #"5."
   On the fifth \dropLyrics day of Christ -- mas my true love sent to me \raiseLyrics
@@ -202,7 +202,7 @@ altoWords = \lyricmode {
   Five gold rings,
   Four call -- ing birds,
   Three French hens,
-  two tur -- tle -- doves, and a part -- ridge in a pear tree. __
+  two tur -- tle -- doves, and a par -- tridge in a pear tree. __
   
 
 }
@@ -214,7 +214,7 @@ altoWordsII = \lyricmode {
   On the fourth day of Christ -- mas my true love sent to me
   Four call -- ing birds,
   %Three French hens,
-  %two tur -- tle -- doves, and a part -- ridge in a pear tree. __
+  %two tur -- tle -- doves, and a par -- tridge in a pear tree. __
   
   \repeat unfold 15 \skip1
   \set stanza = #"6–12."

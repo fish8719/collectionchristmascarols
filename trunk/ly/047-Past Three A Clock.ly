@@ -2,14 +2,14 @@
 \include "../util.ly"
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Past Three a Clock"}}
-  poet = \markup\oldStyleNum"G. R. Woodward (1848–1934)"
+  poet = \markup\oldStyleNum"George Ratcliffe Woodward (1848–1934)"
   composer = \markup{\italic"London Waits"}
   arranger = \markup\oldStyleNum"Arranged by Charles Wood (1866–1926)"
-  tagline = \markup { "from" \italic {The Cambridge Carol Book}}
+  tagline = \markup \concat{ "from " \italic "The Cambridge Carol Book" \oldStyleNum", 1924"}
 }
 \paper {
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   %system-system-spacing =
@@ -20,10 +20,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #047
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -43,7 +43,7 @@
         \fill-line{\headerLine}
   }
 }
-#(set-global-staff-size 15) \paper{ #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 15 20))) }
+#(set-global-staff-size 14.9) \paper{ #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 14.9 20))) }
 global = {
   \key g \major
   \time 3/4
@@ -57,10 +57,10 @@ sopMusic = \relative c' {
     g[ a] b4 b ||
     d2 a4 |
     g e e |
-    d2 d4 |
+    d2 d4 | \break
     
     g8 a b4 a |
-    g2.\fermata \bar"||"\break
+    g2.\fermata \bar"||"
     \once \override Score.RehearsalMark #'self-alignment-X = #RIGHT
     \once \override Score.RehearsalMark #'break-visibility = #end-of-line-visible
     \mark\markup\italic"Fine"
@@ -125,12 +125,20 @@ altoMusic = \relative c' {
   d e fis |
   g g2 \bar "||"
 }
+dropLyrics = {
+  \override LyricText #'extra-offset = #'(0 . -4.9)
+  \override LyricHyphen #'extra-offset = #'(0 . -4.9)
+  \override LyricExtender #'extra-offset = #'(0 . -4.9)
+  \override StanzaNumber #'extra-offset = #'(0 . -4.9)
+}
 altoWords = \lyricmode {
   \dropLyricsIV
   Past three a clock,
   And a cold frost -- y morn -- ing,
   Past three a clock;
-  Good mor -- row, mas -- ters all!
+  Good
+  \dropLyrics
+  mor -- row, mas -- ters all!
   
   \dropLyricsVII
   \set stanza = #"1. "
@@ -157,7 +165,7 @@ altoWordsII = \lyricmode {
   \set stanza = #"6."
   Light out of star -- land
   Lead -- eth from far land
-  Princ -- es, to meet Him,
+  Prin -- ces, to meet Him,
   Wor -- ship and greet Him.
 }
 altoWordsIII = \lyricmode {

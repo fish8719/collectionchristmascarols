@@ -12,7 +12,7 @@
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -23,29 +23,30 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #124
   print-first-page-number = ##t
-  oddLine = ""
-  evenLine = ""
+  headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
   oddHeaderMarkup = \markup\fill-line{
+     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #8.5
      \combine 
         \fill-line{"" \on-the-fly #print-page-number-check-first
         \oldStylePageNum""
         }
-        \fill-line{\oddLine}
+        \fill-line{\headerLine}
   }
   evenHeaderMarkup = \markup {
+     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #8.5
      \combine
         \on-the-fly #print-page-number-check-first
         \oldStylePageNum""
-        \fill-line{\evenLine}
+        \fill-line{\headerLine}
   }
 }
-#(set-global-staff-size 15) \paper{ #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 15 20))) }
+#(set-global-staff-size 14.6) \paper{ #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 14.6 20))) }
 global = {
   \key f \major
   \time 10/4
@@ -96,7 +97,7 @@ altoWords = \lyricmode {
       And that fu -- ture years shall see,
   Ev -- er -- more and ev -- er -- more!
   
-  \set stanza = #"4. "
+  \set stanza = #"4."
   O that birth for -- ev -- er bless -- èd,
     When the Vir -- gin, full of grace,
 By the Ho -- ly Ghost con -- ceiv -- ing,
@@ -121,17 +122,17 @@ altoWordsII = \lyricmode {
   \set associatedVoice = "sopranos"
   \set stanza = #"2. "
   At His Word the worlds were fram -- èd;
-    He com -- mand -- ed; it was done:
+    He com -- mand -- ed; it __ was done:
 Heav’n and earth and depths of o -- cean
     In their three -- fold or -- der one;
 All that grows be -- neath the shin -- ing __
     Of the moon and burn -- ing sun,
         Ev -- er -- more and ev -- er -- more!
   
-  \set stanza = #"5. "
+  \set stanza = #"5."
   This is He Whom seers in old time
     Chant -- ed of with one ac -- cord;
-Whom the voi -- ces of the proph -- ets
+Whom the voi -- ces of the pro -- phets
     Prom -- ised in their faith -- ful word;
 Now He shines, the long ex -- pect -- ed, __
     Let cre -- a -- tion praise its Lord,
@@ -159,7 +160,7 @@ May not hence -- forth die and per -- ish __
         Ev -- er -- more and ev -- er -- more!
   
   
-  \set stanza = #"6. "
+  \set stanza = #"6."
   O ye heights of heav’n a -- dore Him;
     An -- gel hosts, His prais -- es sing;
 Pow’rs, do -- min -- ions, bow be -- fore Him,

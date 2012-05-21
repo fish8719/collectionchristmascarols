@@ -9,7 +9,7 @@
 }
 \paper {
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -20,10 +20,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #023
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -125,20 +125,20 @@ altoWords = {
     \set stanza = #"1. "
     Mas -- ters in this hall, __
     Hear ye news to -- day, __
-    Brought from o -- ver -- sea, __
+    Brought from o -- ver sea, __
     And ev -- er I you pray,
   }
   \set stanza = \markup\dynamic"f "
   \lyricmode{
     \dropLyricsVII
     No -- ël! No -- ël! No -- ël! 
-    No -- ël sing we clear! Holp -- en are all folk on earth __
-    Born __ is God’s Son so dear:
+    No -- ël sing we clear! Holp -- en are all folk on earth
+    Born is God’s Son so dear:
     
     No -- ël! No -- ël! No -- ël! 
     No -- ël, sing we loud!
-    God to -- day hath poor folk rais’d __
-    And __ cast a -- down the proud.
+    God to -- day hath poor folk rais’d
+    And cast a -- down the proud.
   }
 }
 altoWordsII = \lyricmode {

@@ -3,7 +3,7 @@
 \paper {
   print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -19,10 +19,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #078
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -79,7 +79,7 @@ sopMusic = \relative c' {
     f2 c'8( c) |
     c4( c) c |
     
-    d2 d8\noBeam( d) |
+    d4( d) d8\noBeam( d) |
     c2 c4 |
     a2 \bar"" a8\noBeam( a) |
     a4( a) g |
@@ -130,7 +130,7 @@ altoMusic = \relative c' {
   c2 e8( e) |
   
   f4( f) f |
-  f2 f8( f) |
+  f4( f) f8( f) |
   f2 e4 |
   f2 f8( f) |
   
@@ -149,12 +149,12 @@ altoWords = \lyricmode {
   \dropLyricsIX
   \set stanza = #"1. "
   \set ignoreMelismata = ##t
-  Je -- sus, our broth -- er, kind _ and good, Was hum -- _ bly born in a sta -- ble rude,
+  Je -- sus, our bro -- ther, kind _ and good, Was hum -- _ bly born in a sta -- ble rude,
   And the friend -- _ ly beasts _ a -- round _ Him stood; Je -- sus, our broth -- _ er, kind _ and good.
   
   \set stanza = #"4. "
   \set ignoreMelismata = ##t
-  “I,” said the sheep with _ curl -- _ y horn, “I _ gave Him my wool for His blank -- et warm,
+  “I,” said the sheep with _ curl -- _ y horn, “I _ gave Him my wool _ for His blank -- et warm,
   He __ _ wore __ _ my coat _ on Christ -- _ mas morn.” “I,” said the sheep _ with curl -- _ y horn.
 }
 altoWordsII = \lyricmode {
@@ -167,10 +167,10 @@ altoWordsII = \lyricmode {
   
   \set stanza = #"5. "
   \set ignoreMelismata = ##t
-  “I,” said the dove from the raft -- _ ers high,
-  "" "" “Cooed Him to sleep, that he should not cry,
+  “I,” said the dove from the raf -- _ ters high,
+  "" "" “Cooed Him to sleep, _ that He should not cry,
   We _ cooed Him to sleep, _ my mate _ and I.”
-  “I,” said the dove _ from the raft -- ers high.
+  “I,” said the dove _ from the raf -- ters high.
 }
 altoWordsIII = \lyricmode {
   \dropLyricsIX
@@ -181,8 +181,8 @@ altoWordsIII = \lyricmode {
   
   \set stanza = #"6. "
   \set ignoreMelismata = ##t
-  “I,” said the cam -- el, _ yel -- low and black,
-  "" "" “O -- ver the des -- ert, up -- on my back
+  “I,” said the cam -- el, __ _ yel -- low and black,
+  "" "" “O -- ver the des -- ert, up -- _ on my back
   I __ _ brought Him a gift in the Wise _ Men’s pack,”
   “I,” said the cam -- _ el, yel -- low and black.
 }
@@ -191,8 +191,8 @@ altoWordsIV = \lyricmode {
   \repeat unfold 32 \skip1
   \set stanza = #"7. "
   \set ignoreMelismata = ##t
-  Thus ev -- ’ry beast by _ some _ good spell,
-  In the sta -- _ ble dark was __ _ glad to tell
+  Thus ev -- ’ry beast by __ _ some _ good spell,
+  In the sta -- _ ble dark __ _ was __ _ glad to tell
   Of the gift __ _ he gave _ Em -- man -- _ u -- el,
   The gift he gave _ Em -- man -- _ u -- el.
 }
@@ -236,8 +236,7 @@ tenorMusic = \relative c' {
   a2 g8( g) |
   
   a4( a) a |
-  \slurSolid
-  bes( a) \slurDotted f8( f) |
+  bes( a) f8( f) |
   g2 g4 |
   a2 c8( c) |
   
@@ -289,7 +288,7 @@ bassMusic = \relative c {
   f2 c8( c) |
   
   f4( f) f |
-  bes,2 d8( d) |
+  bes,4( bes) d8( d) |
   c2 c4 |
   f2 f8( f) |
   
@@ -336,6 +335,7 @@ bassWords = \lyricmode {
 %    \new PianoStaff << \new Staff { \new Voice { \pianoRH } } \new Staff { \clef "bass" \pianoLH } >>
   >>
   \layout {
+    #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 14.4 20)))
     \context {
       \Score
       \override SpacingSpanner #'base-shortest-duration = #(ly:make-moment 1 2)
@@ -686,7 +686,7 @@ pianoLH = \relative c' {
   }
   \header {
     title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Although at Yule it Bloweth Cool"}}
-    poet = \markup\oldStyleNum"G.R. Woodward (1848–1934)"
+    poet = \markup\oldStyleNum"George Ratcliffe Woodward (1848–1934)"
     composer = \markup \concat{\italic "Der wind der wet, der han der kret" \oldStyleNum", 1554"}
     arranger = \markup\oldStyleNum"Arranged by Charles Wood (1866–1926)"
     tagline = \markup \concat{ "from " \italic "The Cambridge Carol Book" \oldStyleNum", 1924"}

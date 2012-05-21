@@ -10,7 +10,7 @@
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   %system-system-spacing =
@@ -21,10 +21,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #041
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle christmas}
@@ -59,7 +59,7 @@ sopMusic = \relative c' {
   a4 fis8 d8.[ e16] fis8 |
   g4 e8 e8.[ dis16] e8 |
   
-  fis4. b,4 e8 |
+  fis4. b,4 \bar""\break e8 |
   g4 a8 b8.[ c16] b8 |
   a4 fis8 d8.[ e16] fis8 |
   g8.[ fis16] e8 dis8.[ cis16] dis8 |
@@ -121,7 +121,7 @@ altoWords = \lyricmode {
   \unset associatedVoice
   Whom shep -- herds guard and an -- gels sing:
   \raiseLyrics
-  Haste, haste to
+  Haste, haste __ to
   \set associatedVoice = "altos"
   bring Him laud,
   \unset associatedVoice
@@ -144,7 +144,9 @@ altoWordsII = {
   }
   \set stanza = \markup\dynamic"  ff "
   \lyricmode {
-    Nails, spear, shall
+    Nails, spear,
+%8.5x11 __
+    shall
     \set associatedVoice = "altos"
     pierce Him through,
     \unset associatedVoice
@@ -164,7 +166,9 @@ altoWordsIII = \lyricmode {
   \set associatedVoice = "altos"
   gold, and myrrh,
   \unset associatedVoice
-  Come peas -- ant, king, to own Him;
+  Come peas -- ant, king,
+%8.5x11 __
+  to own Him;
   The King of kings,
   \set associatedVoice = "altos"
   sal -- va -- tion brings;

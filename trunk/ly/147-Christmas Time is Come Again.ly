@@ -5,11 +5,12 @@
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Christmas Time is Come Again"}}
   tagline = \markup \concat{ "from " \italic "Favorite Songs and Hymns for School and Home" \oldStyleNum", 1899, via " \italic"books.google.com"}
+  composer = "Anonymous, 1863"
 }
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -20,10 +21,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #147
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -128,11 +129,12 @@ altoWords = \lyricmode {
   An -- gel bands o’er Beth -- lem’s plains,
     Sang the songs of heav -- en.
 
-  \dropLyricsVII
+  \dropLyricsXI
   
   Glo -- ry be to God on high!
+%8.5x11 \dropLyricsV
     Peace, good -- will to
-  \raiseLyrics
+  \dropLyricsV
     mor -- tals!
   Christ the Lord is born to -- night,
     Heav’n throws wide its por -- tals.

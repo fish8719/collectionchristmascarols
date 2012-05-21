@@ -3,7 +3,7 @@
 \paper {
   print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -19,10 +19,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #136
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -449,7 +449,7 @@ bassMusicII = \relative c {
   s a, d d |
   d cis s d |
   cis s d s |
-  e2. \bar "|."
+  e2.\fermata \bar "|."
 }
 bassIIMusic = \relative c {
   a2\rest |
@@ -461,11 +461,17 @@ bassIIMusic = \relative c {
   a s s s |
   s s fis s |
   s fis s e |
-  a,2.\fermata \bar "|."
+  a,2. \bar "|."
 }
 bassWords = \lyricmode {}
+dropLyrics = {
+  \override LyricText #'extra-offset = #'(0 . -1.3)
+  \override LyricHyphen #'extra-offset = #'(0 . -1.3)
+  \override LyricExtender #'extra-offset = #'(0 . -1.3)
+  \override StanzaNumber #'extra-offset = #'(0 . -1.3)
+}
 bassWordsChorus = {
-  \dropLyricsV
+  \dropLyrics
   \set stanza = \markup\dynamic"f "
   \lyricmode {
     O what works of love stu -- pen -- dous,
@@ -479,7 +485,10 @@ bassWordsChorus = {
 chorusWordsBass = {
   \lyricmode {
     O what works of love stu -- pen -- dous
-    Were sal -- va -- tion’s price! Burn -- ing
+    Were sal -- va -- tion’s price!
+    Burn -- ing \set associatedVoice = "bassI" wert Thou to be -- friend \unset associatedVoice us,
+    \set associatedVoice = "bassI" 
+    Ex -- iles \unset associatedVoice far \set associatedVoice = "bassI" from \unset associatedVoice Pa -- ra -- dise.
   }
 }
 chorusWords = {
@@ -594,6 +603,7 @@ pianoLH = \relative c' {
    >>
   >>
   \layout {
+    #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 14.5 20)))
     \context {
       \Score
       %\override SpacingSpanner #'base-shortest-duration = #(ly:make-moment 1 8)

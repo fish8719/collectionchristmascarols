@@ -10,7 +10,7 @@
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   %system-system-spacing =
@@ -21,10 +21,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #068
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -76,7 +76,7 @@ sopWords = \lyricmode {
 
 altoMusic = \relative c' {
   e4 e |
-  e gis a e |
+  e gis gis e |
   e e8 e f4 e |
   e2 e |
   e e4 e |
@@ -142,7 +142,7 @@ altoWordsVI = \lyricmode {
 }
 tenorMusic = \relative c' {
   c4 c |
-  b b a b |
+  b b b b |
   c d8 c a4 gis |
   a2 a |
   gis gis4 a |
@@ -163,7 +163,7 @@ tenorWords = \lyricmode {
 
 bassMusic = \relative c {
   a'4 a |
-  gis e fis gis |
+  gis e e gis |
   a a8 a d,4 e |
   c2 a8[ b c d] |
   e2 e4 a |

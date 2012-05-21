@@ -3,12 +3,12 @@
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Carol of the Shepherds"}}
   poet = \markup\oldStyleNum"English by Eda Lou Walton (1894–1961)"
-  composer = \markup\oldStyleNum"Bohemian Folk Song"
+  composer = \markup\oldStyleNum"17th Century Bohemian Carol"
   tagline = ""
 }
 \paper {
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   %system-system-spacing =
@@ -19,10 +19,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #054
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -90,8 +90,10 @@ altoMusic = \relative c'' {
 altoWords = \lyricmode {
   \dropLyricsV
   \set stanza = #"1. "
-  Come, all __ ye __ shep -- herds and __ be not __ dis -- mayed,
-  Seek where the __ low -- ly __ sweet ba -- by __ is __ laid;
+  Come, all __ ye __ shep -- herds and
+%8.5x11 __
+  be not __ dis -- mayed,
+  Seek where the low -- ly __ sweet ba -- by __ is __ laid;
   Here in a man -- ger,
   far from all dan -- ger,
   Sleep -- ing be -- hold Him,
@@ -101,7 +103,9 @@ altoWords = \lyricmode {
 altoWordsII = \lyricmode {
   \dropLyricsV
   \set stanza = #"2. "
-  As we __ were __ watch -- ing __ our __ flocks where they __ lay,
+  As we __ were watch -- ing __ our
+%8.5x11 __
+  flocks where they lay,
   Shown a __ great glo -- ry __ as __ bright as __ the __ day.
   Glad bells were ring -- ing, sweet voi -- ces sing -- ing,
   Through heav’n’s blue por -- tals, “Good will to mor -- tals;”
@@ -110,8 +114,8 @@ altoWordsII = \lyricmode {
 altoWordsIII = \lyricmode {
   \dropLyricsV
   \set stanza = #"3. "
-  Now we __ have __ found Him __ in __ Beth -- le -- hem __ stall,
-  Sing the __ glad __ ti -- dings, oh, __ sing them to __ all!
+  Now we __ have found Him in __ Beth -- le -- hem stall,
+  Sing the __ glad ti -- dings, oh, __ sing them to __ all!
   Shep -- herds a -- dore Him, wise men be -- fore Him
   Lay down their dow -- er, In glitt -- ’ring show -- er,
   Christ -- mas __ is __ come.

@@ -2,14 +2,14 @@
 \include "../util.ly"
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"The Virgin and Child"}}
-  poet = \markup\oldStyleNum"Old English"
+  poet = \markup\oldStyleNum{\concat{"Adapted from " \italic"Thys endris nyzth" ", 15th Century"}}
   composer = \markup\oldStyleNum"Charles Steggall (1826–1905)"
   tagline = \markup { "from" \italic {Christmas Carols, New and Old}}
 }
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -25,10 +25,10 @@
   ragged-last-bottom = ##t
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #086
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -162,12 +162,18 @@ altoMusic = \relative c' {
   c2. a8[ b] c4 a c a |
   c2.
 }
+dropLyrics = {
+  \override LyricText #'extra-offset = #'(0 . -1.8)
+  \override LyricHyphen #'extra-offset = #'(0 . -1.8)
+  \override LyricExtender #'extra-offset = #'(0 . -1.8)
+  \override StanzaNumber #'extra-offset = #'(0 . -1.8)
+}
 altoWords = {
-  \dropLyricsIV
+  \dropLyricsVI
   \set stanza = \markup{\dynamic"  mf" " 1."}
   \lyricmode {
     On yes -- ter night I saw a sight,
-    A star as bright as day;
+    A star as bright as day; __
     And all a -- long, I heard a song,
     lul -- lay, by by, lul -- lay, __
     lul -- lay, lul -- lay.
@@ -182,14 +188,15 @@ altoWords = {
     A King up -- on this hay;
     But hush Thy wail, I will not fail
     To sing by by, lul -- lay, lul -- lay,
-    to sing by by, lul -- lay, lul -- lay;
+    to sing by by, \dropLyrics lul -- lay, lul -- lay;
     To sing by by lul -- lay, lul -- lay,
-    lul -- lay, lul -- lay, lul -- lay,
-    lul -- lay, lul -- lay.
+    lul -- lay, \dropLyricsVI lul -- lay,
+    \dropLyrics
+    lul -- lay, lul -- lay, lul -- lay.
   }
 }
 altoWordsII = {
-  \dropLyricsIV
+  \dropLyricsVI
   \lyricmode{
     \repeat unfold 32 \skip1
   }
@@ -204,11 +211,11 @@ altoWordsII = {
     Down to Me light;
     Thou canst not say Me nay:
     Then why so sad?
-    Thou mayest be glad
+    Thou may’st be glad
   }
 }
 altoWordsIII = \lyricmode {
-  \dropLyricsIV
+  \dropLyricsVI
   \repeat unfold 32 \skip1
   \set stanza = #"4."
   “Now, sweet -- est Lord, since Thou art King,
@@ -364,20 +371,20 @@ pianoLH = \relative c' {
       \new Voice = "sopranos" { \voiceOne << \global \sopMusic >> }
       \new Voice = "altos" { \voiceTwo << \global \altoMusic >> }
     >>
-    \new Lyrics \with { alignAboveContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \sopWords
+    \new Lyrics \with { alignAboveContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)(padding . 0.1))} \lyricsto "sopranos" \sopWords
      \new Lyrics = "altosVI"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsVI
     \new Lyrics = "altosV"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsV
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1) (padding -1))} \lyricsto "altos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }
       \new Voice = "basses" { \voiceTwo << \global \bassMusic >> }
     >>
-    \new Lyrics \with { alignAboveContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "tenors" \tenorWords
-    \new Lyrics \with { alignBelowContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1) (padding . -1)) } \lyricsto "basses" \bassWords
+    \new Lyrics \with { alignAboveContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)(padding . 0.1)) } \lyricsto "tenors" \tenorWords
+    \new Lyrics \with { alignBelowContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1) (padding . 0)) } \lyricsto "basses" \bassWords
   >>
 %    \new PianoStaff << \new Staff { \new Voice { \pianoRH } } \new Staff { \clef "bass" \pianoLH } >>
   >>
@@ -398,21 +405,6 @@ pianoLH = \relative c' {
     \hspace #0.1 % moves the column off the left margin;
         % can be removed if space on the page is tight
      \column {
-      \line { \bold "4."
-        \column {
-          "“Now, sweetest Lord, since Thou art King."
-          "     Why liest Thou in a stall?"
-          "Why didst Thou not Thy cradle bring"
-          "     To some great royal hall?"
-          "          Methinks ’tis right,"
-          "          That king or knight"
-          "     Should lie in good array;"
-          "          And them among,"
-          "          It were no wrong"
-          "     To sing by by, lullay.”"
-        }
-      }
-      \vspace #1 % adds vertical spacing between verses
       \line { \bold "5."
         \column {
           "“My Mother Mary, thine I be,"
@@ -446,7 +438,17 @@ pianoLH = \relative c' {
           "     And sing by by, lullay,”"
         }
       }
-      \vspace #1 % adds vertical spacing between verses
+    }
+    \hspace #0.1 % gives some extra space on the right margin;
+      % can be removed if page space is tight
+  }
+}
+
+\markup {\override #'(font-name . "Garamond Premier Pro")
+  \vspace #1 % adds vertical spacing between verses
+  \fill-line {
+    " "
+    \column {
       \line { \bold "7."
         \column {
           "“My Mother dear, when time it be,"
@@ -462,7 +464,6 @@ pianoLH = \relative c' {
         }
       }
     }
-  \hspace #0.1 % gives some extra space on the right margin;
-      % can be removed if page space is tight
+    " "
   }
 }

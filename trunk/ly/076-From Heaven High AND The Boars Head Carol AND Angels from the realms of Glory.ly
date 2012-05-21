@@ -3,7 +3,7 @@
 \paper {
   print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   score-markup-spacing =
@@ -19,10 +19,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #076
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -113,7 +113,7 @@ altoWordsIII = \lyricmode {
   Glo -- ry to God in high -- est Heav’n,
   Who un -- to us His Son hath giv’n!
   While an -- gels sing with pi -- ous mirth
-  A glad New Year to all the Earth.
+  A glad New Year to all the earth.
 }
 altoWordsIV = \lyricmode {
 }
@@ -329,7 +329,7 @@ altoWordsIII = \lyricmode {
   Our stew -- ard hath _ pro -- vid -- ed this
   "" In hon -- or of the King of bliss,
   \set associatedVoice = "basses"
-  Which __ _ on this __ _ day to_be serv -- ed is,
+  Which _ on this __ _ day to_be serv -- ed is,
   \markup\italic In _ \markup\italic Re -- \markup\italic gi -- _ \markup\italic nen -- \markup\italic si \markup\italic a -- \markup\italic tri -- \markup\italic o.
 }
 altoWordsIV = \lyricmode {
@@ -427,8 +427,8 @@ pianoLH = \relative c' {
   }
   \header {
     title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"The Boar’s Head Carol"}}
-    poet = \markup\oldStyleNum"Traditional"
-    composer = \markup\oldStyleNum"English"
+    poet = \markup\oldStyleNum"15th Century English"
+    composer = \markup\oldStyleNum"Traditional English"
     tagline = ""
   }
 }
@@ -546,7 +546,7 @@ altoWordsIV = \lyricmode {
   \set associatedVoice = "basses"
   Sud -- den -- ly the Lord, de -- scend -- ing, 
   \unset associatedVoice
-    In his tem -- ple shall ap -- pear;
+    In His tem -- ple shall ap -- pear;
 }
 tenorMusic = \relative c' {
   c4 g g c |

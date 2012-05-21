@@ -11,7 +11,7 @@
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -22,10 +22,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #180
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -187,7 +187,7 @@ altoWords = {
   \set stanza = \markup {\normal-text\italic "Soprano Solo" "1. "}
   \lyricmode {
     _ In the bleak mid -- win -- ter,
-    fros -- ty wind made moan,
+    fros -- ty wind made moan, __
     \set ignoreMelismata = ##t
     Earth stood hard as i -- ron, _
     Wa -- ter like a stone. ""
@@ -203,7 +203,10 @@ altoWords = {
     sus -- tain; __
     \set associatedVoice = "altos"
     Heav’n and earth shall flee a -- way,
-    When He comes to reign. __
+    \set associatedVoice = "sopranos"
+    When He comes \set associatedVoice = "altos"
+    to reign. __
+    
     In the bleak mid -- win -- ter,
     A sta -- ble place suf -- ficed
     the \unset associatedVoice Lord __ God Al -- migh -- ty __

@@ -6,7 +6,7 @@
 \paper {
   print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -22,10 +22,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #163
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -106,8 +106,10 @@ altoWords = \lyricmode {
   \set stanza = #"1. "
   Quem pas -- to -- res lau -- da -- ve -- re,
   Qui -- bus an -- ge -- li di -- xe -- re,
-  “Ab -- sit vo -- bis iam ti -- me -- re,
-  Na -- tus est Rex glo -- ri -- æ,
+  “Ab -- sit vo -- bis iam ti -- me -- \set associatedVoice = "tenors"
+  re,
+  Na -- \unset associatedVoice
+  tus est Rex glo -- ri -- æ,
   Rex glo -- ri -- æ.”
 }
 altoWordsII = \lyricmode {
@@ -116,8 +118,10 @@ altoWordsII = \lyricmode {
   \set stanza = #"2. "
   Ad quem ma -- gi am -- bu -- la -- bant,
   Au -- rum, thus, myr -- rham por -- ta -- bant,
-  Im -- mo -- la -- bant hæc sin -- ce -- re
-  Le -- o -- ni vic -- to -- ri -- æ,
+  Im -- mo -- la -- bant hæc sin -- ce -- \set associatedVoice = "tenors"
+  re
+  Le -- \unset associatedVoice
+  o -- ni vic -- to -- ri -- æ,
   vic -- to -- ri -- æ.
 }
 altoWordsIII = \lyricmode {
@@ -125,8 +129,10 @@ altoWordsIII = \lyricmode {
   \set stanza = #"3. "
   Ex -- ul -- te -- mus cum Ma -- ri -- a
   In cœ -- les -- ti hei -- rar -- chi -- a
-  Na -- tum pro -- mat vo -- ce pi -- a
-  Laus, ho -- nor et glo -- ri -- a,
+  Na -- tum pro -- mat vo -- ce pi -- \set associatedVoice = "tenors"
+  a
+  Laus, \unset associatedVoice
+  ho -- nor et glo -- ri -- a,
   et glo -- ri -- a.
 }
 altoWordsIV = \lyricmode {
@@ -134,8 +140,10 @@ altoWordsIV = \lyricmode {
   \set stanza = #"4. "
   Chris -- to re -- gi, De -- o na -- to,
   Per Ma -- ri -- am no -- bis da -- to,
-  Me -- ri -- to re -- so -- net ve -- re
-  Dul -- ci cum me -- lo -- di -- a,
+  Me -- ri -- to re -- so -- net ve -- \set associatedVoice = "tenors"
+  re
+  Dul -- \unset associatedVoice
+  ci cum me -- lo -- di -- a,
   me -- lo -- di -- a.
 }
 altoWordsV = \lyricmode {
@@ -212,6 +220,11 @@ pianoLH = \relative c' {
       \new Voice = "sopranos" { \voiceOne << \global \sopMusic >> }
       \new Voice = "altos" { \voiceTwo << \global \altoMusic >> }
     >>
+   \new Staff = men <<
+      \clef bass
+      \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }
+      \new Voice = "basses" { \voiceTwo << \global \bassMusic >> }
+    >>
     \new Lyrics \with { alignAboveContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \sopWords
     \new Lyrics = "altosVI"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsVI
     \new Lyrics = "altosV"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsV
@@ -219,11 +232,6 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsII
     \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.5))} \lyricsto "sopranos" \altoWords
-   \new Staff = men <<
-      \clef bass
-      \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }
-      \new Voice = "basses" { \voiceTwo << \global \bassMusic >> }
-    >>
     \new Lyrics \with { alignAboveContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "tenors" \tenorWords
     \new Lyrics \with { alignBelowContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "basses" \bassWords
   >>

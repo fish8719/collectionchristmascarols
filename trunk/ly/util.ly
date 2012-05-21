@@ -55,6 +55,12 @@ dropLyricsXII = {
   \override LyricExtender #'extra-offset = #'(0 . -1.2)
   \override StanzaNumber #'extra-offset = #'(0 . -1.2)
 }
+dropLyricsXV = {
+  \override LyricText #'extra-offset = #'(0 . -1.5)
+  \override LyricHyphen #'extra-offset = #'(0 . -1.5)
+  \override LyricExtender #'extra-offset = #'(0 . -1.5)
+  \override StanzaNumber #'extra-offset = #'(0 . -1.5)
+}
 
 
 raiseLyrics = {

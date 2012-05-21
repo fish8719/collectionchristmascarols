@@ -9,7 +9,7 @@
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   %system-system-spacing =
@@ -20,10 +20,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #117
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -130,7 +130,7 @@ altoWordsIII = \lyricmode {
   Christ -- mas hol -- ly, leaf, and ber -- ry,
   All be prized for His dear sake:
   Come ye gen -- tle hearts and ten -- der.
-  Come ye spir -- its keen and bold;
+  Come ye spi -- rits keen and bold;
   All in all your hom -- age ren -- der,
   Weak and might -- y, young and old.
 }
@@ -139,7 +139,7 @@ altoWordsIV = \lyricmode {
   \set stanza = #"4. "
   High a -- bove a star is shin -- ing,
   And the wise men haste from far: __
-  Come glad hearts, and spir -- its pin -- ing:
+  Come glad hearts, and spi -- rits pin -- ing:
   For you all has ris’n the star.
   Let us bring our poor o -- bla -- tions,
   Thanks and love, and faith and praise;

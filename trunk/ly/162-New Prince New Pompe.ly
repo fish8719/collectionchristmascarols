@@ -10,7 +10,7 @@
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   %system-system-spacing =
@@ -21,10 +21,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #162
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -111,7 +111,7 @@ altoWords = \lyricmode {
   The inns are full, no man will yelde
   This lit -- tle Pil -- grime bedd:
   But forced He is with se -- ly beastes
-  In cribbe to shroude His headd.
+  In cribbe to \set associatedVoice = "tenors" shroude His headd.
 }
 altoWordsII = \lyricmode {
   \dropLyricsV
@@ -124,7 +124,7 @@ altoWordsII = \lyricmode {
   Waye not His cribbe, His wod -- den dishe,
   Nor beastes that by Him feede:
   Waye not His Moth -- er’s poore at -- tire,
-  Nor Jo -- sephe’s sim -- ple weede.
+  Nor Jo -- sephe’s \set associatedVoice = "tenors" sim -- ple weede.
   \set ignoreMelismata = ##t
 }
 altoWordsIII = \lyricmode {
@@ -137,7 +137,7 @@ altoWordsIII = \lyricmode {
   The par -- sons in that poor at -- tire
   His roy -- all live -- ries weare:
   The Prince Him -- self is come from heav’n,
-  This pompe is pris -- èd there.
+  This pompe is \set associatedVoice = "tenors" pris -- èd there.
   \set ignoreMelismata = ##t
 }
 altoWordsIV = \lyricmode {
@@ -150,7 +150,7 @@ altoWordsIV = \lyricmode {
   With joye ap -- proch, O Christ -- en wighte,
   Do hom -- age to thy Kinge:
   And high -- ly prise this hum -- ble pompe,
-  Which He from heav’n doth bring.
+  Which He from \set associatedVoice = "tenors" heav’n doth bring.
   \set ignoreMelismata = ##t
 }
 altoWordsV = \lyricmode {
@@ -227,6 +227,11 @@ pianoLH = \relative c' {
       \new Voice = "sopranos" { \voiceOne << \global \sopMusic >> }
       \new Voice = "altos" { \voiceTwo << \global \altoMusic >> }
     >>
+   \new Staff = men <<
+      \clef bass
+      \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }
+      \new Voice = "basses" { \voiceTwo << \global \bassMusic >> }
+    >>
     \new Lyrics \with { alignAboveContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \sopWords
     \new Lyrics = "altosVI"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsVI
     \new Lyrics = "altosV"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsV
@@ -234,11 +239,6 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsII
     \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "altos" \altoWords
-   \new Staff = men <<
-      \clef bass
-      \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }
-      \new Voice = "basses" { \voiceTwo << \global \bassMusic >> }
-    >>
     \new Lyrics \with { alignAboveContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "tenors" \tenorWords
     \new Lyrics \with { alignBelowContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "basses" \bassWords
   >>

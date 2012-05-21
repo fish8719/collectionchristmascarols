@@ -2,14 +2,14 @@
 \include "../util.ly"
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Hacia Belén va una burra"}}
-  %poet = \markup\oldStyleNum"Traditional"
-  %composer = \markup\oldStyleNum"Traditional"
-  tagline = \markup { "Traditional Spanish Carol, from" \italic {cpdl.org} and \italic"pucpr.edu"}
+  poet = \markup\oldStyleNum"Traditional"
+  composer = \markup\oldStyleNum"Traditional"
+  tagline = \markup { "from" \italic {cpdl.org} and \italic"pucpr.edu"}
 }
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -17,12 +17,6 @@
        (minimum-distance . 0)
        (padding . -10)
        (stretchability . 100))
-  
-  top-markup-spacing =
-    #'((basic-distance . 0)
-       (minimum-distance . 0)
-       (padding . 0.1)
-       (stretchability . 0))
   last-bottom-spacing =
     #'((basic-distance . 0)
        (minimum-distance . 0)
@@ -36,10 +30,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #173
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -179,6 +173,8 @@ altoWords = \lyricmode {
   yo me re -- men -- da -- ba yo me re -- men -- rin,
   yo me~e -- ché~un re -- mien -- do yo me lo qui -- té,
   su mo -- li -- ni -- llo~y su~a -- na -- fre.
+  
+  \set associatedVoice = "sopranos"
   Ma -- rí -- a Ma -- rí -- a
   ven a -- cá co -- rrien -- do
   que~el cho -- co -- la -- ti -- llo
@@ -202,6 +198,8 @@ altoWordsII = {
     yo me re -- men -- da -- ba yo me re -- men -- rin,
     yo me~e -- ché~un re -- mien -- do yo me lo qui -- té,
     Le han roi -- do los cal -- zo -- nes.
+    
+    \set associatedVoice = "sopranos"
     Ma -- rí -- a Ma -- rí -- a
     ven a -- cá co -- rrien -- do
     que los cal -- zon -- ci -- llos
@@ -224,6 +222,8 @@ altoWordsIII = \lyricmode {
   yo me re -- men -- da -- ba yo me re -- men -- rin,
   yo me~e -- ché~un re -- mien -- do yo me lo qui -- té,
   los pa -- ña -- les la~han ro -- ba -- do.
+  
+  \set associatedVoice = "sopranos"
   Ma -- rí -- a Ma -- rí -- a
   ve a -- cá vo -- lan -- do que
   los pa -- ña -- li -- tos los es -- tán lle -- van -- do.

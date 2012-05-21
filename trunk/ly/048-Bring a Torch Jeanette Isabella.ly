@@ -10,21 +10,21 @@
 }
 \paper {
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
-  %system-system-spacing =
-  %  #'((basic-distance . 0)
-  %     (minimum-distance . 0)
-  %     (padding . -0.35)
-  %     (stretchability . 100))
+  system-system-spacing =
+    #'((basic-distance . 0)
+       (minimum-distance . 0)
+       (padding . -5)
+       (stretchability . 100))
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #048
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -50,6 +50,8 @@ global = {
   \time 3/8
   %\override DynamicLineSpanner #'staff-padding = #0.0
   %\override DynamicLineSpanner #'Y-extent = #'(0 . 0)
+  \slurDotted
+  \tieDotted
 }
 
 sopMusic = \relative c'' {
@@ -61,15 +63,15 @@ sopMusic = \relative c'' {
   b4 a8 |
   
   d4 g,8 |
-  \slurDotted g\noBeam( fis\noBeam)  g |
+  \slurDotted g\noBeam( fis\noBeam)  g | \break
   a\noBeam( b\noBeam) a |
   g4 b8\rest |
   
   \once\override DynamicText #'X-offset = #-5
   d4_\mf d8 |
   d8\noBeam( c\noBeam) b |
-  b\noBeam a\noBeam g |
-  \slurDotted g4( fis8) |
+  b\noBeam a\noBeam g | 
+  \slurDotted g4( fis8) | \break
   
   \once\override DynamicText #'X-offset = #-3
   e_\f\noBeam( fis\noBeam) g |
@@ -78,8 +80,8 @@ sopMusic = \relative c'' {
   b4 a8 \bar "||"
   
   g4_\p b8\rest |
-  a4 b8\rest |
-  \slurDotted b8\noBeam( c\noBeam) b |
+  a4 b8\rest | 
+  \slurDotted b8\noBeam( c\noBeam) b | \break
   a4 d8 |
   b4 a8 |
   
@@ -87,6 +89,7 @@ sopMusic = \relative c'' {
   a4 b8\rest |
   b\noBeam( c\noBeam) b |
   a4 d8 |
+  \tieSolid
   g,4.~ |
   g8 b\rest b\rest \bar "|."
 }
@@ -96,31 +99,31 @@ sopWords = \lyricmode {
 
 altoMusic = \relative c'' {
   g4 d8 |
-  \slurDotted e\noBeam( e\noBeam) e |
-  e\noBeam( e\noBeam) e |
+  \slurDotted e\noBeam~ e\noBeam e |
+  e\noBeam~ e\noBeam e |
   d4 d8 |
   
   d4 d8 |
-  \slurDotted e\noBeam( e\noBeam) e |
+  \slurDotted e\noBeam~ e\noBeam e |
   
   
-  fis8\noBeam( fis\noBeam) fis8 |
+  fis8\noBeam~ fis\noBeam fis8 |
   g4 s8 |
   
   g4 g8 |
   g\noBeam( fis\noBeam) g |
   d\noBeam d\noBeam cis |
-  d4( d8) |
+  d4~ d8 |
   
   
-  e8\noBeam( e\noBeam) e |
+  e8\noBeam~ e\noBeam e |
   d4 d8 |
   e4 e8 |
   d4 fis8 |
   
   g4 s8 |
   fis4 s8 |
-  g\noBeam( g\noBeam) g |
+  g\noBeam~ g\noBeam g |
   
   
   a4 fis8 |
@@ -128,8 +131,9 @@ altoMusic = \relative c'' {
   
   g4 s8 |
   e4 s8 |
-  d\noBeam( d\noBeam) e |
+  d\noBeam~ d\noBeam e |
   fis4 fis8 |
+  \tieSolid
   g4.~ |
   g8 s4 \bar "|."
 }
@@ -151,9 +155,9 @@ altoWordsII = \lyricmode {
   Who goes there __ _ a -- knock -- ing so loud -- ly?
   Who goes there _ a -- knock -- ing like that?
   Ope your doors, I have here on a plate
-  Some ver -- y good cakes which I am bring -- ing:
+  Some ve -- ry good cakes which I am bring -- ing:
   Toc! toc! quick -- ly your doors now o -- pen;
-  Toc! toc! Come let us make good cheer! _
+  Toc! toc! Come let us make good cheer! __ _
 }
 altoWordsIII = \lyricmode {
   \dropLyricsV
@@ -161,10 +165,10 @@ altoWordsIII = \lyricmode {
   \set ignoreMelismata = ##t
   It is wrong when the Child _ is sleep -- ing,
   It is wrong _ to talk __ _ so loud;
-  Si -- lence, all, as you gath -- er a -- round, _
+  Si -- lence, all, as you gath -- er a -- round, __ _
   Lest __ _ your noise should wak -- en Je -- sus:
   Hush! hush! see __ _ how fast He slum -- bers!
-  Hush! hush! see __ _ how fast He sleeps! _
+  Hush! hush! see __ _ how fast He sleeps! __ _
 }
 altoWordsIV = \lyricmode {
   \dropLyricsV
@@ -175,7 +179,9 @@ altoWordsIV = \lyricmode {
   Look and see __ _ how charm -- ing is Je -- sus,
   How He is white, His cheeks are ros -- y!
   Hush! hush! see how the Child is sleep -- ing;
-  Hush! hush! see how He smiles in dreams. _
+  Hush! hush! see how He smiles in dreams.
+%8.5x11 __
+  _
 }
 
 tenorMusic = \relative c' {
@@ -189,16 +195,16 @@ tenorMusic = \relative c' {
   b8\noBeam( a\noBeam) b |
   
   
-  c\noBeam( c\noBeam) c |
+  c\noBeam~ c\noBeam c |
   b4 s8 |
   
   d4 d8 |
-  d\noBeam( d\noBeam) d\noBeam |
+  d\noBeam~ d\noBeam d\noBeam |
   g,\noBeam a\noBeam a |
-  a4( a8) |
+  a4~ a8 |
   
   
-  c\noBeam( c\noBeam) g |
+  c\noBeam~ c\noBeam g |
   g4 g8 |
   g4 g8 |
   fis4 c'8 |
@@ -213,8 +219,9 @@ tenorMusic = \relative c' {
   
   b4 s8 |
   e,4 s8 |
-  g8\noBeam( g\noBeam) g |
+  g8\noBeam~ g\noBeam g |
   c4 c8 |
+  \tieSolid
   b4.~ |
   b8 s4 \bar "|."
   
@@ -225,31 +232,31 @@ tenorWords = \lyricmode {
 
 bassMusic = \relative c' {
   g4 g8 |
-  \slurDotted e8\noBeam( e\noBeam) e |
+  \slurDotted e8\noBeam~ e\noBeam e |
   c\noBeam( b\noBeam) a |
   d4 c8 |
   
   b4 b8 |
-  e8\noBeam( e\noBeam) e |
+  e8\noBeam~ e\noBeam e |
   
   
-  d\noBeam( d\noBeam) d |
+  d\noBeam~ d\noBeam d |
   g4 d8\rest |
   
   b'4 b8 |
   b\noBeam( a\noBeam) g |
   g\noBeam fis\noBeam e |
-  d4( d8) |
+  d4~ d8 |
   
   
-  c\noBeam( c\noBeam) c |
+  c\noBeam~ c\noBeam c |
   b4 b8 |
   a4 a8 |
   d4 d8 |
   
   e4 d8\rest |
   d4 d8\rest |
-  g\noBeam( g\noBeam) g |
+  g\noBeam~ g\noBeam g |
   
   
   fis4 d8 |
@@ -257,8 +264,9 @@ bassMusic = \relative c' {
   
   e4 d8\rest |
   c4 d8\rest |
-  b\noBeam( b\noBeam) c |
+  b\noBeam~ b\noBeam c |
   d4 d8 |
+  \tieSolid
   g4.~ |
   g8 d\rest d\rest \bar "|."
 }

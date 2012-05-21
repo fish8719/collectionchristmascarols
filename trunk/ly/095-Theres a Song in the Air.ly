@@ -9,7 +9,7 @@
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   %system-system-spacing =
@@ -20,10 +20,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #095
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -54,17 +54,17 @@ sopMusic = \relative c' {
   d4 g e |
   fis2 d8.\noBeam d16 |
   d4 g b |
-  d2 d,8.\noBeam e16 | \break
+  d2 \bar""\break d,8.\noBeam e16 |
   d4 g e | 
   
   fis2 fis8.\noBeam fis16 |
   g4 fis e |
-  d2 d'8.\noBeam d16 | \break
+  d2 \bar""\break d'8.\noBeam d16 |
   e4 d b |
   a g e | 
   
   d fis a |
-  d2 d8.\noBeam d16 | \break
+  d2 \bar""\break d8.\noBeam d16 |
   e4 d b |
   a g c\fermata |
   b a d, |
@@ -110,7 +110,7 @@ altoWordsII = \lyricmode {
   \set stanza = #"2. "
   There’s a tu -- mult of joy
   O’er the won -- der -- ful birth,
-  For the Vir -- gin’s sweet boy
+  For the Vir -- gin’s sweet Boy
   Is the Lord of the earth.
   Ay! the star rains its fire while the beau -- ti -- ful sing,
   For the man -- ger of Beth -- le -- hem cra -- dles a King!

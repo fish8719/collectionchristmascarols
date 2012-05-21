@@ -4,13 +4,13 @@
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Make we joy now in this fest"}}
   poet = \markup\oldStyleNum"Old English Carol"
   %composer = \markup\oldStyleNum"Old English Carol"
-  composer = \markup\oldStyleNum"Arranged by G.R. Woodward (1848–1934)"
+  composer = \markup\oldStyleNum"Arranged by George Ratcliffe Woodward (1848–1934)"
   tagline = \markup\concat { "from " \italic "The Cowley Carol Book" \oldStyleNum", 1919"}
 }
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -18,18 +18,13 @@
        (minimum-distance . 0)
        (padding . -5)
        (stretchability . 100))
-  %top-markup-spacing =
-  %  #'((basic-distance . 0)
-  %     (minimum-distance . 0)
-  %     (padding . 0)
-  %     (stretchability . 0))
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #153
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -61,45 +56,44 @@ global = {
 sopMusic = \relative c' {
   \once \override Score.RehearsalMark #'self-alignment-X = #LEFT
   \mark "Chorus"
-  b'2 b4 |
-  b2 d4 |
-  c2 b8[ a] |
-  g2. |
-  b2 d4 |
-  b2 a4 |
-  
-  g4 fis2 |
-  e2. |
-  \time 14/4
-  \partial 4*14 b'2( a4 b c b) b2( a g1\fermata) \bar "||"
-  \once \override Score.RehearsalMark #'break-visibility = #end-of-line-visible
-  \once \override Score.RehearsalMark #'self-alignment-X = #RIGHT
-  \mark "Fine." 
-  \time 3/4 \break
-  
-  \partial 4 d'4^"Verse" |
-  e2 d4 |
-  d2 b4 |
-  d2 c4 |
-  b2 d4 |
-  e2 e4 |
-  
-  d2 b4 |
-  b2 a4 |
-  g2 \bar""\break g4 |
-  b2 b4 |
-  a2 a4 |
-  
-  c2 b8[ a] |
-  g2 g4 |
-  b4 d2 |
-  b4 a2 |
-  g4 fis2 |
-  e2.\fermata 
-  \once \override Score.RehearsalMark #'break-visibility = #end-of-line-visible
-  \once \override Score.RehearsalMark #'self-alignment-X = #RIGHT
-  \mark "D.C." \bar "||" \break
-  
+  \repeat volta 3 {
+    b'2 b4 |
+    b2 d4 |
+    c2 b8[ a] |
+    g2. |
+    b2 d4 |
+    b2 a4 |
+    
+    g4 fis2 |
+    e2. |
+    \time 14/4
+    \partial 4*14 b'2( a4 b c b) b2( a g1\fermata) \bar "||"
+    \once \override Score.RehearsalMark #'break-visibility = #end-of-line-visible
+    \once \override Score.RehearsalMark #'self-alignment-X = #RIGHT
+    \mark "Fine." 
+    \time 3/4 \break
+    
+    \partial 4 d'4^"Verse" |
+    e2 d4 |
+    d2 b4 |
+    d2 c4 |
+    b2 d4 |
+    e2 e4 |
+    
+    d2 b4 |
+    b2 a4 |
+    g2 \bar""\break g4 |
+    b2 b4 |
+    a2 a4 |
+    
+    c2 b8[ a] |
+    g2 g4 |
+    b4 d2 |
+    b4 a2 |
+    g4 fis2 |
+    e2.\fermata 
+    \break
+  }
   
   
   \partial 4 d'4 |
@@ -160,7 +154,7 @@ altoMusic = \relative c' {
   e2 d4 |
   e4 fis2 |
   d4 c2 |
-  e4 e( dis) e2. \bar "||"
+  e4 e( dis) e2.
   
   
   
@@ -193,14 +187,19 @@ altoWords = \lyricmode {
   \markup\italic A \markup\italic Pa -- \markup\italic tre \markup\italic U -- \markup\italic ni -- \markup\italic gen -- \markup\italic i -- \markup\italic tus
   Is through a maid -- en come to us:
   Sing we of Him and say Wel -- come,
-  \markup\italic Ve -- \markup\italic ni, \markup\italic Re -- \markup\italic dem -- \markup\italic ptor \markup\italic gen -- \markup\italic ti -- \markup\italic um.
+  \markup\italic Ve -- \markup\italic ni, \markup\italic Re -- \markup\italic dem -- \markup\italic ptor
+  \set associatedVoice = "sopranos"
+  \markup\italic gen -- \markup\italic ti -- \markup\italic um.
   
   
   \set stanza = #"4. "
+  \unset associatedVoice
   \markup\italic Ma -- \markup\italic ri -- \markup\italic a \markup\italic ven -- \markup\italic tre \markup\italic con -- \markup\italic ce -- \markup\italic pit,
   The Ho -- ly Ghost was ay her with,
   Of her in Beth -- lem born He is,
-  \markup\italic Con -- \markup\italic sors \markup\italic pa -- \markup\italic ter -- \markup\italic ni \markup\italic lu -- \markup\italic mi -- \markup\italic nis.
+  \markup\italic Con -- \markup\italic sors \markup\italic pa -- \markup\italic ter -- \markup\italic ni
+  \set associatedVoice = "sopranos"
+  \markup\italic lu -- \markup\italic mi -- \markup\italic nis.
 }
 altoWordsII = \lyricmode {
   \dropLyricsV
@@ -209,14 +208,19 @@ altoWordsII = \lyricmode {
   \markup\italic Ag -- \markup\italic no -- \markup\italic scat \markup\italic o -- \markup\italic mne \markup\italic sæ -- \markup\italic cu -- \markup\italic lum,
   A bright star made three kings to come,
   Him for to seek with their pre -- sen’s,
-  \markup\italic Ver -- \markup\italic bum \markup\italic su -- \markup\italic per -- \markup\italic num \markup\italic pro -- \markup\italic di -- \markup\italic ens.
+  \markup\italic Ver -- \markup\italic bum \markup\italic su -- \markup\italic per -- \markup\italic num
+  \set associatedVoice = "sopranos"
+  \markup\italic pro -- \markup\italic di -- \markup\italic ens.
   
   
   \set stanza = #"5. "
+  \unset associatedVoice
   \markup\italic O \markup\italic lux \markup\italic be -- \markup\italic a -- \markup\italic ta \markup\italic Tri -- \markup\italic ni -- \markup\italic tas,
   He lay be -- tween an ox and ass,
   Be -- side His moth -- er maid -- en free,
-  \markup\italic Glo -- \markup\italic ri -- \markup\italic a \markup\italic Ti -- \markup\italic bi, \markup\italic Do -- \markup\italic mi -- \markup\italic ne.
+  \markup\italic Glo -- \markup\italic ri -- \markup\italic a \markup\italic Ti -- \markup\italic bi,
+  \set associatedVoice = "sopranos"
+  \markup\italic Do -- \markup\italic mi -- \markup\italic ne.
 }
 altoWordsIII = \lyricmode {
   \dropLyricsV
@@ -225,7 +229,9 @@ altoWordsIII = \lyricmode {
   \markup\italic A \markup\italic so -- \markup\italic lis \markup\italic or -- \markup\italic tus \markup\italic car -- \markup\italic di -- \markup\italic ne
   So mighty a Lord is none as He;
   And to our kind He hath Him knit,
-  \markup\italic A -- \markup\italic dam \markup\italic pa -- \markup\italic rens \markup\italic quod \markup\italic pol -- \markup\italic lu -- \markup\italic it.
+  \markup\italic A -- \markup\italic dam \markup\italic pa -- \markup\italic rens \markup\italic quod
+  \set associatedVoice = "sopranos"
+  \markup\italic pol -- \markup\italic lu -- \markup\italic it.
 }
 altoWordsIV = \lyricmode {
   \repeat unfold 16{\skip1}
@@ -269,7 +275,7 @@ tenorMusic = \relative c' {
   g a2 |
   g4 e( fis) |
   g8[ a] b2 |
-  g2. \bar "||"
+  g2.
   
   
   
@@ -330,7 +336,7 @@ bassMusic = \relative c {
   e4 d2 |
   g,4 a2 |
   e'4 b2 |
-  e2.\fermata \bar "||"
+  e2.\fermata
   
   
   

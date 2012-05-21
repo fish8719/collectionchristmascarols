@@ -1,14 +1,14 @@
 ﻿\version "2.14.2"
 \include "../util.ly"
 \header {
-  title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"O Come, O Come Emmanuel"}}
+  title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"O Come, O Come, Emmanuel"}}
   poet = \markup\oldStyleNum"Translated by John Mason Neale (1818–1866)"
   composer = \markup\oldStyleNum"15th Century French"
   tagline = \markup ""
 }
 \paper {
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -19,10 +19,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #002
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle advent}
@@ -160,11 +160,11 @@ altoWordsII = \lyricmode {
 %\markup\italic
   \set stanza = #"2. "
   O come, O come, Thou Lord __ of might, Who to Thy tribes, on Si -- nai’s height,
-  In an -- cient times did’st give __ the Law, In cloud, and maj -- es -- ty __ and awe.
+  In an -- cient times didst give __ the Law, In cloud, and maj -- es -- ty __ and awe.
   
   \repeat unfold 16 \skip1
   \set stanza = #"5. "
-  O come, Thou Day -- Spring, come __ and cheer Our spir -- its by Thine ad -- vent here;
+  O come, Thou Day -- Spring, come __ and cheer Our spi -- rits by Thine ad -- vent here;
   Dis -- perse the gloom -- y clouds __ of night, And death’s dark shad -- ows put __ to flight.
   
 }
@@ -172,7 +172,7 @@ altoWordsIII = \lyricmode {
   \dropLyricsVII
   \set stanza = #"3. "
   O come, Thou Rod of Jes -- se, free Thine own from Sa -- tan’s ty -- ran -- ny;
-  From depths of hell thy peo -- ple save, And give them vic -- t’ry o’er __ the grave.
+  From depths of hell Thy peo -- ple save, And give them vic -- t’ry o’er __ the grave.
 }
 altoWordsIV = \lyricmode {
 }

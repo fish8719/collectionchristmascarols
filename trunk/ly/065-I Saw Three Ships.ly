@@ -8,7 +8,7 @@
 }
 \paper {
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   %system-system-spacing =
@@ -19,10 +19,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #065
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -54,7 +54,7 @@ global = {
 
 sopMusic = \relative c' {
     \repeat volta 2 {
-    \partial 8 d8_\mf |
+    \partial 8 d8 |
     \slurDotted  g4 g8\noBeam a\noBeam( a\noBeam) b |
     d4 b8 a4 c8 |
     
@@ -87,9 +87,9 @@ altoWords = \lyricmode {
   \dropLyricsIX
   \set stanza = #"1. "
   \set ignoreMelismata = ##t
-  I saw three ships __ _ come sail -- ing in,
+  I saw three ships _ come sail -- ing in,
   On Christ -- mas day, on Christ -- mas day,
-  I saw three ships __ _ come sail -- ing in,
+  I saw three ships _ come sail -- ing in,
   On Christ -- mas day in the morn -- ing.
   
   
@@ -112,9 +112,9 @@ altoWordsII = \lyricmode {
   
   \set stanza = #"6. "
   \set ignoreMelismata = ##t
-  And all the bells __ _ on earth shall ring,
+  And all the bells _ on earth shall ring,
   On Christ -- mas day, on Christ -- mas day,
-  And all the bells __ _ on earth shall ring,
+  And all the bells _ on earth shall ring,
   On Christ -- mas day in the morn -- ing.
 }
 altoWordsIII = \lyricmode {
@@ -145,9 +145,9 @@ altoWordsIV = \lyricmode {
   
   \set stanza = #"8. "
   \set ignoreMelismata = ##t
-  And all the souls __ _ on earth shall sing,
+  And all the souls _ on earth shall sing,
   On Christ -- mas day, on Christ -- mas day,
-  And all the souls __ _ on earth shall sing,
+  And all the souls _ on earth shall sing,
   On Christ -- mas day in the morn -- ing.
 }
 altoWordsV = \lyricmode {
@@ -170,7 +170,7 @@ altoWordsIX = \lyricmode {
 }
 
 tenorMusic = \relative c {
-  d8^\mf |
+  d8 |
   \slurDotted b'4 b8 c\noBeam( c\noBeam) b |
   a4 g8 fis4 a8 |
   

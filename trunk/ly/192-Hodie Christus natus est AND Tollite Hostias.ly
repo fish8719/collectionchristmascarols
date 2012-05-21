@@ -3,7 +3,7 @@
 \paper {
   print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -14,15 +14,15 @@
   score-markup-spacing =
     #'((basic-distance . 0)
        (minimum-distance . 0)
-       (padding . 0)
-       (stretchability . 100))
+       (padding . 1)
+       (stretchability . 0))
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #192
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -144,8 +144,8 @@ pianoLH = \relative c' {
     tagline = \markup { "from" \italic "cpdl.org"}
   }
 }
-
-
+\markup \fill-line {\concat{ "from " \italic "cpdl.org"}}
+\markup\vspace#2
 
 
 
@@ -275,20 +275,20 @@ altoMusic = \relative c' {
   d1 \bar "|."
 }
 altoWords = {
-  \dropLyricsV
+  \dropLyricsVIII
   \set stanza = \markup\dynamic"f   "
   \lyricmode {
     Tol -- li -- te hos -- ti -- as.
-    et a -- do -- ra -- te
+    et ad -- o -- ra -- te
     Do -- mi -- num in a -- tri -- o
     san -- cto e -- jus.
   }
   \raiseLyrics
   \lyricmode {
-    \set associatedVoice = "tenors"
     Læ -- ten -- tur cœ -- li, et ex -- ul -- tet ter -- ra
+    
+    a fa -- ci -- e Do -- mi -- ni, quo -- ni -- am ve -- nit. \set associatedVoice = "sopranos" Al -- le -- lu -- ia.
     \unset associatedVoice
-    a fa -- ci -- e Do -- mi -- ni, quo -- ni -- am ve -- nit. Al -- le -- lu -- ia.
     ia.
     
     
@@ -304,7 +304,7 @@ altoWords = {
     \set associatedVoice = "tenors"
     Læ -- ten -- tur cœ -- li, et ex -- ul -- tet ter -- ra
     \unset associatedVoice
-    a fa -- ci -- e Do -- mi -- ni, quo -- ni -- am ve -- nit. Al -- le -- lu -- ia.
+    a fa -- ci -- e Do -- mi -- ni, quo -- ni -- am ve -- nit. \set associatedVoice = "sopranos" Al -- le -- lu -- ia.
   }
 }
 altoWordsII = \lyricmode {

@@ -10,7 +10,7 @@
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -21,10 +21,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #126
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -125,10 +125,14 @@ altoWords = \lyricmode {
   \dropLyricsIX
   \set stanza = #"1. "
   Come! tune your heart, To bear its part,
-  And ce -- le -- brate Mes -- si -- ah’s feast with prais -- es, with prais -- es;
+  And ce -- le -- brate Mes -- si -- ah’s feast with prais -- es,
+  \set associatedVoice = "tenors"
+  with prais -- es;
   
   Let love in -- spire The joy -- ful choir,
-  While to the God of Love, glad Hymns it rais -- es,
+  While to the God of Love, glad Hymns
+  \unset associatedVoice
+  it rais -- es,
   \set associatedVoice = "tenors"
   it rais -- es.
 }
@@ -137,10 +141,14 @@ altoWordsII = \lyricmode {
 %\markup\italic
   \set stanza = #"2. "
   Ex -- alt His Name; With joy pro -- claim,
-  God loved the world, and through His son for -- gave us, for -- gave us;
+  God loved the world, and through His Son for -- gave us, 
+  \set associatedVoice = "tenors"
+  for -- gave us;
   Oh! what are we,
   That, Lord, we see
-  Thy won -- drous love, in Christ who died to save __ us,
+  Thy won -- drous love, in Christ who died 
+  \unset associatedVoice
+  to save __ us,
   \set associatedVoice = "tenors"
   to save __ us!
 }
@@ -149,9 +157,13 @@ altoWordsIII = {
   \set stanza = \markup{\dynamic"mf " "3. "}
   \lyricmode {
     Your ref -- uge place In His free grace,
-    Trust in His Name, and day by day re -- pent you, re -- pent you;
+    Trust in His Name, and day by day re -- pent you, 
+    \set associatedVoice = "tenors"
+    re -- pent you;
     Ye mock God’s word, Who call Him Lord,
-    And fol -- low not the pat -- tern He hath lent __ you,
+    And fol -- low not the pat -- tern He 
+    \unset associatedVoice
+    hath lent __ you,
     \set associatedVoice = "tenors"
     hath lent __ you.
   }
@@ -160,9 +172,13 @@ altoWordsIV = \lyricmode {
   \dropLyricsIX
   \set stanza = #"4. "
   O Christ, to prove For Thee, my love,
-  In breth -- ren Thee my hands shall clothe and cher -- ish, and cher -- ish;
+  In breth -- ren Thee my hands shall clothe and cher -- ish, 
+  \set associatedVoice = "tenors"
+  and cher -- ish;
   To each sad heart Sweet Hope im -- part,
-  When worn with care, with sor -- row nigh to per -- ish,
+  When worn with care, with sor -- row nigh 
+  \unset associatedVoice
+  to per -- ish,
   \set associatedVoice = "tenors"
   to per -- ish.
 }
@@ -170,9 +186,13 @@ altoWordsV = \lyricmode {
   \dropLyricsIX
   \set stanza = #"5. "
   Come! praise the Lord; In Heav’n are stored
-  Rich gifts for those who here His Name e -- steem -- ed, e -- steem -- ed;
+  Rich gifts for those who here His Name e -- steem -- ed, 
+  \set associatedVoice = "tenors"
+  e -- steem -- ed;
   Al -- le -- lu -- ia; Al -- le -- lu -- ia;
-  Re -- joice in Christ, and praise Him ye re -- deem -- ed,
+  Re -- joice in Christ, and praise Him ye 
+  \unset associatedVoice
+  re -- deem -- ed,
   \set associatedVoice = "tenors"
   re -- deem -- ed.
 }

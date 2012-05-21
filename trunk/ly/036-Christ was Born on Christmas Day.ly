@@ -6,7 +6,7 @@
 \paper {
   print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   %system-system-spacing =
@@ -17,10 +17,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #036
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -191,16 +191,16 @@ altoWords = \lyricmode {
   \dropLyricsV
   \set stanza = #" 1."
   Christ was born on Christ -- mas Day,
-  Wreathe the hol -- ly twine the bay;
+  Wreathe the hol -- ly, twine the bay;
   
-  \markup\italic Chri -- \markup\italic stus \markup\italic na -- \markup\italic tus \markup\italic ho -- \markup\italic di -- \markup\italic e;
+  \markup\italic Chri -- \markup\italic stus \markup\italic na -- \markup\italic tus \markup\italic ho -- \markup\italic di -- \markup\italic e_:
   The Babe, the Son, the Ho -- ly One of Ma -- ry.
   
   \set stanza = #" 3."
-  Let the bright red ber -- ries glow,
-  Ev -- ’ry -- where in good -- ly show,
+  Let the bright red ber -- ries glow
+  Ev -- ’ry -- where in good -- ly show;
   
-  \markup\italic Chri -- \markup\italic stus \markup\italic na -- \markup\italic tus \markup\italic ho -- \markup\italic di -- \markup\italic e;
+  \markup\italic Chri -- \markup\italic stus \markup\italic na -- \markup\italic tus \markup\italic ho -- \markup\italic di -- \markup\italic e_:
   The Babe, the Son, the Ho -- ly One of Ma -- ry.
   
   \set stanza = #" 5."
@@ -232,15 +232,15 @@ altoWordsII = \lyricmode {
   He is born to set us free,
   He is born our Lord to be,
   
-  \markup\italic Ex \markup\italic Ma -- \markup\italic ri -- \markup\italic a \markup\italic Vir -- \markup\italic gi -- \markup\italic ne;
-  The God, the Lord, by all a -- dored for ev -- er.
+  \markup\italic Ex \markup\italic Ma -- \markup\italic ri -- \markup\italic a \markup\italic Vir -- \markup\italic gi -- \markup\italic ne_:
+  The God, the Lord, by all a -- dor’d for ev -- er.
   
   \set stanza = #" 4."
-  Chris -- tian men, re -- joice and sing,
+  Chris -- tian men, re -- joice and sing;
   ’Tis the birth -- day of a King,
   
-  \markup\italic Ex \markup\italic Ma -- \markup\italic ri -- \markup\italic a \markup\italic Vir -- \markup\italic gi -- \markup\italic ne;
-  The God, the Lord, by all a -- dored for ev -- er.
+  \markup\italic Ex \markup\italic Ma -- \markup\italic ri -- \markup\italic a \markup\italic Vir -- \markup\italic gi -- \markup\italic ne_:
+  The God, the Lord, by all a -- dor’d for ev -- er.
 }
 altoWordsIII = \lyricmode {
 }

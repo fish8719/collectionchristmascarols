@@ -9,7 +9,7 @@
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -20,10 +20,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #166
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -135,7 +135,7 @@ altoWords = \lyricmode {
   
   \set stanza = #"4. "
   My Joy, my Ex -- ul -- ta -- tion,
-  My spir -- it’s Con -- so -- la -- tion;
+  My spi -- rit’s Con -- so -- la -- tion;
   My Son, my Spouse, my Bro -- ther,
   O lis -- ten to Thy Mo -- ther!
 }
@@ -151,7 +151,7 @@ altoWordsII = \lyricmode {
   \repeat unfold 10{\skip1}
   
   \set stanza = #"5. "
-  Say, would’st Thou heav’n -- ly sweet -- ness,
+  Say, wouldst Thou heav’n -- ly sweet -- ness,
   Or love of an -- sw’ring meet -- ness?
   Or is fit mu -- sic want -- ing?
   Ho! An -- gels, raise your chant -- ing!
