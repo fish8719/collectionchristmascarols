@@ -8,7 +8,7 @@
 }
 \paper {
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -26,13 +26,17 @@
        (minimum-distance . 0)
        (padding . 0)
        (stretchability . 0))
+%8.5x11  system-system-spacing #'stretchability = 100
+%8.5x11  markup-system-spacing #'stretchability = 100
+%8.5x11  top-system-spacing #'stretchability = 80
+%8.5x11  last-bottom-spacing #'stretchability = 80
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #080
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -107,7 +111,7 @@ sopMusic = \relative c'' {
       f'2. ees4 |
       des2 c4 des8.\noBeam ees16 |
       
-      des2. bes4\rest |
+      des2. bes4\rest | \pageBreak
     }
     %second ending
     {
@@ -169,9 +173,9 @@ chorusWords = \lyricmode {
   \unset associatedVoice
   
   \dropLyricsV
-  Fall on your knees, Oh, hear __ the an -- gel voi -- ces!
+  Fall on your knees, Oh, hear __ the an -- gel \break voi -- ces!
   O night __ di -- vine, __
-  O night __ when Christ was born!
+  O night __ when Christ was \break born!
   O night O ho -- ly __ night
   O night di -- vine!
 }
@@ -235,7 +239,7 @@ altoWordsIII = \lyricmode {
   Tru -- ly He taught us to love __ _ one an -- oth -- er,
   His law is love and His gos -- pel is peace;
   
-  Chains shall He break for the slave __ _ is our broth -- er,
+  Chains shall He break for the slave __ _ is our bro -- ther,
   And in His name all op -- pres -- sion shall cease.
   Sweet hymns of joy in grate -- ful cho -- rus raise we,
   Let all with -- in us praise His ho -- ly name; _

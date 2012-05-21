@@ -2,13 +2,13 @@
 \include "../util.ly"
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"The Wassail Song"}}
-  poet = \markup\oldStyleNum"Traditional"
-  composer = \markup\oldStyleNum"Traditional (Yorkshire)"
+  poet = \markup\oldStyleNum"17th Century English"
+  composer = \markup\oldStyleNum"17th Century English"
   tagline = \markup { "from" \italic {Christmas Carols, New and Old}}
 }
 \paper {
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -19,10 +19,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #075
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -42,7 +42,7 @@
         \fill-line{\headerLine}
   }
 }
-#(set-global-staff-size 14.6) \paper{ #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 14.6 20))) }
+#(set-global-staff-size 14.3) \paper{ #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 14.3 20))) }
 global = {
   \key e \major
   \time 6/8
@@ -57,8 +57,8 @@ sopMusic = \relative c' {
   \slurDotted e4( fis8) gis4 fis8 |
   e4 b'8 b4 b8 |
   
-  \partial 8*5 \slurSolid b4.( b4) | 
-  \partial 8 b8 |
+  \slurSolid b4.( b4) \bar""
+  b8 |
   cis4 cis8 b4 gis8 |
   b4.( a4) gis8 |
   \slurDotted fis4( e8) fis4 gis8 |
@@ -91,8 +91,8 @@ sopMusic = \relative c' {
   \slurDotted e4( fis8) gis4 fis8 |
   e4 b'8 b4 b8 |
   
-  \partial 8*5 \slurSolid b4.( \slurDotted b4) | 
-  \partial 8 b8 |
+  \slurSolid b4.( \slurDotted b4) | \bar""
+  b8 |
   cis4 cis8 b4 gis8 |
   b4( b8)( a4) gis8 |
   fis4 e8 fis4 gis8 |
@@ -189,7 +189,9 @@ altoWordsII = {
     Love and joy come to you, And to
     \raiseLyrics
     you your was -- sail too,
-    And God bless you, and send you a hap -- py new year,
+    And God bless you, and send you a hap -- py new
+%8.5x11 \dropLyrics    
+    year,
     \unset associatedVoice
     And God
     \dropLyrics
@@ -198,7 +200,7 @@ altoWordsII = {
     
     \set stanza = #"5. "
     \set ignoreMelismata = ##t
-    Call up the But -- ler of this house, Put on his gold -- den ring; _
+    Call up the but -- ler of this house, Put on his gol -- den ring; _
     Let him bring us a glass of beer, The bet -- ter we shall sing.
   }
 }

@@ -3,7 +3,7 @@
 \paper {
   print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -14,10 +14,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #194
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -136,7 +136,7 @@ tenorMusic = \relative c' {
   
   a bes c4. bes8 |
   a4 g8 f4 g8 a4 |
-  g2.
+  <g d'>2.
 }
 tenorWords = \lyricmode {
 
@@ -188,6 +188,7 @@ pianoLH = \relative c' {
 %    \new PianoStaff << \new Staff { \new Voice { \pianoRH } } \new Staff { \clef "bass" \pianoLH } >>
   >>
   \layout {
+    #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 14.7 20)))
     \context {
       \Score
       %\override SpacingSpanner #'base-shortest-duration = #(ly:make-moment 1 8)
@@ -236,6 +237,7 @@ global = {
   \autoBeamOff
   \override DynamicLineSpanner #'staff-padding = #0.0
   \override DynamicLineSpanner #'Y-extent = #'(-1 . 1)
+  \tieDotted
 }
 
 sopMusic = \relative c' {
@@ -258,12 +260,13 @@ sopMusic = \relative c' {
   \repeat volta 3 {
     \partial 2 a4. a8 |
     fis'4 d b e |
-    d4 cis8[ b] a4. a8 |
+    \slurDotted
+    d4( cis8[) b] a4. a8 |
     a4. a8 d4 d |
     
-    d cis e4. d8 |
+    d( cis) e4. d8 |
     cis4 b a a |
-    a a fis4. fis8 |
+    a~ a fis4. fis8 |
     
     g4 gis a a |
     a2 b4. b8 |
@@ -306,12 +309,13 @@ altoMusic = \relative c' {
   
   fis4. fis8 |
   a4 a a g |
-  g4. g8 g4. g8 |
+  \slurDotted
+  g4.~ g8 g4. g8 |
   fis4. fis8 fis4 gis |
   
-  a a g4. g8 |
+  a~ a g4. g8 |
   g4 g e fis |
-  g fis d4. d8 |
+  g( fis) d4. d8 |
   
   d4 d cis d8[ e] |
   d2 d4. d8 |
@@ -343,9 +347,9 @@ altoWords = \lyricmode {
   Watch be -- side \unset associatedVoice their flocks that slept.
   
   \set stanza = #"3. "
-  Soft and pure and ho -- ly glo -- ry,
-  Kings and seers and pro -- phets hoa -- ry,
-  Shed through -- out the sa -- cred sto -- ry:
+  Soft and pure and ho -- ly \set ignoreMelismata = ##t glo -- \unset ignoreMelismata ry,
+  Kings and seers and pro -- phets \set ignoreMelismata = ##t hoa -- ry, \unset ignoreMelismata 
+  Shed through -- out the sa -- cred \set ignoreMelismata = ##t sto -- ry: \unset ignoreMelismata 
   While the priests, like shep -- herds true,
   Watch’d be -- side God’s cho -- sen __ few.
   
@@ -354,6 +358,7 @@ altoWords = \lyricmode {
   Let us all, with glad en -- dea -- vor,
   Sing the song that e -- choes ev -- er:
   Glo -- ry in the high -- est Hea -- ven!
+  \set associatedVoice = "tenors"
   Peace on earth to us for giv -- en.
 }
 altoWordsII = \lyricmode {
@@ -367,9 +372,9 @@ altoWordsII = \lyricmode {
   When Christ’s An -- \unset associatedVoice gels sang His birth.
   
   \set stanza = #"4. "
-  But that light no more a -- vail -- ed,
-  All its splen -- dor straight -- way pal -- ed
-  In His light whom An -- gels hail -- ed;
+  But that light no more a -- \set ignoreMelismata = ##t vail -- \unset ignoreMelismata ed,
+  All its splen -- dor straight -- way \set ignoreMelismata = ##t pal -- ed \unset ignoreMelismata 
+  In His light whom An -- gels \set ignoreMelismata = ##t hail -- ed; \unset ignoreMelismata 
   E -- ven as the stars of old,
   ’Mid the bright  -- ness lost their gold.
 }
@@ -377,9 +382,9 @@ altoWordsIII = \lyricmode {
   \dropLyricsV
   \repeat unfold 35 { \skip 1 }
   \set stanza = #"5. "
-  Now no more on Christ -- mas night, __ _
-  Is the sky with An -- gels bright, __ _
-  But for ev -- er shines the Light; __ _
+  Now no more on Christ -- mas night, __
+  Is the sky with An -- gels bright, __
+  But for ev -- er shines the Light; __
   E -- ven He whose birth they told
   To the shep -- herds by __ the __ fold.
 }
@@ -407,12 +412,13 @@ tenorMusic = \relative c' {
   
   d4. d8 |
   d4 d d e |
-  e4. d8 e4. e8 |
+  \slurDotted
+  e4.( d8) e4. e8 |
   d4. d8 d4 d |
   
-  e e cis4. d8 |
+  e~ e cis4. d8 |
   e4 d cis d |
-  cis d a4. d,8 |
+  cis( d) a4. d,8 |
   
   d4 e e fis8[ g] |
   fis2 g4. b8 |
@@ -456,12 +462,13 @@ bassMusic = \relative c {
   
   d4. d8 |
   d4 fis g e |
-  a4. b8 cis4. cis8 |
+  \slurDotted
+  a4.( b8) cis4. cis8 |
   d4. d8 b4 b |
   
-  a a a4. a8 |
+  a~ a a4. a8 |
   a4 a a d, |
-  a' d, d4. b8 |
+  a'( d,) d4. b8 |
   
   b4 b a a |
   d2 g4. g8 |

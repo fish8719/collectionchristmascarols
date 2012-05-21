@@ -4,12 +4,12 @@
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"The Angel Gabriel"}}
   poet = \markup\oldStyleNum"Translated and Adapted by Sabine Baring-Gould (1834–1924)"
   composer = \markup\oldStyleNum"Basque Carol"
-  tagline = \markup { "from" \italic {NetHymnal.org}}
+  tagline = \markup { "from" \italic {CyberHymnal.org}}
 }
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   %system-system-spacing =
@@ -20,10 +20,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #049
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -113,7 +113,8 @@ altoWordsIII = \lyricmode {
   \set ignoreMelismata = ##t
   ho -- ly
   \unset ignoreMelismata
-  Name.” __
+  Name.”
+%8.5x11 __
   Most high -- ly fa -- vored la -- dy,
   Glo -- ri -- a! __
 }
@@ -126,7 +127,7 @@ altoWordsIV = \lyricmode {
   \set ignoreMelismata = ##t
   ev -- er
   \unset ignoreMelismata
-  say __
+  say, __
   “Most high -- ly fa -- vored la -- dy,”
   Glo -- ri -- a! __
 }

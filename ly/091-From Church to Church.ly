@@ -3,7 +3,7 @@
 \paper {
   print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   %score-markup-spacing =
@@ -19,10 +19,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #091
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -62,6 +62,22 @@ sopMusic = \relative c'' {
     a( bes) c bes( a) f |
     \partial 4*5 g2.~ g2\fermata \break 
   }
+  
+  
+  \repeat volta 2 {
+    \partial 4 g4 |
+    g( a bes a g) f |
+    \slurDotted
+    g2.( d'2)  d4 |
+    \slurSolid
+    c( d) ees d( c) d |
+    bes2.~ bes4 bes\rest \bar""\break bes |
+    
+    d2 c4 d2 g,4 |
+    g( a) c bes( a) f |
+    a( bes) c bes( a) f |
+    \partial 4*5 g2.~ g2\fermata \break 
+  }
 }
 sopWords = \lyricmode {
   
@@ -78,6 +94,20 @@ altoMusic = \relative c'' {
   e2 f4 f2 f4 |
   f2 f4 f2 f4 |
   e2.( d2)
+  
+  
+  g4 |
+  e2( f4 f2) f4 |
+  \slurDotted
+  e2.( f2) f4 |
+  \slurSolid
+  f2 g4 f2 f4 |
+  d2.~ d4 s4 bes' |
+  
+  f2 f4 f2 d4 |
+  e2 f4 f2 f4 |
+  f2 f4 f2 f4 |
+  e2.( d2)
 }
 altoWords = \lyricmode {
   \dropLyricsIX
@@ -87,7 +117,11 @@ altoWords = \lyricmode {
   
   
   \set stanza = #"5. "
-  The Star __ went leading from East un -- to __ the West: __
+  The Star __ went
+  \set ignoreMelismata = ##t
+  lead -- ing
+  \unset ignoreMelismata
+  from East un -- to __ the West: __
   The Wise Men fol -- lowed, till they saw it rest
   In Beth -- le -- hem. __
 }
@@ -140,6 +174,19 @@ tenorMusic = \relative c' {
   c2 c4 f,2 a4 |
   d2 c4 d( c) a |
   c2.( b2\fermata)
+  
+  
+  g4 |
+  c2( d4 c2) a4 |
+  \slurDotted
+  c2.( \slurSolid d4)( c4) bes |
+  a2 bes4 a2 a4 |
+  bes2.~ bes4 s4 bes |
+  
+  bes2 a4 a2 bes4 |
+  c2 c4 f,2 a4 |
+  d2 c4 d( c) a |
+  c2.( b2\fermata)
 }
 tenorWords = \lyricmode {
 
@@ -149,6 +196,21 @@ bassMusic = \relative c' {
   g4 |
   c,2( bes4 f'2) f4 |
   c2.( bes2) bes4 |
+  f'2 ees4 f2 f4 |
+  bes,2.( bes4) d4\rest bes'4 |
+  
+  bes2 f4 d2 g4 |
+  c,2 a4 d2 d4 |
+  d2 a4 bes( f') f |
+  c2.( g2)
+  
+  
+  
+  g'4 |
+  c,2( bes4 f'2) f4 |
+  \slurDotted
+  c2.( bes2) bes4 |
+  \slurSolid
   f'2 ees4 f2 f4 |
   bes,2.( bes4) d4\rest bes'4 |
   
@@ -175,21 +237,21 @@ pianoLH = \relative c' {
     \new Staff = women <<
       \new Voice = "sopranos" {
         \voiceOne
-        << \global \repeat unfold2\sopMusic >>
+        << \global \sopMusic >>
       }
       \new Voice = "altos" {
         \voiceTwo
-        << \global \repeat unfold2\altoMusic >>
+        << \global \altoMusic >>
       }
     >>
     \new Staff = men <<
       \clef bass
       \new Voice = "tenors" {
         \voiceOne
-        << \global \repeat unfold2\tenorMusic >>
+        << \global \tenorMusic >>
       }
       \new Voice = "basses" {
-        \voiceTwo << \global \repeat unfold2\bassMusic >>
+        \voiceTwo << \global \bassMusic >>
       }
     >>
 %    \new Lyrics = basses { s1 }

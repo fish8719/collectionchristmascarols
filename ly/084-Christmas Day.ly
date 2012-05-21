@@ -9,7 +9,7 @@
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -17,18 +17,13 @@
        (minimum-distance . 0)
        (padding . -10)
        (stretchability . 100))
-  top-markup-spacing =
-    #'((basic-distance . 0)
-       (minimum-distance . 0)
-       (padding . 0)
-       (stretchability . 0))
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #084
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -118,10 +113,12 @@ altoWords = {
   \dropLyricsIX
   \lyricmode {
     \set stanza = #"1. "
+    \set associatedVoice = "basses"
     Wake all mu -- sic’s ma -- gic pow’rs,
     On this bliss -- ful morn -- ing,
     Born to -- day, the Child is ours,
     Theme of Pro -- phet’s warn -- ing;
+    \unset associatedVoice
     Gi -- ant in the race He tow’rs,
     Toil and dan -- ger scorn -- ing.
   }
@@ -142,6 +139,7 @@ altoWordsII = \lyricmode {
   \dropLyricsIX
 %\markup\italic
   \set stanza = #"2. "
+  \set associatedVoice = "basses"
   Let this glo -- rious hol -- i -- day
   Find such ho -- ly spend -- ing,
   That the sim -- ple -- heart -- ed may
@@ -153,6 +151,7 @@ altoWordsIII = {
   \dropLyricsIX
   \set stanza = \markup{\dynamic"mf  " "3. "}
   \lyricmode {
+    \set associatedVoice = "basses"
     Give we glo -- ry to this Feast,
   }
   \set stanza = \markup\dynamic"  ff "
@@ -179,6 +178,7 @@ altoWordsIII = {
 altoWordsIV = \lyricmode {
   \dropLyricsIX
   \set stanza = #"4. "
+  \set associatedVoice = "basses"
   O how bright is this day made,
   Day with ra -- diance glow -- ing,
   Which the Light of Light dis -- played,
@@ -189,6 +189,7 @@ altoWordsIV = \lyricmode {
 altoWordsV = \lyricmode {
   \dropLyricsIX
   \set stanza = #"5. "
+  \set associatedVoice = "basses"
   Ris’n to -- day in splen -- dor bright,
   Shin -- ing to all a -- ges,
   Beams the Sun, whose dis -- tant light
@@ -279,6 +280,11 @@ pianoLH = \relative c' {
       \new Voice = "sopranos" { \voiceOne << \global \sopMusic >> }
       \new Voice = "altos" { \voiceTwo << \global \altoMusic >> }
     >>
+   \new Staff = men <<
+      \clef bass
+      \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }
+      \new Voice = "basses" { \voiceTwo << \global \bassMusic >> }
+    >>
     \new Lyrics \with { alignAboveContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \sopWords
      \new Lyrics = "altosVI"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsVI
     \new Lyrics = "altosV"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsV
@@ -286,12 +292,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsII
     \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.8))} \lyricsto "altos" \altoWords
-   \new Staff = men <<
-      \clef bass
-      \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }
-      \new Voice = "basses" { \voiceTwo << \global \bassMusic >> }
-    >>
-    \new Lyrics \with { alignAboveContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)(padding . -0.5)) } \lyricsto "tenors" \tenorWords
+    \new Lyrics \with { alignAboveContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)(padding . 0.1)) } \lyricsto "tenors" \tenorWords
     \new Lyrics \with { alignBelowContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "basses" \bassWords
   >>
 %    \new PianoStaff << \new Staff { \new Voice { \pianoRH } } \new Staff { \clef "bass" \pianoLH } >>

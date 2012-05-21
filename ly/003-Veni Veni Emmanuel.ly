@@ -1,13 +1,13 @@
 ﻿\version "2.14.2"
 \include "../util.ly"
 \header {
-  title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Veni, Veni Emmanuel"}}
+  title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Veni, Veni, Emmanuel"}}
   %composer = \markup\oldStyleNum"Gregorian"
   tagline = ""
 }
 \paper {
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -18,10 +18,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #003
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCaps advent}
@@ -147,7 +147,7 @@ altoMusic = \relative c' {
 altoWords = \lyricmode {
   \dropLyricsVII
   \set stanza = #"1. "
-  Ve -- ni ve -- ni, Em -- ma -- nu -- el
+  Ve -- ni, ve -- ni, Em -- ma -- nu -- el
   cap -- ti -- vum sol -- ve Is -- ra -- el,
   qui ge -- mit in ex -- si -- li -- o,
   pri -- va -- tus De -- i Fi -- li -- o.
@@ -172,7 +172,7 @@ altoWordsII = \lyricmode {
   
   \repeat unfold 16\skip1
   \set stanza = #"6. "
-  Ve -- ni, ve -- ni O O -- ri -- ens,
+  Ve -- ni, ve -- ni, O O -- ri -- ens,
   so -- la -- re nos ad -- ve -- ni -- ens,
   noc -- tis de -- pel -- le ne -- bu -- las,
   di -- ras -- que mor -- tis te -- ne -- bras.
@@ -183,7 +183,7 @@ altoWordsIII = \lyricmode {
   Ve -- ni, ve -- ni, A -- do -- na -- i,
   qui po -- pu -- lo in Si -- na -- i
   le -- gem de -- dis -- ti ver -- ti -- ce
-  in ma -- ies -- ta -- te glo -- ri -- æ.
+  in ma -- jes -- ta -- te glo -- ri -- æ.
   
   \repeat unfold16\skip1
   \set stanza = #"7. "
@@ -195,7 +195,7 @@ altoWordsIII = \lyricmode {
 altoWordsIV = \lyricmode {
   \dropLyricsVII
   \set stanza = #"4. "
-  Ve -- ni, O Ies -- se vir -- gu -- la,
+  Ve -- ni, O Jes -- se vir -- gu -- la,
   ex hos -- tis tu -- os un -- gu -- la,
   de spec -- tu tu -- os tar -- ta -- ri
   e -- duc et an -- tro ba -- ra -- thri.

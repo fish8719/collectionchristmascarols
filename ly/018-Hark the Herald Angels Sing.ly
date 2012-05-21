@@ -8,7 +8,7 @@
 }
 \paper {
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -19,10 +19,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #018
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -109,7 +109,7 @@ altoMusic = \relative c' {
   d4 fis d2 \bar "|."
 }
 altoWords = \lyricmode {
-  \dropLyricsVI
+  \dropLyricsVII
   \set stanza = #"1. "
   \set associatedVoice = "altos"
   Hark! the her -- ald an -- gels sing, __ “Glo -- ry to the new -- born King!
@@ -122,17 +122,17 @@ altoWords = \lyricmode {
   Joy -- ful all ye na -- tions, rise; __
   Join the tri -- umph of the skies;
   With th’an -- gel -- ic hosts pro -- claim,
-  “Christ is __ born in Beth -- le -- hem.”
+  “Christ is born in Beth -- le -- hem.”
   
-  \dropLyricsIV
+  \dropLyricsV
   \set associatedVoice = "basses"
   Hark the her -- ald
   an -- gels sing,
   \unset associatedVoice
-  Glo -- ry __ to the new -- born King.
+  Glo -- ry to the new -- born King.
 }
 altoWordsII = \lyricmode {
-  \dropLyricsVI
+  \dropLyricsVII
   \set stanza = #"2. "
   \set associatedVoice = "altos"
   Christ, by high -- est heav’n a -- dored; Christ, the ev -- er -- last -- ing Lord;
@@ -147,7 +147,7 @@ altoWordsII = \lyricmode {
   Pleased as Man with man to dwell, Je -- sus, our Em -- man -- u -- el!
 }
 altoWordsIII = \lyricmode {
-  \dropLyricsVI
+  \dropLyricsVII
   \set stanza = #"3. "
   \set associatedVoice = "altos"
   Mild He lays His glo -- ry by, __
@@ -161,7 +161,7 @@ altoWordsIII = \lyricmode {
   Ris’n with heal -- ing in His wings,
   Light and life to all He brings,
   Hail, the Sun of Right -- eous -- ness!
-  Hail, the __ heav’n born Prince of Peace!
+  Hail, the heav’n born Prince of Peace!
 }
 altoWordsIV = \lyricmode {
   
@@ -241,10 +241,10 @@ bassWords = \lyricmode {
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }
       \new Voice = "basses" { \voiceTwo << \global \bassMusic >> }
     >>
-    \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWordsIV
-    \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWordsIII
-    \new Lyrics = "altosII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWords
+    \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsIV
+    \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsIII
+    \new Lyrics = "altosII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsII
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWords
     \new Lyrics \with { alignAboveContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "tenors" \tenorWords
     \new Lyrics \with { alignBelowContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "basses" \bassWords
   >>

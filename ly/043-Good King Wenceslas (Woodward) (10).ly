@@ -4,12 +4,12 @@
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Good King Wenceslas"}}
   poet = \markup\oldStyleNum"John Mason Neale (1818–1866)"
   composer = \markup \concat{ \italic "Tempus adest floridum" ", from " \italic "Piæ Cantiones" \oldStyleNum", 1582"}
-  arranger = \markup\oldStyleNum"Arranged by G.R. Woodward (1848–1934)"
+  arranger = \markup\oldStyleNum"Arranged by George Ratcliffe Woodward (1848–1934)"
   tagline = \markup \concat { "from " \italic "The Cowley Carol Book" \oldStyleNum", 1919"}
 }
 \paper {
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -20,10 +20,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #043
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -107,7 +107,7 @@ altoWords = \lyricmode {
   \dropLyricsIX
   \set stanza = #"1. "
   Good King Wen -- ces -- las look’d out
-  On the Feast of Steph -- en,
+  On the Feast of Ste -- phen,
   When the snow lay round a -- bout,
   Deep and crisp and e -- ven;
   Bright -- ly shone the moon that night,
@@ -156,7 +156,7 @@ altoWordsV = \lyricmode {
   \set stanza = #"5. "
   In his mas -- ter’s steps he trod,
   Where the snow lay dint -- ed;
-  Heat was in the ver -- y sod
+  Heat was in the ve -- ry sod
   Which the saint had print -- ed;
   There -- fore, Chris -- tian men, be sure,
   Wealth or rank pos -- sess -- ing,

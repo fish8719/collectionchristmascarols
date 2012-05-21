@@ -9,7 +9,7 @@
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   %system-system-spacing =
@@ -20,10 +20,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #026
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -125,11 +125,16 @@ altoWords = \lyricmode {
   \dropLyricsVII
   \set stanza = #"1. "
   Lis -- ten, Lord -- ings, un -- to me, a tale I will you tell;
-  Which, as on this night of glee, in Da -- vid’s town be -- fel.
+  Which, as on this night of glee, in Da -- vid’s town be -- fell.
   Jo -- seph came from Na -- za -- reth, with Ma -- ry that sweet maid:
   Wea -- ry were they, nigh to death; and for a lodg -- ing pray’d.
   
-  Sing high, sing low, sing high, sing low, sing to and fro,
+  \set associatedVoice = "tenors"
+  Sing high, sing high,
+  \set associatedVoice = "basses" sing low,
+  sing low, sing high, sing low,
+  \unset associatedVoice
+  sing to and fro,
   Go tell it out with speed, Cry out and shout all round a -- bout,
   That Christ is born in -- deed.
   
@@ -164,7 +169,7 @@ altoWordsII = \lyricmode {
   On -- ward then the An -- gels sped, the shep -- herds on -- ward went,
   God was in His man -- ger bed, in wor -- ship low they bent.
   In the morn -- ing see ye mind, my mas -- ters one and all,
-  At the Al -- tar Him to find, who lay with -- in the stall.
+  At the Al -- tar Him to find, Who lay with -- in the stall.
 }
 altoWordsIII = \lyricmode {
 }
@@ -211,12 +216,8 @@ tenorMusic = \relative c {
   c4 s
 }
 tenorWords = \lyricmode {
-  \repeat unfold 54 { \skip 1 }
-  sing high,
 }
 tenorWordsBass = \lyricmode {
-  \repeat unfold 56 { \skip 1 }
-  sing low,
 }
 
 bassMusic = \relative c {
@@ -281,8 +282,6 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsII
     \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWords
-    \context Lyrics = "altos" \lyricsto "tenors" \tenorWords
-    \context Lyrics = "altos" \lyricsto "basses" \tenorWordsBass
 %    \new Lyrics \with { alignAboveContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "tenors" \tenorWords
     \new Lyrics \with { alignBelowContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "basses" \bassWords
   >>

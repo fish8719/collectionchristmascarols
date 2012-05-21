@@ -10,7 +10,7 @@
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   %system-system-spacing =
@@ -21,10 +21,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #135
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -167,7 +167,7 @@ altoWords = {
     Al -- le -- lu -- ia.
     -ia.
     
-    \set stanza = #"5. "
+    \set stanza = #"5."
     Choos -- ing Him pov -- er -- ty be -- low,
     To make man rich for ev -- er -- mo.
   }
@@ -180,7 +180,7 @@ altoWordsII = \lyricmode {
   Like to our own, took flesh and blood.
   
   \repeat unfold 22 {\skip1}
-  \set stanza = #"6. "
+  \set stanza = #"6."
   What! God the serf, and man the knight!
   Sure, this of love the ve -- ry height.
 }
@@ -191,7 +191,7 @@ altoWordsIII = \lyricmode {
   A Babe in low -- ly crib doth lie.
   
   \repeat unfold 22 {\skip1}
-  \set stanza = #"7. "
+  \set stanza = #" 7."
   The gate of E -- den once was barr’d,
   But now no need of Cher -- ub -- guard.
 }
@@ -202,16 +202,16 @@ altoWordsIV = \lyricmode {
   Doth on the garb of com -- mon thrall.
   
   \repeat unfold 22 {\skip1}
-  \set stanza = #"8. "
+  \set stanza = #" 8."
   Where -- fore, I pray you, mer -- ry make,
   And ca -- rol for the Ba -- by’s sake.
 }
 altoWordsV = \lyricmode {
-  \set stanza = #"5. "
+  \set stanza = #" 5. "
   \set ignoreMelismata = ##t
 }
 altoWordsVI = \lyricmode {
-  \set stanza = #"6. "
+  \set stanza = #" 6. "
   \set ignoreMelismata = ##t
 }
 tenorMusic = \relative c' {
@@ -318,12 +318,12 @@ pianoLH = \relative c' {
       \new Voice = "altos" { \voiceTwo << \global \altoMusic >> }
     >>
     \new Lyrics \with { alignAboveContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \sopWords
-    \new Lyrics = "altosVI"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsVI
-    \new Lyrics = "altosV"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsV
-    \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIV
-    \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIII
-    \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "altos" \altoWords
+    \new Lyrics = "altosVI"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsVI
+    \new Lyrics = "altosV"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsV
+    \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIV
+    \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIII
+    \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsII
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "sopranos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }

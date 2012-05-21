@@ -3,7 +3,7 @@
 \paper {
   print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -24,10 +24,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #089
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -194,6 +194,7 @@ pianoLH = \relative c' {
 %    \new PianoStaff << \new Staff { \new Voice { \pianoRH } } \new Staff { \clef "bass" \pianoLH } >>
   >>
   \layout {
+    #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 14.6 20)))
     \context {
       \Score
       %\override SpacingSpanner #'base-shortest-duration = #(ly:make-moment 1 8)
@@ -245,13 +246,13 @@ sopMusic = \relative c' {
   g4. fis8 g4 g4 |
   aes4. g8 aes4 a |
   bes4 ees d c |
-  \partial 2. c4. bes8 bes4 | \break
+  c4. bes8 bes4 \bar"" \break
   
-  \partial 4 bes4 |
+  bes4 |
   bes4. aes8 g4 aes |
   g4. f8 ees4 f |
   g aes bes c |
-  \partial 2. d,4. f8 ees4 \bar "|."
+  d,4. f8 ees4 \bar "|."
 }
 sopWords = \lyricmode {
   
@@ -280,7 +281,7 @@ altoWordsII = \lyricmode {
   \dropLyricsIX
 %\markup\italic
   \set stanza = #"2. "
-  I though how, as the day had come, The bel -- fries of all Chris -- ten -- dom
+  I thought how, as the day had come, The bel -- fries of all Chris -- ten -- dom
   Had rolled a -- long th’un -- bro -- ken song Of peace on earth, good will to men.
 }
 altoWordsIII = \lyricmode {

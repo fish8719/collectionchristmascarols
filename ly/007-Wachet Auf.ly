@@ -1,7 +1,7 @@
 ﻿\version "2.14.2"
 \include "../util.ly"
 \version "2.14.2"
-#(set-global-staff-size 15) \paper{ #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 15 20))) }
+#(set-global-staff-size 14.9) \paper{ #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 14.9 20))) }
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Wake, O Wake! with Tidings Thrilling"}}
   poet = \markup\concat{\italic"Wachet Auf!" \oldStyleNum" by P. Nicolai (1556–1608)"}
@@ -13,7 +13,7 @@
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -29,10 +29,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #007
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCaps advent}
@@ -166,13 +166,13 @@ altoWordsIII = \lyricmode {
   She stands and waits with ea -- ger eyes;
   
   \set associatedVoice = "altos"
-  Now come, thou pre -- cious \set associatedVoice = "basses" Crown,
+  Now come, Thou pre -- cious \set associatedVoice = "basses" Crown,
   Lord Je -- su, God’s own \set associatedVoice = "tenors" Son!
   Ho -- san -- _ na!
   Let us pre -- pare
   To fol -- low there,
   \set associatedVoice = "sopranos"
-  Where in thy sup -- per we may share.
+  Where in Thy sup -- per we may share.
 }
 altoWordsIV = \lyricmode {
   \dropLyricsVI
@@ -191,12 +191,12 @@ altoWordsV = \lyricmode {
   
   \set associatedVoice = "altos"
   Earth can -- not give be -- \set associatedVoice = "basses" low
-  The bliss thou dost be -- \set associatedVoice = "tenors" stow.
+  The bliss Thou dost be -- \set associatedVoice = "tenors" stow.
   Al -- le -- lu -- ia!
   Grant us to raise,
   To length of days,
   \set associatedVoice = "sopranos"
-  The tri -- umph -- cho -- rus of Thy praise.
+  The tri -- umph -- cho -- rus of ThThy praise.
 }
 altoWordsVI = \lyricmode {
   \dropLyricsVI

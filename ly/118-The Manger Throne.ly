@@ -9,7 +9,7 @@
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   %system-system-spacing =
@@ -20,10 +20,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #118
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -55,15 +55,15 @@ sopMusic = \relative c'' {
   \partial 4 d4 |
   a b a fis8( fis) |
   e4( e8) fis8 d4 e |
-  fis b8( b) a( a) d4 |
+  fis b8( b) a( a) d4 | \break
   
   cis2. a4 |
   d4 cis8 b a g fis[ e] |
-  fis4 gis8( gis) a4 b8( b) |
+  fis4 gis8( gis) a4 b8( b) | \break
   cis4. d8 e( e) a,4 |
   
   b4( b8) cis8 a4 a |
-  b fis a a8 a |
+  b fis a a8 a | \break
   b4 fis a a8( a) |
   b8( b) d8( d) e4. fis8 |
   \partial 2. d2. \bar "||" \pageBreak
@@ -123,10 +123,12 @@ altoMusic = \relative c' {
 altoWords = \lyricmode {
   \dropLyricsV
   \set stanza = #"1. "
+  \set associatedVoice = "sopranos"
   \set ignoreMelismata = ##t
   Like sil -- ver lamps in a 
   \unset ignoreMelismata
   dis -- tant shrine,
+  \unset associatedVoice
   The stars are __ spark -- ling bright;
   The bells of the ci -- ty of __ God ring __ out,
   \set ignoreMelismata = ##t
@@ -138,7 +140,9 @@ altoWords = \lyricmode {
   
   \unset ignoreMelismata
   \set stanza = #"2. "
+  \set associatedVoice = "sopranos"
   Nev -- er fell me -- lo -- dies half so sweet As those which are fill -- ing the skies;
+  \unset associatedVoice
   \set ignoreMelismata = ##t
   And nev -- er a __ _ pa -- lace shone _ half __ _ so fair
   As the man -- ger bed __ _ where our Sav -- ior lies;
@@ -149,9 +153,11 @@ altoWordsII = \lyricmode {
   \dropLyricsV
 %\markup\italic
   \set stanza = #"4. "
+  \set associatedVoice = "sopranos"
   The stars of heav’n still
   \set ignoreMelismata = ##t
   shine as at first
+  \unset associatedVoice
   \unset ignoreMelismata
   They gleamed on_this wonder -- ful night;
   The bells of the ci -- ty of __ God peal __ out,
@@ -162,7 +168,9 @@ altoWordsII = \lyricmode {
   
   \unset ignoreMelismata
   \set stanza = #"3. "
+  \set associatedVoice = "sopranos"
   Now a new Pow’r has come on the earth,
+  \unset associatedVoice
   A match for the arm -- ies of Hell:
   A child is __ born
   \set ignoreMelismata = ##t
@@ -175,9 +183,11 @@ altoWordsIII = \lyricmode {
   \dropLyricsV
   \set stanza = #"5. "
   \set ignoreMelismata = ##t
+  \set associatedVoice = "sopranos"
   Faith sees no long -- er the
   \unset ignoreMelismata
   sta -- ble floor,
+  \unset associatedVoice
   The pave -- ment_of sapphire is there;
   The clear light of Heav -- en streams out
   \set ignoreMelismata = ##t
@@ -282,6 +292,11 @@ pianoLH = \relative c' {
       \new Voice = "sopranos" { \voiceOne << \global \sopMusic >> }
       \new Voice = "altos" { \voiceTwo << \global \altoMusic >> }
     >>
+   \new Staff = men <<
+      \clef bass
+      \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }
+      \new Voice = "basses" { \voiceTwo << \global \bassMusic >> }
+    >>
     \new Lyrics \with { alignAboveContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \sopWords
      \new Lyrics = "altosVI"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsVI
     \new Lyrics = "altosV"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsV
@@ -289,11 +304,6 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsII
     \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWords
-   \new Staff = men <<
-      \clef bass
-      \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }
-      \new Voice = "basses" { \voiceTwo << \global \bassMusic >> }
-    >>
     \new Lyrics \with { alignAboveContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "tenors" \tenorWords
     \new Lyrics \with { alignBelowContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "basses" \bassWords
   >>

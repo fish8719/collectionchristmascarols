@@ -8,7 +8,7 @@
 }
 \paper {
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   %system-system-spacing =
@@ -19,10 +19,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #112
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -55,17 +55,17 @@ sopMusic = \relative c'' {
   c4. bes8 a4 g |
   f g a f |
   g8\noBeam a\noBeam bes\noBeam g\noBeam a4. g8 |
-  f4 e f2 |
+  f4 e f2 | \break
   
   c'4. bes8 a4 g |
   f g a f |
   g8\noBeam a\noBeam bes\noBeam g\noBeam a4. g8 |
-  f4 e f2 |
+  f4 e f2 | \break
   
   g4. a8 bes4 g |
   a4. bes8 c4 g |
   a8 b c4 d8 e f4 |
-  e d c2 |
+  e d c2 | \break
   
   c4. bes8 a4 g |
   f g a f |
@@ -110,8 +110,8 @@ altoWordsII = \lyricmode {
   \set stanza = #"2. "
   See the blaz -- ing Yule be -- fore us, Fa la la la la, la la la la.
   Strike the harp and join the cho -- rus, Fa la la la la, la la la la.
-  Fol -- low me in mer -- ry meas -- ure, Fa la la, la la la, la la la.
-  While I tell of Yule -- tide treas -- ure, Fa la la la la, la la la la.
+  Fol -- low me in mer -- ry mea -- sure, Fa la la, la la la, la la la.
+  While I tell of Yule -- tide trea -- sure, Fa la la la la, la la la la.
 }
 altoWordsIII = \lyricmode {
   \dropLyricsV

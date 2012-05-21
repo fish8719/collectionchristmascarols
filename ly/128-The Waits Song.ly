@@ -9,7 +9,7 @@
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -20,10 +20,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #128
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -65,12 +65,12 @@ sopMusic = \relative c'' {
     
     bes4 c a bes8[ c] |
     d4 g,8( g) bes[ a] g[ fis] |
-    \partial 2. g2. \break
+    g2. \break
   }
   
   %sop2
   \repeat volta 2 {
-    \partial 4 a4 |
+    a4 |
     bes4 a g a8[ bes] |
     c[ bes] a( g) fis4 d |
     
@@ -80,12 +80,12 @@ sopMusic = \relative c'' {
     
     bes4 c a bes8( c) |
     d4 g,4 bes8[ a] g[ fis] |
-    \partial 2. g2. \break
+    g2. \break
   }
   
   %sop3
   \repeat volta 2 {
-    \partial 4 a4 |
+    a4 |
     bes4 a g a8[ bes] |
     c[ bes] a[ g] fis4 d |
     
@@ -95,12 +95,12 @@ sopMusic = \relative c'' {
     
     bes4 c a bes8[ c] |
     d4 g,4 bes8[ a] g[ fis] |
-    \partial 2. g2. \break
+    g2. \break
   }
   
   %sop4
   \repeat volta 2 {
-    \partial 4 a4 |
+    a4 |
     bes4 a g a8( bes) |
     c[ bes] a[ g] fis4 d |
     
@@ -110,12 +110,12 @@ sopMusic = \relative c'' {
     
     bes4 c a bes8( c) |
     d4 g,4 bes8[ a] g[ fis] |
-    \partial 2. g2. \break
+    g2. \break
   }
   
   %sop5
   \repeat volta 2 {
-    \partial 4 a4 |
+    a4 |
     bes4 a g a8[ bes] |
     c[ bes] a[ g] fis4 d8 d |
     
@@ -125,7 +125,7 @@ sopMusic = \relative c'' {
     
     bes4 c a bes8[ c] |
     d4 g,8( g) bes( a) g[ fis] |
-    \partial 2. g2. \break
+    g2. \break
   }
 }
 sopWords = \lyricmode {
@@ -257,7 +257,7 @@ altoWordsII = \lyricmode {
   For us He loved so dear.
   
   \set stanza = #"4. "
-  The fields were green as green
+  The fields were green as __ green
   \set ignoreMelismata = ##t
   as could be,
   \unset ignoreMelismata
@@ -269,7 +269,7 @@ altoWordsII = \lyricmode {
   Heav’n -- ly dew so sweet.
 
   \set stanza = #"6. "
-  The life of man is but a span,
+  The life of man is __ but a span,
   And cut down in its flow’r,
   We’re here to -- day, to -- mor -- row gone,
   The crea -- tures of an hour.

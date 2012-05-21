@@ -3,7 +3,7 @@
 \paper {
   print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -21,19 +21,14 @@
        (minimum-distance . 0)
        (padding . 0.5)
        (stretchability . 0))
-  top-markup-spacing =
-    #'((basic-distance . 0)
-       (minimum-distance . 0)
-       (padding . 0.25)
-       (stretchability . 0))
   
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #055
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -101,7 +96,7 @@ altoMusic = \relative c' {
   d2. \bar "|."
 }
 altoWords = \lyricmode {
-  \dropLyricsIX
+  \dropLyricsXI
   \set stanza = #"1. "
   While shep -- herds watch’d their flocks by night;
     All seat -- ed on the ground;
@@ -110,7 +105,7 @@ altoWords = \lyricmode {
     And glo -- ry shone a -- round.
 }
 altoWordsII = \lyricmode {
-  \dropLyricsIX
+  \dropLyricsXI
   \set stanza = #"2. "
   “To you, in Da -- vid’s town, this day
     Is born of Da -- vid’s line,
@@ -119,7 +114,7 @@ altoWordsII = \lyricmode {
     And this shall be the sign:
 }
 altoWordsIII = \lyricmode {
-  \dropLyricsIX
+  \dropLyricsXI
   \set stanza = #"3. "
   The heav’n -- ly Babe you there shall find,
     To hu -- man view dis -- play’d,
@@ -128,7 +123,7 @@ altoWordsIII = \lyricmode {
     And in a man -- ger laid.”
 }
 altoWordsIV = \lyricmode {
-  \dropLyricsIX
+  \dropLyricsXI
   \set stanza = #"4. "
   “All glo -- ry be to God on high,
     And to the earth be peace;
@@ -191,7 +186,7 @@ bassWords = \lyricmode {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.5)) } \lyricsto "sopranos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.9)) } \lyricsto "sopranos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }
@@ -204,7 +199,7 @@ bassWords = \lyricmode {
   >>
   \layout {
     %#(layout-set-staff-size 14.6)
-    %#(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 14.6 20)))
+    #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 14 20)))
     \context {
       \Score
       \override SpacingSpanner #'base-shortest-duration = #(ly:make-moment 1 4)
@@ -283,7 +278,7 @@ altoMusic = \relative c' {
   d2. \bar "|."
 }
 altoWords = \lyricmode {
-  \dropLyricsIX
+  \dropLyricsXI
   \set stanza = #"1. "
   While shep -- herds watch’d their flocks by night,
     All seat -- ed on the ground,
@@ -292,7 +287,7 @@ altoWords = \lyricmode {
     And glo -- ry shone a -- round.
 }
 altoWordsII = \lyricmode {
-  \dropLyricsIX
+  \dropLyricsXI
   \set stanza = #"2. "
   “Fear not,” said he, for might -- y dread
     Had seized their troub -- led mind;
@@ -301,7 +296,7 @@ altoWordsII = \lyricmode {
     To you and all man -- kind.
 }
 altoWordsIII = \lyricmode {
-  \dropLyricsIX
+  \dropLyricsXI
   \set stanza = #"3. "
   “To you, in Da -- vid’s town, this day,
     Is born of Da -- vid’s line,
@@ -310,7 +305,7 @@ altoWordsIII = \lyricmode {
     And this shall be the sign:
 }
 altoWordsIV = \lyricmode {
-  \dropLyricsIX
+  \dropLyricsXI
   \set stanza = #"4. "
   “The heav’n -- ly Babe you there shall find
     To hu -- man view dis -- play’d,
@@ -320,7 +315,7 @@ altoWordsIV = \lyricmode {
 }
 
 altoWordsV = \lyricmode {
-  \dropLyricsIX
+  \dropLyricsXI
   \set stanza = #"5. "
   Thus spake the ser -- aph, and forth -- with
     Ap -- peared a shin -- ing throng
@@ -330,7 +325,7 @@ altoWordsV = \lyricmode {
 }
 
 altoWordsVI = \lyricmode {
-  \dropLyricsIX
+  \dropLyricsXI
   \set stanza = #"6. "
   “All glo -- ry be to God on high
     And to the earth be peace;
@@ -392,7 +387,7 @@ bassWords = \lyricmode {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.5)) } \lyricsto "sopranos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.9)) } \lyricsto "sopranos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }
@@ -404,7 +399,7 @@ bassWords = \lyricmode {
 %    \new PianoStaff << \new Staff { \new Voice { \pianoRH } } \new Staff { \clef "bass" \pianoLH } >>
   >>
   \layout {
-    #(layout-set-staff-size 15)
+    %#(layout-set-staff-size 15)
     #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 15 20)))
     \context {
       \Score

@@ -9,7 +9,7 @@
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -20,10 +20,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #101
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -62,18 +62,18 @@ sopMusic = \relative c' {
   ees,1^\pp ees2. aes4 |
   g1.^\markup\italic"cresc." ees'2 |
   ees d4( c) bes2. aes4 |
-  \partial 1. g1. \bar "||" 
+  g1. \bar "||" 
   
-  \partial 2 g2^\mf |
+  g2^\mf |
   g2. g4 a2 b |
   d2. g,4 g2 g |
   g ees' ees d4( c) |
-  \partial 1. c2. bes4 bes2 \bar "||" 
+  c2. bes4 bes2 \bar "||" 
   
-  \partial 2 bes2 |
+  bes2 |
   bes2.^\markup\italic"dim." ees,4 ees2 ees |
-  \partial 1. ees1. \bar "||"
-  \partial 2 d2^\pp |
+  ees1. \bar "||"
+  d2^\pp |
   ees4( g) bes( c) bes2. d,4 |
   << { ees1( ees) }
      { s1. <ees d g,>2_\markup\smallCapsOldStyle"Accomp." }

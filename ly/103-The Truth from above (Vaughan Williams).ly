@@ -10,21 +10,21 @@
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
-  %system-system-spacing =
-  %  #'((basic-distance . 0)
-  %     (minimum-distance . 0)
-  %     (padding . -0.35)
-  %     (stretchability . 100))
+  system-system-spacing =
+    #'((basic-distance . 0)
+       (minimum-distance . 0)
+       (padding . -5)
+       (stretchability . 100))
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #103
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -120,39 +120,72 @@ altoMusic = \relative c' {
   a4 e a8([ g] fis4) e( fis) |
   g8[ a] g[ fis] e2
 }
+
 altoWords = \lyricmode {
-  \dropLyricsV
+  \dropLyricsXI
   \set stanza = #"1. "
   This is the truth sent from a -- bove,
   The truth of God, the God of love.
   There -- fore don’t turn me from your door,
-  But __ heark -- en all both rich and poor.
+  But __ heark -- en all __ both rich and poor.
   
-  \set stanza = #"4."
-  And at that sea -- son of the year
+  \set stanza = #"6."
+  And at this sea -- son of the year
   Our blest re -- deem -- er did ap -- pear;
   He here did live, and here did preach,
   and ma -- ny thou -- sands He did teach.
 }
 altoWordsII = \lyricmode {
-  \dropLyricsV
+  \dropLyricsXI
 %\markup\italic
   \set stanza = #"2. "
-  The first things which I do re -- late
+  The first thing which I do re -- late
   \skip1
   Is that God did man cre -- ate;
   The next thing which to you I’ll tell
   Wo -- man was made with man to dwell.
   
-  \set stanza = #"5."
+  \set stanza = #"7."
   Thus He in love to us be -- haved,
   To show us how we must be saved;
   And if you want to know the way,
-  Be pleased to hear what He did say.
+  Be pleased to hear what He did say:
 }
 altoWordsIII = \lyricmode {
-  \dropLyricsV
+  \dropLyricsXI
   \set stanza = #"3. "
+  Then, af -- ter this, ’twas God’s own choice
+  To place them both in Pa -- ra -- dise,
+  There to re -- main, from e -- vil free,
+  Ex -- cept they ate __ of such a tree.
+
+  \set stanza = #"8."
+  “Go preach the Gos -- pel,” now He said,
+  “To all the na -- tions that are made!
+  And he that does be -- lieve in me,
+  From all his sins I’ll set him free.”
+
+}
+altoWordsIV = \lyricmode {
+  \dropLyricsXI
+  \set stanza = #"4. "
+  But they did eat, which was a sin,
+  And thus their ru -- in did be -- gin.
+  Ru -- ined them -- selves, both you and me,
+  And all of their pos -- ter -- i -- ty.
+  
+  \set stanza = #"9."
+  O seek! O seek of God a -- bove
+  That sav -- ing faith that works by love!
+  And, if He’s pleased to grant thee this,
+  \set ignoreMelismata = ##t
+  Thou -- ’rt
+  \unset ignoreMelismata
+  sure to have e -- ter -- nal bliss.
+}
+altoWordsV = \lyricmode {
+  \dropLyricsXI
+  \set stanza = #"5. "
   Thus we were heirs to end -- less woes,
   Till God the Lord did in -- ter -- pose;
   And so a prom -- ise soon did run
@@ -160,11 +193,13 @@ altoWordsIII = \lyricmode {
   That he
   \unset ignoreMelismata
   would re -- deem us by His Son.
+  
+  \set stanza = #"10."
+  God grant to all with -- in this place
+  True sav -- ing faith, that spe -- cial grace
+  Which to His peo -- ple doth be -- long:
+  And thus I close my Christ -- mas song.
 
-}
-altoWordsIV = \lyricmode {
-}
-altoWordsV = \lyricmode {
 }
 altoWordsVI = \lyricmode {
   \set stanza = #"6. "
@@ -179,7 +214,7 @@ tenorMusic = \relative c' {
   c d g,2. a4 |
   b c b2 e4( d) |
   
-  c a g( fis) \slurDotted g8( b) |
+  c a g( fis!) \slurDotted g8( b) |
   \slurSolid c4 b a4.( b8) c4( a) |
   e'4 d cis2
   
@@ -193,7 +228,7 @@ tenorMusic = \relative c' {
   c d g,2. a4 |
   b c b2 e4( d) |
   
-  c a g( fis) g8[ b] |
+  c a g( fis!) g8[ b] |
   c4 b a4.( b8) c4( a) |
   e'4 d cis2
 }
@@ -254,7 +289,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "sopranos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -1)) } \lyricsto "sopranos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }

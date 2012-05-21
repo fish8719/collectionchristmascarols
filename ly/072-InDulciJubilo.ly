@@ -11,7 +11,7 @@
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -22,10 +22,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #072
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -133,19 +133,19 @@ altoWordsII = \lyricmode {
   \markup\italic O \markup\italic Je -- \markup\italic su, \markup\italic par -- \markup\italic vu -- \markup\italic le, __
   I yearn for Thee al -- way; __
   Hear me, I be -- seech Thee, ""
-  \markup\italic O \markup\italic puer \markup\italic op -- \markup\italic ti -- \markup\italic me, __
+  \markup\italic O \markup\italic Puer \markup\italic op -- \markup\italic ti -- \markup\italic me, __
   My pray -- ing let it reach Thee,
-  \markup\italic O \markup\italic prin -- \markup\italic ceps \markup\italic glo -- \markup\italic ri -- \markup\italic æ. __
-  \markup\italic Tra -- \markup\italic he \markup\italic me \markup\italic post \markup\italic te! __
-  \markup\italic Tra -- \markup\italic he \markup\italic me \markup\italic post \markup\italic te! __
-  \markup\italic O \markup\italic prin -- \markup\italic ceps \markup\italic glo -- \markup\italic ri -- \markup\italic æ. __
-  \markup\italic Tra -- \markup\italic he \markup\italic me \markup\italic post \markup\italic te! __
-  \markup\italic Tra -- \markup\italic he \markup\italic me \markup\italic post \markup\italic te! __
+  \markup\italic O \markup\italic Prin -- \markup\italic ceps \markup\italic glo -- \markup\italic ri -- \markup\italic æ. __
+  \markup\italic Tra -- \markup\italic he \markup\italic me \markup\italic post \markup\italic Te! __
+  \markup\italic Tra -- \markup\italic he \markup\italic me \markup\italic post \markup\italic Te! __
+  \markup\italic O \markup\italic Prin -- \markup\italic ceps \markup\italic glo -- \markup\italic ri -- \markup\italic æ. __
+  \markup\italic Tra -- \markup\italic he \markup\italic me \markup\italic post \markup\italic Te! __
+  \markup\italic Tra -- \markup\italic he \markup\italic me \markup\italic post \markup\italic Te! __
 }
 altoWordsIII = \lyricmode {
   \dropLyricsV
   \set stanza = #"3. "
-  \markup\italic O \markup\italic pa -- \markup\italic tris \markup\italic ca -- \markup\italic ri -- \markup\italic tas! __
+  \markup\italic O \markup\italic Pa -- \markup\italic tris \markup\italic ca -- \markup\italic ri -- \markup\italic tas! __
   \markup\italic O \markup\italic na -- \markup\italic ti \markup\italic lem -- \markup\italic i -- \markup\italic tas! __
   Deep -- ly were we stain -- ed
   \markup\italic Per \markup\italic nos -- \markup\italic tra \markup\italic cri -- \markup\italic mi -- \markup\italic na; __

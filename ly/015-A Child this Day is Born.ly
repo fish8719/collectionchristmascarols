@@ -9,7 +9,7 @@
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   
@@ -18,24 +18,19 @@
        (minimum-distance . 0)
        (padding . -5)
        (stretchability . 100))
-  top-markup-spacing =
-    #'((basic-distance . -10)
-       (minimum-distance . -10)
-       (padding . 0)
-       (stretchability . 0))
        
   last-bottom-spacing =
     #'((basic-distance . -10)
        (minimum-distance . -10)
-       (padding . -2)
+       (padding . 0)
        (stretchability . 0))
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #015
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -69,8 +64,8 @@ sopMusic = \relative c' {
   cis2. e4 |
   d4 cis d8[ cis] b4 |
   
-  \partial 2. a2. | \break
-  \partial 4 a4 |
+  a2. \bar"" \break
+  a4 |
   a d, b' d |
   a4.( b8) a4 g |
   fis d' fis, e |
@@ -82,8 +77,8 @@ sopMusic = \relative c' {
   cis2. e4 |
   d4 cis d8[ cis] b4 |
   
-  \partial 2. a2. | \break
-  \partial 4 a4 |
+  a2. \bar"" \break
+  a4 |
   a d, b' d |
   \slurSolid
   a4.( b8 a4) g |
@@ -101,8 +96,8 @@ sopMusic = \relative c' {
   cis2. e4 |
   d4 cis d8[ cis] b4 |
   
-  \partial 2. a2. | \break
-  \partial 4 a4 |
+  a2. \bar"" \break
+  a4 |
   a d, b' d |
   a4. b8 a4 g |
   fis d' fis, e |
@@ -154,15 +149,15 @@ altoMusic = \relative c' {
   d2. \bar "||"
 }
 altoWords = \lyricmode {
-  \dropLyricsVII
+  \dropLyricsXII
   \set stanza = #"1. "
   A Child this day is born,
   A Child of high re -- nown;
   Most wor -- thy of a scep -- tre,
   A scep -- tre and a crown.
   
-  Glad ti -- dings to all men,
-  Glad ti -- dings sing we may,
+  Glad tid -- ings to all men,
+  Glad tid -- ings sing we may,
   Be -- cause the King of kings __
   Was born on Christ -- mas Day.
   
@@ -181,9 +176,9 @@ altoWordsII = \lyricmode {
   
 }
 altoWordsIII = \lyricmode {
-  \dropLyricsVII
+  \dropLyricsXII
   \set stanza = #"2. "
-  These ti -- dings shep -- herds heard
+  These tid -- ings shep -- herds heard
   Whilst watch -- ing o’er their fold,
   ’Twas by an An -- gel
 \set ignoreMelismata = ##t
@@ -202,9 +197,9 @@ altoWordsIII = \lyricmode {
   And joy -- ful mel -- o -- dy.
 }
 altoWordsIV = \lyricmode {
-  \dropLyricsVII
+  \dropLyricsXII
   \set stanza = #"3. "
-  Then was there with the_An -- gel
+  Then was there with the~An -- gel
   An host in -- con -- ti -- nent
   Of heav -- en -- ly bright sol -- diers,
   All from the high -- est sent.
@@ -323,7 +318,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.9))} \lyricsto "altos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }

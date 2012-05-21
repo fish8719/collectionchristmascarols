@@ -10,7 +10,7 @@
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   %system-system-spacing =
@@ -21,10 +21,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #064
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -69,7 +69,7 @@ sopMusic = \relative c' {
   c'4 d bes2 |
   bes4 c a2 |
   a4 g bes a |
-  g2 f2 \bar "||"
+  g2 f2 \bar "|."
 }
 sopWords = \lyricmode {
   
@@ -93,7 +93,7 @@ altoMusic = \relative c' {
   e4 f d2 |
   d4 e c2 |
   d4 d8[ c] bes4 c |
-  d( c) a2 \bar "||"
+  d( c) a2 \bar "|."
 }
 altoWords = \lyricmode {
   \dropLyricsV
@@ -160,7 +160,7 @@ tenorMusic = \relative c' {
   g4 a a( g) |
   bes a8[ g] f2 |
   f4 g d8[ e] f4 |
-  f( e) c2 \bar "||"
+  f( e) c2 \bar "|."
 }
 tenorWords = \lyricmode {
 
@@ -184,7 +184,7 @@ bassMusic = \relative c' {
   c4 f, g2 |
   g'4 c, f( e) |
   d bes8[ a] g4 a |
-  bes( c) f,2 \bar "||"
+  bes( c) f,2 \bar "|."
 }
 bassWords = \lyricmode {
 

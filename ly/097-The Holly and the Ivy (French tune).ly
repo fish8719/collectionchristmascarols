@@ -2,14 +2,14 @@
 \include "../util.ly"
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"The Holly and the Ivy"}}
-  poet = \markup\oldStyleNum"Traditional"
-  composer = \markup\oldStyleNum"Old French"
+  poet = \markup\oldStyleNum"17th Century English"
+  composer = \markup\oldStyleNum"Old French Carol"
   tagline = \markup { "from" \italic {Christmas Carols, New and Old}}
 }
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -17,23 +17,18 @@
        (minimum-distance . 0)
        (padding . -5)
        (stretchability . 100))
-  top-markup-spacing =
-    #'((basic-distance . 0)
-       (minimum-distance . 0)
-       (padding . 0)
-       (stretchability . 0))
   last-bottom-spacing =
     #'((basic-distance . -10)
        (minimum-distance . -10)
-       (padding . -0.5)
+       (padding . 0)
        (stretchability . 0))
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #097
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -99,8 +94,10 @@ sopMusic = \relative c' {
   d4.~ d4 \bar""\break d8 |
   a'4 a8 a4 d8 |
   c4 bes8 a4 gis8 |
-  a4 b8 c4 b8 |
+  \tieDotted
+  a4 b8 c8~ c b8 |
   
+  \tieSolid
   a4.~ a4 bes8\rest \bar "||" 
 }
 sopWords = \lyricmode {
@@ -143,12 +140,14 @@ altoMusic = \relative c' {
   d4.~ d4 d8 |
   d4 g8 f4 a8 |
   g4 g8 f4 e8 |
-  a4 a8 a4 gis8 |
+  \tieDotted
+  a4 a8 a~ a gis8 |
   
+  \tieSolid
   a4.~ a4 s8 |
 }
 altoWords = {
-  \dropLyricsIX
+  \dropLyricsXI
   \lyricmode {
     \set stanza = #"1, 6."
     The Hol -- ly and the I -- vy,
@@ -180,11 +179,11 @@ altoWords = {
   \set stanza = \markup\dynamic"f "
   \lyricmode {
     And Ma -- ry bore sweet Je -- sus Christ,
-    On Christ -- mas day_in the morn. __
+    On Christ -- mas \set ignoreMelismata = ##t day in the morn. __ _
   }
 }
 altoWordsII = {
-  \dropLyricsIX
+  \dropLyricsXI
   \set stanza = \markup{\dynamic"mf " "2."}
   \lyricmode {
     The Hol -- ly bears a blos -- som,
@@ -207,7 +206,7 @@ altoWordsII = {
   }
 }
 altoWordsIII = \lyricmode {
-  \dropLyricsIX
+  \dropLyricsXI
   \set stanza = #"3."
   The Hol -- ly bears a ber -- ry,
   As red as an -- y blood, __
@@ -259,8 +258,10 @@ tenorMusic = \relative c {
   f4.~f4 bes8 |
   a4 cis8 d4 d8 |
   d4 d8 d4 b8 |
-  e4 f8 e4 d8 |
+  \tieDotted
+  e4 f8 e~ e d8 |
   
+  \tieSolid
   c4.~ c4 s8 |
 }
 tenorWords = \lyricmode {
@@ -303,8 +304,10 @@ bassMusic = \relative c {
   d4.~ d4 g8 |
   f4 e8 d4 f8 |
   g4 g8 d4 d8 |
-  c4 d8 e4 e8 |
+  \tieDotted
+  c4 d8 e~ e e8 |
   
+  \tieSolid
   a4.~ a4 d,8\rest |
 }
 bassWords = \lyricmode {
@@ -332,7 +335,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.5))} \lyricsto "sopranos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.9))} \lyricsto "sopranos" \altoWords
     \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }

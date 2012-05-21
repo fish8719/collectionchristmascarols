@@ -11,7 +11,7 @@
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -19,11 +19,6 @@
        (minimum-distance . 0)
        (padding . -5)
        (stretchability . 100))
-  top-markup-spacing =
-    #'((basic-distance . 0)
-       (minimum-distance . 0)
-       (padding . 0)
-       (stretchability . 0))
   markup-system-spacing =
     #'((basic-distance . 0)
        (minimum-distance . 0)
@@ -32,10 +27,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #144
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -114,56 +109,56 @@ altoMusic = \relative c' {
   d4.
 }
 altoWords = \lyricmode {
-  \dropLyricsV
+  \dropLyricsIX
   \set stanza = #"1. "
   God rest you, Chryst -- en gen -- til men, 
     Wher -- ev -- er you may be,
     Wher -- ev -- er you may be,
-  God rest you all in fielde or hall, __
+  God rest you all in fielde or hall,
     Or on __ ye storm -- y sea; 
   For on this morn, this morn, oure Chryst is born, is born,
     That sav -- eth you and me,
     That sav -- eth you and me.
-  For on this morn oure Chryst is born __
+  For on this morn oure Chryst is born
     That sav -- eth you and me.
     
   \set stanza = #"3. "
   God rest you, Chryst -- en gen -- til men, 
     Far -- ing wher -- e’er you may,
     Far -- ing wher -- e’er you may;
-  In no -- blesse court do thou no sport, __
+  In no -- blesse court do thou no sport,
     In tour -- na -- ment no playe, 
   In Pay -- nim lands hold thou, hold thou thy hands, thy hands
     From bloud -- y works this daye,
     From bloud -- y works this daye.
-  In Pay -- nim lands hold thou thy hands __
+  In Pay -- nim lands hold thou thy hands
     From bloud -- y works this daye.
 }
 altoWordsII = \lyricmode {
-  \dropLyricsV
+  \dropLyricsIX
 %\markup\italic
   \set stanza = #"2. "
   Last night ye shep -- herds in ye east 
     Saw ma -- ny~a won -- drous thing,
     Saw ma -- ny~a won -- drous thing;
-  Ye sky last night flamed pass -- ing bright __
+  Ye sky last night flamed pass -- ing bright
     Whiles that __ ye stars did sing, 
   And an -- gels came to bless, to bless ye name, ye name
     Of Je -- sus Chryst, oure Kyng,
     Of Je -- sus Chryst, oure Kyng.
-  And an -- gels came to bless ye name __
+  And an -- gels came to bless ye name
     Of Je -- sus Chryst, oure Kyng.
     
   \set stanza = #"4. "
   But think -- ing on ye gen -- til Lord 
     That died up -- on ye tree,
     That died up -- on ye tree,
-  Let troub -- lings cease and deeds of peace __
+  Let troub -- lings cease and deeds of peace
     A -- bound __ in Chryst -- an -- tie;
   For on this morn, this morn, oure Chryst is born, is born,
     That sav -- eth you and me,
     That sav -- eth you and me.
-  For on this morn oure Chryst is born __
+  For on this morn oure Chryst is born
     That sav -- eth you and me.
 }
 altoWordsIII = \lyricmode {
@@ -250,7 +245,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "altos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "altos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.5)) } \lyricsto "altos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \repeat unfold 2 \tenorMusic >> }

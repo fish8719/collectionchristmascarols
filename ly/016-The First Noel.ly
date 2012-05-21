@@ -8,7 +8,7 @@
 }
 \paper {
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -19,10 +19,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #016
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -121,7 +121,7 @@ altoWords = {
   \dropLyricsVI
   \lyricmode {
     \set stanza = #"1. "
-    The __ first __ No -- ël the
+    The first __ No -- ël the
     \set ignoreMelismata = ##t
     an -- gel did say,
     Was to cer -- tain poor shep -- herds in fields as they lay;
@@ -162,23 +162,29 @@ altoWordsII = \lyricmode {
 altoWordsIII = \lyricmode {
   \dropLyricsVI
   \set stanza = #"3. "
-  And __ by __ the __ light of __ that __ same Star
+  And by
+%8.5x11 __
+  the __ light of __ that __ same Star
   Three wise men came __ from coun -- try far;
   To __ seek __
 \set ignoreMelismata = ##t
   for a King
 \unset ignoreMelismata
-  was their __ in -- tent,
+  was their
+%8.5x11 __
+  in -- tent,
 \set ignoreMelismata = ##t
   And to fol -- low the star _ where e’er __ _ it went.
 }
 altoWordsIV = \lyricmode {
   \dropLyricsVI
   \set stanza = #"4. "
-  This __ star __ drew nigh to __ 
+  This star __ drew nigh to __ 
   \set ignoreMelismata = ##t
   the __ _ North West,
-  O’er __ _ Beth -- _ le -- hem __ _ it took __ _ its rest,
+  O’er
+%8.5x11 __
+  _ Beth -- _ le -- hem __ _ it took __ _ its rest,
   \unset ignoreMelismata
   
   And there __ it __ did both
@@ -196,7 +202,9 @@ altoWordsV = \lyricmode {
   Full __ _ rev -- _ ’rent -- ly __ _ on bend -- _ ed knee,
   \unset ignoreMelismata
   
-  And of -- fer’d __ there in __
+  And of -- fer’d
+%8.5x11 __
+  there in __
   \set ignoreMelismata = ##t
   
   His __ _ pres -- ence,

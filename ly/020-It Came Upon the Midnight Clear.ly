@@ -8,7 +8,7 @@
 }
 \paper {
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   %system-system-spacing =
@@ -19,10 +19,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #020
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -56,25 +56,25 @@ sopMusic = \relative c' {
   d'4 a8 c[ bes] g8 |
   f4 g8 f4 f8 |
   g[ a] bes bes[ c] d |
-  \partial 8*5 c4.~ c4 | \break
+  c4.~ c4 \bar""\break
   
-  \partial 8 f,8 |
+  f,8 |
   d'4 a8 c[ bes] g8 |
   f4 g8 f4 f8 |
   g4 g8 a[ g] f |
-  \partial 8*5 bes4.~bes4 | \break
+  bes4.~bes4 | \bar""\break
   
-  \partial 8 d8 |
+  d8 |
   d4 d,8 d[ e] fis |
   g4 a8 bes4 d8 |
   c[ bes] a g[ a] g |
-  \partial 8*5 f4.~f4 |
+  f4.~f4 \bar""\break
   
-  \partial 8 f8 |
+  f8 |
   d'4 a8 c[ bes] g8 |
   f4 g8 f4 f8 |
   g4 g8 a[ g] f |
-  \partial 8*5 bes4.~bes4 \bar "|."
+  bes4.~bes4 \bar "|."
 }
 sopWords = \lyricmode {
   
@@ -114,6 +114,7 @@ altoWords = \lyricmode {
   To touch their harps of gold: __
   “Peace on the earth, good -- will to men
   From heav’n’s all gra -- cious King.”
+%8.5x11 __
   The world in sol -- emn still -- ness lay
   To hear the an -- gels sing. __
 }
@@ -122,8 +123,10 @@ altoWordsII = \lyricmode {
   \set stanza = #"2. "
   Still through the clo -- ven skies they come,
   With peace -- ful wings un -- furl’d;
+%8.5x11 __
   And still their heav’n -- ly mu -- sic floats
   O’er all the wea -- ry world:
+%8.5x11 __
   A -- bove its sad __ and low -- ly plains
   They bend __ on hov -- ’ring wing, __
   And ev -- er o’er __ its Ba -- bel sounds
@@ -145,12 +148,12 @@ altoWordsIV = \lyricmode {
   \dropLyricsVI
   \set stanza = #"4. "
   For lo! the days are hast -- ’ning on,
-  By proph -- ets bards fore -- told, __
+  By pro -- phet bards fore -- told, __
   When with the ev -- er -- cir -- cling years
   Comes round the age of gold; __
   When Peace shall o -- ver all the earth
   Its an -- cient splen -- dors fling, __
-  And the whole world give back the song
+  And the whole world send back the song
   Which now the an -- gels sing. __
 }
 

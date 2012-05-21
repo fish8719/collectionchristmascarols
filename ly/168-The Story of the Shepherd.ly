@@ -10,7 +10,7 @@
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -18,18 +18,13 @@
        (minimum-distance . 0)
        (padding . -2)
        (stretchability . 100))
-  top-markup-spacing =
-    #'((basic-distance . 0)
-       (minimum-distance . 0)
-       (padding . 0)
-       (stretchability . 0))
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #168
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -49,7 +44,7 @@
         \fill-line{\headerLine}
   }
 }
-#(set-global-staff-size 15) \paper{ #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 15 20))) }
+#(set-global-staff-size 14.9) \paper{ #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 14.9 20))) }
 global = {
   \key f \major
   \time 4/4
@@ -206,8 +201,8 @@ altoWords = \lyricmode {
   More sure than clock or chim -- ing bell, the hour of mid -- night told:
   When from the heav’ns there came a voice, and forms were seen \set associatedVoice = "basses" to shine, __
   \unset associatedVoice
-  Still bright -- ’ning as the mu -- sic rose with light and love div -- ine.
-  With love div -- ine the song be -- gan; there shone a light se -- rene:
+  Still bright -- ’ning as the mu -- sic rose with light and love di -- vine.
+  With love di -- vine the song be -- gan; there shone a light se -- rene:
   
   
   
@@ -218,7 +213,7 @@ altoWords = \lyricmode {
   I left them, for in -- stead of snow, I trod on blade \set associatedVoice = "basses" and flow’r, __
   \unset associatedVoice
   And ice dis -- solved in star -- ry rays at morn -- ing’s gra -- cious hour,
-  Re -- veal -- ing where on earth the steps of Love Div -- ine had been;
+  Re -- veal -- ing where on earth the steps of Love Di -- vine had been;
 }
 altoWordsII = \lyricmode {
   \dropLyrics
@@ -230,18 +225,18 @@ altoWordsII = \lyricmode {
   \unset associatedVoice
   So thrill -- ing as the con -- cert sweet by heav’n -- ly harp -- ings made;
   
-  For love div -- ine was in each chord, and fill’d each pause be -- tween:  
+  For love di -- vine was in each chord, and fill’d each pause be -- tween:  
   
   O, who hath heard what I have heard, or seen what I have seen?
   O, who hath heard what I have heard, or seen what I have seen?
   
   \set stanza = #"5. "
   I hast -- ed to a low -- roofed shed, for so the An -- gel bade;
-  And bowed be -- fore the low -- ly rack where Love Div -- ine was laid:
+  And bowed be -- fore the low -- ly rack where Love Di -- vine was laid:
   A new -- born Babe, like ten -- der Lamb, with Li -- on’s strength \set associatedVoice = "basses" there smiled; __
   \unset associatedVoice
   For Li -- on’s strength, im -- mort -- al might, was in that new -- born Child;
-  That Love Div -- ine in child -- like form had God for -- ev -- er been:
+  That Love Di -- vine in child -- like form had God for -- ev -- er been:
 }
 altoWordsIII = \lyricmode {
   \dropLyrics
@@ -250,7 +245,7 @@ altoWordsIII = \lyricmode {
   Of sum -- mer light -- ning; all a -- round so bright the splen -- dor lay.
   For oh, it mas -- tered sight and sense, to see that glo -- \set associatedVoice = "basses" ry shine, __
   \unset associatedVoice
-  To hear that min -- strel in the clouds, who sang of Love Div -- ine,
+  To hear that min -- strel in the clouds, who sang of Love Di -- vine,
   To see that form with bird -- like wings, of more than mor -- tal mien:
   
   

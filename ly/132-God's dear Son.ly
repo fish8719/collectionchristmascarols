@@ -9,7 +9,7 @@
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   %system-system-spacing =
@@ -20,10 +20,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #132
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -117,9 +117,11 @@ altoWords = \lyricmode {
   On this bless -- ed day was born;
   To save us all from sin and thrall,
   When we in Sa -- tan’s chains were bound;
+  \set associatedVoice = "basses"
   And shed His blood to do us good
   With ma -- ny~a pur -- ple bleed -- ing wound.
   
+  \unset associatedVoice
     \set stanza = #"4. "
   No king -- ly robes nor gold -- en trea -- sure
   Decked the brith -- day of God’s Son;
@@ -127,6 +129,7 @@ altoWords = \lyricmode {
   To the King of kings to run;
   No man -- tle brave could Je -- sus have
   Up -- on His cra -- dle cold to lie;
+  \set associatedVoice = "basses"
   No mu -- sic’s charms in nurse -- ’s arms
   To sing that Babe a lul -- la -- by.
 
@@ -151,10 +154,12 @@ altoWordsII = {
   }
   \set stanza = \markup\dynamic"mf  "
   \lyricmode {
+    \set associatedVoice = "basses"
     When He was born they did Him scorn,
     And showed Him mal -- ice when He died.
   }
-    
+   
+  \unset associatedVoice
   \set stanza = \markup{\dynamic"mf  " "5. "}
   \lyricmode{
     "" Yet, as Ma -- ry sat in sol -- ace
@@ -172,6 +177,7 @@ altoWordsII = {
   }
   \set stanza = \markup\dynamic"mf  "
   \lyricmode {
+    \set associatedVoice = "basses"
     And ev -- ’ry thing to Jew -- ry’s King,
     Through all the world gives cheer -- ful sound.
   }
@@ -185,9 +191,11 @@ altoWordsIII = \lyricmode {
   Pa -- tient -- ly up -- on the ground
   Her Babe did place, in vile dis -- grace,
   Where ox -- en in their stalls did feed;
+  \set associatedVoice = "basses"
   No mid -- wife mild had this sweet Child,
   Nor wo -- man’s help at moth -- er’s need.
   
+  \unset associatedVoice
   \set stanza = #"6. "
   \skip1 Now to Him that hath re -- deemed us
   By His death on ho -- ly Rood,
@@ -195,6 +203,7 @@ altoWordsIII = \lyricmode {
   As to buy us with His Blood,
   Yield last -- ing fame, that still the Name
   Of Je -- sus may be hon -- ored here;
+  \set associatedVoice = "basses"
   And let us say that Christ -- mas Day
   Is still the best day in the year.
 }
@@ -277,18 +286,18 @@ pianoLH = \relative c' {
       \new Voice = "sopranos" { \voiceOne << \global \sopMusic >> }
       \new Voice = "altos" { \voiceTwo << \global \altoMusic >> }
     >>
-    \new Lyrics \with { alignAboveContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \sopWords
-     \new Lyrics = "altosVI"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsVI
-    \new Lyrics = "altosV"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsV
-    \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsIV
-    \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsIII
-    \new Lyrics = "altosII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }
       \new Voice = "basses" { \voiceTwo << \global \bassMusic >> }
     >>
+    \new Lyrics \with { alignAboveContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \sopWords
+     \new Lyrics = "altosVI"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "tenors" \altoWordsVI
+    \new Lyrics = "altosV"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "tenors" \altoWordsV
+    \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "tenors" \altoWordsIV
+    \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "tenors" \altoWordsIII
+    \new Lyrics = "altosII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "tenors" \altoWordsII
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "tenors" \altoWords
     \new Lyrics \with { alignAboveContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "tenors" \tenorWords
     \new Lyrics \with { alignBelowContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "basses" \bassWords
   >>

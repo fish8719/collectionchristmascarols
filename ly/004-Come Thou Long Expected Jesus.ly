@@ -1,12 +1,12 @@
 ﻿\version "2.14.2"
 \include "../util.ly"
 \header {
-  tagline = \markup { "from" \italic {cyberhymnal.org}}
+  tagline = \markup { "from" \italic {CyberHymnal.org}}
 }
 \paper {
   print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -22,10 +22,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #004
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCaps advent}
@@ -81,29 +81,29 @@ altoMusic = \relative c' {
 altoWords = \lyricmode {
   \dropLyricsVII
   \set stanza = #"1. "
-  Come, thou long ex -- pect -- ed Je -- sus,
-  born to set __ thy peo -- ple free;
-  from our fears and sins re -- lease us, let us find our rest in thee.
+  Come, Thou long ex -- pect -- ed Je -- sus,
+  born to set __ Thy peo -- ple free;
+  from our fears and sins re -- lease us, let us find our rest in Thee.
 }
 altoWordsII = \lyricmode {
   \dropLyricsVII
 %\markup\italic
   \set stanza = #"2. "
   Is -- rael’s strength and con -- so -- la -- tion,
-  hope of all __ the earth thou art:
+  hope of all __ the earth Thou art:
   dear de -- sire of ev -- ’ry na -- tion, joy of ev -- ’ry long -- ing heart.
 }
 altoWordsIII = \lyricmode {
   \dropLyricsVII
   \set stanza = #"3. "
-  Born thy peo -- ple to de -- liv -- er, born a child, and yet a king,
-  born to reign in us for ev -- er, now thy gra -- cious king -- dom bring.
+  Born Thy peo -- ple to de -- liv -- er, born a child, and yet a king,
+  born to reign in us for ev -- er, now Thy gra -- cious king -- dom bring.
 }
 altoWordsIV = \lyricmode {
   \dropLyricsVII
   \set stanza = #"4. "
-  By thine own e -- ter -- nal Spir -- it rule in all __ our hearts a -- lone;
-  by thy grace, help us to mer -- it life e -- ter -- nal at thy throne.
+  By Thine own e -- ter -- nal Spi -- rit rule in all __ our hearts a -- lone;
+  by Thy grace, help us to mer -- it life e -- ter -- nal at Thy throne.
 }
 altoWordsV = \lyricmode {
   \set stanza = #"5. "
@@ -257,29 +257,29 @@ altoMusic = \relative c' {
 altoWords = \lyricmode {
   \dropLyricsVII
   \set stanza = #"1. "
-  Come, thou long ex -- pect -- ed Je -- sus,
-  born to set thy peo -- ple free;
-  from our fears and sins re -- lease us, let us find our rest in thee.
+  Come, Thou long ex -- pect -- ed Je -- sus,
+  born to set Thy peo -- ple free;
+  from our fears and sins re -- lease us, let us find our rest in Thee.
 }
 altoWordsII = \lyricmode {
   \dropLyricsVII
 %\markup\italic
   \set stanza = #"2. "
   Is -- rael’s strength and con -- so -- la -- tion,
-  hope of all the earth thou art:
+  hope of all the earth Thou art:
   dear de -- sire of ev -- ’ry na -- tion, joy of ev -- ’ry long -- ing heart.
 }
 altoWordsIII = \lyricmode {
   \dropLyricsVII
   \set stanza = #"3. "
-  Born thy peo -- ple to de -- liv -- er, born a child, and yet a king,
-  born to reign in us for ev -- er, now thy gra -- cious king -- dom bring.
+  Born Thy peo -- ple to de -- liv -- er, born a child, and yet a king,
+  born to reign in us for ev -- er, now Thy gra -- cious king -- dom bring.
 }
 altoWordsIV = \lyricmode {
   \dropLyricsVII
   \set stanza = #"4. "
-  By thine own e -- ter -- nal Spir -- it rule in all our hearts a -- lone;
-  by thy grace, help us to mer -- it life e -- ter -- nal at thy throne.
+  By Thine own e -- ter -- nal Spi -- rit rule in all our hearts a -- lone;
+  by Thy grace, help us to mer -- it life e -- ter -- nal at Thy throne.
 }
 altoWordsV = \lyricmode {
   \set stanza = #"5. "

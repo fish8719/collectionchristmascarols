@@ -3,11 +3,13 @@
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"The Babe of Bethlehem"}}
   tagline = \markup { "from" \italic {Christmas Carols, New and Old}}
+  poet = "Traditional"
+  composer = "Traditional"
 }
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -15,11 +17,6 @@
        (minimum-distance . 0)
        (padding . -35)
        (stretchability . 100))
-  top-markup-spacing =
-    #'((basic-distance . 0)
-       (minimum-distance . 0)
-       (padding . 0.1)
-       (stretchability . 0))
   last-bottom-spacing =
     #'((basic-distance . 0)
        (minimum-distance . 0)
@@ -29,10 +26,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #134
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -142,7 +139,10 @@ altoWords = {
     The Babe in Beth -- lem’s man -- ger laid,
     In hum -- ble form so low;
     By won -- d’ring An -- gels is sur -- vey’d,
-    Thro’ all His scenes of woe.
+    Thro’ all His 
+    \set associatedVoice = "sopranos"
+    scenes of woe.
+    \unset associatedVoice
   }
   \set stanza = \markup\dynamic"ff   "
   \lyricmode{
@@ -154,10 +154,12 @@ altoWords = {
     
     
     \set stanza = #"4."
-    To preach the Word of Life Div -- ine,
+    To preach the Word of Life Di -- vine,
     And feed with liv -- ing Bread,
     To heal the sick with hand be -- nign,
-    And raise to life the dead.
+    And raise to 
+    \set associatedVoice = "sopranos"
+    life the dead.
   }
 }
 altoWordsII = {
@@ -167,7 +169,10 @@ altoWordsII = {
     A Sav -- ior! sin -- ners all a -- round
     Sing, shout the won -- drous word;
     Let ev -- ’ry bo -- som hail the sound,
-    A Sav -- ior! Christ the Lord.
+    A Sav -- ior! 
+    \set associatedVoice = "sopranos"
+    Christ the Lord.
+    \unset associatedVoice
     
     \repeat unfold 26 \skip1
   }
@@ -176,7 +181,9 @@ altoWordsII = {
     He preached, He suf -- fered, bled and died,
     Up -- lift ’twixt earth and skies;
     In sin -- ners’ stead was cru -- ci -- fied,
-    For sin a sac -- ri -- fice.
+    For sin a 
+    \set associatedVoice = "sopranos"
+    sac -- ri -- fice.
     
   }
 }
@@ -186,14 +193,19 @@ altoWordsIII = \lyricmode {
   For not to sit on Da -- vid’s throne
   With world -- ly pomp and joy,
   He came for sin -- ners to a -- tone,
-  And Sa -- tan to de -- stroy.
+  And Sa -- tan 
+  \set associatedVoice = "sopranos"
+  to de -- stroy.
+  \unset associatedVoice
   
   \repeat unfold 26 \skip1
   \set stanza = #"6."
   Well may we sing a Sav -- ior’s Birth,
   Who need the Grace so giv’n,
   And hail His com -- ing down to earth,
-  Who rais -- es us to Heav’n.
+  Who rais -- es 
+  \set associatedVoice = "sopranos"
+  us to Heav’n.
   
 }
 altoWordsIV = \lyricmode {

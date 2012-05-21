@@ -9,7 +9,7 @@
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   %system-system-spacing =
@@ -20,10 +20,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #038
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -151,7 +151,7 @@ altoWords = {
     In the town of Beth -- le -- hem, in Beth -- le -- hem.
     Bring -- ing to men far and wide,
     Love’s di -- a -- dem,
-    E -- ia, E -- ia, Lull -- a -- by.
+    E -- ia, E -- ia, Lul -- la -- by.
   }
 }
 altoWordsII = \lyricmode {
@@ -161,7 +161,7 @@ altoWordsII = \lyricmode {
   I will glad -- ly, la -- dy mine,
   Help thee rock the Child di -- vine,
   God’s pure light on thee will shine,
-  In par -- a -dise, So prays the moth -- er,
+  In par -- a -- dise, So prays the moth -- er,
 }
 altoWordsIII = \lyricmode {
 }

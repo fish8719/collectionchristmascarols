@@ -9,7 +9,7 @@
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   %system-system-spacing =
@@ -20,10 +20,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #188
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -57,8 +57,10 @@ sopMusic = \relative c' {
   c4^\mf f a c2 a4^\markup\italic"cresc." |
   a( g) a f2. \bar "||"
   f4^\p f f c'( a) d |
+  \slurDotted
   d2.(^\> g,)\! \bar "||"
   
+  \slurSolid
   g4^\markup\italic"cresc." g a bes( c) d |
   d( c) a g2. \bar "||"
   g4^\markup\italic"dim." g a bes( c) d |
@@ -172,8 +174,10 @@ altoMusic = \relative c' {
   c4 c f f2 f4 |
   e2 e4 f2. \bar "||"
   f4 e d c2 f4 |
+  \slurDotted
   f2.( f) \bar "||"
   
+  \slurSolid
   e4 ees ees d2 g4 |
   fis2 fis4 g2. \bar "||"
   g4 g g g2 g4 |
@@ -282,10 +286,14 @@ altoWords = {
     
     \dropLyricsV
     O hear Thy Church, with one ac -- cord,
+    \set associatedVoice = "tenors"
     Her long -- lost Peace im -- plor -- ing:
+    \unset associatedVoice 
     Be it ac -- cord -- ing to Thy word:
+    \set associatedVoice = "tenors"
     Thy Reign of Peace bring in, dear Lord;
-    Heav’n’s Peace to earth re -- sto -- ring.
+    \set associatedVoice = "sopranos"
+    Heav’n’s Peace to earth \unset associatedVoice re -- sto -- ring.
     And Peace E -- ter -- nal, Je -- su, grant, we pray.
     
     \markup\italic “In \markup\italic Cæ -- \markup\italic lo __ \markup\italic Pax, __
@@ -349,8 +357,10 @@ tenorMusic = \relative c' {
   c4_\mf c c a2 c4 |
   c( bes) c a2( c4) \bar "||"
   d_\p c bes a2 a4 |
+  \tieDotted
   b2.~ b \bar "||"
   
+  \tieSolid
   c4 g g g( a) bes |
   c2 c4 bes2. \bar "||"
   bes4 c cis d( c) bes |
@@ -454,8 +464,10 @@ bassMusic = \relative c {
   a'4 a f c( f) a |
   c2 c,4 f2. \bar "||"
   f4 f f f2 d4 |
+  \tieDotted
   g2.~ g \bar "||"
   
+  \tieSolid
   c,4 c c d2 d4 |
   d2 d4 g2( f4) \bar "||"
   ees4 ees ees d2 d4 |

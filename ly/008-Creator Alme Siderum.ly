@@ -6,7 +6,7 @@
 \paper {
   print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -27,10 +27,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #008
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCaps advent}
@@ -114,8 +114,6 @@ altoWords = \lyricmode {
   No -- mén -- que cum pri -- mum so -- nat,
   Et cæ -- li -- tes et ín -- fe -- ri
   Tre -- mén -- te cur -- ván -- tur ge -- nu.
-
-  A -- men. 
 }
 altoWordsII = \lyricmode {
   \dropLyricsIX
@@ -131,6 +129,8 @@ altoWordsII = \lyricmode {
   Ma -- gnum di -- é -- i Jú -- di -- cem,
   Ar -- mis su -- pér -- næ grá -- ti -- æ
   De -- fén -- de nos ab hó -- sti -- bus.
+
+  A -- men.
 }
 altoWordsIII = \lyricmode {
   \dropLyricsIX
@@ -237,6 +237,7 @@ pianoLH = \relative c' {
 %    \new PianoStaff << \new Staff { \new Voice { \pianoRH } } \new Staff { \clef "bass" \pianoLH } >>
   >>
   \layout {
+    #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 14.9 20)))
     \context {
       \Score
       %\override SpacingSpanner #'base-shortest-duration = #(ly:make-moment 1 8)
@@ -334,18 +335,16 @@ altoWords = \lyricmode {
   And hear thy ser -- vants when they call.
 
   \set stanza = #"4."
-  At whose dread Name, ma -- jes -- tic now,
-  All knees must bend, all hearts must bow
+  At Whose dread Name, ma -- jes -- tic now,
+  All knees must bend, all hearts must bow;
   And things ce -- les -- tial Thee shall own,
   And things ter -- res -- trial, Lord a -- lone.
-
-  A -- men. 
 }
 altoWordsII = \lyricmode {
   \dropLyricsIX
 %\markup\italic
   \set stanza = #"2."
-  Thoum griev -- ing that the an -- cient curse
+  Thou, griev -- ing that the an -- cient curse
   Should doom to death a u -- ni -- verse,
   Hast found the med -- ’cine, full of grace,
   To save and heal a ru -- in’d race.
@@ -355,18 +354,20 @@ altoWordsII = \lyricmode {
   To judge and doom the quick and dead,
   Pre -- serve us, while we dwell be -- low,
   From ev -- ’ry in -- sult of the foe.
+
+  A -- men.
 }
 altoWordsIII = \lyricmode {
   \dropLyricsIX
   \set stanza = #"3."
-  Thou cam’st, the Bride -- groom of the Bride,
+  Thou cam’st, the Bride -- groom of the bride,
   As drew the world to eve -- ning -- tide;
-  Pro -- ceed -- ing from a Vir -- gin shrine,
+  Pro -- ceed -- ing from a vir -- gin shrine,
   The spot -- less Vic -- tim all di -- vine.
 
   \set stanza = #" 6."
   To God the Fa -- ther, God the Son,
-  And God the Spi -- rit, Thee in One,
+  And God the Spi -- rit, Three in One,
   Laud, hon -- or, might, and glo -- ry be
   From age to age e -- ter -- nal -- ly.
 }
@@ -621,7 +622,7 @@ bassWords = \lyricmode {
   \header {
     title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Conditor alme siderum"}}
     poet = \markup\oldStyleNum"Vesper Hymn"
-    composer = \markup\oldStyleNum"Michael Praetorius (1571–1621)"
+    composer = \markup\oldStyleNum"Arranged by Michael Praetorius (1571–1621)"
     
     tagline = \markup{from \italic"cpdl.org"}
   }
@@ -671,7 +672,7 @@ sopMusic = \relative c'' {
 sopWords = \lyricmode {
   \dropLyricsIV
   Christ -- mas is com -- ing! The goose is get -- ting fat;
-  Please to put a pen -- ny in the old man’s __ hat,
+  Please to put a pen -- ny in the old man’s hat,
   Please to put a pen -- ny in the old man’s hat.
 }
 

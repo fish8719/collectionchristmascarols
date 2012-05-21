@@ -2,7 +2,7 @@
 \include "../util.ly"
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Hail! Holy Child, Lain in an Oxen Manger"}}
-  poet = \markup\oldStyleNum"G.R. Woodward (1848–1934)"
+  poet = \markup\oldStyleNum"George Ratcliffe Woodward (1848–1934)"
   composer = \markup{"Flemish,"\italic"Quittez, pasteurs, vos brebis et houlette"}
   arranger = \markup\oldStyleNum"Arranged by Charles Wood (1866–1926)"
   tagline = \markup \concat{ "from " \italic "The Cambridge Carol Book" \oldStyleNum", 1924"}
@@ -10,7 +10,7 @@
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   %system-system-spacing =
@@ -21,10 +21,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #152
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -69,7 +69,7 @@ sopMusic = \relative c' {
   e f g e |
   
   f( g) a \bar""\break g |
-  a g a bes |
+  a g a b |
   c2. f4 |
   c2. f4 |
   e d c bes |
@@ -195,7 +195,7 @@ tenorMusic = \relative c' {
   c4 bes g g |
   
   a( bes) c c |
-  c c c bes |
+  c c c b |
   g2 c4( d) |
   g,2 c4( d) |
   c bes a g |

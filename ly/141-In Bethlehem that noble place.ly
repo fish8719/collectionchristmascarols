@@ -9,7 +9,7 @@
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -20,10 +20,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #141
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -62,7 +62,7 @@ sopMusic = \relative c' {
   
   fis[^\markup\italic"cresc." g] a4 |
   b8[ cis] d[ e] |
-  cis4 \bar""\break a8 a |
+  cis4 \bar""\break \slurDotted a8( a) |
   b4 a |
   d4. a8 |
   b4 a |
@@ -118,7 +118,7 @@ altoMusic = \relative c' {
   
   d d |
   g fis |
-  e a8 a |
+  e \slurDotted a8( a) |
   b4 a |
   d,4. fis8 |
   g4 a |
@@ -166,8 +166,16 @@ altoWords = {
     \set stanza = #"1. "
     In Beth -- le -- hem, that no -- ble place,
     As by the Pro -- phet said it was,
-    Of the Vir -- gin Ma -- ry, filled with Grace,
-    \markup\italic Sal -- \markup\italic va -- \markup\italic tor \markup\italic mun -- \markup\italic di \markup\italic na -- \markup\italic tus \markup\italic est.
+    \set ignoreMelismata = ##t
+    Of the
+    \unset ignoreMelismata
+    Vir -- gin Ma -- ry, filled with Grace,
+    \markup\italic Sal -- \markup\italic va -- \markup\italic tor \markup\italic mun --
+    \set associatedVoice = "sopranos"
+    \markup\italic di \markup\italic na -- \markup\italic tus
+    \unset associatedVoice
+    \markup\italic est.
+    
   }
   \set stanza = \markup\dynamic"ff  "
   \lyricmode {
@@ -183,7 +191,10 @@ altoWords = {
   \set stanza = \markup\dynamic"f  "
   \lyricmode{
     On Ma -- ry’s lap, that gen -- tle maid:
-    \markup\italic Sal -- \markup\italic va -- \markup\italic tor \markup\italic mun -- \markup\italic di \markup\italic na -- \markup\italic tus \markup\italic est.
+    \markup\italic Sal -- \markup\italic va -- \markup\italic tor \markup\italic mun --
+    \set associatedVoice = "sopranos"
+    \markup\italic di \markup\italic na -- \markup\italic tus \markup\italic est.
+    \unset associatedVoice
   }
 }
 altoWordsII = {
@@ -195,8 +206,11 @@ altoWordsII = {
   }
   \set stanza = \markup\dynamic"f  "
   \lyricmode{
-    In __ _ Beth -- le -- hem, full nigh the wold,
-    \markup\italic “Sal -- \markup\italic va -- \markup\italic tor \markup\italic mun -- \markup\italic di \markup\italic na -- \markup\italic tus \markup\italic est.”
+    In __ Beth -- le -- hem, full nigh the wold,
+    \markup\italic “Sal -- \markup\italic va -- \markup\italic tor \markup\italic mun --
+    \set associatedVoice = "sopranos"
+    \markup\italic di \markup\italic na -- \markup\italic tus \markup\italic est.”
+    \unset associatedVoice
     
     \repeat unfold 15 \skip1
     
@@ -204,7 +218,10 @@ altoWordsII = {
     “And thus in faith find Him ye shall
     Laid poor -- ly in an ox -- ’s stall.”
     The shep -- herds then laud -- ed God all,
-    \markup\italic Qui -- \markup\italic a \markup\italic Sal -- \markup\italic va -- \markup\italic tor \markup\italic na -- \markup\italic tus \markup\italic est.
+    \markup\italic Qui -- \markup\italic a \markup\italic Sal -- \markup\italic va --
+    \set associatedVoice = "sopranos"
+    \markup\italic tor \markup\italic na -- \markup\italic tus \markup\italic est.
+    \unset associatedVoice
   }
 }
 altoWordsIII = \lyricmode {
@@ -212,8 +229,10 @@ altoWordsIII = \lyricmode {
   \set stanza = #"3. "
   The shep -- herds were en -- com -- passed right,
   A -- bout them shone a glo -- rious light,
-  “Dread _ ye naught,” said the An -- gel bright,
-  \markup\italic “Sal -- \markup\italic va -- \markup\italic tor \markup\italic mun -- \markup\italic di \markup\italic na -- \markup\italic tus \markup\italic est.”
+  “Dread ye naught,” said the An -- gel bright,
+  \markup\italic “Sal -- \markup\italic va -- \markup\italic tor \markup\italic mun --
+  \set associatedVoice = "sopranos"
+  \markup\italic di \markup\italic na -- \markup\italic tus \markup\italic est.”
   
 }
 altoWordsIV = \lyricmode {
@@ -234,7 +253,7 @@ tenorMusic = \relative c' {
   
   a d |
   g, a |
-  a a8 a |
+  a \slurDotted a8( a) |
   b4 a |
   d4. d8 |
   d4 d |
@@ -290,7 +309,7 @@ bassMusic = \relative c {
   
   d fis |
   e d |
-  a a'8 a |
+  a \slurDotted a'8( a) |
   b4 a |
   d4. d,8 |
   g4 fis |
@@ -351,6 +370,11 @@ pianoLH = \relative c' {
       \new Voice = "sopranos" { \voiceOne << \global \sopMusic >> }
       \new Voice = "altos" { \voiceTwo << \global \altoMusic >> }
     >>
+   \new Staff = men <<
+      \clef bass
+      \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }
+      \new Voice = "basses" { \voiceTwo << \global \bassMusic >> }
+    >>
     \new Lyrics \with { alignAboveContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \sopWords
      \new Lyrics = "altosVI"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsVI
     \new Lyrics = "altosV"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsV
@@ -358,11 +382,6 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsII
     \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "altos" \altoWords
-   \new Staff = men <<
-      \clef bass
-      \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }
-      \new Voice = "basses" { \voiceTwo << \global \bassMusic >> }
-    >>
     \new Lyrics \with { alignAboveContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "tenors" \tenorWords
     \new Lyrics \with { alignBelowContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "basses" \bassWords
   >>

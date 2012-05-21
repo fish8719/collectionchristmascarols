@@ -9,7 +9,7 @@
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   %system-system-spacing =
@@ -20,10 +20,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #200
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"new year"}
@@ -109,8 +109,10 @@ altoWords = \lyricmode {
   Ring out, wild bells, \set ignoreMelismata = ##t to the \unset ignoreMelismata wild sky,
   The fly -- ing cloud, the frost -- y light:
   The year is dy -- ing in the night;
-  Ring out, wild bells, and let him die.
+  Ring out, \set associatedVoice = "sopranos"
+  wild bells, and let him die.
 
+  \unset associatedVoice
   The year is dy -- ing in the night;
   Ring out, wild bells, and let __ him __ die.
 }
@@ -121,8 +123,10 @@ altoWordsII = \lyricmode {
   Ring out the old, ring in the new,
   Ring, hap -- py bells a -- cross the snow:
   The year is go -- ing, let him go;
-  Ring out the false, ring in the true.
+  Ring out \set associatedVoice = "sopranos"
+  the false, ring in the true.
 
+  \unset associatedVoice
   The year is go -- ing, let him go;
   Ring out the false, ring in __ the __ true.
 }
@@ -132,8 +136,10 @@ altoWordsIII = \lyricmode {
   Ring in the val -- iant man and free,
   The lar -- ger heart, the kind -- lier hand;
   Ring out the dark -- ness of the land,
-  Ring in the Christ that is to be.
+  Ring in \set associatedVoice = "sopranos"
+  the Christ that is to be.
 
+  \unset associatedVoice
   Ring out the dark -- ness of the land,
   Ring in the Christ that is __ to __ be.
 }

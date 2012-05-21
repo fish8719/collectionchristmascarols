@@ -3,7 +3,7 @@
 \paper {
   print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   %score-markup-spacing =
@@ -19,10 +19,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #090
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -89,7 +89,7 @@ altoWords = \lyricmode {
   
   \set stanza = #"5. "
   In o -- cta -- va __ dum cir -- cum -- ci -- di -- tur, __
-  No -- men e -- i Ie -- sus im -- po -- ni -- tur
+  No -- men e -- i Je -- sus im -- po -- ni -- tur
   in Beth -- le -- hem. __
 }
 altoWordsII = \lyricmode {
@@ -115,7 +115,7 @@ altoWordsIII = \lyricmode {
   
   
   \set stanza = #"7. "
-  Col -- ly -- ri -- das __ si -- mul cum ne -- cta -- re __
+  Col -- ly -- ri -- das __ si -- mul cum nec -- ta -- re __
   Be -- ne -- di -- cat Chri -- stus Rex glo -- ri -- æ
   in Beth -- le -- hem. __
 }

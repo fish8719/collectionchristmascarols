@@ -2,14 +2,15 @@
 \include "../util.ly"
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Jingle Bells"}}
+  subtitle = \markup{\override #'(font-name . "Garamond Premier Pro"){ \abs-fontsize #10.5 "(The One Horse Open Sleigh)"}}
   poet = \markup\oldStyleNum"James Lord Pierpont (1822–1893)"
   composer = \markup\oldStyleNum"James Lord Pierpont (1822–1893)"
-  tagline = \markup \concat{ "from " \italic"The One Horse Open Sleigh" \oldStyleNum", 1857"}
+  tagline = \markup \concat{ \italic"The One Horse Open Sleigh" \oldStyleNum", 1857"}
 }
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -20,15 +21,15 @@
   last-bottom-spacing =
     #'((basic-distance . 0)
        (minimum-distance . 0)
-       (padding . -1.1)
+       (padding . 0)
        (stretchability . 0))
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #114
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -48,7 +49,7 @@
         \fill-line{\headerLine}
   }
 }
-#(set-global-staff-size 15) \paper{ #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 15 20))) }
+#(set-global-staff-size 14.8) \paper{ #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 14.8 20))) }
 global = {
   \key aes \major
   \time 2/4
@@ -142,13 +143,12 @@ altoWords = \lyricmode {
   O’er the fields we go,
     \skip1 Laugh -- ing all the way;
   \skip1 Bells on bob  tail ring, \skip1
-    Mak -- ing spir -- its bright;
+    Mak -- ing spi -- rits bright;
   \skip1 O what sport to ride and sing
     A sleigh -- ing song to -- night.
 }
 altoChorusWords = \lyricmode {
   \dropLyricsXII
-  \repeat unfold 50 ""
   
   Jin -- gle bells,
     Jin -- gle bells,
@@ -393,7 +393,7 @@ pianoLH = \relative c {
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \altoWordsII
     \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . 0.5))} \lyricsto "sopranos" \altoWords
-    \new Lyrics = "altosChorus"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -1))} \lyricsto "sopranos" \altoChorusWords
+    \new Lyrics = "altosChorus"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -1))} \lyricsto "altos" \altoChorusWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }

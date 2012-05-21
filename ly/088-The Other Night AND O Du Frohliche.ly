@@ -6,7 +6,7 @@
 \paper {
   print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 6\in
+  paper-width = 5.2734\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   score-markup-spacing =
@@ -22,10 +22,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
-  bottom-margin = 0.25\in
+  inner-margin = 0.1017\in
+  outer-margin = 0.1017\in
+  top-margin = 0.125\in
+  bottom-margin = 0.125\in
   first-page-number = #088
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -94,14 +94,14 @@ altoWordsII = \lyricmode {
   \set stanza = #"1."
   This love -- ly la -- dy sat and sang,
   And to her Child did say, __
-  “My son, my bro -- ther, fa -- ther dear,
-  Why liest thou thus in hay?” __
+  “My Son, my Bro -- ther, Fa -- ther dear,
+  Why liest Thou thus in hay?” __
 }
 altoWordsIII = \lyricmode {
   \dropLyricsIX
   \set stanza = #"2."
   “My sweet -- est bird, ’tis thus re -- quired,
-  Though Thou be king ve -- ray, __
+  Though Thou be King ve -- ray, __
   But n’er -- the -- less I will not cease
   To sing ‘By by, lul -- lay.’” __
 }
@@ -110,7 +110,7 @@ altoWordsIV = \lyricmode {
   \set stanza = #"3."
   The Child then spake in His talk -- ing,
   And to His mo -- ther said, __
-  “Yea, I am known as heav -- en -- king
+  “Yea, I am known as Heav -- en -- King
   In crib though I be laid. __
 }
 altoWordsV = \lyricmode {
@@ -203,7 +203,7 @@ pianoLH = \relative c' {
   \header {
     title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"This Endris Night"}}
     composer = \markup\oldStyleNum"15th Century English"
-    poet = \markup\oldStyleNum"15th Century English"
+    poet = \markup\oldStyleNum{\concat{"Adapted from " \italic"Thys endris nyzth" ", 15th Century"}}
     tagline = \markup\concat{"from " \italic"The English Carol Book, Second Series" \oldStyleNum", 1913, via " \italic"HymnsAndCarolsOfChristmas.com"}
   }
 }
@@ -418,6 +418,7 @@ pianoLH = \relative c' {
 %    \new PianoStaff << \new Staff { \new Voice { \pianoRH } } \new Staff { \clef "bass" \pianoLH } >>
   >>
   \layout {
+    #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 14.5 20)))
     \context {
       \Score
       %\override SpacingSpanner #'base-shortest-duration = #(ly:make-moment 1 8)
