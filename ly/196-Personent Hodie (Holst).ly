@@ -9,7 +9,7 @@
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 5.2734\in
+  paper-width = 6\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   %system-system-spacing =
@@ -20,10 +20,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.1017\in
-  outer-margin = 0.1017\in
-  top-margin = 0.125\in
-  bottom-margin = 0.125\in
+  inner-margin = 0.5\in
+  outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #196
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -87,7 +87,7 @@ altoWords = \lyricmode {
   Per -- so -- nent ho -- di -- e
   vo -- ces pu -- e -- ru -- læ,
   lau -- dan -- tes ju -- cun -- de
-  qui no -- bis est na -- tus,
+  Qui no -- bis est na -- tus,
   sum -- mo De -- o da -- tus,
   et de vir, vir, vir,
   et de vir, vir, vir,
@@ -117,7 +117,7 @@ altoWordsIII = \lyricmode {
   au -- rum thus, thus, thus,
   au -- rum thus, thus, thus,
   au -- rum thus, et myr -- rham
-  e -- i of -- fe -- ren -- do.
+  E -- i of -- fe -- ren -- do.
 }
 altoWordsIV = \lyricmode {
   \set stanza = #"4. "
@@ -125,7 +125,7 @@ altoWordsIV = \lyricmode {
   par -- i -- ter pu -- e -- ri,
   can -- tent ut an -- ge -- li:
   Ad -- ven -- is -- ti mun -- do,
-  lau -- des ti -- bi fun -- do.
+  lau -- des Ti -- bi fun -- do.
   Id -- e -- o, o, o,
   id -- e -- o, o, o,
   id -- e -- o, glo -- ri -- a

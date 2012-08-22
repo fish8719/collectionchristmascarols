@@ -6,7 +6,7 @@
 \paper {
   print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 5.2734\in
+  paper-width = 6\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -24,13 +24,18 @@
        (minimum-distance . 0)
        (padding . -2)
        (stretchability . 100))
+%{IF_LESSER
+  markup-system-spacing #'stretchability = 50
+  top-markup-spacing #'stretchability = 30
+  last-bottom-spacing #'stretchability = 60
+%}%END_IF_LESSER
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.1017\in
-  outer-margin = 0.1017\in
-  top-margin = 0.125\in
-  bottom-margin = 0.125\in
+  inner-margin = 0.5\in
+  outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #092
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -209,6 +214,14 @@ bassWordsII = \lyricmode {
   \repeat unfold 17 { \skip 1 }
   -ne Magd.
 }
+bassWordsIII = \lyricmode {
+  \repeat unfold 11 { \skip 1 }
+  so süß,
+  \repeat unfold 11 { \skip 1 }
+  -ster -- nis.
+  \repeat unfold 17 { \skip 1 }
+  und Tod.
+}
 
 pianoRH = \relative c' {
   
@@ -238,6 +251,9 @@ pianoLH = \relative c' {
       \new Voice = "basses" { \voiceTwo << \global \bassMusic >> }
     >>
     \new Lyrics \with { alignAboveContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . 0.2)) } \lyricsto "tenors" \tenorWords
+%{IF_LESSER
+    \new Lyrics \with { alignBelowContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)(padding . 0.2)) } \lyricsto "basses" \bassWordsIII
+%}%END_IF_LESSER
     \new Lyrics \with { alignBelowContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)(padding . 0.2)) } \lyricsto "basses" \bassWordsII
     \new Lyrics \with { alignBelowContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)(padding . 0.2)) } \lyricsto "basses" \bassWords
   >>
@@ -271,7 +287,7 @@ pianoLH = \relative c' {
 
 
 
-
+%IF_NOT_LESSER
 global = {
   \key g \major
   \time 4/4
@@ -331,7 +347,7 @@ altoWords = \lyricmode {
   \dropLyricsV
   \set stanza = #"1. "
   Flos de ra -- di -- ce Jes -- se, est na -- tus ho -- di -- e.
-  Quem no -- bis jam ad -- es -- se, læ -- ta -- mur u -- ni -- ce.
+  Quem no -- bis iam ad -- es -- se, læ -- ta -- mur u -- ni -- ce.
   Flos il -- le Je -- sus est.
   Ma -- ri -- a Vir -- go ra -- dix de qua flos or -- tus est.
 }
@@ -471,6 +487,7 @@ pianoLH = \relative c' {
       % Remove all empty staves
       % \Staff \RemoveEmptyStaves \override VerticalAxisGroup #'remove-first = ##t
     }
+%6.14g    \context { \Lyrics \override LyricText #'font-size = #0.9 }
   }
   \header {
     title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Flos de radice Jesse"}}
@@ -478,7 +495,7 @@ pianoLH = \relative c' {
     %tagline = \markup { "from" \italic {HymnsAndCarolsOfChristmas.com}}
   }
 }
-
+%END_IF_NOT_LESSER
 
 
 
@@ -643,6 +660,18 @@ bassWordsII = \lyricmode {
   in mind;
   \repeat unfold 11 { \skip 1 }
   -er kind.
+%{IF_LESSER
+  \repeat unfold 17 { \skip 1 }
+  the night.
+%}%END_IF_LESSER
+}
+bassWordsIII = \lyricmode {
+  \repeat unfold 11 { \skip 1 }
+  the air,
+  \repeat unfold 11 { \skip 1 }
+  ’ry -- where;
+  \repeat unfold 17 { \skip 1 }
+  ’ry load.
 }
 
 pianoRH = \relative c' {
@@ -673,6 +702,9 @@ pianoLH = \relative c' {
       \new Voice = "basses" { \voiceTwo << \global \bassMusic >> }
     >>
     \new Lyrics \with { alignAboveContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)(padding . 0.2)) } \lyricsto "tenors" \tenorWords
+%{IF_LESSER
+    \new Lyrics \with { alignBelowContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)(padding . 0.2)) } \lyricsto "basses" \bassWordsIII
+%}%END_IF_LESSER
     \new Lyrics \with { alignBelowContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)(padding . 0.2)) } \lyricsto "basses" \bassWordsII
     \new Lyrics \with { alignBelowContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)(padding . 0.2)) } \lyricsto "basses" \bassWords
   >>

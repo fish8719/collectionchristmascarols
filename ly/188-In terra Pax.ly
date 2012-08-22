@@ -9,7 +9,7 @@
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 5.2734\in
+  paper-width = 6\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   %system-system-spacing =
@@ -20,10 +20,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.1017\in
-  outer-margin = 0.1017\in
-  top-margin = 0.125\in
-  bottom-margin = 0.125\in
+  inner-margin = 0.5\in
+  outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #188
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -266,10 +266,14 @@ altoWords = {
   \lyricmode {
     \dropLyricsV
     \set stanza = #"1. "
+    \set associatedVoice = "sopranos"
     In -- fant of days, yet Lord of Life,
-    Sweet Prince of Peace, All hail! __
+    Sweet Prince \unset associatedVoice
+    of Peace, All hail! __
     Oh! we are wea -- ry of the strife,
-    The din with which earth’s fields are rife,
+    \set associatedVoice = "sopranos"
+    The din \unset associatedVoice
+    with which earth’s fields are rife,
     And we would list the tale __
     That chimes its Christ -- mas news for us,
     
@@ -285,7 +289,8 @@ altoWords = {
     \markup\italic Pax.” __
     
     \dropLyricsV
-    O hear Thy Church, with one ac -- cord,
+    \set associatedVoice = "sopranos"
+    O hear Thy Church, with one __ ac -- cord,
     \set associatedVoice = "tenors"
     Her long -- lost Peace im -- plor -- ing:
     \unset associatedVoice 
@@ -294,9 +299,11 @@ altoWords = {
     Thy Reign of Peace bring in, dear Lord;
     \set associatedVoice = "sopranos"
     Heav’n’s Peace to earth \unset associatedVoice re -- sto -- ring.
-    And Peace E -- ter -- nal, Je -- su, grant, we pray.
+    And Peace E -- ter -- nal, Je -- su, grant, we pray. __
     
+    \dropLyrics
     \markup\italic “In \markup\italic Cæ -- \markup\italic lo __ \markup\italic Pax, __
+    \dropLyricsV
     \set associatedVoice = "sopranos"
     \markup\italic Et __ \markup\italic in \unset associatedVoice \markup\italic Ex -- \markup\italic cel -- \markup\italic sis,
     \set associatedVoice = "sopranos"
@@ -318,23 +325,32 @@ altoWordsII = \lyricmode {
   \dropLyricsV
 %\markup\italic 
   \set stanza = #"2. "
+  \set associatedVoice = "sopranos"
   “Peace I leave with you,” was a -- gain
-  Thy dy -- ing Gift to earth; __
+  Thy dy -- \unset associatedVoice
+  ing Gift to earth; __
   Sweet ech -- o of the lin -- g’ring strain
-  Of Christ -- mas morn, the glad re -- frain
+  \set associatedVoice = "sopranos"
+  Of Christ -- \unset associatedVoice
+  mas morn, the glad re -- frain
   Of An -- thems at Thy Birth; __
   When An -- gel choirs hymned forth to us
 }
 altoWordsIII = \lyricmode {
   \dropLyricsV
   \set stanza = #"3. "
+  \set associatedVoice = "sopranos"
   O ol -- ive Branch! O Dove of Peace!
-  Brood -- ing o’er storm -- y
+  Brood -- ing
+  \unset associatedVoice
+  o’er storm -- y
   \set ignoreMelismata = ##t
   wa -- ters!
   \unset ignoreMelismata
   When shall the flood of woe de -- crease?
-  When shall the drear -- y con -- flict cease,
+  \set associatedVoice = "sopranos"
+  When shall \unset associatedVoice
+  the drear -- y con -- flict cease,
   And earth’s sad sons and
   \set ignoreMelismata = ##t
   daugh -- _ _ ters

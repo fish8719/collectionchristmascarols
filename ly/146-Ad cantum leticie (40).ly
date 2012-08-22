@@ -10,7 +10,7 @@
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 5.2734\in
+  paper-width = 6\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   %system-system-spacing =
@@ -21,10 +21,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.1017\in
-  outer-margin = 0.1017\in
-  top-margin = 0.125\in
-  bottom-margin = 0.125\in
+  inner-margin = 0.5\in
+  outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #146
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -91,9 +91,20 @@ altoWords = \lyricmode {
   Spes et a -- mor pa -- tri -- e Ce -- le -- stis.
   
   \set stanza = #"1. "
+  Love and hope of heav’n -- ly __ rest,
+  And the song of such as __ fest
+  To -- day bid us do our best En -- deav -- or.
+}
+bassWords = \lyricmode {
+  \set stanza = #"1. "
+  Ad can -- tum le -- ti -- ci -- e
+  Nos in -- vi -- tat ho -- di -- e
+  Spes et a -- mor pa -- tri -- e Ce -- le -- stis.
+  
+  \set stanza = #"1. "
   Love and hope of heav’n -- ly rest,
   And the song of such as fest
-  To -- day bid us do our best En -- deav -- or.
+  To -- day bid us do our __ best En -- deav -- or.
 }
 altoWordsII = \lyricmode {
 %\markup\italic
@@ -108,6 +119,18 @@ altoWordsII = \lyricmode {
   E’en as doth Saint Dan -- i -- el As -- sev -- er.
 }
 altoWordsIII = \lyricmode {
+  \set stanza = #"3. "
+  Er -- go no -- stra con -- ci -- o
+  Psal -- lens cum tri -- pu -- di -- o,
+  Be -- ne -- di -- cat Do -- mi -- no His fe -- stis.
+  
+  \set stanza = #"3. "
+  Where -- fore let th’as -- sem -- bly __ all
+  Bless, in ca -- rol and cho -- ral,
+  Je -- sus on this fes -- tiv -- al, And ev -- er.
+}
+
+bassWordsIII = \lyricmode {
   \set stanza = #"3. "
   Er -- go no -- stra con -- ci -- o
   Psal -- lens cum tri -- pu -- di -- o,
@@ -161,9 +184,6 @@ bassMusic = \relative c {
   bes8[( a] g4) f c |
   d( e) f2\fermata \bar "|."
 }
-bassWords = \lyricmode {
-
-}
 
 pianoRH = \relative c' {
   
@@ -185,9 +205,9 @@ pianoLH = \relative c' {
       \clef bass
       \new Voice = "basses" { << \global \bassMusic >> }
     >>
-    \new Lyrics \with { alignBelowContext = #"men" } \lyricsto "basses" \altoWordsIII
+    \new Lyrics \with { alignBelowContext = #"men" } \lyricsto "basses" \bassWordsIII
     \new Lyrics \with { alignBelowContext = #"men" } \lyricsto "basses" \altoWordsII
-    \new Lyrics \with { alignBelowContext = #"men" } \lyricsto "basses" \altoWords
+    \new Lyrics \with { alignBelowContext = #"men" } \lyricsto "basses" \bassWords
   >>
 %    \new PianoStaff << \new Staff { \new Voice { \pianoRH } } \new Staff { \clef "bass" \pianoLH } >>
   >>

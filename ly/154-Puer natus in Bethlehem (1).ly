@@ -4,13 +4,13 @@
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Puer natus in Bethlehem"}}
   subtitle = \markup{\override #'(font-name . "Garamond Premier Pro"){ \abs-fontsize #10.5 "(A Babe is Born in Bethlehem)"}}
   poet = \markup\oldStyleNum"14th century or earlier"
-  composer = \markup \concat{"From " \italic "Piæ Cantiones" \oldStyleNum", 1582"}
-  tagline = \markup\concat { "from " \italic "The Cowley Carol Book" \oldStyleNum", 1919"}
+  composer = \markup \concat{"From " \italic "Piæ Cantiones" \oldStyleNum"*, 1582"}
+  tagline = \markup { \center-column { \concat { "from " \italic "The Cowley Carol Book" \oldStyleNum", 1919"} \justify {*In \italic Piæ \italic Cantiones only a tenor and bass part were given, and in \italic The \italic Cowley \italic Carol \italic Book (and here), the bass line from \italic Piæ \italic Cantiones is found in the soprano, while the tenor is retained as the tenor.}}}
 }
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 5.2734\in
+  paper-width = 6\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -21,10 +21,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.1017\in
-  outer-margin = 0.1017\in
-  top-margin = 0.125\in
-  bottom-margin = 0.125\in
+  inner-margin = 0.5\in
+  outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #154
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -125,20 +125,20 @@ altoWords = \lyricmode {
   \set stanza = #"9. "
   Co -- gno -- vit bos et a -- si -- nus
   Al -- le -- lu -- ia.
-  Quod pu -- er e -- rat Do -- mi -- nus.
+  Quod Pu -- er e -- rat Do -- mi -- nus.
   Al -- le -- lu -- ia.
   
   \set stanza = #"12. "
   In -- tran -- tes do -- mum in -- vi -- cem,
   Al -- le -- lu -- ia.
-  Na -- tum sa -- lu -- tant ho -- mi -- nem,
+  Na -- tum sa -- lu -- tant Ho -- mi -- nem,
   Al -- le -- lu -- ia.
 }
 altoWordsII = \lyricmode {
   \dropLyricsV
 %\markup\italic
   \set stanza = #"2. "
-  As -- sum -- sit car -- nem ho -- mi -- nis,
+  As -- sum -- psit car -- nem ho -- mi -- nis,
   Al -- le -- lu -- ia.
   Ver -- bum Pa -- tris al -- tis -- si -- mi,
   Al -- le -- lu -- ia.
@@ -153,7 +153,7 @@ altoWordsII = \lyricmode {
   \set stanza = #"10. "
   Et an -- ge -- lus pas -- to -- ri -- bus,
   Al -- le -- lu -- ia.
-  Re -- ve -- lat quis sit Do -- mi -- nus,
+  Re -- ve -- lat Quis sit Do -- mi -- nus,
   Al -- le -- lu -- ia.
   
   
@@ -168,7 +168,7 @@ altoWordsIII = \lyricmode {
   \set stanza = #"3. "
   Per Ga -- bri -- e -- lis nun -- ti -- um,
   Al -- le -- lu -- ia.
-  Vir -- go con -- ce -- pit fi -- li -- um,
+  Vir -- go con -- ce -- pit Fi -- li -- um,
   Al -- le -- lu -- ia.
   
   \set stanza = #"7. "
@@ -194,7 +194,7 @@ altoWordsIV = \lyricmode {
   \set stanza = #"4. "
   De ma -- tre na -- tus vir -- gi -- ne,
   Al -- le -- lu -- ia.
-  Si -- ne vi -- ri -- li fe -- mi -- ne,
+  Si -- ne vi -- ri -- li se -- mi -- ne,
   Al -- le -- lu -- ia.
   
   \set stanza = #"8. "

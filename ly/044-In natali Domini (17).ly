@@ -10,7 +10,7 @@
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 5.2734\in
+  paper-width = 6\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -21,10 +21,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.1017\in
-  outer-margin = 0.1017\in
-  top-margin = 0.125\in
-  bottom-margin = 0.125\in
+  inner-margin = 0.5\in
+  outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #044
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -167,8 +167,8 @@ altoWords = \lyricmode {
   \dropLyricsIV
   \set stanza = #"1. "
   In na -- tá -- li Dó -- mi -- ni,
-  Gau -- dent om -- nes Án -- ge -- li 
-  Et can -- tant cum iú -- bi -- lo_:
+  Gau -- dent om -- nes An -- ge -- li 
+  Et can -- tant cum jú -- bi -- lo_:
   Gló -- ri -- a u -- ni De -- o.
   
   \set associatedVoice = "tenors"
@@ -187,10 +187,10 @@ altoWords = \lyricmode {
 altoWordsII = \lyricmode {
   \dropLyricsIV
   \set stanza = #"2. "
-  Nun -- ti -- á -- vit Án -- ge -- lus
+  Nun -- ti -- á -- vit An -- ge -- lus
   Gáu -- di -- um pas -- tó -- ri -- bus, 
   Chris -- ti na -- ti -- vi -- tá -- tem
-  Ma -- gnam iu -- cun -- di -- tá -- tem.
+  Ma -- gnam ju -- cun -- di -- tá -- tem.
   
   \repeat unfold 21 {\skip1}
   \set stanza = #"4. "

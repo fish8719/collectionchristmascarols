@@ -9,7 +9,7 @@
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 5.2734\in
+  paper-width = 6\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -20,10 +20,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.1017\in
-  outer-margin = 0.1017\in
-  top-margin = 0.125\in
-  bottom-margin = 0.125\in
+  inner-margin = 0.5\in
+  outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #167
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -66,8 +66,9 @@ sopMusic = \relative c' {
   
   d4 a8 b |
   c4 c8 c |
-  c4 b8 c |
-  d4 d8 e |
+  \slurDotted
+  c4 b8( c) |
+  d4 d8( e) |
   d[ b] c a|
   
   g4 g8 g |
@@ -107,8 +108,9 @@ altoMusic = \relative c' {
   
   fis4 f8 f |
   e4 ees8 ees8 |
-  d4 d8 c |
-  g'4 g8 g |
+  \slurDotted
+  d4 d8( c) |
+  g'4 g8( g) |
   g[ f] e fis |
   
   g4 f8 e |
@@ -140,7 +142,9 @@ altoWords = \lyricmode {
   day,
   At __ night on a stone __ for a pil -- low he lay,
   He __ saw in a vi -- sion a lad -- der so high,
-  That its foot was on earth, and its top in the sky.
+  \set ignoreMelismata = ##t
+  That its foot was on \unset ignoreMelismata
+  earth, and its top in the sky.
   
   Hal -- le -- lu -- jah to Je -- sus, who died on the Tree,
   And hath rais’d up a lad -- der of mer -- cy for me,
@@ -167,7 +171,7 @@ altoWordsIII = \lyricmode {
   \set ignoreMelismata = ##t
   For the An -- gels of Ja -- _ cob are guard -- ing it still:
   And re -- mem -- ber each step, that by faith we pass o’er,
-  Some __ _ Pro -- phet or Mar -- _ tyr hath trod it be -- fore.
+  Some _ Pro -- phet or Mar -- _ tyr hath trod it be -- fore.
 }
 altoWordsIV = \lyricmode {
   \dropLyrics
@@ -203,8 +207,9 @@ tenorMusic = \relative c' {
   
   a4 d8 d |
   c4 a8 a |
-  a4 g8 g |
-  g4 d'8 c |
+  \slurDotted
+  a4 g8( g) |
+  g4 d'8( c) |
   b[ gis] a c |
   
   b4 d8 c |
@@ -244,8 +249,9 @@ bassMusic = \relative c {
   
   d4 d8 d |
   a'4 g8 g |
-  fis4 g8 e |
-  b4 b8 c |
+  \slurDotted
+  fis4 g8( e) |
+  b4 b8( c) |
   d4 d8 d |
   
   e4 b8 c |
