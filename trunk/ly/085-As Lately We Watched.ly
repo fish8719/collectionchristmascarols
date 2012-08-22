@@ -8,7 +8,7 @@
 }
 \paper {
   paper-height = 9\in
-  paper-width = 5.2734\in
+  paper-width = 6\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   %system-system-spacing =
@@ -19,10 +19,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.1017\in
-  outer-margin = 0.1017\in
-  top-margin = 0.125\in
-  bottom-margin = 0.125\in
+  inner-margin = 0.5\in
+  outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #085
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -91,7 +91,7 @@ altoMusic = \relative c' {
   
   ees4 ees8[ e] f[ ees] |
   des2. |
-  des4 f d |
+  d4 f d |
   bes2 ees4 |
   
   ees c ees |
@@ -112,7 +112,7 @@ altoWordsII = \lyricmode {
 %\markup\italic
   \set stanza = #"2. "
   A King of such beau -- ty __ was ne’er  be -- fore seen,
-  And Ma -- ry his moth -- er __ so __ like to a queen.
+  And Ma -- ry His moth -- er __ so __ like to a queen.
   Blest be __ the __ hour, wel -- come the __ morn,
   For Christ our dear Sav -- ior __ on __ earth now is born.
 }
@@ -176,7 +176,7 @@ bassMusic = \relative c {
   
   aes'4 aes8[ g] f[ c] |
   des2. |
-  bes4 des bes |
+  bes4 d bes |
   ees2 ees8[ des] |
   
   c4 f ees |

@@ -8,7 +8,7 @@
 }
 \paper {
   paper-height = 9\in
-  paper-width = 5.2734\in
+  paper-width = 6\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   %system-system-spacing =
@@ -16,13 +16,18 @@
   %     (minimum-distance . 0)
   %     (padding . -0.35)
   %     (stretchability . 100))
+%{IF_LESSER
+  markup-system-spacing #'stretchability = 50
+  top-markup-spacing #'stretchability = 30
+  last-bottom-spacing #'stretchability = 60
+%}%END_IF_LESSER
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.1017\in
-  outer-margin = 0.1017\in
-  top-margin = 0.125\in
-  bottom-margin = 0.125\in
+  inner-margin = 0.5\in
+  outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #046
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -116,10 +121,10 @@ altoWordsII = \lyricmode {
 altoWordsIII = \lyricmode {
   \dropLyricsIX
   \set stanza = #"3. "
-  And, through all his won -- drous child -- hood,
+  And, through all His won -- drous child -- hood,
     He would hon -- or and o -- bey,
   Love, and watch the low -- ly maid -- en
-    In whose gen -- tle arms he lay;
+    In whose gen -- tle arms He lay;
   \set associatedVoice = "tenors"
   Chris -- tian chil -- dren all must be __
   Mild, o -- be -- dient, good as He. __

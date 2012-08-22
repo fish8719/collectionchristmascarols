@@ -9,7 +9,7 @@
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 5.2734\in
+  paper-width = 6\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -25,10 +25,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.1017\in
-  outer-margin = 0.1017\in
-  top-margin = 0.125\in
-  bottom-margin = 0.125\in
+  inner-margin = 0.5\in
+  outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #164
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -130,7 +130,7 @@ altoMusic = \relative c' {
   c4 d8) c4.
 }
 dropLyrics = {
-  \dropLyricsXI
+  \dropLyricsIX
 }
 altoWords = \lyricmode {
   \dropLyrics
@@ -145,7 +145,9 @@ altoWords = \lyricmode {
   \unset associatedVoice
   
   Change will dark -- en ma -- ny~a day,
+  \set associatedVoice = "basses"
   Ma -- ny~a bond dis -- sev -- er;
+  \unset associatedVoice
   Ma -- ny~a joy shall pass a -- way,
   But the “Great Joy” nev -- er!
   But the “Great Joy” nev -- er, __
@@ -170,7 +172,9 @@ altoWords = \lyricmode {
   \unset associatedVoice
   
   Faith -- ful lips shall an -- swer thus
+  \set associatedVoice = "basses"
   To all faith -- less scorn -- ing,
+  \unset associatedVoice
   “Je -- sus Christ is God with us,
   Born on Christ -- mas morn -- ing.
   Born on Christ -- mas morn -- ing, __
@@ -193,7 +197,9 @@ altoWordsII = {
     \unset associatedVoice
     
     O could tongues by An -- gels taught
+    \set associatedVoice = "basses"
     Speak our ex -- ul -- ta -- tion
+    \unset associatedVoice
     In the Vir -- gin’s Child that brought
     All man -- kind Sal -- va -- tion.
   }
@@ -221,7 +227,9 @@ altoWordsII = {
     \unset associatedVoice
     
     While Thy Birth -- day morn we greet
+    \set associatedVoice = "basses"
     With our best de -- vo -- tion,
+    \unset associatedVoice
     Bathe us, O most true and sweet!
     In Thy Mer -- cy’s o -- cean.
   }
@@ -246,7 +254,9 @@ altoWordsIII = \lyricmode {
   \unset associatedVoice
   
   Wel -- come, though an age like this
+  \set associatedVoice = "basses"
   Puts Thy Name on tri -- al,
+  \unset associatedVoice
   And the Truth that makes our bliss
   Pleads a -- gainst de -- ni -- al!
   Pleads a -- gainst de -- ni -- al, __
@@ -267,7 +277,9 @@ altoWordsIII = \lyricmode {
   \unset associatedVoice
   
   Thou whose Love be -- stows a worth
+  \set associatedVoice = "basses"
   On each poor en -- deav -- or,
+  \unset associatedVoice
   Have Thou joy of this Thy Birth
   In our praise for ev -- er.
   In our praise for ev -- er, __
@@ -380,7 +392,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsIV
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsII
-    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.9))} \lyricsto "altos" \altoWords
+    \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . -0.6))} \lyricsto "altos" \altoWords
     \new Lyrics \with { alignAboveContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "tenors" \tenorWords
     \new Lyrics \with { alignBelowContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "basses" \bassWords
   >>

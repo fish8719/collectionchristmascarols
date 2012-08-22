@@ -9,7 +9,7 @@
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 5.2734\in
+  paper-width = 6\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -20,10 +20,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.1017\in
-  outer-margin = 0.1017\in
-  top-margin = 0.125\in
-  bottom-margin = 0.125\in
+  inner-margin = 0.5\in
+  outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #138
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -97,7 +97,7 @@ sopMusic = \relative c' {
     bes bes bes a a a |
     
     a a a a4 \bar"" f8^\mf |
-    f f bes d8( d) c8 |
+    f( f) bes d8( d) c8 |
     bes[ a] g c4. | 
     b8^\p b b c[ d] c |
     
@@ -109,12 +109,12 @@ sopMusic = \relative c' {
     bes( bes) bes8 a8( a) a8 |
     
     g4 g8 f4 f8 |
-    ees ees ees d[ c] bes |
+    ees( ees) ees d( c) bes |
     f'4 f8 f4 \bar"" f8 |
     
     d'( d) d8 f8( f) f8 |
     bes,4 bes8 d4 \bar"" d8 |
-    g, g a bes( bes) ees8 |
+    g,( g) a bes( bes) ees8 |
     
     \slurSolid
     d4.(~ d8[ c bes] |
@@ -128,10 +128,10 @@ sopMusic = \relative c' {
   
   %3rdPage
   \repeat volta 3 {
-    \partial 8 f8^\mf |
     \slurDotted
-    f( f) bes8 d8( d) c8 |
-    bes[ a] g f4 \bar"" f8^\pp |
+    \partial 8 f16(^\mf f) |
+    f8( f) bes8 d8( d) c8 |
+    bes( a) g f4 \bar"" f8^\pp |
     bes bes bes a a a |
     
     a a a a4 \bar"" f8^\mf |
@@ -143,15 +143,15 @@ sopMusic = \relative c' {
     \once\override DynamicText #'X-offset = #'-3
     f^>^\f f8 f f |
     f4 bes8\rest bes4\rest  \bar""
-    f8^\mf |
-    bes( bes) bes8 a8( a) a8 |
+    f16(^\mf f) |
+    bes8( bes) bes8 a8( a) a8 |
     
-    g4 g8 f4 f8 |
-    ees( ees) ees d[ c] bes |
-    f'4 f8 f4 \bar"" f8 |
+    g( g) g8 f4 f8 |
+    ees( ees) ees d( c) bes |
+    f'4 f8 f4 \bar"" f16( f) |
     
-    d'( d) d8 f8( f) f8 |
-    bes,4 bes8 d4 \bar"" d8 |
+    d'8( d) d8 f8( f) f8 |
+    bes,( bes) bes8 d4 \bar"" d8 |
     g,( g) a bes( bes) ees8 |
     
     \slurSolid
@@ -211,7 +211,7 @@ altoMusic = \relative c' {
   f g f f f f |
   
   g f e f4 f8 |
-  d d d d( d) e8 |
+  d( d) d d( d) e8 |
   e4 e8 f4. |
   f8 f f f4 f8 |
   
@@ -221,12 +221,12 @@ altoMusic = \relative c' {
   bes( bes) bes8 a( a) a8 |
   
   g4 g8 f4 f8 |
-  ees ees ees d[ c] bes |
+  ees( ees) ees d( c) bes |
   f'4 f8 f4 f8 |
   
   bes( bes) bes8 a( a) a8 |
   g4 g8 fis4 fis!8 |
-  g g ees d( d) g8 |
+  g( g) ees d( d) g8 |
   
   \slurSolid
   f4.~ f( |
@@ -245,10 +245,10 @@ altoMusic = \relative c' {
   
   
   %3rdPageAlto
-  f8 |
   \slurDotted
-  f( f) f8 f8( f) f8 |
-  g[ f] ees d4 f8 |
+  f16( f) |
+  f8( f) f8 f8( f) f8 |
+  g( f) ees d4 f8 |
   f g f f f f |
   
   g f e f4 f8 |
@@ -258,15 +258,15 @@ altoMusic = \relative c' {
   
   f f e f4. |
   f f8 ees d |
-  c4 s4. f8 |
-  bes( bes) bes8 a( a) a8 |
+  c4 s4. f16( f) |
+  bes8( bes) bes8 a( a) a8 |
   
-  g4 g8 f4 f8 |
-  ees( ees) ees d[ c] bes |
-  f'4 f8 f4 f8 |
+  g( g) g8 f4 f8 |
+  ees( ees) ees d( c) bes |
+  f'4 f8 f4 f16( f) |
   
-  bes( bes) bes8 a( a) a8 |
-  g4 g8 fis4 fis!8 |
+  bes8( bes) bes8 a( a) a8 |
+  g( g) g8 fis4 fis!8 |
   g( g) ees d( d) g8 |
   
   \slurSolid
@@ -300,20 +300,20 @@ altoWords = \lyricmode {
   
   
   \set stanza = #"4. "
-  "" “O ye shepherds, what have ye seen,
+  "" “O __ ye \set ignoreMelismata = ##t shep -- herds, \unset ignoreMelismata what have ye seen,
   
   %\markup\italic The \markup\italic snow \markup\italic in \markup\italic the \markup\italic street, \markup\italic and \markup\italic the \markup\italic wind \markup\italic on \markup\italic the \markup\italic door,
   \repeat unfold 11 \skip1
   
-  \skip1 To slay your sorrow and heal your teen?”
+  To slay __ your \set ignoreMelismata = ##t sor -- row \unset ignoreMelismata and heal your teen?”
   
   %\markup\italic Min -- \markup\italic strels \markup\italic and \markup\italic maids \markup\italic stand \markup\italic forth \markup\italic on \markup\italic the \markup\italic floor, \markup\italic Stand \markup\italic forth \markup\italic on \markup\italic the \markup\italic floor.
   \repeat unfold 14{\skip1}
   
-  \skip1 “O ye shepherds, what have ye seen,
-  \skip1 To slay your sorrow and heal your teen?”
-  \skip1 “O ye shepherds, what have ye seen,
-  \skip1 To slay your sorrow and heal __ your teen?” __
+  \skip1 “O __ ye \set ignoreMelismata = ##t shep -- herds, \unset ignoreMelismata what have ye seen,
+  To slay __ your \set ignoreMelismata = ##t sor -- row \unset ignoreMelismata and heal your teen?”
+  \skip1 “O __ ye \set ignoreMelismata = ##t shep -- herds, \unset ignoreMelismata what have ye seen,
+  To slay __ your \set ignoreMelismata = ##t sor -- row \unset ignoreMelismata and heal __ your teen?” __
   
   
   
@@ -330,9 +330,9 @@ altoWords = \lyricmode {
   %\markup\italic Min -- \markup\italic strels \markup\italic and \markup\italic maids \markup\italic stand \markup\italic forth \markup\italic on \markup\italic the \markup\italic floor, \markup\italic Stand \markup\italic forth \markup\italic on \markup\italic the \markup\italic floor.
   \repeat unfold 14{\skip1}
   
-  And as __ _ we gazed _ this thing up -- on,
+  And _ as __ _ we gazed _ this thing _ up -- on,
   \skip1 Those twain knelt down to the lit -- tle One,
-  And as __ _ we gazed _ this thing up -- on,
+  And _ as __ _ we gazed _ this thing _ up -- on,
   \skip1 Those twain knelt down to
   \unset ignoreMelismata
   the lit -- tle One. __
@@ -372,7 +372,7 @@ altoWordsII = \lyricmode {
   \markup\italic The \markup\italic snow \markup\italic in \markup\italic the \markup\italic street, \markup\italic and \markup\italic the \markup\italic wind \markup\italic on \markup\italic the \markup\italic door,
   \unset associatedVoice
   
-  A Babe and a Maid _ with -- out a flaw,
+  A Babe and a Maid __ _ with -- out a flaw,
   
   \markup\italic Min -- \markup\italic strels \markup\italic and \markup\italic maids \markup\italic stand \markup\italic forth \markup\italic on \markup\italic the \markup\italic floor,
   \set associatedVoice = "sopranos"
@@ -381,17 +381,17 @@ altoWordsII = \lyricmode {
   %\repeat unfold 14{\skip1}
   
   \skip1 “In an ox -- stall __ _ this night we saw,
-  A Babe and a Maid _ with -- out a flaw,
+  A Babe and a Maid __ _ with -- out a flaw,
   \skip1 “In an ox -- stall __ _ this night we saw,
-  \unset ignoreMelismata
-  A Babe and a Maid with -- out __ a flaw. __
+  A Babe and a \unset ignoreMelismata
+  Maid __ with -- out __ a flaw. __
   
   
   
   
   \set stanza = #"8. "
   \set ignoreMelismata = ##t
-  And_a mar -- vel -- lous song _ we straight _ did hear,
+  And a mar -- vel -- lous song _ we straight _ did hear,
   
   \set associatedVoice = "sopranos"
   \markup\italic The \markup\italic snow \markup\italic in \markup\italic the \markup\italic street, \markup\italic and \markup\italic the \markup\italic wind \markup\italic on \markup\italic the \markup\italic door,
@@ -405,9 +405,9 @@ altoWordsII = \lyricmode {
   \unset associatedVoice
   %\repeat unfold 14{\skip1}
   
-  And_a mar -- vel -- lous song _ we straight did hear,
+  And a mar -- vel -- lous song _ we straight _ did hear,
   That slew __ _ our sor -- row and healed our care,”
-  And_a mar -- vel -- lous song _ we straight did hear,
+  And a mar -- vel -- lous song _ we straight _ did hear,
   That slew __ _ our sor -- row
   \unset ignoreMelismata
   and healed __ our care,” __
@@ -445,7 +445,7 @@ altoWordsIII = \lyricmode {
   
   
   \set stanza = #"6. "
-  There was an old __ man there be -- side;
+  There was __ an old __ man there be -- side;
   
   %%\markup\italic The \markup\italic snow \markup\italic in \markup\italic the \markup\italic street, \markup\italic and \markup\italic the \markup\italic wind \markup\italic on \markup\italic the \markup\italic door,
   \repeat unfold 11 \skip1
@@ -456,9 +456,9 @@ altoWordsIII = \lyricmode {
   %\markup\italic Min -- \markup\italic strels \markup\italic and \markup\italic maids \markup\italic stand \markup\italic forth \markup\italic on \markup\italic the \markup\italic floor, \markup\italic Stand \markup\italic forth \markup\italic on \markup\italic the \markup\italic floor.
   \repeat unfold 14{\skip1}
   
-  There was _ an old __ _ man there be -- side;
+  There was __ _ an old __ _ man there be -- side;
   His hair __ _ was white, and his hood was wide,
-  There was _ an old __ _ man there be -- side;
+  There was __ _ an old __ _ man there be -- side;
   His hair __ _ was white, and
   \unset ignoreMelismata
   his hood __ was wide. __
@@ -468,7 +468,7 @@ altoWordsIII = \lyricmode {
   
   \set stanza = #"9. "
   \set ignoreMelismata = ##t
-  "" News of a fair and a mar -- vel -- lous thing,
+  "" "" News of a fair and a mar -- vel -- lous thing,
   
   %%\markup\italic The \markup\italic snow \markup\italic in \markup\italic the \markup\italic street, \markup\italic and \markup\italic the \markup\italic wind \markup\italic on \markup\italic the \markup\italic door,
   \repeat unfold 11 \skip1
@@ -478,9 +478,9 @@ altoWordsIII = \lyricmode {
   %\markup\italic Min -- \markup\italic strels \markup\italic and \markup\italic maids \markup\italic stand \markup\italic forth \markup\italic on \markup\italic the \markup\italic floor, \markup\italic Stand \markup\italic forth \markup\italic on \markup\italic the \markup\italic floor.
   \repeat unfold 14{\skip1}
   
-  \skip1 News of a fair and a marvel -- lous thing,
+  "" "" News of a fair and a mar -- vel -- lous thing,
   No -- ël, __ _ No -- ël, __ _ No -- ël, we sing!
-  \skip1 News of a fair and a marvel -- lous thing,
+  "" "" News of a fair and a mar -- vel -- lous thing,
   \unset ignoreMelismata
   No -- ël, __ No -- ël, __ No -- ël, __ we sing! __
 }
@@ -542,7 +542,7 @@ tenorMusic = \relative c {
   d d d d cis d |
   
   e d cis d4 d8_\mf |
-  bes bes bes bes( bes) c8 |
+  bes( bes) bes bes( bes) c8 |
   des4 des8 c[ bes a] |
   aes_\p g aes a4 a8 |
   
@@ -553,12 +553,12 @@ tenorMusic = \relative c {
   bes( bes) bes8 a8( a) a8 |
   
   g4 g8 f4 f8 |
-  ees ees ees d[ c] bes |
+  ees( ees) ees d( c) bes |
   f'4 f8 f4 f'8 |
   
   d( ees) f ees( d) c |
   bes[ c] d c[ bes] a |
-  g g fis g( g) bes8 |
+  g( g) fis g( g) bes8 |
   
   \slurSolid
   bes4( c8 d4. |
@@ -574,10 +574,10 @@ tenorMusic = \relative c {
   
   
   %3rdPageTenor
-  d'8_\mf |
   \slurDotted
-  d( d) d8 bes( bes) bes8 |
-  bes4 bes8 d4 d8_\pp |
+  d'16(_\mf d) |
+  d8( d) d8 bes( bes) bes8 |
+  bes8( bes) bes8 d4 d8_\pp |
   d d d d cis d |
   
   e d cis d4 d8_\mf |
@@ -588,15 +588,15 @@ tenorMusic = \relative c {
   g a bes a4. |
   \once\override DynamicText #'X-offset = #'-3
   f4._\f d'8 c bes |
-  a4 s4. f8_\mf |
-  bes( bes) bes8 a8( a) a8 |
+  a4 s4. f16(_\mf f) |
+  bes8( bes) bes8 a8( a) a8 |
   
-  g4 g8 f4 f8 |
-  ees( ees) ees d[ c] bes |
-  f'4 f8 f4 f'8 |
+  g8( g) g8 f4 f8 |
+  ees( ees) ees d( c) bes |
+  f'4 f8 f4 f'16( f) |
   
-  d( ees) f ees( d) c |
-  bes[ c] d c[ bes] a |
+  d8( ees) f ees( d) c |
+  bes( c) d c[ bes] a |
   g( g) fis g( g) bes8 |
   
   \slurSolid
@@ -652,7 +652,7 @@ bassMusic = \relative c {
   g g g a a a |
   
   a a a d4 a8 |
-  bes bes a g( g) g8 |
+  bes( bes) a g( g) g8 |
   g[ a] bes a[ g f] |
   d d d c4 c8 |
   
@@ -662,12 +662,12 @@ bassMusic = \relative c {
   bes( bes) bes8 a( a) a8 |
   
   g4 g8 f4 f8 |
-  ees ees ees d[ c] bes |
+  ees( ees) ees d( c) bes |
   f'4 f8 f4 f8 |
   
   bes( bes) bes8 f( f) f8 |
   g4 g8 d4 d8 |
-  ees ees c g'( g) ees8 |
+  ees( ees) c g'( g) ees8 |
   
   f4.~ f~ |
   f~ f4 f8 |
@@ -679,10 +679,10 @@ bassMusic = \relative c {
   
   
   %3rdPageBass
-  bes'8 |
   \slurDotted
-  bes( bes) bes8 bes,( bes) d8 |
-  ees4 g8 bes4 a8 |
+  bes'16( bes) |
+  bes8( bes) bes8 bes,( bes) d8 |
+  ees8( ees) g8 bes4 a8 |
   g g g a a a |
   
   a a a d4 \bar"" a8 |
@@ -692,15 +692,15 @@ bassMusic = \relative c {
   
   c c c f4. |
   f f8 f f |
-  f4 d8\rest d4\rest f8 |
-  bes( bes) bes8 a( a) a8 |
+  f4 d8\rest d4\rest f16( f) |
+  bes8( bes) bes8 a( a) a8 |
   
-  g4 g8 f4 \bar"" f8 |
-  ees( ees) ees d[ c] bes |
-  f'4 f8 f4 f8 |
+  g( g) g8 f4 \bar"" f8 |
+  ees( ees) ees d( c) bes |
+  f'4 f8 f4 f16( f) |
   
-  bes( bes) bes8 f( f) f8 |
-  g4 g8 d4 d8 |
+  bes8( bes) bes8 f( f) f8 |
+  g( g) g8 d4 d8 |
   ees( ees) c g'( g) ees8 |
   
   f4.~ f~ |

@@ -3,7 +3,7 @@
 \paper {
   print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 5.2734\in
+  paper-width = 6\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -14,10 +14,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.1017\in
-  outer-margin = 0.1017\in
-  top-margin = 0.125\in
-  bottom-margin = 0.125\in
+  inner-margin = 0.5\in
+  outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #194
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -107,7 +107,7 @@ altoWordsIII = \lyricmode {
   \repeat unfold 21 {\skip1}
   \set stanza = #"3. "
   E -- ze -- chie -- lis por -- ta
-  cla -- sa per tran -- si -- tur,
+  clau -- sa per tran -- si -- tur,
   un -- de lux est or -- ta,
   sa -- lus in -- ve -- ni -- tur.
 }
@@ -117,7 +117,7 @@ altoWordsIV = \lyricmode {
   \set stanza = #"4. "
   \set ignoreMelismata = ##t
   Er -- go nos -- tra can -- ti -- o
-  psal -- lam jam in lu -- stro,
+  psal -- lam iam in lu -- stro,
   be -- ne -- di -- cat Do -- mi -- no,
   Sa -- lus Re -- gi nos -- tro.
 }
@@ -341,7 +341,7 @@ altoWords = \lyricmode {
   \dropLyricsV
   \set stanza = #"1. "
   Glo -- rious, beau -- teous, gol -- den -- bright,
-  Shed -- ding soft -- est pu -- rest light,
+  Shed -- ding soft -- est pur -- est light,
   Shone the stars that \set associatedVoice = "tenors" Christ -- mas night,
   When the Jew -- ish shep -- herds kept
   Watch be -- side \unset associatedVoice their flocks that slept.
@@ -354,12 +354,12 @@ altoWords = \lyricmode {
   Watch’d be -- side God’s cho -- sen __ few.
   
   \set stanza = #"6. "
-  Since that Light then dar -- kens nev -- er,
+  Since that Light then dark -- ens nev -- er,
   Let us all, with glad en -- dea -- vor,
   Sing the song that e -- choes ev -- er:
   Glo -- ry in the high -- est Hea -- ven!
   \set associatedVoice = "tenors"
-  Peace on earth to us for giv -- en.
+  Peace on earth to us for -- giv -- en.
 }
 altoWordsII = \lyricmode {
   \dropLyricsV
@@ -385,7 +385,7 @@ altoWordsIII = \lyricmode {
   Now no more on Christ -- mas night, __
   Is the sky with An -- gels bright, __
   But for ev -- er shines the Light; __
-  E -- ven He whose birth they told
+  E -- ven He Whose birth they told
   To the shep -- herds by __ the __ fold.
 }
 altoWordsIV = \lyricmode {

@@ -2,14 +2,14 @@
 \include "../util.ly"
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"The Virgin and Child"}}
-  poet = \markup\oldStyleNum{\concat{"Adapted from " \italic"Thys endris nyzth" ", 15th Century"}}
+  poet = \markup\oldStyleNum{\concat{"Adapted from " \italic"Thys endris nyzth" \oldStyleNum", 15th Century"}}
   composer = \markup\oldStyleNum"Charles Steggall (1826–1905)"
   tagline = \markup { "from" \italic {Christmas Carols, New and Old}}
 }
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 5.2734\in
+  paper-width = 6\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -25,10 +25,10 @@
   ragged-last-bottom = ##t
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.1017\in
-  outer-margin = 0.1017\in
-  top-margin = 0.125\in
-  bottom-margin = 0.125\in
+  inner-margin = 0.5\in
+  outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #086
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -400,7 +400,7 @@ pianoLH = \relative c' {
     }
   }
 }
-\markup {\override #'(font-name . "Garamond Premier Pro")
+\markup {\fontsize #0.8 \override #'(font-name . "Garamond Premier Pro")
   \fill-line {
     \hspace #0.1 % moves the column off the left margin;
         % can be removed if space on the page is tight
@@ -444,11 +444,12 @@ pianoLH = \relative c' {
   }
 }
 
-\markup {\override #'(font-name . "Garamond Premier Pro")
-  \vspace #1 % adds vertical spacing between verses
-  \fill-line {
+\markup {
+  \vspace #0.7 % adds vertical spacing between verses\
+  \override #'(font-name . "Garamond Premier Pro")
+  \fill-line {\override #'(font-name . "Garamond Premier Pro")
     " "
-    \column {
+    \column {\fontsize #0.8
       \line { \bold "7."
         \column {
           "“My Mother dear, when time it be,"

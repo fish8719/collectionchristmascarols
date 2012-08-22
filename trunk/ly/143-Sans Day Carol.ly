@@ -9,7 +9,7 @@
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 5.2734\in
+  paper-width = 6\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -20,10 +20,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.1017\in
-  outer-margin = 0.1017\in
-  top-margin = 0.125\in
-  bottom-margin = 0.125\in
+  inner-margin = 0.5\in
+  outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #143
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -61,8 +61,8 @@ sopMusic = \relative c' {
   
   a4 f \slurDotted a8( a) |
   bes4 g e |
-  \partial 2 f2 \bar "||" \break
-  \partial 4 f8[ a] |
+  f2 \bar "||" \break
+  f8[ a] |
   c4 c d8[ e] |
   f8 f c4 c |
   
@@ -98,7 +98,7 @@ altoMusic = \relative c' {
   c2 |
   f4 |
   a a bes |
-  bes8 bes a4 a |
+  a8 a a4 a |
   
   g f a8 g |
   f2 f8 f |
@@ -175,7 +175,7 @@ tenorMusic = \relative c' {
   d[ c] bes4 bes |
   a2 |
   a8[ c] |
-  f4 e d |
+  f4 ees d |
   c8 c c4 c |
   
   e f a,8 a |

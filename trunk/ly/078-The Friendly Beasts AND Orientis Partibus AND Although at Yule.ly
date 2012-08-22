@@ -3,13 +3,13 @@
 \paper {
   print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 5.2734\in
+  paper-width = 6\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
     #'((basic-distance . 10)
        (minimum-distance . 10)
-       (padding . 2.5)
+       (padding . 1.5)
        (stretchability . 100))
   score-markup-spacing = 
     #'((basic-distance . 5)
@@ -19,10 +19,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.1017\in
-  outer-margin = 0.1017\in
-  top-margin = 0.125\in
-  bottom-margin = 0.125\in
+  inner-margin = 0.5\in
+  outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #078
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -353,9 +353,9 @@ bassWords = \lyricmode {
     tagline = \markup { "from" \italic {HymnsAndCarolsOfChristmas.com}}
   }
 }
+%IF_NOT_LESSER
 \markup \fill-line \center-align { \concat{ "from " \italic "HymnsAndCarolsOfChristmas.com"}}
 \pageBreak
-
 
 
 
@@ -514,8 +514,7 @@ bassWords = \lyricmode {
   \layout {
     \context {
       \Score
-      %\override SpacingSpanner #'base-shortest-duration = #(ly:make-moment 1 8)
-      %\override SpacingSpanner #'common-shortest-duration = #(ly:make-moment 1 4)
+      \override SpacingSpanner #'common-shortest-duration = #(ly:make-moment 1 4)
     }
     \context {
       % Remove all empty staves
@@ -693,3 +692,7 @@ pianoLH = \relative c' {
   }
 }
 \header{tagline = \markup \concat{ "from " \italic "The Cambridge Carol Book" \oldStyleNum", 1924"}}
+%END_IF_NOT_LESSER
+%{IF_LESSER
+\header{tagline = \markup{ \concat{ "from " \italic "HymnsAndCarolsOfChristmas.com"}} }
+%}%END_IF_LESSER

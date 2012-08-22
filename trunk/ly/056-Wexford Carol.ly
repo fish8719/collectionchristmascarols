@@ -10,7 +10,7 @@
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 5.2734\in
+  paper-width = 6\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   %system-system-spacing =
@@ -21,10 +21,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.1017\in
-  outer-margin = 0.1017\in
-  top-margin = 0.125\in
-  bottom-margin = 0.125\in
+  inner-margin = 0.5\in
+  outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #056
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -163,7 +163,7 @@ altoWords = \lyricmode {
   Con -- sid -- er well, and bear in mind,
   \set associatedVoice = "basses"
   What our good God __ for us has done,
-  In send -- ing his __ be -- lov -- ed Son.
+  In send -- ing His __ be -- lov -- ed Son.
   
   With Ma -- ry ho -- ly, we should pray
   To God with love this Christ -- mas day;
@@ -208,7 +208,7 @@ altoWordsII = \lyricmode {
   \set associatedVoice = "basses"
   And as God’s an -- gels had fore -- told,
   They did our Sav -- ior Christ be -- hold.
-  With -- in a man -- ger he was laid,
+  With -- in a man -- ger He was laid,
   And by His side the vir -- gin maid
   At -- tend -- ing on __ the Lord of Life
   Who came to earth to end all strife.
@@ -218,7 +218,7 @@ altoWordsIII = \lyricmode {
   \set stanza = #"3. "
   \set associatedVoice = "tenors"
   Let all your songs __ and prais -- es be,
-  Un -- to his Heav’n -- ly __ Ma -- je -- sty;
+  Un -- to His Heav’n -- ly __ Ma -- je -- sty;
   \set associatedVoice = "basses"
   And ev -- er -- more, __ a -- mongst our mirth,
   Re -- mem -- ber Christ our Sav -- ior’s birth.
@@ -231,7 +231,7 @@ altoWordsIII = \lyricmode {
   \set stanza = #"6. "
   \set associatedVoice = "tenors"
   See how the Lord __ of Heav’n and earth,
-  Show’d him -- self low -- ly __ in His birth;
+  Show’d Him -- self low -- ly __ in His birth;
   \set associatedVoice = "basses"
   A sweet ex -- am -- ple for man -- kind,
   To learn to bear __ a hum -- ble mind.

@@ -10,7 +10,7 @@
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 5.2734\in
+  paper-width = 6\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   %system-system-spacing =
@@ -21,10 +21,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.1017\in
-  outer-margin = 0.1017\in
-  top-margin = 0.125\in
-  bottom-margin = 0.125\in
+  inner-margin = 0.5\in
+  outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #201
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"new year"}
@@ -98,7 +98,7 @@ altoMusic = \relative c' {
   c4. c8 |
   b8. g16 g8 g |
   fis8. e16 fis8 fis |
-  e8.[ c16] c4 |
+  e4 c4 |
   b4 s8 \bar ":|"
 }
 altoWords = \lyricmode {
@@ -170,7 +170,7 @@ tenorMusic = \relative c' {
   c4. c8 |
   d8. d16 d8 b |
   d8. d16 d8 d |
-  c4 fis, |
+  b4 fis |
   g s8 \bar ":|"
 }
 tenorWords = \lyricmode {
@@ -196,7 +196,7 @@ bassMusic = \relative c {
   c,4. c8 |
   g'8. g16 g8 g |
   d8. d16 d8 b |
-  c4 d |
+  e4 d |
   g, d'8\rest \bar ":|"
 }
 bassWords = \lyricmode {

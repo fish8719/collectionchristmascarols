@@ -9,7 +9,7 @@
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 5.2734\in
+  paper-width = 6\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -20,10 +20,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.1017\in
-  outer-margin = 0.1017\in
-  top-margin = 0.125\in
-  bottom-margin = 0.125\in
+  inner-margin = 0.5\in
+  outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #184
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -131,6 +131,12 @@ altoMusic = \relative c' {
     d1. |
   }
 }
+dropLyrics = {
+  \override LyricText #'extra-offset = #'(0 . -2.5)
+  \override LyricHyphen #'extra-offset = #'(0 . -2.5)
+  \override LyricExtender #'extra-offset = #'(0 . -2.5)
+  \override StanzaNumber #'extra-offset = #'(0 . -2.5)
+}
 altoWords = {
   \dropLyricsIX
   \set stanza = \markup {\normal-text\italic "1st Shepherd" "1. "}
@@ -142,7 +148,7 @@ altoWords = {
   \set stanza = \markup {\normal-text\italic "1st Angel" "2. "}
   \lyricmode {
     Let all your Fears be ban -- ish’d hence.
-    Glad tid -- ings I pro -- claim.
+    Glad tid -- ings I pro -- claim. __
     For there’s a Sav -- ior born to -- day,
     and Je -- sus is His name,
     and Je -- sus is His name.
@@ -154,11 +160,14 @@ altoWords = {
     and des -- ti -- tute of Grace,
     and des -- ti -- tute of Grace.
   }
+  \dropLyrics
   \set stanza = \markup {\normal-text\italic "1st Angel" "7. "}
   \lyricmode {
-    Ex -- ult ye Ox -- en, low for joy, ye Ten -- ants of the Stall,
+    Ex -- ult ye Ox -- en,
+    \dropLyricsIX
+    low for joy, ye Ten -- ants of the Stall, __
     Pay your o -- bei -- sance; on your knees
-    U -- nan -- i -- mous -- ly fall,
+    U -- nan -- i -- mous -- ly fall, __
     U -- nan -- i -- mous -- ly fall.
   }
 }
@@ -173,8 +182,8 @@ altoWordsII = {
   \set stanza = \markup {\normal-text\italic "1st Angel" "3. "}
   \lyricmode {
     Lay down your crooks, and quit your Flocks,
-    to Beth -- le -- hem re -- pair;
-    And let your wan -- d’ring steps be squared
+    to Beth -- le -- hem re -- pair; __
+    And let __ your wan -- d’ring steps be squared
     by yon -- der shin -- ing Star,
     by yon -- der shin -- ing Star.
   }
@@ -185,11 +194,15 @@ altoWordsII = {
     and thus ad -- dress their song,
     and thus ad -- dress their song.
   }
+  \dropLyrics
   \set stanza = \markup {\normal-text\italic "1st Angel" "8. "}
   \lyricmode {
-    The Roy -- al guest you en -- ter -- tain is not of com -- mon Birth,
+    The Roy -- al guest you
+    \dropLyricsIX
+    en -- ter -- tain is not of com -- mon Birth, __
     but sec -- ond to the Great I Am;
     the God of heav’n and earth,
+%8.5x11 __
     the God of heav’n and earth.
   }
 }
@@ -201,7 +214,7 @@ altoWordsIII = {
   \set stanza = \markup {\normal-text\italic "1st Angel" "4. "}
   \lyricmode {
     Seek not in Courts or Pa -- la -- ces;
-    Nor Roy -- al cur -- tains draw;
+    Nor Roy -- al cur -- tains draw; __
     But search the Sta -- ble, see your God
     ex -- tend -- ed on the Straw,
     ex -- tend -- ed on the Straw.
@@ -329,9 +342,9 @@ pianoLH = \relative c' {
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }
       \new Voice = "basses" { \voiceTwo << \global \bassMusic >> }
     >>
-    \new Lyrics \with { alignAboveContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \sopWords
-    \new Lyrics \with { alignAboveContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \sopWordsII
-    \new Lyrics \with { alignAboveContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \sopWordsIII
+    \new Lyrics \with { alignAboveContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . 0.2))} \lyricsto "sopranos" \sopWords
+    \new Lyrics \with { alignAboveContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . 0.2))} \lyricsto "sopranos" \sopWordsII
+    \new Lyrics \with { alignAboveContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . 0.2))} \lyricsto "sopranos" \sopWordsIII
     \new Lyrics = "altosVI"  \with { alignBelowContext = #"women" } \lyricsto "tenors" \altoWordsVI
     \new Lyrics = "altosV"  \with { alignBelowContext = #"women" } \lyricsto "tenors" \altoWordsV
     \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "tenors" \altoWordsIV
@@ -341,7 +354,7 @@ pianoLH = \relative c' {
     \new Lyrics \with { alignAboveContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "tenors" \tenorWords
     \new Lyrics \with { alignBelowContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "basses" \bassWordsIII
     \new Lyrics \with { alignBelowContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "basses" \bassWordsII
-    \new Lyrics \with { alignBelowContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "basses" \bassWords
+    \new Lyrics \with { alignBelowContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((padding . 0.4)) } \lyricsto "basses" \bassWords
   >>
 %    \new PianoStaff << \new Staff { \new Voice { \pianoRH } } \new Staff { \clef "bass" \pianoLH } >>
   >>

@@ -10,7 +10,7 @@
 \paper {
   %print-all-headers = ##t
   paper-height = 9\in
-  paper-width = 5.2734\in
+  paper-width = 6\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   %system-system-spacing =
@@ -21,10 +21,10 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.1017\in
-  outer-margin = 0.1017\in
-  top-margin = 0.125\in
-  bottom-margin = 0.125\in
+  inner-margin = 0.5\in
+  outer-margin = 0.25\in
+  top-margin = 0.25\in
+  bottom-margin = 0.25\in
   first-page-number = #120
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
@@ -148,9 +148,9 @@ altoWords = {
   }
   \set stanza = \markup\dynamic"f  "
   \lyricmode{
+    \set associatedVoice = "tenors"
     Might tran -- scend -- ing, Weak -- ness blend -- ing,
     Great -- ness bend -- ing from the sky;
-    \set associatedVoice = "sopranos"
     Love un -- end -- ing, man be -- friend -- ing,
   }
   \set stanza = \markup\dynamic"  ff "
@@ -303,6 +303,11 @@ pianoLH = \relative c' {
       \new Voice = "sopranos" { \voiceOne << \global \sopMusic >> }
       \new Voice = "altos" { \voiceTwo << \global \altoMusic >> }
     >>
+   \new Staff = men <<
+      \clef bass
+      \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }
+      \new Voice = "basses" { \voiceTwo << \global \bassMusic >> }
+    >>
     \new Lyrics \with { alignAboveContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \sopWords
      \new Lyrics = "altosVI"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsVI
     \new Lyrics = "altosV"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsV
@@ -310,11 +315,6 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsIII
     \new Lyrics = "altosII"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsII
     \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "altos" \altoWords
-   \new Staff = men <<
-      \clef bass
-      \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }
-      \new Voice = "basses" { \voiceTwo << \global \bassMusic >> }
-    >>
     \new Lyrics \with { alignAboveContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "tenors" \tenorWords
     \new Lyrics \with { alignBelowContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "basses" \bassWords
   >>
