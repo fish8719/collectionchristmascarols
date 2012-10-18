@@ -2,8 +2,8 @@
 \include "../util.ly"
 \paper {
   print-all-headers = ##t
-  paper-height = 9\in
-  paper-width = 6\in
+  paper-height = 11\in
+  paper-width = 8.5\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -24,15 +24,15 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
+  inner-margin = 1\in
+  outer-margin = 0.75\in
+  top-margin = 0.26\in
   bottom-margin = 0.25\in
   first-page-number = #170
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
   oddHeaderMarkup = \markup\fill-line{
-     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #8.5
+     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #12.5
      \combine 
         \fill-line{"" \on-the-fly #print-page-number-check-first
         \oldStylePageNum""
@@ -40,14 +40,14 @@
         \fill-line{\headerLine}
   }
   evenHeaderMarkup = \markup {
-     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #8.5
+     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #12.5
      \combine
         \on-the-fly #print-page-number-check-first
         \oldStylePageNum""
         \fill-line{\headerLine}
   }
 }
-#(set-global-staff-size 15) \paper{ #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 15 20))) }
+#(set-global-staff-size 18) \paper{ #(define fonts (make-pango-font-tree "Garamond Premier Pro" "Garamond Premier Pro" "Garamond Premier Pro" (/ 18 20))) }
 %IF_NOT_LESSER
 global = {
   \key f \major
@@ -95,7 +95,7 @@ sopMusic = \relative c' {
   d'4\rest d4 f d |
   
   c4. c8 c4 bes |
-  a2 bes4\rest^\markup\italic"dim. e rall." f4 |
+  a2 bes4\rest^\markup\italic"dim. e rall." f!4 |
   g a d2~ |
   d4 c8[ bes] a4. g8 |
   g1 \bar "|."
@@ -147,6 +147,12 @@ altoMusic = \relative c' {
   e a,4 d |
   d1 \bar "|."
 }
+dropLyrics =
+{
+    \override LyricText #'extra-offset = #'(0 . -2.0)
+    \override LyricHyphen #'extra-offset = #'(0 . -2.0)
+    \override LyricExtender #'extra-offset = #'(0 . -2.0)
+}
 altoWords = {
   \dropLyricsV
   \set stanza = \markup\dynamic"mp "
@@ -178,11 +184,14 @@ altoWords = {
   }
   \set stanza = \markup\dynamic" f "
   \lyricmode{
-    To vis -- it us that were for -- lorn;
+    To vis -- it us
+    \dropLyrics
+    that were for -- lorn;
     \set associatedVoice = "tenors"
     La -- lu -- la, la -- lu --
     \unset associatedVoice
     la, la -- lu -- la --
+    \dropLyricsV
     \set associatedVoice = "tenors"
     by,
   }
@@ -338,6 +347,10 @@ pianoLH = \relative c' {
 %    \new PianoStaff << \new Staff { \new Voice { \pianoRH } } \new Staff { \clef "bass" \pianoLH } >>
   >>
   \layout {
+  \context {
+    \Lyrics
+    \override LyricText #'font-size = #1.3
+  }
     \context {
       \Score
       %\override SpacingSpanner #'base-shortest-duration = #(ly:make-moment 1 8)
@@ -349,7 +362,7 @@ pianoLH = \relative c' {
     }
   }
   \header {
-    title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Sweet was the song the Virgin sung"}}
+    title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #18 \smallCapsOldStyle"Sweet was the song the Virgin sung"}}
     poet = \markup\concat{"From William Ballet’s " \italic"Lute Book" ", c. 1600"}
     composer = \markup\oldStyleNum"Arranged by Charles Wood (1866–1926)"
     tagline = \markup\concat { "from " \italic "The Cowley Carol Book" \oldStyleNum", 1919"}
@@ -543,6 +556,10 @@ pianoLH = \relative c' {
 %    \new PianoStaff << \new Staff { \new Voice { \pianoRH } } \new Staff { \clef "bass" \pianoLH } >>
   >>
   \layout {
+  \context {
+    \Lyrics
+    \override LyricText #'font-size = #1.3
+  }
     \context {
       \Score
       %\override SpacingSpanner #'base-shortest-duration = #(ly:make-moment 1 8)
@@ -554,7 +571,7 @@ pianoLH = \relative c' {
     }
   }
   \header {
-    title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Still, Still, Still"}}
+    title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #18 \smallCapsOldStyle"Still, Still, Still"}}
     poet = \markup\oldStyleNum"Traditional Austrian"
     composer = \markup\oldStyleNum"Salzburg Melody, c. 1819"
     tagline = \markup\concat{ "from " \italic "Salzburgische Volks-Lieder" \oldStyleNum", 1865"}

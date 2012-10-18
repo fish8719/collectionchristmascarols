@@ -5,8 +5,8 @@
 }
 \paper {
   print-all-headers = ##t
-  paper-height = 9\in
-  paper-width = 6\in
+  paper-height = 11\in
+  paper-width = 8.5\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   %system-system-spacing =
@@ -17,15 +17,15 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
+  inner-margin = 1\in
+  outer-margin = 0.75\in
+  top-margin = 0.26\in
   bottom-margin = 0.25\in
   first-page-number = #036
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
   oddHeaderMarkup = \markup\fill-line{
-     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #8.5
+     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #12.5
      \combine 
         \fill-line{"" \on-the-fly #print-page-number-check-first
         \oldStylePageNum""
@@ -33,14 +33,14 @@
         \fill-line{\headerLine}
   }
   evenHeaderMarkup = \markup {
-     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #8.5
+     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #12.5
      \combine
         \on-the-fly #print-page-number-check-first
         \oldStylePageNum""
         \fill-line{\headerLine}
   }
 }
-#(set-global-staff-size 15) \paper{ #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 15 20))) }
+#(set-global-staff-size 18) \paper{ #(define fonts (make-pango-font-tree "Garamond Premier Pro" "Garamond Premier Pro" "Garamond Premier Pro" (/ 18 20))) }
 global = {
   \key f \major
   \time 6/8
@@ -193,14 +193,14 @@ altoWords = \lyricmode {
   Christ was born on Christ -- mas Day,
   Wreathe the hol -- ly, twine the bay;
   
-  \markup\italic Chri -- \markup\italic stus \markup\italic na -- \markup\italic tus \markup\italic ho -- \markup\italic di -- \markup\italic e_:
+  \markup\italic Chri -- \markup\italic stus \markup\italic na -- \markup\italic tus \markup\italic ho -- \markup\italic di -- \markup\italic "e :"
   The Babe, the Son, the Ho -- ly One of Ma -- ry.
   
   \set stanza = #" 3."
   Let the bright red ber -- ries glow
   Ev -- ’ry -- where in good -- ly show;
   
-  \markup\italic Chri -- \markup\italic stus \markup\italic na -- \markup\italic tus \markup\italic ho -- \markup\italic di -- \markup\italic e_:
+  \markup\italic Chri -- \markup\italic stus \markup\italic na -- \markup\italic tus \markup\italic ho -- \markup\italic di -- \markup\italic "e :"
   The Babe, the Son, the Ho -- ly One of Ma -- ry.
   
   \set stanza = #" 5."
@@ -210,18 +210,18 @@ altoWords = \lyricmode {
   Af -- ter ma -- ny trou -- bles sore,
   Morn of glad -- ness ev -- er -- more and ev -- er -- more.
   
-  \set stanza = #" 6."
+  \set stanza = #"   6."
   Mid -- night scarce -- ly pass’d and o -- ver,
   Draw -- ing to this ho -- ly morn,
   Ve -- ry ear -- ly, ve -- ry ear -- ly Christ was born.
   
-  \set stanza = #" 7."
+  \set stanza = #"   7."
   Sing out with bliss, His Name is this:
   Em -- man -- u -- el:
   As was fore -- told in days of old
   By Ga -- bri -- el.
   
-  \set stanza = #" 8."
+  \set stanza = #"   8."
   Mid -- night scarce -- ly pass’d and o -- ver,
   Draw -- ing to this ho -- ly morn,
   Ve -- ry ear -- ly, ve -- ry ear -- ly Christ was born.
@@ -232,14 +232,14 @@ altoWordsII = \lyricmode {
   He is born to set us free,
   He is born our Lord to be,
   
-  \markup\italic Ex \markup\italic Ma -- \markup\italic ri -- \markup\italic a \markup\italic Vir -- \markup\italic gi -- \markup\italic ne_:
+  \markup\italic Ex \markup\italic Ma -- \markup\italic ri -- \markup\italic a \markup\italic Vir -- \markup\italic gi -- \markup\italic "ne :"
   The God, the Lord, by all a -- dor’d for ev -- er.
   
   \set stanza = #" 4."
   Chris -- tian men, re -- joice and sing;
   ’Tis the birth -- day of a King,
   
-  \markup\italic Ex \markup\italic Ma -- \markup\italic ri -- \markup\italic a \markup\italic Vir -- \markup\italic gi -- \markup\italic ne_:
+  \markup\italic Ex \markup\italic Ma -- \markup\italic ri -- \markup\italic a \markup\italic Vir -- \markup\italic gi -- \markup\italic "ne :"
   The God, the Lord, by all a -- dor’d for ev -- er.
 }
 altoWordsIII = \lyricmode {
@@ -425,6 +425,10 @@ pianoLH = \relative c' {
 %    \new PianoStaff << \new Staff { \new Voice { \pianoRH } } \new Staff { \clef "bass" \pianoLH } >>
   >>
   \layout {
+  \context {
+    \Lyrics
+    \override LyricText #'font-size = #1.3
+  }
     \context {
       \Score
       %\override SpacingSpanner #'base-shortest-duration = #(ly:make-moment 1 8)
@@ -436,7 +440,7 @@ pianoLH = \relative c' {
     }
   }
   \header {
-    title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Christ Was Born on Christmas Day"}}
+    title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #18 \smallCapsOldStyle"Christ Was Born on Christmas Day"}}
     poet = \markup\oldStyleNum"John Mason Neale (1818–1866)"
     composer = \markup\concat{\oldStyleNum"14th Century German melody, " \italic"Resonet in laudibus"}
     arranger = \markup\oldStyleNum"Arranged chiefly by G. R. Woodward (1848–1934)"

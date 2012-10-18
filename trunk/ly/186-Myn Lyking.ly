@@ -1,14 +1,14 @@
 ﻿\version "2.14.2"
 \include "../util.ly"
 \header {
-  title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Myn Lyking"}}
+  title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #18 \smallCapsOldStyle"Myn Lyking"}}
   poet = \markup\oldStyleNum"15th Century"
   composer = \markup\oldStyleNum"Richard R. Terry (1865–1938)"
   tagline = \markup\concat{ "from " \italic"Twelve Christmas Carols" \oldStyleNum", 1912, via " \italic"HymnsAndCarolsOfChristmas.com"}
 }
 \paper {
-  paper-height = 9\in
-  paper-width = 6\in
+  paper-height = 11\in
+  paper-width = 8.5\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -19,15 +19,15 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
+  inner-margin = 1\in
+  outer-margin = 0.75\in
+  top-margin = 0.26\in
   bottom-margin = 0.25\in
   first-page-number = #186
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
   oddHeaderMarkup = \markup\fill-line{
-     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #8.5
+     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #12.5
      \combine 
         \fill-line{"" \on-the-fly #print-page-number-check-first
         \oldStylePageNum""
@@ -35,14 +35,14 @@
         \fill-line{\headerLine}
   }
   evenHeaderMarkup = \markup {
-     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #8.5
+     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #12.5
      \combine
         \on-the-fly #print-page-number-check-first
         \oldStylePageNum""
         \fill-line{\headerLine}
   }
 }
-#(set-global-staff-size 13.5) \paper{ #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 13.5 20))) }
+#(set-global-staff-size 18) \paper{ #(define fonts (make-pango-font-tree "Garamond Premier Pro" "Garamond Premier Pro" "Garamond Premier Pro" (/ 18 20))) }
 global = {
   \key g \major
   \time 4/4
@@ -53,7 +53,7 @@ global = {
   \mergeDifferentlyDottedOn
 }
 verseRests = { r1 | r1 | r1 | r2 r4 }
-verseRestsII = { r1 | r1 | r1 | r2 r4^"Fine." }
+verseRestsII = { r1 | r1 | r1 | r2 r4^\markup\italic"Fine." }
 verseMusic = \relative c'' {
   g4^\mf |
   
@@ -109,12 +109,12 @@ verseWords = \lyricmode {
   That same Lord is He that made al -- lé thing,
   Of al -- lé lord -- is He is Lord, of al -- lé kyng -- es Kyng.
   
-%8.5x11g  \override LyricText #'font-size = #1.0
+\override LyricText #'font-size = #0.8
   \set stanza = #"3."
   There was mick -- le mel -- o -- dy at that Chyld -- é’s birth.
   All that were in heav’n -- ly bliss, they made mick -- le mirth.
   
-%8.5x11g  \override LyricText #'font-size = #1.3
+\override LyricText #'font-size = #1.3
   \set stanza = #"4. "
   An -- gels bright sang their song to that Chyld;
   Blyss -- id be Thou, and so be She, so meek and so mild.
@@ -241,7 +241,7 @@ pianoRH = \relative c' {
                   g2 c8[ b a g]~ |
                   g4 fis g c8[ b] |
                   a4 fis e d |
-                  <c e> g8[ a] b2 |
+                  <c e> g8[ a] << b2 { s16 s4..^\markup\italic"Fine."} >> |
                   
                   d4 fis g d |
                   g <a fis> g d |
@@ -281,7 +281,7 @@ pianoLH = \relative c' {
                   b4^\markup{\dynamic"mf" \italic"a tempo"} g4 g c |
                   a d8[ a] c[ b a g] |
                   a4 c b s |
-                  s2. s4^"Fine." |
+                  s2. s4 |
                   
                   s1^\mf |
                   s1 |
@@ -364,6 +364,10 @@ pianoLH = \relative c' {
     \new PianoStaff << \new Staff { \global \new Voice { \pianoRH } } \new Staff { \global \clef "bass" \pianoLH } >>
   >>
   \layout {
+  \context {
+    \Lyrics
+    \override LyricText #'font-size = #1.3
+  }
     \context {
       \Score
       \override SpacingSpanner #'base-shortest-duration = #(ly:make-moment 1 2)

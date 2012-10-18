@@ -1,7 +1,7 @@
 ﻿\version "2.14.2"
 \include "../util.ly"
 \header {
-  title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Make we joy now in this fest"}}
+  title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #18 \smallCapsOldStyle"Make we joy now in this fest"}}
   poet = \markup\oldStyleNum"Old English Carol"
   %composer = \markup\oldStyleNum"Old English Carol"
   composer = \markup\oldStyleNum"Arranged by George Ratcliffe Woodward (1848–1934)"
@@ -9,8 +9,8 @@
 }
 \paper {
   %print-all-headers = ##t
-  paper-height = 9\in
-  paper-width = 6\in
+  paper-height = 11\in
+  paper-width = 8.5\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -21,15 +21,15 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
+  inner-margin = 1\in
+  outer-margin = 0.75\in
+  top-margin = 0.26\in
   bottom-margin = 0.25\in
   first-page-number = #153
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
   oddHeaderMarkup = \markup\fill-line{
-     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #8.5
+     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #12.5
      \combine 
         \fill-line{"" \on-the-fly #print-page-number-check-first
         \oldStylePageNum""
@@ -37,14 +37,15 @@
         \fill-line{\headerLine}
   }
   evenHeaderMarkup = \markup {
-     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #8.5
+     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #12.5
      \combine
         \on-the-fly #print-page-number-check-first
         \oldStylePageNum""
         \fill-line{\headerLine}
   }
 }
-#(set-global-staff-size 15) \paper{ #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 15 20))) }
+#(set-global-staff-size 18) \paper{ #(define fonts (make-pango-font-tree "Garamond Premier Pro" "Garamond Premier Pro" "Garamond Premier Pro" (/ 18 20))) }
+%6.14 #(set-global-staff-size 14.7) \paper{ #(define fonts (make-pango-font-tree "Garamond Premier Pro" "Garamond Premier Pro" "Garamond Premier Pro" (/ 14.7 20))) }
 global = {
   \key g \major
   \time 3/4
@@ -78,8 +79,10 @@ sopMusic = \relative c' {
     d2 b4 |
     d2 c4 |
     b2 d4 |
-    e2 e4 |
+    \slurDotted
+    e4( e) e4 |
     
+    \slurSolid
     d2 b4 |
     b2 a4 |
     g2 \bar""\break g4 |
@@ -142,8 +145,10 @@ altoMusic = \relative c' {
   g2 g4 |
   g2 g4 |
   g2 g4 |
-  g2 a4 |
+  \slurDotted
+  g4( g) a4 |
   
+  \slurSolid
   fis2 g4 |
   fis2 fis4 |
   g2 g4 |
@@ -227,7 +232,9 @@ altoWordsIII = \lyricmode {
   \repeat unfold 16{\skip1}
   \set stanza = #"3. "
   \markup\italic A \markup\italic so -- \markup\italic lis \markup\italic or -- \markup\italic tus \markup\italic car -- \markup\italic di -- \markup\italic ne
-  So mighty a Lord is none as He;
+  \set ignoreMelismata = ##t
+  So might -- y a Lord is none as He;
+  \unset ignoreMelismata
   And to our kind He hath Him knit,
   \markup\italic A -- \markup\italic dam \markup\italic pa -- \markup\italic rens \markup\italic quod
   \set associatedVoice = "sopranos"
@@ -262,8 +269,10 @@ tenorMusic = \relative c' {
   b( c) d |
   d2 e4 |
   d2 b4 |
+  \slurDotted
   c( b) a |
   
+  \slurSolid
   a( b) g |
   d'2 d4 |
   b2 e4 |
@@ -323,8 +332,10 @@ bassMusic = \relative c {
   g2 g4 |
   b2 c4 |
   g2 g4 |
-  e2 c4 |
+  \slurDotted
+  e4( e) c4 |
   
+  \slurSolid
   d2 e4 |
   b2 d4 |
   g2 c4 |
@@ -397,6 +408,11 @@ pianoLH = \relative c' {
 %    \new PianoStaff << \new Staff { \new Voice { \pianoRH } } \new Staff { \clef "bass" \pianoLH } >>
   >>
   \layout {
+  \context {
+    \Lyrics
+    \override LyricText #'font-size = #1.3
+  }
+%6.14 \context {\Lyrics\override LyricText #'font-size = #0.7 }
     \context {
       \Score
       %\override SpacingSpanner #'base-shortest-duration = #(ly:make-moment 1 8)

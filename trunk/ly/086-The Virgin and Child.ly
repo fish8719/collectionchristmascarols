@@ -1,39 +1,39 @@
 ﻿\version "2.14.2"
 \include "../util.ly"
 \header {
-  title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"The Virgin and Child"}}
+  title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #18 \smallCapsOldStyle"The Virgin and Child"}}
   poet = \markup\oldStyleNum{\concat{"Adapted from " \italic"Thys endris nyzth" \oldStyleNum", 15th Century"}}
   composer = \markup\oldStyleNum"Charles Steggall (1826–1905)"
   tagline = \markup { "from" \italic {Christmas Carols, New and Old}}
 }
 \paper {
   %print-all-headers = ##t
-  paper-height = 9\in
-  paper-width = 6\in
+  paper-height = 11\in
+  paper-width = 8.5\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
-    #'((basic-distance . 12)
+    #'((basic-distance . 8)
        (minimum-distance . 0)
        (padding . -5)
        (stretchability . 100))
   score-markup-spacing =
     #'((basic-distance . 0)
        (minimum-distance . 0)
-       (padding . 3)
+       (padding . 2)
        (stretchability . 0))
   ragged-last-bottom = ##t
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
+  inner-margin = 1\in
+  outer-margin = 0.75\in
+  top-margin = 0.26\in
   bottom-margin = 0.25\in
   first-page-number = #086
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
   oddHeaderMarkup = \markup\fill-line{
-     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #8.5
+     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #12.5
      \combine 
         \fill-line{"" \on-the-fly #print-page-number-check-first
         \oldStylePageNum""
@@ -41,14 +41,14 @@
         \fill-line{\headerLine}
   }
   evenHeaderMarkup = \markup {
-     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #8.5
+     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #12.5
      \combine
         \on-the-fly #print-page-number-check-first
         \oldStylePageNum""
         \fill-line{\headerLine}
   }
 }
-#(set-global-staff-size 15) \paper{ #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 15 20))) }
+#(set-global-staff-size 18) \paper{ #(define fonts (make-pango-font-tree "Garamond Premier Pro" "Garamond Premier Pro" "Garamond Premier Pro" (/ 18 20))) }
 global = {
   \key c \major
   \time 4/4
@@ -169,15 +169,16 @@ dropLyrics = {
   \override StanzaNumber #'extra-offset = #'(0 . -1.8)
 }
 altoWords = {
-  \dropLyricsVI
+  \dropLyricsIX
   \set stanza = \markup{\dynamic"  mf" " 1."}
   \lyricmode {
     On yes -- ter night I saw a sight,
     A star as bright as day; __
     And all a -- long, I heard a song,
-    lul -- lay, by by, lul -- lay, __
-    lul -- lay, lul -- lay.
+    lul -- lay, by by, \dropLyricsIV lul -- lay, __
+    \dropLyricsXV lul -- lay, lul -- lay.
   }
+  \dropLyricsIX
   \set stanza = "2."
   \lyricmode{
     A love -- ly la -- dy sat and sang,
@@ -187,6 +188,7 @@ altoWords = {
     To see Thee there, so cold and bare,
     A King up -- on this hay;
     But hush Thy wail, I will not fail
+    \dropLyricsVI
     To sing by by, lul -- lay, lul -- lay,
     to sing by by, \dropLyrics lul -- lay, lul -- lay;
     To sing by by lul -- lay, lul -- lay,
@@ -196,7 +198,7 @@ altoWords = {
   }
 }
 altoWordsII = {
-  \dropLyricsVI
+  \dropLyricsIX
   \lyricmode{
     \repeat unfold 32 \skip1
   }
@@ -215,7 +217,7 @@ altoWordsII = {
   }
 }
 altoWordsIII = \lyricmode {
-  \dropLyricsVI
+  \dropLyricsIX
   \repeat unfold 32 \skip1
   \set stanza = #"4."
   “Now, sweet -- est Lord, since Thou art King,
@@ -389,6 +391,10 @@ pianoLH = \relative c' {
 %    \new PianoStaff << \new Staff { \new Voice { \pianoRH } } \new Staff { \clef "bass" \pianoLH } >>
   >>
   \layout {
+  \context {
+    \Lyrics
+    \override LyricText #'font-size = #1.3
+  }
     \context {
       \Score
       %\override SpacingSpanner #'base-shortest-duration = #(ly:make-moment 1 8)
