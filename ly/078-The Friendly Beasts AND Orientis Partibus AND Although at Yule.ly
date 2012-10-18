@@ -2,8 +2,8 @@
 \include "../util.ly"
 \paper {
   print-all-headers = ##t
-  paper-height = 9\in
-  paper-width = 6\in
+  paper-height = 11\in
+  paper-width = 8.5\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -19,15 +19,15 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
+  inner-margin = 1\in
+  outer-margin = 0.75\in
+  top-margin = 0.26\in
   bottom-margin = 0.25\in
   first-page-number = #078
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
   oddHeaderMarkup = \markup\fill-line{
-     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #8.5
+     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #12.5
      \combine 
         \fill-line{"" \on-the-fly #print-page-number-check-first
         \oldStylePageNum""
@@ -35,14 +35,14 @@
         \fill-line{\headerLine}
   }
   evenHeaderMarkup = \markup {
-     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #8.5
+     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #12.5
      \combine
         \on-the-fly #print-page-number-check-first
         \oldStylePageNum""
         \fill-line{\headerLine}
   }
 }
-#(set-global-staff-size 15) \paper{ #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 15 20))) }
+#(set-global-staff-size 18) \paper{ #(define fonts (make-pango-font-tree "Garamond Premier Pro" "Garamond Premier Pro" "Garamond Premier Pro" (/ 18 20))) }
 global = {
   \key f \major
   \time 3/4
@@ -70,7 +70,7 @@ sopMusic = \relative c' {
     g( g) e |
     f2.
   }
-  
+  \break
   
   \repeat volta 4 {
     f4 f g |
@@ -154,7 +154,7 @@ altoWords = \lyricmode {
   
   \set stanza = #"4. "
   \set ignoreMelismata = ##t
-  “I,” said the sheep with _ curl -- _ y horn, “I _ gave Him my wool _ for His blank -- et warm,
+  “I,” said the sheep with _ curl -- _ y horn, “I __ _ gave Him my wool _ for His blank -- et warm,
   He __ _ wore __ _ my coat _ on Christ -- _ mas morn.” “I,” said the sheep _ with curl -- _ y horn.
 }
 altoWordsII = \lyricmode {
@@ -192,7 +192,7 @@ altoWordsIV = \lyricmode {
   \set stanza = #"7. "
   \set ignoreMelismata = ##t
   Thus ev -- ’ry beast by __ _ some _ good spell,
-  In the sta -- _ ble dark __ _ was __ _ glad to tell
+  In the sta -- _ ble dark _ was __ _ glad to tell
   Of the gift __ _ he gave _ Em -- man -- _ u -- el,
   The gift he gave _ Em -- man -- _ u -- el.
 }
@@ -335,7 +335,18 @@ bassWords = \lyricmode {
 %    \new PianoStaff << \new Staff { \new Voice { \pianoRH } } \new Staff { \clef "bass" \pianoLH } >>
   >>
   \layout {
-    #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 14.4 20)))
+  \context {
+    \Lyrics
+    \override LyricText #'font-size = #1.3
+  }
+%{IF_LESSER
+\context {
+  \Lyrics
+  \override LyricText #'font-size = #1.2
+}
+%}%END_IF_LESSER
+%6.14 \context {\Lyrics\override LyricText #'font-size = #0.8 }
+    #(define fonts (make-pango-font-tree "Garamond Premier Pro" "Garamond Premier Pro" "Garamond Premier Pro" (/ 18 20)))
     \context {
       \Score
       \override SpacingSpanner #'base-shortest-duration = #(ly:make-moment 1 2)
@@ -347,7 +358,7 @@ bassWords = \lyricmode {
     }
   }
   \header {
-    title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"The Friendly Beasts"}}
+    title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #18 \smallCapsOldStyle"The Friendly Beasts"}}
     poet = \markup\oldStyleNum"Robert Davis (1881–1950)"
     composer = \markup\concat{"Adapted from "\italic"Orientis Partibus" \oldStyleNum", 12th Century French"}
     tagline = \markup { "from" \italic {HymnsAndCarolsOfChristmas.com}}
@@ -512,6 +523,10 @@ bassWords = \lyricmode {
 %    \new PianoStaff << \new Staff { \new Voice { \pianoRH } } \new Staff { \clef "bass" \pianoLH } >>
   >>
   \layout {
+  \context {
+    \Lyrics
+    \override LyricText #'font-size = #1.3
+  }
     \context {
       \Score
       \override SpacingSpanner #'common-shortest-duration = #(ly:make-moment 1 4)
@@ -522,7 +537,7 @@ bassWords = \lyricmode {
     }
   }
   \header {
-    title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Orientis Partibus"}}
+    title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #18 \smallCapsOldStyle"Orientis Partibus"}}
     poet = \markup\oldStyleNum"Attributed to Pierre de Corbeil, Bishop of Sens (d. 1222)"
     composer = \markup\oldStyleNum"12th Century French"
     tagline = \markup \concat{ "Words from " \italic"HymnsAndCarolsOfChristmas.com" ", Music from " \italic"CyberHymnal.org"}
@@ -673,6 +688,10 @@ pianoLH = \relative c' {
 %    \new PianoStaff << \new Staff { \new Voice { \pianoRH } } \new Staff { \clef "bass" \pianoLH } >>
   >>
   \layout {
+  \context {
+    \Lyrics
+    \override LyricText #'font-size = #1.3
+  }
     \context {
       \Score
       %\override SpacingSpanner #'base-shortest-duration = #(ly:make-moment 1 8)
@@ -684,7 +703,7 @@ pianoLH = \relative c' {
     }
   }
   \header {
-    title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Although at Yule it Bloweth Cool"}}
+    title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #18 \smallCapsOldStyle"Although at Yule it Bloweth Cool"}}
     poet = \markup\oldStyleNum"George Ratcliffe Woodward (1848–1934)"
     composer = \markup \concat{\italic "Der wind der wet, der han der kret" \oldStyleNum", 1554"}
     arranger = \markup\oldStyleNum"Arranged by Charles Wood (1866–1926)"

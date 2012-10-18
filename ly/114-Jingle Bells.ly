@@ -1,16 +1,16 @@
 ﻿\version "2.14.2"
 \include "../util.ly"
 \header {
-  title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Jingle Bells"}}
-  subtitle = \markup{\override #'(font-name . "Garamond Premier Pro"){ \abs-fontsize #10.5 "(The One Horse Open Sleigh)"}}
+  title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #18 \smallCapsOldStyle"Jingle Bells"}}
+  subtitle = \markup{\override #'(font-name . "Garamond Premier Pro"){ \abs-fontsize #12.5 "(The One Horse Open Sleigh)"}}
   poet = \markup\oldStyleNum"James Lord Pierpont (1822–1893)"
   composer = \markup\oldStyleNum"James Lord Pierpont (1822–1893)"
   tagline = \markup \concat{ \italic"The One Horse Open Sleigh" \oldStyleNum", 1857"}
 }
 \paper {
   %print-all-headers = ##t
-  paper-height = 9\in
-  paper-width = 6\in
+  paper-height = 11\in
+  paper-width = 8.5\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -26,15 +26,15 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
+  inner-margin = 1\in
+  outer-margin = 0.75\in
+  top-margin = 0.26\in
   bottom-margin = 0.25\in
   first-page-number = #114
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
   oddHeaderMarkup = \markup\fill-line{
-     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #8.5
+     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #12.5
      \combine 
         \fill-line{"" \on-the-fly #print-page-number-check-first
         \oldStylePageNum""
@@ -42,14 +42,15 @@
         \fill-line{\headerLine}
   }
   evenHeaderMarkup = \markup {
-     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #8.5
+     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #12.5
      \combine
         \on-the-fly #print-page-number-check-first
         \oldStylePageNum""
         \fill-line{\headerLine}
   }
 }
-#(set-global-staff-size 14.8) \paper{ #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 14.8 20))) }
+#(set-global-staff-size 18) \paper{ #(define fonts (make-pango-font-tree "Garamond Premier Pro" "Garamond Premier Pro" "Garamond Premier Pro" (/ 18 20))) }
+%6.14 #(set-global-staff-size 14.1) \paper{ #(define fonts (make-pango-font-tree "Garamond Premier Pro" "Garamond Premier Pro" "Garamond Premier Pro" (/ 14.1 20))) }
 global = {
   \key aes \major
   \time 2/4
@@ -405,6 +406,10 @@ pianoLH = \relative c {
     \new PianoStaff << \new Staff { \global \new Voice { \pianoRH } } \new Staff { \global \clef "bass" \pianoLH } >>
   >>
   \layout {
+  \context {
+    \Lyrics
+    \override LyricText #'font-size = #1.3
+  }
     \context {
       \Score
       \override SpacingSpanner #'base-shortest-duration = #(ly:make-moment 1 2)

@@ -2,7 +2,7 @@
 \include "../util.ly"
 \version "2.14.2"
 \header {
-  title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"In the Bleak Midwinter"}}
+  title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #18 \smallCapsOldStyle"In the Bleak Midwinter"}}
   poet = \markup\oldStyleNum"Christina Rosetti (1830–1894)"
   composer = \markup\oldStyleNum"Harold Darke (1888–1976)"
   tagline = \markup { "from" \italic {cpdl.org}}
@@ -10,8 +10,8 @@
 
 \paper {
   %print-all-headers = ##t
-  paper-height = 9\in
-  paper-width = 6\in
+  paper-height = 11\in
+  paper-width = 8.5\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -22,15 +22,15 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
+  inner-margin = 1\in
+  outer-margin = 0.75\in
+  top-margin = 0.26\in
   bottom-margin = 0.25\in
   first-page-number = #180
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
   oddHeaderMarkup = \markup\fill-line{
-     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #8.5
+     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #12.5
      \combine 
         \fill-line{"" \on-the-fly #print-page-number-check-first
         \oldStylePageNum""
@@ -38,14 +38,14 @@
         \fill-line{\headerLine}
   }
   evenHeaderMarkup = \markup {
-     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #8.5
+     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #12.5
      \combine
         \on-the-fly #print-page-number-check-first
         \oldStylePageNum""
         \fill-line{\headerLine}
   }
 }
-#(set-global-staff-size 15) \paper{ #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 15 20))) }
+#(set-global-staff-size 18) \paper{ #(define fonts (make-pango-font-tree "Garamond Premier Pro" "Garamond Premier Pro" "Garamond Premier Pro" (/ 18 20))) }
 global = {
   \key g \major
   \time 4/4
@@ -209,7 +209,7 @@ altoWords = {
     
     In the bleak mid -- win -- ter,
     A sta -- ble place suf -- ficed
-    the \unset associatedVoice Lord __ God Al -- migh -- ty __
+    the \unset associatedVoice Lord __ God Al -- might -- y __
     Je -- sus Christ.
     
     \set stanza = #"4. "
@@ -441,6 +441,11 @@ pianoLH = \relative c' {
     \new PianoStaff << \new Staff { \new Voice { \global \pianoRH } } \new Staff { \clef "bass" \global \pianoLH } >>
   >>
   \layout {
+  \context {
+    \Lyrics
+    \override LyricText #'font-size = #1.3
+  }
+%6.14 \context {\Lyrics\override LyricText #'font-size = #0.9 }
     \context {
       \Score
       \override SpacingSpanner #'base-shortest-duration = #(ly:make-moment 1 4)

@@ -1,15 +1,15 @@
 ﻿\version "2.14.2"
 \include "../util.ly"
 \header {
-  title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Shiloh"}}
+  title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #18 \smallCapsOldStyle"Shiloh"}}
   poet = \markup { "from" \italic "The Suffolk Harmony" "(1786)"}
   composer = \markup\oldStyleNum"William Billings (1746–1800)"
   tagline = \markup { "from" \italic {www.cpdl.org}}
 }
 \paper {
   %print-all-headers = ##t
-  paper-height = 9\in
-  paper-width = 6\in
+  paper-height = 11\in
+  paper-width = 8.5\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -20,15 +20,15 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
+  inner-margin = 1\in
+  outer-margin = 0.75\in
+  top-margin = 0.26\in
   bottom-margin = 0.25\in
   first-page-number = #184
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
   oddHeaderMarkup = \markup\fill-line{
-     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #8.5
+     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #12.5
      \combine 
         \fill-line{"" \on-the-fly #print-page-number-check-first
         \oldStylePageNum""
@@ -36,14 +36,14 @@
         \fill-line{\headerLine}
   }
   evenHeaderMarkup = \markup {
-     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #8.5
+     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #12.5
      \combine
         \on-the-fly #print-page-number-check-first
         \oldStylePageNum""
         \fill-line{\headerLine}
   }
 }
-#(set-global-staff-size 15) \paper{ #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 15 20))) }
+#(set-global-staff-size 18) \paper{ #(define fonts (make-pango-font-tree "Garamond Premier Pro" "Garamond Premier Pro" "Garamond Premier Pro" (/ 18 20))) }
 global = {
   \key g \major
   \time 4/4
@@ -139,13 +139,13 @@ dropLyrics = {
 }
 altoWords = {
   \dropLyricsIX
-  \set stanza = \markup {\normal-text\italic "1st Shepherd" "1. "}
+  \set stanza = \markup {\normal-text\italic " 1st Shepherd" "1."}
     \lyricmode {
     Me -- thinks I see an heav’n -- ly Host of An -- gels on the Wing;
     Me -- thinks I hear their cheer -- ful notes, so mer -- ri -- ly they sing,
     so mer -- ri -- ly they sing.
   }
-  \set stanza = \markup {\normal-text\italic "1st Angel" "2. "}
+  \set stanza = \markup {\normal-text\italic "1st Angel" "  2. "}
   \lyricmode {
     Let all your Fears be ban -- ish’d hence.
     Glad tid -- ings I pro -- claim. __
@@ -153,7 +153,7 @@ altoWords = {
     and Je -- sus is His name,
     and Je -- sus is His name.
   }
-  \set stanza = \markup {\normal-text\italic "Narrator     " "6. "}
+  \set stanza = \markup {\normal-text\italic " Narrator     " "6."}
   \lyricmode {
     The mas -- ter of the inn re -- fus’d a more com -- mo -- dious place;
     Un -- gen’ -- rous Soul of sav -- age mold,
@@ -161,7 +161,7 @@ altoWords = {
     and des -- ti -- tute of Grace.
   }
   \dropLyrics
-  \set stanza = \markup {\normal-text\italic "1st Angel" "7. "}
+  \set stanza = \markup {\normal-text\italic "1st Angel" "  7. "}
   \lyricmode {
     Ex -- ult ye Ox -- en,
     \dropLyricsIX
@@ -173,13 +173,13 @@ altoWords = {
 }
 altoWordsII = {
   \dropLyricsIX
-  \set stanza = \markup {\normal-text\italic "Narrator   " "5. "}
+  \set stanza = \markup {\normal-text\italic " Narrator   " "5."}
   \lyricmode {
     Then learn from hence, ye ru -- ral Swains, the meek -- ness of your God,
     Who left the bound -- less Realms of Joy, to ran -- som you with blood,
     to ran -- som you with blood.
   }
-  \set stanza = \markup {\normal-text\italic "1st Angel" "3. "}
+  \set stanza = \markup {\normal-text\italic "1st Angel" "  3. "}
   \lyricmode {
     Lay down your crooks, and quit your Flocks,
     to Beth -- le -- hem re -- pair; __
@@ -187,7 +187,7 @@ altoWordsII = {
     by yon -- der shin -- ing Star,
     by yon -- der shin -- ing Star.
   }
-  \set stanza = \markup {\normal-text\italic "Narrator     " "9. "}
+  \set stanza = \markup {\normal-text\italic " Narrator     " "9."}
   \lyricmode {
     Then sud -- den -- ly a Heav’n -- ly Host a -- round the Shep -- herds throng.
     Ex -- ult -- ing in the three -- fold God,
@@ -195,14 +195,14 @@ altoWordsII = {
     and thus ad -- dress their song.
   }
   \dropLyrics
-  \set stanza = \markup {\normal-text\italic "1st Angel" "8. "}
+  \set stanza = \markup {\normal-text\italic "1st Angel" "  8. "}
   \lyricmode {
     The Roy -- al guest you
     \dropLyricsIX
     en -- ter -- tain is not of com -- mon Birth, __
     but sec -- ond to the Great I Am;
     the God of heav’n and earth,
-%8.5x11 __
+__
     the God of heav’n and earth.
   }
 }
@@ -211,15 +211,15 @@ altoWordsIII = {
   \lyricmode {
     \repeat unfold 34{\skip1}
   }
-  \set stanza = \markup {\normal-text\italic "1st Angel" "4. "}
+  \set stanza = \markup {\normal-text\italic "1st Angel" "  4. "}
   \lyricmode {
-    Seek not in Courts or Pa -- la -- ces;
+    Seek not in Courts or Pal -- a -- ces;
     Nor Roy -- al cur -- tains draw; __
     But search the Sta -- ble, see your God
     ex -- tend -- ed on the Straw,
     ex -- tend -- ed on the Straw.
   }
-  \set stanza = \markup {\normal-text\italic "Grand Chorus" "10. "}
+  \set stanza = \markup {\normal-text\italic " Grand Chorus" "10."}
   \lyricmode {
     To God the Fa -- ther, Christ the Son, and Ho -- ly Ghost ac -- cord;
     The first and last, the last and first,
@@ -359,6 +359,10 @@ pianoLH = \relative c' {
 %    \new PianoStaff << \new Staff { \new Voice { \pianoRH } } \new Staff { \clef "bass" \pianoLH } >>
   >>
   \layout {
+  \context {
+    \Lyrics
+    \override LyricText #'font-size = #1.3
+  }
     \context {
       \Score
       %\override SpacingSpanner #'base-shortest-duration = #(ly:make-moment 1 8)

@@ -1,16 +1,16 @@
 ﻿\version "2.14.2"
 \include "../util.ly"
 \header {
-  title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"God Loved the World"}}
-  subtitle = \markup{\override #'(font-name . "Garamond Premier Pro"){ \abs-fontsize #10.5 "(Also hat Gott die Welt geliebt)"}}
+  title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #18 \smallCapsOldStyle"God Loved the World"}}
+  subtitle = \markup{\override #'(font-name . "Garamond Premier Pro"){ \abs-fontsize #12.5 "(Also hat Gott die Welt geliebt)"}}
   poet = \markup\oldStyleNum"from the Trier Gesangbuch, 1871"
   composer = \markup\oldStyleNum"Arranged by B. Luard Selby (1853–1918)"
   tagline = \markup \concat { "from " \italic "The Cowley Carol Book" \oldStyleNum", 1919"}
 }
 \paper {
   %print-all-headers = ##t
-  paper-height = 9\in
-  paper-width = 6\in
+  paper-height = 11\in
+  paper-width = 8.5\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   %system-system-spacing =
@@ -21,15 +21,15 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
+  inner-margin = 1\in
+  outer-margin = 0.75\in
+  top-margin = 0.26\in
   bottom-margin = 0.25\in
   first-page-number = #135
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
   oddHeaderMarkup = \markup\fill-line{
-     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #8.5
+     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #12.5
      \combine 
         \fill-line{"" \on-the-fly #print-page-number-check-first
         \oldStylePageNum""
@@ -37,14 +37,14 @@
         \fill-line{\headerLine}
   }
   evenHeaderMarkup = \markup {
-     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #8.5
+     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #12.5
      \combine
         \on-the-fly #print-page-number-check-first
         \oldStylePageNum""
         \fill-line{\headerLine}
   }
 }
-#(set-global-staff-size 15) \paper{ #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 15 20))) }
+#(set-global-staff-size 18) \paper{ #(define fonts (make-pango-font-tree "Garamond Premier Pro" "Garamond Premier Pro" "Garamond Premier Pro" (/ 18 20))) }
 global = {
   \key c \major
   \time 2/4
@@ -198,7 +198,7 @@ altoWordsIII = \lyricmode {
 altoWordsIV = \lyricmode {
   \dropLyricsV
   \set stanza = #"4. "
-  See, the Al -- migh -- ty Lord of all
+  See, the Al -- might -- y Lord of all
   Doth on the garb of com -- mon thrall.
   
   \repeat unfold 22 {\skip1}
@@ -335,6 +335,10 @@ pianoLH = \relative c' {
 %    \new PianoStaff << \new Staff { \new Voice { \pianoRH } } \new Staff { \clef "bass" \pianoLH } >>
   >>
   \layout {
+  \context {
+    \Lyrics
+    \override LyricText #'font-size = #1.3
+  }
     \context {
       \Score
       %\override SpacingSpanner #'base-shortest-duration = #(ly:make-moment 1 2)

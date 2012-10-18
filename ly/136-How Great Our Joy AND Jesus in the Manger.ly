@@ -2,8 +2,8 @@
 \include "../util.ly"
 \paper {
   print-all-headers = ##t
-  paper-height = 9\in
-  paper-width = 6\in
+  paper-height = 11\in
+  paper-width = 8.5\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -19,15 +19,15 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
+  inner-margin = 1\in
+  outer-margin = 0.75\in
+  top-margin = 0.26\in
   bottom-margin = 0.25\in
   first-page-number = #136
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
   oddHeaderMarkup = \markup\fill-line{
-     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #8.5
+     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #12.5
      \combine 
         \fill-line{"" \on-the-fly #print-page-number-check-first
         \oldStylePageNum""
@@ -35,14 +35,14 @@
         \fill-line{\headerLine}
   }
   evenHeaderMarkup = \markup {
-     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #8.5
+     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #12.5
      \combine
         \on-the-fly #print-page-number-check-first
         \oldStylePageNum""
         \fill-line{\headerLine}
   }
 }
-#(set-global-staff-size 15) \paper{ #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 15 20))) }
+#(set-global-staff-size 18) \paper{ #(define fonts (make-pango-font-tree "Garamond Premier Pro" "Garamond Premier Pro" "Garamond Premier Pro" (/ 18 20))) }
 global = {
   \key bes \major
   \time 2/4
@@ -266,6 +266,10 @@ pianoLH = \relative c' {
 %    \new PianoStaff << \new Staff { \new Voice { \pianoRH } } \new Staff { \clef "bass" \pianoLH } >>
   >>
   \layout {
+  \context {
+    \Lyrics
+    \override LyricText #'font-size = #1.3
+  }
     \context {
       \Score
       %\override SpacingSpanner #'base-shortest-duration = #(ly:make-moment 1 8)
@@ -277,7 +281,7 @@ pianoLH = \relative c' {
     }
   }
   \header {
-    title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"How Great Our Joy!"}}
+    title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #18 \smallCapsOldStyle"How Great Our Joy!"}}
     poet = \markup\oldStyleNum"German Carol"
     meter = \markup\oldStyleNum"Translated by Theodore Baker (1851–1934)"
     composer = \markup\oldStyleNum"German Melody"
@@ -310,6 +314,10 @@ global = {
   \time 4/4
   \autoBeamOff
 }
+globalNoTime = {
+  \key a \major
+  \autoBeamOff
+}
 sopMusic = \relative c' {
   \once \override Score.RehearsalMark #'self-alignment-X = #LEFT
   \mark \markup\italic "Con spirito."
@@ -325,8 +333,8 @@ sopMusic = \relative c' {
   \partial 2 a2 \bar "||" \break
 }
 sopMusicII = \relative c' {
-  \partial 2 r2 |
-  e4 a a gis |
+  \partial 2 b'2\rest |
+  e,4 a a gis |
   a cis fis, gis |
   a cis b gis |
   
@@ -353,7 +361,7 @@ altoMusic = \relative c' {
   cis2 \bar "||"
 }
 altoMusicII = \relative c' {
-  r2 |
+  s2 |
   cis4 e e e |
   e a8[ gis] fis4 fis |
   fis a eis eis |
@@ -452,7 +460,7 @@ bassMusicII = \relative c {
   e2.\fermata \bar "|."
 }
 bassIIMusic = \relative c {
-  a2\rest |
+  g2\rest |
   a4. cis8 e4 e |
   a, a b b |
   cis cis cis cis |
@@ -536,7 +544,6 @@ pianoLH = \relative c' {
     \new Lyrics = sopranos \with { \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) }
     \new Staff = women <<
       \set Staff.explicitKeySignatureVisibility = #end-of-line-invisible
-      \override Staff.TimeSignature #'stencil = ##f
       \new Voice = "sopranos" { \voiceOne << \global \sopMusic >> }
       \new Voice = "altos" { \voiceTwo << \global \altoMusic >> }
     >>
@@ -549,7 +556,6 @@ pianoLH = \relative c' {
     \new Lyrics = "altos"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWords
    \new Staff = men <<
       \set Staff.explicitKeySignatureVisibility = #end-of-line-invisible
-      \override Staff.TimeSignature #'stencil = ##f
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }
       \new Voice = "basses" { \voiceTwo << \global \bassMusic >> }
@@ -558,32 +564,27 @@ pianoLH = \relative c' {
     \new Lyrics \with { alignBelowContext = #"men" } \lyricsto "basses" \bassWords
   >>
    \new ChoirStaff <<
-    \new Staff = womenII << 
+    \new Staff = womenII <<
       \set Staff.explicitKeySignatureVisibility = #end-of-line-invisible
-      \override Staff.TimeSignature #'stencil = ##f
-      \new Voice = "sopranosII" { \global s1*8 \voiceOne \sopMusicII }
-      \new Voice = "altosII" { \global s1*8 \voiceTwo \altoMusicII }
+      \new Voice = "sopranosII" { \globalNoTime s1*8 \voiceOne \sopMusicII }
+      \new Voice = "altosII" { \globalNoTime s1*8 \voiceTwo \altoMusicII }
     >>
     \new Lyrics \with { alignBelowContext = #"womenII" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranosII" \chorusWords
 %    \new Staff = altosII <<
-%      \set Staff.explicitKeySignatureVisibility = #end-of-line-invisible
-%      \override Staff.TimeSignature #'stencil = ##f
-%      \new Voice = "altosII" { \global s1*8 \altoMusicII }
+%      \new Voice = "altosII" { \globalNoTime s1*8 \altoMusicII }
 %    >>
 %    \new Lyrics \with { alignBelowContext = #"altosII" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altosII" \chorusWords
     \new Staff = tenorsII <<
       \set Staff.explicitKeySignatureVisibility = #end-of-line-invisible
-      \override Staff.TimeSignature #'stencil = ##f
       \clef "G_8"
-      \new Voice = "tenorsII" { \global s1*8 \tenorMusicII }
+      \new Voice = "tenorsII" { \globalNoTime s1*8 \tenorMusicII }
     >>
 %    \new Lyrics \with { alignBelowContext = #"tenorsII" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "tenorsII" \chorusWords
     \new Staff = bassesII <<
       \set Staff.explicitKeySignatureVisibility = #end-of-line-invisible
-      \override Staff.TimeSignature #'stencil = ##f
       \clef bass
-      \new Voice = "bassI" { \voiceOne s1*8 << \global \bassMusicII >> }
-      \new Voice = "bassII" { \voiceTwo s1*8 << \global \bassIIMusic >> }
+      \new Voice = "bassI" { \globalNoTime \voiceOne s1*8 << \bassMusicII >> }
+      \new Voice = "bassII" { \globalNoTime \voiceTwo s1*8 << \bassIIMusic >> }
     >>
     \new Lyrics \with { alignBelowContext = #"tenorsII" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "bassI" \bassWordsChorus
     \new Lyrics \with { alignBelowContext = #"bassesII" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "bassII" \chorusWordsBass
@@ -591,19 +592,21 @@ pianoLH = \relative c' {
    >>
    \new PianoStaff <<
       \new Staff {
-        \set Staff.explicitKeySignatureVisibility = #end-of-line-invisible
-        \override Staff.TimeSignature #'stencil = ##f
         \new Voice { \global \pianoRH }
       }
       \new Staff {
-        \set Staff.explicitKeySignatureVisibility = #end-of-line-invisible
-        \override Staff.TimeSignature #'stencil = ##f
         \clef "bass" \global \pianoLH
       }
    >>
   >>
   \layout {
-    #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 14.5 20)))
+  \context {
+    \Lyrics
+    \override LyricText #'font-size = #1.3
+  }
+
+%6.14 \context {\Lyrics\override LyricText #'font-size = #0.8 }
+    #(define fonts (make-pango-font-tree "Garamond Premier Pro" "Garamond Premier Pro" "Garamond Premier Pro" (/ 18 20)))
     \context {
       \Score
       %\override SpacingSpanner #'base-shortest-duration = #(ly:make-moment 1 8)
@@ -616,7 +619,7 @@ pianoLH = \relative c' {
     }
   }
   \header {
-    title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Jesus in the Manger"}}
+    title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #18 \smallCapsOldStyle"Jesus in the Manger"}}
     poet = \markup\oldStyleNum"Translated by Rev. H.R. Bramley (1833–1917) from Latin"
     composer = \markup\oldStyleNum"Henry Smart (1813–1879)"
     tagline = \markup { "from" \italic {Christmas Carols, New and Old}}

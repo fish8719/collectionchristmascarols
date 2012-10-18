@@ -1,7 +1,7 @@
 ﻿\version "2.14.2"
 \include "../util.ly"
 \header {
-  title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Personent hodie"}}
+  title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #18 \smallCapsOldStyle"Personent hodie"}}
   poet = \markup \concat{"from " \italic "Piæ Cantiones" \oldStyleNum", 1582"}
   composer = \markup \concat{"from " \italic "Piæ Cantiones" \oldStyleNum", 1582"}
   arranger = \markup\oldStyleNum"Arranged by George Ratcliffe Woodward (1848–1934)"
@@ -9,8 +9,8 @@
 }
 \paper {
   %print-all-headers = ##t
-  paper-height = 9\in
-  paper-width = 6\in
+  paper-height = 11\in
+  paper-width = 8.5\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   %system-system-spacing =
@@ -21,15 +21,15 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
+  inner-margin = 1\in
+  outer-margin = 0.75\in
+  top-margin = 0.26\in
   bottom-margin = 0.25\in
   first-page-number = #197
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
   oddHeaderMarkup = \markup\fill-line{
-     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #8.5
+     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #12.5
      \combine 
         \fill-line{"" \on-the-fly #print-page-number-check-first
         \oldStylePageNum""
@@ -37,14 +37,14 @@
         \fill-line{\headerLine}
   }
   evenHeaderMarkup = \markup {
-     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #8.5
+     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #12.5
      \combine
         \on-the-fly #print-page-number-check-first
         \oldStylePageNum""
         \fill-line{\headerLine}
   }
 }
-#(set-global-staff-size 15) \paper{ #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 15 20))) }
+#(set-global-staff-size 18) \paper{ #(define fonts (make-pango-font-tree "Garamond Premier Pro" "Garamond Premier Pro" "Garamond Premier Pro" (/ 18 20))) }
 global = {
   \key d \major
   \time 4/4
@@ -52,25 +52,25 @@ global = {
 }
 
 sopMusic = \relative c' {
-  \partial 2 e4 e |
+  e4 e |
   b'2 a4 a b2 b4 b |
   e2 cis4 d |
   b2 a4 b |
   
   d2 a4 b |
-  g1 |
+  g2 |
   fis4 e fis d |
   e2 e |
   fis4 g a d, |
   
   e2 e |
-  b'\rest fis4 g |
+  fis4 g |
   a2 a |
   a g4 a |
   b2 b |
   b fis4 g |
   a2 g4 fis |
-  e1 |
+  e2 |
   fis4 e e d |
   e2 e\fermata \bar "|."
 }
@@ -86,20 +86,20 @@ altoMusic = \relative c' {
   fis2 fis4 g |
   
   fis2 fis4 fis |
-  e1 |
+  e2 |
   d4 cis cis d |
   cis2 b |
   d4 e e d |
   
   b2 b |
-  s d4 d |
+  d4 d |
   fis2 e |
   fis g4 fis |
   g2 fis |
   
   g fis4 d |
   d2 e4 dis |
-  e1 |
+  e2 |
   d4 b a a |
   cis2 b \bar "|."
 }
@@ -172,20 +172,20 @@ tenorMusic = \relative c' {
   d2 d4 d |
   
   d2 d4 d |
-  c2( b) |
+  c4( b) |
   a4 a a fis |
   a2 g |
   b4 b a a |
   
   a( fis) gis2 |
-  s a4 b |
+  a4 b |
   d2 d4( cis) |
   d2 d4 c |
   e2 e4( dis) |
   
   e2 d4 b |
   a2 b4 a |
-  b1 |
+  b2 |
   a4 g e fis |
   a2 gis \bar "|."
 }
@@ -201,20 +201,20 @@ bassMusic = \relative c {
   b2 d4 g |
   
   d2 d4 b |
-  c1 |
+  c2 |
   d4  a fis b |
   a2 e' |
   b4 e cis fis |
   
   e2 e |
-  d\rest d4 g |
+  d4 g |
   fis( g) a2 |
   d, b'4 a |
   g( a) b2 |
   
   e, b'4 g |
   fis2 e4 fis |
-  g1 |
+  g2 |
   d4 e cis d |
   a2 e'\fermata \bar "|."
 }
@@ -252,6 +252,10 @@ pianoLH = \relative c' {
 %    \new PianoStaff << \new Staff { \new Voice { \pianoRH } } \new Staff { \clef "bass" \pianoLH } >>
   >>
   \layout {
+  \context {
+    \Lyrics
+    \override LyricText #'font-size = #1.3
+  }
     \context {
       \Score
       %\override SpacingSpanner #'base-shortest-duration = #(ly:make-moment 1 8)

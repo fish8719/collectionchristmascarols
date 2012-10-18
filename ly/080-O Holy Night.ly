@@ -1,14 +1,14 @@
 ﻿\version "2.14.2"
 \include "../util.ly"
 \header {
-  title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"O Holy Night"}}
-  subtitle = \markup{\override #'(font-name . "Garamond Premier Pro"){ \abs-fontsize #10.5 "(Cantique de Noël)"}}
+  title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #18 \smallCapsOldStyle"O Holy Night"}}
+  subtitle = \markup{\override #'(font-name . "Garamond Premier Pro"){ \abs-fontsize #12.5 "(Cantique de Noël)"}}
   composer = \markup\oldStyleNum"Adolphe Adam (1803–1856)"
   tagline = \markup { "from" \concat{\italic "Christmas Carols and Hymns for School and Choir" \oldStyleNum", 1910"}}
 }
 \paper {
-  paper-height = 9\in
-  paper-width = 6\in
+  paper-height = 11\in
+  paper-width = 8.5\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -26,22 +26,22 @@
        (minimum-distance . 0)
        (padding . 0)
        (stretchability . 0))
-%8.5x11  system-system-spacing #'stretchability = 100
-%8.5x11  markup-system-spacing #'stretchability = 100
-%8.5x11  top-system-spacing #'stretchability = 80
-%8.5x11  last-bottom-spacing #'stretchability = 80
+system-system-spacing #'stretchability = 100
+markup-system-spacing #'stretchability = 100
+top-system-spacing #'stretchability = 80
+last-bottom-spacing #'stretchability = 80
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
+  inner-margin = 1\in
+  outer-margin = 0.75\in
+  top-margin = 0.26\in
   bottom-margin = 0.25\in
   first-page-number = #080
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
   oddHeaderMarkup = \markup\fill-line{
-     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #8.5
+     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #12.5
      \combine 
         \fill-line{"" \on-the-fly #print-page-number-check-first
         \oldStylePageNum""
@@ -49,17 +49,24 @@
         \fill-line{\headerLine}
   }
   evenHeaderMarkup = \markup {
-     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #8.5
+     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #12.5
      \combine
         \on-the-fly #print-page-number-check-first
         \oldStylePageNum""
         \fill-line{\headerLine}
   }
 }
-#(set-global-staff-size 15) \paper{ #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 15 20))) }
+#(set-global-staff-size 18) \paper{ #(define fonts (make-pango-font-tree "Garamond Premier Pro" "Garamond Premier Pro" "Garamond Premier Pro" (/ 18 20))) }
 global = {
   \key des \major
   \time 4/4
+  \autoBeamOff
+  #'line-break-system-details #'((alignment-distances . (-100)))
+  \override DynamicLineSpanner #'staff-padding = #0.0
+  \override DynamicLineSpanner #'Y-extent = #'(-1 . 1)
+}
+globalNoTime = {
+  \key des \major
   \autoBeamOff
   #'line-break-system-details #'((alignment-distances . (-100)))
   \override DynamicLineSpanner #'staff-padding = #0.0
@@ -69,7 +76,7 @@ global = {
 sopMusicPre = \relative c' {
   \tempo \markup\italic"Andante maestoso" 4 = 72
   r2 | r1 | r1 | r1 | \mark \markup { \musicglyph #"scripts.segno" }
-  r2 f4^\mf f8.\noBeam f16 | 
+  r2 f4^\mf f8.\noBeam f16 | \break
   
   \slurDotted aes4( aes8.\noBeam) aes16\noBeam bes8.\noBeam( bes16\noBeam) ges8.\noBeam bes16 |
   des2 aes8\noBeam r16 aes16 f8.\noBeam ees16 | \break
@@ -477,16 +484,15 @@ pianoLH = \relative c {
    \new ChoirStaff <<
 %    \new Lyrics = sopranos { s1 }
     \new Staff = women {
-       \set Staff.explicitKeySignatureVisibility = #end-of-line-invisible
-         \override Staff.TimeSignature #'stencil = ##f
+      \set Staff.explicitKeySignatureVisibility = #end-of-line-invisible
       \new Voice = "sopranos" {
         \global \sopMusicPre 
       }
       << \new Voice = "chorus" {
-        \voiceOne \global \sopMusic
+        \voiceOne \globalNoTime \sopMusic
       }
       \new Voice = "altos" {
-        \voiceTwo \global \altoMusic
+        \voiceTwo \globalNoTime \altoMusic
       }
       >>
     }
@@ -505,10 +511,10 @@ pianoLH = \relative c {
       \clef bass
       \new Voice = "tenors" {
         \voiceOne
-        { s1*29 s2 \global \tenorMusic }
+        { s1*29 s2 \globalNoTime \tenorMusic }
       }
       \new Voice = "basses" {
-        \voiceTwo { s1*29 s2 \global \bassMusic }
+        \voiceTwo { s1*29 s2 \globalNoTime \bassMusic }
       }
     >>
 %    \new Lyrics = basses { s1 }
@@ -525,13 +531,17 @@ pianoLH = \relative c {
 %    \context Lyrics = tenors \lyricsto tenors \tenorWords
 %    \context Lyrics = basses \lyricsto basses \bassWords
    >>
-    \new PianoStaff << \new Staff { \set Staff.explicitKeySignatureVisibility = #end-of-line-invisible
-         \override Staff.TimeSignature #'stencil = ##f
-         \key des \major \new Voice { \pianoRH } } \new Staff {\set Staff.explicitKeySignatureVisibility = #end-of-line-invisible
-         \override Staff.TimeSignature #'stencil = ##f
-         \key des \major \clef "bass" \pianoLH } >>
+    \new PianoStaff << \new Staff {
+         
+         \key des \major \time 4/4 \new Voice { \pianoRH } } \new Staff {
+         
+         \key des \major \time 4/4 \clef "bass" \pianoLH } >>
   >>
   \layout {
+  \context {
+    \Lyrics
+    \override LyricText #'font-size = #1.3
+  }
    % ragged-right = ##t
     \context {
       \Score

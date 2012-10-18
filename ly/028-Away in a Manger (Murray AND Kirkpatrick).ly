@@ -5,8 +5,8 @@
 }
 \paper {
   print-all-headers = ##t
-  paper-height = 9\in
-  paper-width = 6\in
+  paper-height = 11\in
+  paper-width = 8.5\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   score-markup-spacing =
@@ -37,15 +37,15 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
+  inner-margin = 1\in
+  outer-margin = 0.75\in
+  top-margin = 0.26\in
   bottom-margin = 0.25\in
   first-page-number = #028
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
   oddHeaderMarkup = \markup\fill-line{
-     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #8.5
+     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #12.5
      \combine 
         \fill-line{"" \on-the-fly #print-page-number-check-first
         \oldStylePageNum""
@@ -53,17 +53,17 @@
         \fill-line{\headerLine}
   }
   evenHeaderMarkup = \markup {
-     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #8.5
+     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #12.5
      \combine
         \on-the-fly #print-page-number-check-first
         \oldStylePageNum""
         \fill-line{\headerLine}
   }
 }
-#(set-global-staff-size 13.6) \paper{ #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 13.6 20))) }
-%8.5x11 #(set-global-staff-size 17.8) \paper{ #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 17.8 20))) }
+#(set-global-staff-size 18) \paper{ #(define fonts (make-pango-font-tree "Garamond Premier Pro" "Garamond Premier Pro" "Garamond Premier Pro" (/ 18 20))) }
+#(set-global-staff-size 17.8) \paper{ #(define fonts (make-pango-font-tree "Garamond Premier Pro" "Garamond Premier Pro" "Garamond Premier Pro" (/ 17.8 20))) }
 %{IF_LESSER
-#(set-global-staff-size 15) \paper{ #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 15 20))) }
+#(set-global-staff-size 18) \paper{ #(define fonts (make-pango-font-tree "Garamond Premier Pro" "Garamond Premier Pro" "Garamond Premier Pro" (/ 18 20))) }
 %}%END_IF_LESSER
 global = {
   \key f \major
@@ -233,11 +233,15 @@ bassWords = \lyricmode {
 %    \new PianoStaff << \new Staff { \new Voice { \pianoRH } } \new Staff { \clef "bass" \pianoLH } >>
   >>
   \layout {
+  \context {
+    \Lyrics
+    \override LyricText #'font-size = #1.3
+  }
     %#(layout-set-staff-size 13)
-    #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 14 20)))
-    %8.5x11 #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 17.8 20)))
+    #(define fonts (make-pango-font-tree "Garamond Premier Pro" "Garamond Premier Pro" "Garamond Premier Pro" (/ 18 20)))
+    #(define fonts (make-pango-font-tree "Garamond Premier Pro" "Garamond Premier Pro" "Garamond Premier Pro" (/ 17.8 20)))
 %{IF_LESSER
-#(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 15 20)))
+#(define fonts (make-pango-font-tree "Garamond Premier Pro" "Garamond Premier Pro" "Garamond Premier Pro" (/ 18 20)))
 %}%END_IF_LESSER
     \context {
       \Score
@@ -250,7 +254,7 @@ bassWords = \lyricmode {
     }
   }
   \header {
-    title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Away In A Manger"}}
+    title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #18 \smallCapsOldStyle"Away In A Manger"}}
     poet = \markup\oldStyleNum"Anonymous"
     composer = \markup\oldStyleNum"James Ramsey Murray (1841–1905)"
     tagline = ""%\markup { "from" \italic {ChristmasCarolMusic.org}}
@@ -377,7 +381,7 @@ altoWordsIV = \lyricmode {
 
 tenorMusic = \relative c' {
   c4 |
-  c c g |
+  c d g, |
   c c c8[ g] |
   a4 a bes |
   d2 c4 |
@@ -386,7 +390,7 @@ tenorMusic = \relative c' {
   
   bes4 bes g |
   g2 c4 |
-  c c g |
+  c d g, |
   c c c8[ g] |
   a4 a bes |
   d2 c4 |
@@ -447,11 +451,15 @@ bassWords = \lyricmode {
 %    \new PianoStaff << \new Staff { \new Voice { \pianoRH } } \new Staff { \clef "bass" \pianoLH } >>
   >>
   \layout {
+  \context {
+    \Lyrics
+    \override LyricText #'font-size = #1.3
+  }
     %#(layout-set-staff-size 13)
-    #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 13.2 20)))
-    %8.5x11 #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 17.8 20)))
+    #(define fonts (make-pango-font-tree "Garamond Premier Pro" "Garamond Premier Pro" "Garamond Premier Pro" (/ 18 20)))
+    #(define fonts (make-pango-font-tree "Garamond Premier Pro" "Garamond Premier Pro" "Garamond Premier Pro" (/ 17.8 20)))
 %{IF_LESSER
-#(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 15 20)))
+#(define fonts (make-pango-font-tree "Garamond Premier Pro" "Garamond Premier Pro" "Garamond Premier Pro" (/ 18 20)))
 %}%END_IF_LESSER
     \context {
       \Score
@@ -462,11 +470,12 @@ bassWords = \lyricmode {
       % Remove all empty staves
       % \Staff \RemoveEmptyStaves \override VerticalAxisGroup #'remove-first = ##t
     }
-%8.5x11g    \context {\Lyrics \override LyricText #'font-size = #0.9 }
-%6.14g    \context {\Lyrics \override LyricText #'font-size = #0.9 }
+\context {\Lyrics \override LyricText #'font-size = #0.7 }
+%6.14g    \context {\Lyrics \override LyricText #'font-size = #0.7 }
+%6x9 \context {\Lyrics\override LyricText #'font-size = #1.2 }
   }
   \header {
-    title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Away In A Manger"}}
+    title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #18 \smallCapsOldStyle"Away In A Manger"}}
     poet = \markup\oldStyleNum"Anonymous"
     composer = \markup\oldStyleNum"William Kirkpatrick (1838–1921)"
   }

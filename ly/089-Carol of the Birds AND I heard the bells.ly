@@ -2,8 +2,8 @@
 \include "../util.ly"
 \paper {
   print-all-headers = ##t
-  paper-height = 9\in
-  paper-width = 6\in
+  paper-height = 11\in
+  paper-width = 8.5\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   system-system-spacing =
@@ -24,15 +24,15 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
+  inner-margin = 1\in
+  outer-margin = 0.75\in
+  top-margin = 0.26\in
   bottom-margin = 0.25\in
   first-page-number = #089
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
   oddHeaderMarkup = \markup\fill-line{
-     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #8.5
+     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #12.5
      \combine 
         \fill-line{"" \on-the-fly #print-page-number-check-first
         \oldStylePageNum""
@@ -40,14 +40,14 @@
         \fill-line{\headerLine}
   }
   evenHeaderMarkup = \markup {
-     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #8.5
+     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #12.5
      \combine
         \on-the-fly #print-page-number-check-first
         \oldStylePageNum""
         \fill-line{\headerLine}
   }
 }
-#(set-global-staff-size 15) \paper{ #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 15 20))) }
+#(set-global-staff-size 18) \paper{ #(define fonts (make-pango-font-tree "Garamond Premier Pro" "Garamond Premier Pro" "Garamond Premier Pro" (/ 18 20))) }
 global = {
   \key bes \major
   \time 4/4
@@ -109,7 +109,7 @@ altoWordsII = \lyricmode {
 altoWordsIII = \lyricmode {
   \dropLyricsIX
   \set stanza = #"3. "
-  Hark how the Green -- finch bears his part,
+  Hark how the Green -- finch bears his __ part,
   Phi -- lo -- mel, too, with ten -- der heart,
   Chants from her leaf -- y dark re -- treat
   \markup\italic Re, \markup\italic mi, \markup\italic fa, \markup\italic sol, in ac -- cents sweet.
@@ -194,7 +194,16 @@ pianoLH = \relative c' {
 %    \new PianoStaff << \new Staff { \new Voice { \pianoRH } } \new Staff { \clef "bass" \pianoLH } >>
   >>
   \layout {
-    #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 14.6 20)))
+  \context {
+    \Lyrics
+    \override LyricText #'font-size = #1.3
+  }
+%6x9  \context {\Lyrics\override LyricText #'font-size = #0.75 }
+%6.14 \context {\Lyrics\override LyricText #'font-size = #0.25 }
+%{IF_LESSER
+\context {\Lyrics\override LyricText #'font-size = #0.6 }
+%}%END_IF_LESSER
+    #(define fonts (make-pango-font-tree "Garamond Premier Pro" "Garamond Premier Pro" "Garamond Premier Pro" (/ 18 20)))
     \context {
       \Score
       %\override SpacingSpanner #'base-shortest-duration = #(ly:make-moment 1 8)
@@ -206,7 +215,7 @@ pianoLH = \relative c' {
     }
   }
   \header {
-    title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Carol of the Birds"}}
+    title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #18 \smallCapsOldStyle"Carol of the Birds"}}
     poet = \markup\oldStyleNum"Traditional"
     composer = \markup\oldStyleNum"Bas-Quercey Carol"
     tagline = \markup \concat{ "from " \italic"Carols Old and Carols New" \oldStyleNum", 1916, via " \italic"HymnsAndCarolsOfChristmas.com" }
@@ -371,6 +380,10 @@ pianoLH = \relative c' {
 %    \new PianoStaff << \new Staff { \new Voice { \pianoRH } } \new Staff { \clef "bass" \pianoLH } >>
   >>
   \layout {
+  \context {
+    \Lyrics
+    \override LyricText #'font-size = #1.3
+  }
     \context {
       \Score
       %\override SpacingSpanner #'base-shortest-duration = #(ly:make-moment 1 8)
@@ -382,7 +395,7 @@ pianoLH = \relative c' {
     }
   }
   \header {
-    title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"I Heard the Bells on Christmas Day"}}
+    title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #18 \smallCapsOldStyle"I Heard the Bells on Christmas Day"}}
     poet = \markup\oldStyleNum"Henry Wadsworth Longfellow (1807–1882)"
     composer = \markup\oldStyleNum"John Baptiste Calkin (1827–1905)"
     tagline = \markup\concat{"from "\italic"HymnsAndCarolsOfChristmas.com"}

@@ -1,15 +1,15 @@
 ﻿\version "2.14.2"
 \include "../util.ly"
 \header {
-  title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"In Terra Pax"}}
+  title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #18 \smallCapsOldStyle"In Terra Pax"}}
   poet = \markup\oldStyleNum"Mrs. Alderson"
   composer = \markup\oldStyleNum"John Bacchus Dykes (1823–1876)"
   tagline = \markup { "from" \italic {Christmas Carols, New and Old}}
 }
 \paper {
   %print-all-headers = ##t
-  paper-height = 9\in
-  paper-width = 6\in
+  paper-height = 11\in
+  paper-width = 8.5\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   %system-system-spacing =
@@ -20,15 +20,15 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.5\in
-  outer-margin = 0.25\in
-  top-margin = 0.25\in
+  inner-margin = 1\in
+  outer-margin = 0.75\in
+  top-margin = 0.26\in
   bottom-margin = 0.25\in
   first-page-number = #188
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
   oddHeaderMarkup = \markup\fill-line{
-     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #8.5
+     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #12.5
      \combine 
         \fill-line{"" \on-the-fly #print-page-number-check-first
         \oldStylePageNum""
@@ -36,17 +36,24 @@
         \fill-line{\headerLine}
   }
   evenHeaderMarkup = \markup {
-     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #8.5
+     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #12.5
      \combine
         \on-the-fly #print-page-number-check-first
         \oldStylePageNum""
         \fill-line{\headerLine}
   }
 }
-#(set-global-staff-size 15) \paper{ #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 15 20))) }
+#(set-global-staff-size 18) \paper{ #(define fonts (make-pango-font-tree "Garamond Premier Pro" "Garamond Premier Pro" "Garamond Premier Pro" (/ 18 20))) }
 global = {
   \key f \major
   \time 6/4
+  \autoBeamOff
+  \override DynamicLineSpanner #'staff-padding = #-1.0
+  \override DynamicLineSpanner #'Y-extent = #'(-0.35 . 1)
+  \override DynamicText #'X-offset = #-4
+}
+globalNoTime = {
+  \key f \major
   \autoBeamOff
   \override DynamicLineSpanner #'staff-padding = #-1.0
   \override DynamicLineSpanner #'Y-extent = #'(-0.35 . 1)
@@ -135,9 +142,9 @@ sopMusic = \relative c' {
   bes2\rest f'4 e2 d4 |
   c2. a |
   g c |
-  a2 e'4\rest e2.\rest |
+  a2 f'4\rest f2.\rest |
   
-  e2\rest f4 e2 d4 |
+  f2\rest f4 e2 d4 |
   c2.~ c |
   f~ f |
   a,~ a( |
@@ -168,6 +175,12 @@ dropLyrics = {
   \override LyricHyphen #'extra-offset = #'(0 . -2.0)
   \override LyricExtender #'extra-offset = #'(0 . -2.0)
   \override StanzaNumber #'extra-offset = #'(0 . -2.0)
+}
+dropLyricsII = {
+  \override LyricText #'extra-offset = #'(0 . -0.2)
+  \override LyricHyphen #'extra-offset = #'(0 . -0.2)
+  \override LyricExtender #'extra-offset = #'(0 . -0.2)
+  \override StanzaNumber #'extra-offset = #'(0 . -0.2)
 }
 
 altoMusic = \relative c' {
@@ -301,9 +314,8 @@ altoWords = {
     Heav’n’s Peace to earth \unset associatedVoice re -- sto -- ring.
     And Peace E -- ter -- nal, Je -- su, grant, we pray. __
     
-    \dropLyrics
+    \dropLyricsII
     \markup\italic “In \markup\italic Cæ -- \markup\italic lo __ \markup\italic Pax, __
-    \dropLyricsV
     \set associatedVoice = "sopranos"
     \markup\italic Et __ \markup\italic in \unset associatedVoice \markup\italic Ex -- \markup\italic cel -- \markup\italic sis,
     \set associatedVoice = "sopranos"
@@ -345,7 +357,9 @@ altoWordsIII = \lyricmode {
   \unset associatedVoice
   o’er storm -- y
   \set ignoreMelismata = ##t
+  \set associatedVoice = "sopranos"
   wa -- ters!
+  \unset associatedVoice
   \unset ignoreMelismata
   When shall the flood of woe de -- crease?
   \set associatedVoice = "sopranos"
@@ -430,12 +444,14 @@ tenorMusic = \relative c' {
 
   bes2 a4 g2 f4 |
   e2.~ e2 \bar "||"
-  c'4\rest^\f |
-  c1.\rest |
-  c2.\rest c2\rest a4 |
+}
+tenorMusicII = \relative c' {
+  r4_\f |
+  r1. |
+  r2. r2 a4 |
   a2. f2( bes4) |
   
-  a2.~ a2 s4 |
+  a2.~ a2 r4 |
   c2( bes4) a2 g4 |
   a2( g4) f2. |
   a2.( f |
@@ -448,14 +464,14 @@ tenorMusic = \relative c' {
   a2 b4 b2 g4 |
   a2. c |
   bes g |
-  a2 c4\rest c2.\rest |
+  a2 r4 r2. |
   
-  c2\rest a4 a2 a4 |
+  r2 a4 a2 a4 |
   a2 f4 g2 a4 |
   bes2 c4 d2 e4 |
-  f2 s4 s2. |
+  f2 r4 r2. |
   
-  s2 a,4 c2 bes4 |
+  r2 a,4 c2 bes4 |
   a2.( g2 a4) |
   bes2( c4 d2.) |
   c2.~ c |
@@ -468,7 +484,11 @@ tenorWords = \lyricmode {
   \markup\italic Pax, __ \markup\italic In \markup\italic ter -- \markup\italic ra \markup\italic Pax \markup\italic ho -- \markup\italic mi -- \markup\italic ni -- \markup\italic bus, __
   \markup\italic ho -- \markup\italic mi -- \markup\italic ni -- \markup\italic bus __ \markup\italic In \markup\italic ter -- \markup\italic ra "" "" ""
   
-  \repeat unfold 51 {\skip 1}
+  %\repeat unfold 51 {\skip 1}
+}
+tenorWordsII = \lyricmode {
+  \dropLyricsII
+  \markup\italic “In \markup\italic Cæ -- \markup\italic lo __ \markup\italic Pax, __
   \markup\italic Et __ \markup\italic in \markup\italic Ex -- \markup\italic cel -- \markup\italic sis, \markup\italic Glo -- \markup\italic ri -- \markup\italic a, __
   \markup\italic Glo -- \markup\italic ri -- \markup\italic a, \markup\italic In \markup\italic Cæ -- \markup\italic lo \markup\italic Pax,
   \markup\italic Et \markup\italic in \markup\italic Ex -- \markup\italic cel -- \markup\italic sis, \markup\italic Glo -- \markup\italic ri -- \markup\italic a.
@@ -535,11 +555,14 @@ bassMusic = \relative c {
   
   c2 c4 c2 c4 |
   c2.~ c2 \bar "||"
+}
+
+bassMusicII = \relative c {
   c4 |
   f2. d |
   f~ f2 f4 |
   f2. bes, |
-  f~ f2 d'4\rest |
+  f~ f2 r4 |
   a'2( g4) f2 e4 |
   d2.~ d |
   c2 f4 a2 d4 |
@@ -547,9 +570,9 @@ bassMusic = \relative c {
   c2 bes4 a2 g4 |
   f2. c2 c4 |
   c2.~ c |
-  d2 b4\rest b2.\rest |
+  d2 r4 r2. |
   
-  b2\rest g4 g2 |
+  r2 g,4 g2 |
   b4 |
   c2.~ c |
   c~ c2 c4 |
@@ -558,9 +581,9 @@ bassMusic = \relative c {
   f2 d4 c2 b4 |
   c2. c |
   c c |
-  f2 d4\rest d2.\rest |
+  f2 r4 r2. |
   
-  d2\rest d4 e2 e4 |
+  r2 d4 e2 e4 |
   f2.( e) |
   d( bes) |
   c~ c~ |
@@ -573,16 +596,19 @@ bassWords = \lyricmode {
   \repeat unfold 7 {\skip 1}
   \markup\italic Pax, __ \markup\italic Pax, __ \markup\italic ho -- \markup\italic mi -- \markup\italic ni -- \markup\italic bus, \markup\italic In \markup\italic ter -- \markup\italic ra \markup\italic Pax. __ ""
   
-  \repeat unfold 49 {\skip 1}
-  \markup\italic “In \markup\italic Cæ -- \markup\italic lo \markup\italic Pax,
-  \repeat unfold 4 {\skip 1}
+  %\repeat unfold 49 {\skip 1}
+}
+bassWordsII = \lyricmode {
+  \dropLyricsII
+  \markup\italic “In \markup\italic Cæ -- \markup\italic lo \markup\italic Pax, __
+  \markup\italic “In \markup\italic Cæ -- \markup\italic lo \markup\italic Pax, __
   \markup\italic Et __ \markup\italic in \markup\italic Ex -- \markup\italic cel -- \markup\italic sis,
   \markup\italic Et \markup\italic in \markup\italic Ex -- \markup\italic cel -- \markup\italic sis, \markup\italic Glo -- \markup\italic ri -- \markup\italic a,
   \markup\italic in \markup\italic Ex -- \markup\italic cel -- \markup\italic sis,
   \markup\italic Et \markup\italic in \markup\italic Ex -- \markup\italic cel -- \markup\italic sis, __
   \markup\italic In \markup\italic cæ -- \markup\italic lo, \markup\italic Pax,
   \markup\italic Et \markup\italic in \markup\italic Ex -- \markup\italic cel -- \markup\italic sis, \markup\italic Glo -- \markup\italic ri -- \markup\italic a,
-  \repeat unfold 5 {\skip 1}
+  \markup\italic Et \markup\italic in \markup\italic Ex -- \markup\italic cel -- \markup\italic sis, __
   \markup\italic Glo -- \markup\italic ri -- \markup\italic a.”
 }
 
@@ -598,14 +624,31 @@ pianoLH = \relative c' {
    \new ChoirStaff <<
 %    \new Lyrics = sopranos \with { \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) }
     \new Staff = women <<
+      \set Staff.explicitKeySignatureVisibility = #end-of-line-invisible
       \new Voice = "sopranos" { \voiceOne << \global \sopMusic >> }
       \new Voice = "altos" { \voiceTwo << \global \altoMusic >> }
     >>
-   \new Staff = men <<
+    {\new Staff = men <<
+      \set Staff.explicitKeySignatureVisibility = #end-of-line-invisible
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }
       \new Voice = "basses" { \voiceTwo << \global \bassMusic >> }
     >>
+     <<
+       \new Staff = tenor {
+          \override Staff.TimeSignature #'stencil = ##f
+          \set Staff.explicitKeySignatureVisibility = #end-of-line-invisible
+          \clef "G_8" \new Voice = "tenorsII" { \globalNoTime \tenorMusicII }
+       }
+       \new Staff = bass {
+          \override Staff.TimeSignature #'stencil = ##f
+          \set Staff.explicitKeySignatureVisibility = #end-of-line-invisible
+          \clef bass \new Voice = "bassesII" { \globalNoTime \bassMusicII }
+       }
+      \new Lyrics \with { alignBelowContext = #"tenor" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "tenorsII" \tenorWordsII
+      \new Lyrics \with { alignBelowContext = #"bass" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "bassesII" \bassWordsII
+     >>
+    }
     \new Lyrics \with { alignAboveContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "sopranos" \sopWords
      \new Lyrics = "altosVI"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsVI
     \new Lyrics = "altosV"  \with { alignBelowContext = #"women" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1))} \lyricsto "altos" \altoWordsV
@@ -619,6 +662,10 @@ pianoLH = \relative c' {
 %    \new PianoStaff << \new Staff { \new Voice { \pianoRH } } \new Staff { \clef "bass" \pianoLH } >>
   >>
   \layout {
+  \context {
+    \Lyrics
+    \override LyricText #'font-size = #1.3
+  }
     \context {
       \Score
       %\override SpacingSpanner #'base-shortest-duration = #(ly:make-moment 1 8)
@@ -626,7 +673,7 @@ pianoLH = \relative c' {
     }
     \context {
       % Remove all empty staves
-      % \Staff \RemoveEmptyStaves \override VerticalAxisGroup #'remove-first = ##t
+      \Staff \RemoveEmptyStaves \override VerticalAxisGroup #'remove-first = ##t
     }
   }
 }
