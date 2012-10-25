@@ -135,7 +135,7 @@ altoWordsII = \lyricmode {
   
   \set stanza = #"5. "
   Psal -- lat al -- ti -- tu -- do cæ -- li,
-  psalli -- te om -- nes an -- ge -- li,
+  psal -- lant om -- nes an -- ge -- li,
   Quid -- quid est vir -- tu -- tis us -- quam
   psal -- lat in lau -- dem De -- i,
   Nul -- la lin -- gua -- rum si -- les -- cat,
@@ -157,7 +157,7 @@ altoWordsIII = \lyricmode {
   \set stanza = #"3. "
   Cor -- po -- ris for -- mam ca -- du -- ci,
   mem -- bra mor -- ti~ob -- no -- xi -- a
-  In -- du -- it, ne gens pe -- ri -- ret
+  In -- du -- it, ne gens per -- i -- ret
   pri -- mo -- plas -- ti~ex ger -- mi -- ne,
   Mer -- se -- rat quem lex pro -- fun -- do
   no -- xi -- a -- lis tar -- ta -- ro. __
