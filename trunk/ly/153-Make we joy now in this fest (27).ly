@@ -215,7 +215,7 @@ altoWordsII = \lyricmode {
   Him for to seek with their pre -- sen’s,
   \markup\italic Ver -- \markup\italic bum \markup\italic su -- \markup\italic per -- \markup\italic num
   \set associatedVoice = "sopranos"
-  \markup\italic pro -- \markup\italic di -- \markup\italic ens.
+  \markup\italic prod -- \markup\italic i -- \markup\italic ens.
   
   
   \set stanza = #"5. "

@@ -202,7 +202,7 @@ bassMusic = \relative c {
  \slurSolid
  f4 bes ees,2 |
  bes'4 aes g8\noBeam g fis4 |
- f8 bes,4. d4\rest ees8\noBeam ees |
+ f!8 bes,4. d4\rest ees8\noBeam ees |
  
  \slurDotted
  ees4 ees8\noBeam( ees) ees4 ees8\noBeam ees |
