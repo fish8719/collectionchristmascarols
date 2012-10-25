@@ -448,7 +448,7 @@ altoWordsIII = \lyricmode {
   \set stanza = #"3. "
   Hic in col -- li -- bus Sy -- chen,
   Iam nu -- tri -- tus sub Ru -- ben
-  Tran -- si -- it per Jor -- da -- nem
+  Trans -- i -- it per Jor -- da -- nem
   Sa -- li -- it in Beth -- le -- hem.
   
   \set stanza = #"6. "

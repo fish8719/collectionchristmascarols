@@ -1,8 +1,8 @@
 ﻿\version "2.14.2"
 \include "../util.ly"
 \header {
-  title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #15 \smallCapsOldStyle"Infant Holy, Infant Lowly"}}
-  subtitle = \markup{\override #'(font-name . "Garamond Premier Pro"){ \abs-fontsize #10.5 "(W Zlobie Lezy)"}}
+  title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #18 \smallCapsOldStyle"Infant Holy, Infant Lowly"}}
+  subtitle = \markup{\override #'(font-name . "Garamond Premier Pro"){ \abs-fontsize #12.5 "(W Żłobie Leży)"}}
   poet = \markup\oldStyleNum"Traditional Polish Carol"
   meter = \markup\oldStyleNum"Translated by Edith M. G. Reed (1885–1933)"
   composer = \markup\oldStyleNum"Traditional Polish Carol"
@@ -11,8 +11,8 @@
 }
 \paper {
   %print-all-headers = ##t
-  paper-height = 9\in
-  paper-width = 5.2734\in
+  paper-height = 11\in
+  paper-width = 8.5\in
   indent = 0\in
   %system-system-spacing = #'((basic-distance . 10) (padding . 0))
   %system-system-spacing =
@@ -23,15 +23,15 @@
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 0.1017\in
-  outer-margin = 0.1017\in
-  top-margin = 0.125\in
-  bottom-margin = 0.125\in
-  first-page-number = #176
+  inner-margin = 1\in
+  outer-margin = 0.75\in
+  top-margin = 0.26\in
+  bottom-margin = 0.25\in
+  first-page-number = #173
   print-first-page-number = ##t
   headerLine = \markup{\override #'(font-name . "Garamond Premier Pro") \smallCapsOldStyle"christmas"}
   oddHeaderMarkup = \markup\fill-line{
-     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #8.5
+     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #12.5
      \combine 
         \fill-line{"" \on-the-fly #print-page-number-check-first
         \oldStylePageNum""
@@ -39,14 +39,14 @@
         \fill-line{\headerLine}
   }
   evenHeaderMarkup = \markup {
-     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #8.5
+     \override #'(font-name . "Garamond Premier Pro")\abs-fontsize #12.5
      \combine
         \on-the-fly #print-page-number-check-first
         \oldStylePageNum""
         \fill-line{\headerLine}
   }
 }
-#(set-global-staff-size 15) \paper{ #(define fonts (make-pango-font-tree "GoudyOlSt BT" "Garamond Premier Pro" "Garamond Premier Pro" (/ 15 20))) }
+#(set-global-staff-size 18) \paper{ #(define fonts (make-pango-font-tree "Garamond Premier Pro" "Garamond Premier Pro" "Garamond Premier Pro" (/ 18 20))) }
 global = {
   \key g \major
   \time 3/4
@@ -101,11 +101,11 @@ altoWords = \lyricmode {
   In -- fant ho -- ly, in -- fant low -- ly
   For His bed a cat -- tle stall;
   Ox -- en low -- ing, lit -- tle know -- ing,
-  Christ the babe, is Lord of all.
+  Christ the Babe, is Lord of all.
   Swift are wing -- ing an -- gels sing -- ing,
   No -- ëls ring -- ing,
   tid -- ings bring -- ing:
-  Christ the babe is Lord of all.
+  Christ the Babe is Lord of all.
 }
 altoWordsII = \lyricmode {
   \dropLyricsV
@@ -115,9 +115,9 @@ Flocks were sleep -- ing, shep -- herds keep -- ing
 Vi -- gil till the morn -- ing new
 Saw the glo -- ry, heard the sto -- ry,
 Tid -- ings of a gos -- pel true.
-Thus re -- joic -- ing, free from sor -- orw,
+Thus re -- joic -- ing, free from sor -- row,
 Prais -- es voic -- ing greet the mor -- row:
-Christ the babe was born for all.
+Christ the Babe was born for all.
 }
 altoWordsIII = \lyricmode {
   \set stanza = #"3. "
@@ -210,6 +210,10 @@ pianoLH = \relative c' {
 %    \new PianoStaff << \new Staff { \new Voice { \pianoRH } } \new Staff { \clef "bass" \pianoLH } >>
   >>
   \layout {
+  \context {
+    \Lyrics
+    \override LyricText #'font-size = #1.3
+  }
     \context {
       \Score
       %\override SpacingSpanner #'base-shortest-duration = #(ly:make-moment 1 8)
