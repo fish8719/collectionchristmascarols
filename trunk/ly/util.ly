@@ -1,6 +1,4 @@
 ﻿\version "2.14.2"
-\include "../util.ly"
-\version "2.14.2"
 % Michael's utilities
 
 dropLyricsIV = {
