@@ -447,13 +447,13 @@ altoWordsIII = \lyricmode {
   \dropLyricsIX
   \set stanza = #"3. "
   Hic in col -- li -- bus Sy -- chen,
-  Iam nu -- tri -- tus sub Ru -- ben
+  Jam nu -- tri -- tus sub Ru -- ben
   Trans -- i -- it per Jor -- da -- nem
   Sa -- li -- it in Beth -- le -- hem.
   
   \set stanza = #"6. "
   A -- men di -- cas, a -- si -- ne;
-  Iam sa -- tur ex gra -- mi -- ne.
+  Jam sa -- tur ex gra -- mi -- ne.
   A -- men, a -- men i -- te -- ra
   As -- per -- na -- re ve -- te -- ra.
 }

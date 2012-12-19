@@ -106,7 +106,7 @@ altoWords = \lyricmode {
   \set stanza = #"1. "
   Quem pas -- to -- res lau -- da -- ve -- re,
   Qui -- bus an -- ge -- li di -- xe -- re,
-  “Ab -- sit vo -- bis iam ti -- me -- \set associatedVoice = "tenors"
+  “Ab -- sit vo -- bis jam ti -- me -- \set associatedVoice = "tenors"
   re,
   Na -- \unset associatedVoice
   tus est Rex glo -- ri -- æ,
@@ -338,7 +338,7 @@ altoWords = \lyricmode {
   \set stanza = #"1. "
   Quem pas -- to -- res lau -- da -- ve -- re,
   Qui -- bus an -- ge -- li di -- xe -- re,
-  “Ab -- sit vo -- bis iam ti -- me -- re,
+  “Ab -- sit vo -- bis jam ti -- me -- re,
   Na -- tus est rex glo -- ri -- æ.”
 }
 altoWordsII = \lyricmode {

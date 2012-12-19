@@ -2,9 +2,9 @@
 \include "../util.ly"
 \header {
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #18 \smallCapsOldStyle"Milford"}}
-  poet = \markup\oldStyleNum"Sir John Stepheson (1772–1833)"
-  composer = \markup\oldStyleNum"Sir John Stepheson (1772–1833)"
-  tagline = \markup \concat { "from " \italic "Original Sacred Harp" \oldStyleNum", 1911, via " \italic "books.google.com"}
+  poet = \markup\oldStyleNum"Jeremiah Clarke (1674–1707)"
+  composer = \markup\oldStyleNum"Joseph Stephenson (1728–1810)"
+  tagline = \markup \concat { "from " \italic "The American Vocalist: a selection of tunes, anthems, sentences, and hymns, old and new" \oldStyleNum", 1849, via " \italic "hymnary.org"}
 }
 \paper {
   %print-all-headers = ##t
@@ -59,10 +59,10 @@ sopMusic = \relative c'' {
   a4.( b8[ a b]) cis[ d] |
   e4 e b b |
   cis cis e e |
-  cis4.( b8 a4) e |
+  cis4.( b8 a4) gis |
   a2. gis4 |
   a2 cis |
-  b a |
+  b2. ais4 |
   \partial 2. b2.
   \repeat volta 2 {
     \partial 4 b4\rest |
@@ -111,14 +111,14 @@ altoMusic = \relative c' {
   a2. gis4 |
   fis2( e4) e |
   e2. e4 |
-  e2 a |
-  fis fis |
-  e2. |
+  e2 <fis a> |
+  fis2. fis4 |
+  fis2. |
   \repeat volta 2 {
     s4 |
     s1 |
     
-    s2. e4 |
+    s2. cis4 |
     e e a a |
     a1( |
     gis2.) fis4 |
@@ -128,14 +128,14 @@ altoMusic = \relative c' {
     e2 r2 |
     e2 gis4 a |
     e e a a |
-    gis2. e4 |
+    gis2. gis4 |
   }
   \alternative {
     {
-      e2.
+      a2.
     }
     {
-      e1
+      a1
     }
   }
 }
@@ -189,7 +189,7 @@ tenorMusic = \relative c' {
     cis cis e e |
     cis cis a a |
     e' e cis cis |
-    fis2( e4) d |
+    fis2( e4) dis |
     e2. r4 |
     r1 |
     r1 |
@@ -223,7 +223,7 @@ tenorWords = \lyricmode {
 bassMusic = \relative c' {
   r1 |
   a2 fis4 fis |
-  e4.( fis8[ e fis]) a4 |
+  e4.( fis8[ e fis]) gis4 |
   a2. a,4 |
   e'2. e4 |
   a a cis cis |
@@ -245,7 +245,7 @@ bassMusic = \relative c' {
     r2. e4 |
     a a fis fis |
     e2. a4 |
-    cis cis a( d |
+    <a cis> <a cis> a( d, |
     e2.) e4 |
   }
   \alternative {

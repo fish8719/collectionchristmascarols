@@ -351,7 +351,7 @@ altoWords = \lyricmode {
   \dropLyricsV
   \set stanza = #"1. "
   Flos de ra -- di -- ce Jes -- se, est na -- tus ho -- di -- e.
-  Quem no -- bis iam ad -- es -- se, læ -- ta -- mur u -- ni -- ce.
+  Quem no -- bis jam ad -- es -- se, læ -- ta -- mur u -- ni -- ce.
   Flos il -- le Je -- sus est.
   Ma -- ri -- a Vir -- go ra -- dix de qua flos or -- tus est.
 }

@@ -88,8 +88,8 @@ altoWords = \lyricmode {
   \set ignoreMelismata = ##t
   Tem -- pus ad -- est gra -- ti -- æ
   hoc quod op -- ta -- ba -- mus,
-  car -- mi -- na læ -- ti -- ti -- æ
-  de -- vo -- tæ re -- da -- mus.
+  Car -- mi -- na læ -- ti -- ti -- æ
+  de -- vo -- te red -- da -- mus.
 }
 altoWordsII = \lyricmode {
   \dropLyricsIV
@@ -99,7 +99,7 @@ altoWordsII = \lyricmode {
   \set ignoreMelismata = ##t
   De -- us ho -- mo fac -- tus est
   na -- tu -- ra mi -- ran -- te,
-  mun -- dus re -- no -- va -- tus est
+  Mun -- dus re -- no -- va -- tus est
   a Chris -- to re -- gnan -- te.
 }
 altoWordsIII = \lyricmode {
@@ -107,8 +107,8 @@ altoWordsIII = \lyricmode {
   \repeat unfold 21 {\skip1}
   \set stanza = #"3. "
   E -- ze -- chie -- lis por -- ta
-  clau -- sa per tran -- si -- tur,
-  un -- de lux est or -- ta,
+  clau -- sa per -- tran -- si -- tur,
+  Un -- de lux est or -- ta,
   sa -- lus in -- ve -- ni -- tur.
 }
 altoWordsIV = \lyricmode {
@@ -116,10 +116,10 @@ altoWordsIV = \lyricmode {
   \repeat unfold 21 {\skip1}
   \set stanza = #"4. "
   \set ignoreMelismata = ##t
-  Er -- go nos -- tra can -- ti -- o
-  psal -- lam iam in lu -- stro,
-  be -- ne -- di -- cat Do -- mi -- no,
-  Sa -- lus Re -- gi nos -- tro.
+  Er -- go nos -- tra con -- ti -- o
+  psal -- lat jam in lu -- stro,
+  Be -- ne -- di -- cat Do -- mi -- no,
+  sa -- lus Re -- gi nos -- tro.
 }
 altoWordsV = \lyricmode {
   \set stanza = #"5. "
