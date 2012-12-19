@@ -5,6 +5,8 @@
   subtitle = \markup{\override #'(font-name . "Garamond Premier Pro"){ \abs-fontsize #12.5 "(Cantique de Noël)"}}
   composer = \markup\oldStyleNum"Adolphe Adam (1803–1856)"
   tagline = \markup { "from" \concat{\italic "Christmas Carols and Hymns for School and Choir" \oldStyleNum", 1910"}}
+  poet = \markup\oldStyleNum"Placide Cappeau (1808–1877)"
+  meter = \markup\oldStyleNum"Translated by John Sullivan Dwight (1813–1893)"
 }
 \paper {
   paper-height = 11\in
@@ -394,7 +396,7 @@ pianoRH = \relative c {
       >>
     
     << {       \once\override DynamicText #'X-offset = #-6
-        des''8[_\f ees f des] bes[ des] c[ ges'16 bes,] |
+        des''8[_\f ees f des] bes[ des] c[ f16 bes,] |
         aes8[ c f g] aes[ g f c] |
         ees[ bes ees f] ges[ aes bes c] |
         des[ bes des ees] <des bes>4 <des, f,> | } \\
