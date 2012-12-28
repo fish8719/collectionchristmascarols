@@ -192,7 +192,7 @@ pianoLH = \relative c' {
     \Lyrics
     \override LyricText #'font-size = #1.3
   }
-%6x9 \context {\Lyrics\override LyricText #'font-size = #1.2 }
+%6x9 \context {\Lyrics\override LyricText #'font-size = #1.1 }
 %6.14 \context {\Lyrics\override LyricText #'font-size = #0.6 }
     #(define fonts (make-pango-font-tree "Garamond Premier Pro" "Garamond Premier Pro" "Garamond Premier Pro" (/ 18 20)))
     \context {

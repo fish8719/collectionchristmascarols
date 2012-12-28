@@ -1,7 +1,7 @@
 ﻿\version "2.14.2"
 \include "../util.ly"
 \header {
-  title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #18 \smallCapsOldStyle"In ducli jubilo"}}
+  title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #18 \smallCapsOldStyle"In dulci jubilo"}}
   poet = \markup\oldStyleNum"Heinrich Seuse (1300–1366)"
   meter = \markup\oldStyleNum"Translated by Robert Lucas de Pearsall (1795–1856)"
   composer = \markup\oldStyleNum"14th century German melody"
