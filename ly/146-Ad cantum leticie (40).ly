@@ -121,7 +121,7 @@ altoWordsII = \lyricmode {
 altoWordsIII = \lyricmode {
   \set stanza = #"3. "
   Er -- go nos cum gau -- di -- o,
-  No -- stra si -- mul con -- ci -- o
+  No -- stra si -- mul con -- ti -- o
   Be -- ne -- di -- cat Do -- mi -- no Ju -- bi -- lo.
   
   \set stanza = #"3. "
@@ -133,7 +133,7 @@ altoWordsIII = \lyricmode {
 bassWordsIII = \lyricmode {
   \set stanza = #"3. "
   Er -- go nos cum gau -- di -- o,
-  No -- stra si -- mul con -- ci -- o
+  No -- stra si -- mul con -- ti -- o
   Be -- ne -- di -- cat Do -- mi -- no Ju -- bi -- lo.
   
   \set stanza = #"3. "

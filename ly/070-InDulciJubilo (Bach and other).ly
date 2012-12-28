@@ -264,7 +264,7 @@ bassWords = \lyricmode {
     }
   }
   \header {
-    title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #18 \smallCapsOldStyle"In ducli jubilo"}}
+    title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #18 \smallCapsOldStyle"In dulci jubilo"}}
     poet = \markup\oldStyleNum"Heinrich Seuse (1300–1366)"
     composer = \markup\oldStyleNum"Arranged by J.S. Bach (1685–1750)"
     
@@ -481,7 +481,7 @@ bassWords = \lyricmode {
     }
   }
   \header {
-    title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #18 \smallCapsOldStyle"In ducli jubilo"}}
+    title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #18 \smallCapsOldStyle"In dulci jubilo"}}
     poet = \markup\oldStyleNum"Heinrich Seuse (1300–1366)"
     composer = \markup\oldStyleNum"14th century German melody"
     
