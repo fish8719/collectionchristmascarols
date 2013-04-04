@@ -1,7 +1,7 @@
 ﻿\version "2.14.2"
 \include "util.ly"
 \header {
-  title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #18 \smallCapsOldStyle"Integer Vitae"}}
+  title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #18 \smallCapsOldStyle"Integer Vitæ"}}
   composer = \markup\oldStyleNum"Friedrich F. Flemming (1778–1813)"
   poet = \markup\oldStyleNum"Quintus Horatius Flaccus (65–8 BC)"
   tagline = ""
@@ -15,9 +15,9 @@
   system-system-spacing =
     #'((basic-distance . 0)
        (minimum-distance . 0)
-       (padding . -3)
+       (padding . 0)
        (stretchability . 100))
-  ragged-last-bottom = ##f
+  ragged-last-bottom = ##t
   ragged-bottom = ##f
   two-sided = ##t
   inner-margin = 1\in
@@ -85,19 +85,39 @@ sopWordsII = \lyricmode {
   Si -- ve per Syr -- tes i -- ter æs -- tu -- o -- sas,
   Si -- ve fac -- tu -- rus per in -- hos -- pi -- ta -- lem
   Cau -- ca -- sum, vel quæ lo -- ca fa -- bu -- lo -- sus
-  Lam -- bit Hy -- das -- pes.
+  Lam -- bit Hy -- da -- spes.
 }
 
 sopWordsIII = \lyricmode {
   \set stanza = #"3. "
+  Nam -- que me sil -- va lu -- pus in Sa -- bi -- na,
+  Dum me -- am can -- to La -- la -- gen et ul -- tra
+  Ter -- mi -- num cu -- ris va -- gor ex -- pe -- di -- tis,
+  Fu -- git in -- er -- mem,
 }
 
 sopWordsIV = \lyricmode {
   \set stanza = #"4. "
+Qua -- le por -- ten -- tum ne -- que mi -- li -- ta -- ris
+Dau -- ni -- as la -- tis a -- lit æs -- cu -- le -- tis
+Nec Ju -- bæ tel -- lus ge -- ne -- rat, le -- o -- num
+A -- ri -- da nu -- trix.
 }
 
 sopWordsV = \lyricmode {
   \set stanza = #"5. "
+Po -- ne me pi -- gris u -- bi nul -- la cam -- pis
+Ar -- bor æ -- sti -- va re -- cre -- a -- tur au -- ra,
+Quod la -- tus mun -- di ne -- bu -- læ ma -- lus -- que
+Jup -- pi -- ter ur -- "get ;"
+}
+
+sopWordsVI = \lyricmode {
+  \set stanza = #"6. "  
+Po -- ne sub cur -- ru ni -- mi -- um pro -- pin -- qui
+So -- lis in ter -- ra do -- mi -- bus ne -- ga -- "ta :"
+Dul -- ce ri -- den -- tem La -- la -- gen a -- ma -- bo,
+Dul -- ce lo -- quen -- tem.
 }
 
 altoMusic = \relative c' {
@@ -204,6 +224,7 @@ pianoLH = \relative c' {
     \new Lyrics = "altosIII"  \lyricsto "sopranos" \sopWordsIII
     \new Lyrics = "altosIV"  \lyricsto "sopranos" \sopWordsIV
     \new Lyrics = "altosV"  \lyricsto "sopranos" \sopWordsV
+    \new Lyrics = "altosVI"  \lyricsto "sopranos" \sopWordsVI
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }

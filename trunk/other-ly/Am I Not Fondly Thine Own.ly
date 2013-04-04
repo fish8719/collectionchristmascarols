@@ -14,13 +14,18 @@
   system-system-spacing =
     #'((basic-distance . 0)
        (minimum-distance . 0)
-       (padding . -3)
+       (padding . -8)
        (stretchability . 100))
+  score-markup-spacing =
+    #'((basic-distance . 0)
+       (minimum-distance . 0)
+       (padding . -3)
+       (stretchability . 200))
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 1\in
-  outer-margin = 0.75\in
+  inner-margin = 0.75\in
+  outer-margin = 0.5\in
   top-margin = 0.26\in
   bottom-margin = 0.25\in
   first-page-number = #43

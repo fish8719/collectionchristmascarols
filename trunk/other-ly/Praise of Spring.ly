@@ -106,11 +106,11 @@ sopMusic = \relative c'' {
   a, cis fis, a |
   dis,2 gis4 fis8[ e] |
   b'4^> a8[\cresc gis\!] d'4^> cis8[ b] |
-  e2 cis4\f e |
+  e2 cis4 e |
   
   %page5
   a1~ |
-  a2 b,4 fis'\mf |
+  a2 b,4 \once\override DynamicText #'self-alignment-X = #-1 fis'\mf |
   e4. cis8 cis4\dim b\! |
   a2\fermata
   \bar"|."
@@ -125,28 +125,34 @@ sopWords = \lyricmode {
   
   When of such sweet things we’re chant -- ing,
   Say, O Spring, what is there want -- ing
-  Here on earth to swell thy praise,
-  here on earth to swell thy praise,
-  here on earth to swell thy praise?
+  Here on \dropLyricsXII earth to swell thy praise,
+  \raiseLyrics here on earth to swell thy praise,
+  \dropLyricsXII here on earth to swell thy \raiseLyrics praise?
   
   Op -- ’ning buds,
   black -- bird’s call,
   Lark’s sweet car -- ol,
-  sun -- ny days,
+  sun -- ny \dropLyricsXII days,
   Fruit -- ful show -- ers,
-  balm -- y gale,
+  balm -- y \raiseLyrics gale,
   balm -- y gale!
   
-  When of such sweet things we’re chant -- ing,
+  \dropLyricsXII When of such sweet things we’re chant -- ing,
   Say, O Spring, what is there want -- ing
-  Here on earth to swell thy praise,
+  Here on earth to swell thy praise, \raiseLyrics
   here on earth to swell thy praise,
   here on earth to swell thy praise,
   here on earth to swell thy praise,
-  here on earth to swell thy praise,
-  here on earth, __
-  here on earth to swell thy praise?
+  \set associatedVoice = "tenors" here on earth to swell thy praise,
+  \set associatedVoice = "altos"
+  here on earth, to swell thy praise,
+  on earth to swell thy praise?
   
+}
+trueSopWords = \lyricmode {
+  \repeat unfold 131 \skip 1
+  \set stanza = \markup\dynamic"f " here on earth, __
+  here
 }
 
 altoMusic = \relative c' {
@@ -228,6 +234,7 @@ altoWordsVI = \lyricmode {
   \set ignoreMelismata = ##t
 }
 tenorMusic = \relative c' {
+  \dynamicDown
   \partial 2
   cis4.\p d8 |
   e4 r e4.\cresc d8\! |
@@ -246,17 +253,17 @@ tenorMusic = \relative c' {
   b-. e-. d-. c?-. |
   b2 d4 d |
   cis1~ |
-  cis2 cis4^\markup{\dynamic"f" \italic"cresc."} b |
+  cis2 cis4_\markup{\dynamic"f" \italic"cresc."} b |
   
   a b e4. d8 |
-  cis2 gis4.\p a8 |
+  cis2 gis4.^\p a8 |
   b4 r d4. cis8 |
   b4 r e4.\sf d8 |
   cis8 cis r4 fis4. fis8 |
   
   %page3
   fis4 r d4.\f cis8 |
-  cis b r4 d4.\dim cis8\! |
+  cis b r4 d4.^\dim cis8\! |
   b1~ |
   b2\fermata b4\cresc b\! |
   a4. a8 b[ cis] d4 |
@@ -297,8 +304,8 @@ tenorWords = \lyricmode {
   "" \repeat unfold 22 \skip1
   swell thy praise, __
   "" \repeat unfold 20 \skip1
-  here on earth to swell thy praise,
-  on earth to swell thy praise?
+  %here on earth to swell thy praise,
+  %on earth to swell thy praise?
 }
 
 bassMusic = \relative c' {
@@ -377,7 +384,8 @@ pianoLH = \relative c' {
 %{  <<
     \new Staff = "sopranos" \new Voice = "sopranos" { << \global \sopMusic >> }
     \new Staff = "altos" \new Voice = "altos" { << \global \altoMusic >> }
-    \new Lyrics \with { alignBelowContext = #"sopranos" } \lyricsto "sopranos" \sopWords
+    \new Lyrics  \lyricsto "sopranos" \sopWords
+    \new Lyrics \with { alignAboveContext = #"sopranos" } \lyricsto "sopranos" \trueSopWords
     \new Lyrics \with { alignBelowContext = #"altos" } \lyricsto "altos" \altoWords
     \new Staff = tenors { \clef "treble_8" \new Voice = "tenors" { << \global \tenorMusic >> } }
     \new Staff = basses { \clef bass \new Voice = "basses" { << \global \bassMusic >> } }
@@ -392,7 +400,8 @@ pianoLH = \relative c' {
       \new Voice = "sopranos" { \voiceOne << \global \sopMusic >> }
       \new Voice = "altos" { \voiceTwo << \global \altoMusic >> }
     >>
-    \new Lyrics \with { alignBelowContext = #"women" } \lyricsto "sopranos" \sopWords
+    \new Lyrics = "sop"
+    \new Lyrics \with { alignAboveContext = #"women" } \lyricsto "sopranos" \trueSopWords
    \new Staff = men <<
       \clef bass
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }
@@ -400,6 +409,7 @@ pianoLH = \relative c' {
     >>
     \new Lyrics \with { alignAboveContext = #"men" } \lyricsto "tenors" \tenorWords
     \new Lyrics \with { alignBelowContext = #"men" } \lyricsto "basses" \bassWords
+    \context Lyrics = "sop" \lyricsto "sopranos" \sopWords
   >>
   >>
     %\new PianoStaff << \new Staff { \new Voice { \global \pianoRH } } \new Staff { \clef "bass" \global \pianoLH } >>
@@ -416,6 +426,7 @@ pianoLH = \relative c' {
   \context {
     \Lyrics
     \override LyricText #'font-size = #1.3
+      \override VerticalAxisGroup #'staff-affinity = #0
   }
     \context {
       \Score

@@ -14,9 +14,9 @@
   system-system-spacing =
     #'((basic-distance . 0)
        (minimum-distance . 0)
-       (padding . -3)
+       (padding . -2)
        (stretchability . 100))
-  ragged-last-bottom = ##f
+  ragged-last-bottom = ##t
   ragged-bottom = ##f
   two-sided = ##t
   inner-margin = 1\in
@@ -47,6 +47,7 @@ global = {
   \key d \major
   \time 2/4
   \dynamicUp
+  \tempo 4 = 92
   %\set crescendoSpanner = #'dashed-line
   %\set midiInstrument = "recorder"
   \autoBeamOff
@@ -54,10 +55,10 @@ global = {
 }
 
 sopMusic = \relative c' {
-	a'8-> fis b g |
+	a'8->\mf fis b g |
   a fis b g |
-  a-> fis d d' |
-  cis[ b] a4 |
+  a-> fis\< d d' |
+  cis[\> b] a4\! |
   
   g8-> b e, g |
   fis a d4 |
@@ -66,8 +67,8 @@ sopMusic = \relative c' {
   fis d g e |
   
   fis d g e |
-  fis a d fis, |
-  a[ g] fis4 |
+  fis a d\< fis, |
+  a[\> g]\! fis4 |
   e8 d cis e |
   d4. e16[ fis] |
   
@@ -76,8 +77,8 @@ sopMusic = \relative c' {
   d d'4-- d8 |
   d4.( cis16)[ b] |
   
-  a8 d4-- d8 |
-  d8.[ e16] fis8-- d |
+  a8 d4--\< d8 |
+  d8.[\> e16] fis8--\! d |
   cis b a b16[ cis] |
   d4 d, |
   
@@ -86,8 +87,8 @@ sopMusic = \relative c' {
   a8 fis b g |
   a fis b g |
   
-  a-> fis d d' |
-  cis[ b] a4 |
+  a-> fis d\< d' |
+  cis[\> b] a4\! |
   g8 b e, g |
   fis a d4 |
   cis8-> a e gis |
@@ -95,12 +96,12 @@ sopMusic = \relative c' {
   a b->[ a] g |
   fis d g e |
   fis d g e |
-  fis a d fis, |
+  fis a d\< fis, |
   
-  a[ g] fis4 |
+  a[\> g] fis4\! |
   e8 d cis e |
-  d[ fis] a d |
-  fis4-> e-> d2 \bar"|."
+  d[\< fis] a d |
+  fis4->\f e-> d2 \bar"|."
 }
 sopWords = \lyricmode {
 	Live we sing -- ing, danc -- ing, spring -- ing,
@@ -146,8 +147,8 @@ altoMusic = \relative c' {
   \repeat unfold 8 r2 |
   a'8-> fis b g |
   a fis b g |
-  a-> fis d d' |
-  cis[ b] a4 |
+  a-> fis d\< d' |
+  cis[\> b]\! a4 |
   
   g8-> b e, g |
   fis a d4 |
@@ -156,8 +157,8 @@ altoMusic = \relative c' {
   fis d g e |
   
   fis d g e |
-  fis a d fis, |
-  a[ g] fis4 |
+  fis a\< d fis, |
+  a[\> g] fis4\! |
   e8 d cis e |
   d4. e16[ fis] |
   
@@ -167,7 +168,7 @@ altoMusic = \relative c' {
   d4.( cis16)[ b] |
   
   a8 d4-- d8 |
-  d8.[ e16] fis8-- d |
+  d8.[\> e16] fis8--\! d |
   cis b a b16[ cis] |
   d4 d, |
   
@@ -176,11 +177,11 @@ altoMusic = \relative c' {
   a8 fis b g |
   a fis b g |
   
-  a-> fis d d' |
-  cis[ b] a4 |
+  a-> fis d\< d' |
+  cis[\> b] a4\! |
   g8 b e, g |
-  fis[ a] d d |
-  d4-> cis-> |
+  fis[\< a] d d |
+  d4->\f cis-> |
   d2 \bar"|."
 }
 altoWords = \lyricmode {
@@ -244,7 +245,7 @@ tenorMusic = \relative c' {
   a8 g->[ fis] e |
   d d'4-- d8 |
   d4.( cis16)[ b] |
-  a8 d4--\< d8 |
+  a8 d4-- d8 |
   
   <d d,>8.\>[ <e e,>16] <fis fis,>8\! d |
   cis-> b a b16[ cis] |
@@ -310,7 +311,7 @@ pianoLH = \relative c' {
 %    \new PianoStaff << \new Staff { \new Voice { \pianoRH } } \new Staff { \clef "bass" \pianoLH } >>
   >>
   \midi {
-    \tempo 4 = 90
+    \tempo 4 = 92
     \set Staff.midiInstrument = "flute"
   
     \context {
