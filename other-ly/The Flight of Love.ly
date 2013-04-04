@@ -223,6 +223,11 @@ pianoLH = \relative c' {
   \midi {
     \tempo 4 = 115
     \set Staff.midiInstrument = "grand piano"
+  
+    \context {
+      \Voice
+      \remove "Dynamic_performer"
+    }
   }
   \layout {
     \context {
@@ -247,3 +252,4 @@ pianoLH = \relative c' {
     }
   }
 }
+
