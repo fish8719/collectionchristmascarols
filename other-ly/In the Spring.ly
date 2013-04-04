@@ -55,21 +55,21 @@ global = {
 
 sopMusic = \relative c' {
 	f4 f f8([ g] a4) |
-  g4 g g8([ a] bes4) |
-  a4. bes8 c4 bes |
+  g4\mf g g8([ a] bes4) |
+  a4.\f bes8 c4 bes |
   
   a g f2 |
-  a4. bes8 c4 d |
+  a4.\p bes8 c4 d |
   c8[ bes] a[ g] bes4 a |
-  a4. bes8 c4 d |
+  a4.\cresc bes8 c4 d |
   
   d8[ bes] a[ g] bes4 a |
-  a4 a g g8[ c] |
+  a4\f a g g8[ c] |
   e4 d c2 |
   
-  f,4 f f8([ g] a4) |
-  g4 g g8([ a] bes4) |
-  a4. bes8 c[ f] d[ bes] |
+  f,4\p f f8([ g] a4) |
+  g4\cresc g g8([ a] bes4) |
+  a4.\f bes8 c[ f] d[ bes] |
   a4 g f2 \bar "|."
 }
 sopWords = \lyricmode {
@@ -121,7 +121,7 @@ sopWordsV = \lyricmode {
 }
 
 altoMusic = \relative c' {
-  f4 f f2 |
+  f4\p f f2 |
   e4 e g2 |
   f4. f8 g4 g |
   

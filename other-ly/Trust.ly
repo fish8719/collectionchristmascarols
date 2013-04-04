@@ -54,39 +54,39 @@ global = {
 }
 
 sopMusic = \relative c'' {
-	a4 a4. a8 |
-  a4 g b\rest |
-  c8[ bes] a4. g8 |
-  bes4 a b\rest |
-  d8[ bes] f4. d'8 |
+	a4\p\< a4. a8 |
+  a4\> g\! b\rest |
+  c8[\< bes] a4. g8 |
+  bes4\> a\! b\rest |
+  d8[\p\< bes] f4. d'8 |
   
-  c8.[ d16] c4 b\rest |
-  bes8[ g] d4. bes'8 |
-  a8.[ bes16] a4 b\rest |
-  g g g |
+  c8.[\> d16] c4\! b\rest |
+  bes8[\< g] d4. bes'8 |
+  a8.[\> bes16] a4\! b\rest |
+  g\mf g g\cresc |
   f'2. |
-  e4 c b |
-  c b\rest b\rest |
+  e4 c b\> |
+  c b\rest\! b\rest |
   
-  c c bes |
-  a2 e'4 |
-  f8.[ c16] c4 bes |
+  c\p c bes |
+  a2\< e'4 |
+  f8.[\! c16] c4 bes |
   a b\rest b\rest |
   
   %page2
-  c4 c8[ bes] a[ g] |
+  c4\p c8[ bes] a[ g] |
   f4 f b\rest |
   d d8[ c] bes[ a] |
-  g8.[( a32 g] fis8[ g a bes] |
-  c4) c8.[ d16] c4 |
+  g8.[(\< a32 g] fis8[ g a bes] |
+  c4)\! c8.[\mf\> d16] c4 |
   
-  b4\rest c8.[ d16] c4 |
-  d2.~ |
-  d4 a g |
-  bes2.~ |
-  bes4 b\rest b\rest |
-  d4 c c |
-  a2.~ |
+  b4\rest\! c8.[\> d16] c4 |
+  d2.~\f |
+  d4 a g\p |
+  bes2.~\< |
+  bes4 b\rest\! b\rest |
+  d4\p c\dim c |
+  a2.~\pp |
   a4 b\rest b\rest \bar "|."
 }
 sopWords = \lyricmode {
@@ -221,13 +221,15 @@ tenorMusic = \relative c' {
   c s s |
   
   s2. |
-  c4 c bes |
-  a2 e'4 |
-  f8.[ c16] c4 bes |
+  c4\p c bes |
+  a2\< e'4 |
+  f8.[\! c16] c4 bes |
   
   %page2
   a4 s s |
-  f'4 f8[ e] d[ c] |
+  \once\override DynamicText #'extra-offset = #'( 0 . -4)
+  \once\override DynamicText #'self-alignment-X = #4
+  f'4\p f8[ e] d[ c] |
   bes4 bes s4 |
   c c4. c8 |
   c4 e f |
@@ -335,7 +337,7 @@ pianoLH = \relative c' {
 %    \new PianoStaff << \new Staff { \new Voice { \pianoRH } } \new Staff { \clef "bass" \pianoLH } >>
   >>
   \midi {
-    \tempo 4 = 100
+    \tempo 4 = 110
     \set Staff.midiInstrument = "flute"
   
     \context {
