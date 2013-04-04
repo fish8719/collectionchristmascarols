@@ -23,7 +23,7 @@
   outer-margin = 0.75\in
   top-margin = 0.26\in
   bottom-margin = 0.25\in
-  first-page-number = #196
+  first-page-number = #108
   print-first-page-number = ##t
   headerLine = ""
   oddHeaderMarkup = \markup\fill-line{
@@ -279,6 +279,11 @@ pianoLH = \relative c' {
   \midi {
     \tempo 4 = 180
     \set Staff.midiInstrument = "flute"
+  
+    \context {
+      \Voice
+      \remove "Dynamic_performer"
+    }
   }
   \layout {
     \context {
@@ -303,3 +308,4 @@ pianoLH = \relative c' {
     }
   }
 }
+
