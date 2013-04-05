@@ -77,15 +77,15 @@ sopMusic = \relative c' {
     a4. fis8 g4. e8 |
     fis4 b\pp a4. a8 |
     g4 fis e2 |
-    fis2.
+    d2.
   }
 }
 sopWords = \lyricmode {
   \set stanza = #"1. "
 	Since first I saw your face I re -- solv’d
-  To hon -- or and re -- nown __ you;
+  To hon -- or and re -- nown __ ye;
   If now I be dis -- dain’d,
-  I wish my heart had nev -- er known __ you.
+  I wish my heart had nev -- er known __ ye.
   
   What I that lov’d, and \set associatedVoice = "altos" you that \unset associatedVoice lik’d,
   \set associatedVoice = "tenors"
@@ -97,6 +97,21 @@ sopWords = \lyricmode {
 
 sopWordsII = \lyricmode {
   \set stanza = #"2. "
+  If I ad -- mire or praise you too much,
+    That fault you may for -- give __ me.
+  Or if my hands had stray’d \set ignoreMelismata = ##t but a touch,
+  \unset ignoreMelismata
+    Then just -- ly might you leave me.	 
+
+  I ask’d you leave, you \set associatedVoice = "altos" bade me \unset associatedVoice love;
+  \set associatedVoice = "tenors"
+    Is~’t now a time to chide \set associatedVoice = "altos" me?
+  No, no, no, no, no, I’ll love you still
+    What for -- tune e’er be -- tide me.
+}
+
+sopWordsIII = \lyricmode {
+  \set stanza = #"3. "
   The sun whose beams most glo -- ri -- ous are,
   Re -- ject -- eth no be -- hold -- er;
   And your sweet beau -- ty, past com -- pare,
@@ -107,10 +122,6 @@ sopWordsII = \lyricmode {
   And signs of kind -- ness bind \set associatedVoice = "altos" me,
   There, O there, O there! where -- e’er I go,
   I leave my heart be -- hind me.
-}
-
-sopWordsIII = \lyricmode {
-  \set stanza = #"3. "
 }
 
 sopWordsIV = \lyricmode {
@@ -136,14 +147,14 @@ altoMusic = \relative c' {
   
   \repeat volta 2 {
     fis4 |
-    dis4. dis8 e4. e8 |
+    dis4. dis8 e4 e |
     e4 cis d a' |
     b4. b8 b4 a |
     a( gis) a2 |
     
     e4-. fis-. d4 e |
     cis d b4. cis8 |
-    d4 b cis4. b8 |
+    d4 b cis4. cis8 |
     b[ cis] d2 cis4 |
     d2.
   }
@@ -173,13 +184,13 @@ tenorMusic = \relative c' {
   fis,4 |
   fis4 g a b |
   cis cis8 cis cis4 b8[ cis] |
-  d4. a8 a4 a |
+  d4 a a4 a |
   
   a2 fis4 fis |
   fis4. g8 a4 b |
   cis4 cis cis b8[ cis] |
   
-  d4. a8 a4 a |
+  d4 a a4 a |
   a2 fis4
   
   \repeat volta 2 {
@@ -193,7 +204,7 @@ tenorMusic = \relative c' {
     a4. b8 g4 a |
     fis4 g e4. fis8 |
     g[ a] a4 a2 |
-    a2.
+    fis2.
   }
 }
 
@@ -215,7 +226,7 @@ bassMusic = \relative c' {
   
   a2 d4 d |
   d4. d8 d4 b |
-  a a g' g |
+  a a a' g |
   fis4. fis8 e4 d |
   a2 d4
   
@@ -239,6 +250,11 @@ bassWords = \lyricmode {
   Shall we be -- gin to wran -- gle?
 }
 bassWordsII = \lyricmode {
+  \repeat unfold 31 \skip1
+  I ask’d you leave, you bade me love;
+  Is~’t now a time to chide me?
+}
+bassWordsIII = \lyricmode {
   \repeat unfold 31 \skip1
   Where beau -- ty moves, and wit de -- lights,
   And signs of kind -- ness bind me,
@@ -268,9 +284,11 @@ pianoLH = \relative c' {
     >>
     \new Lyrics \lyricsto "basses" \bassWords
     \new Lyrics \lyricsto "basses" \bassWordsII
+    \new Lyrics \lyricsto "basses" \bassWordsIII
     
     \context Lyrics = "altos"  \lyricsto "sopranos" \sopWords
     \context Lyrics = "altosII"  \lyricsto "sopranos" \sopWordsII
+    \context Lyrics = "altosIII"  \lyricsto "sopranos" \sopWordsIII
   >>
 %    \new PianoStaff << \new Staff { \new Voice { \pianoRH } } \new Staff { \clef "bass" \pianoLH } >>
   >>
@@ -318,6 +336,7 @@ pianoLH = \relative c' {
     >>
     \new Lyrics \lyricsto "basses" \bassWords
     \new Lyrics \lyricsto "basses" \bassWordsII
+    \new Lyrics \lyricsto "basses" \bassWordsIII
     
     \context Lyrics = "altos"  \lyricsto "sopranos" \sopWords
     \context Lyrics = "altosII"  \lyricsto "sopranos" \sopWordsII
@@ -326,7 +345,7 @@ pianoLH = \relative c' {
   >>
   \midi {
     \tempo 4 = 120
-    \set Staff.midiInstrument = "Grand Piano"
+    \set Staff.midiInstrument = "Flute"
   
     \context {
       \Voice
