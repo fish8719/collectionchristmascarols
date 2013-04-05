@@ -279,7 +279,7 @@ tenorWordsIII = \lyricmode {
 }
 
 bassMusic = \relative c' {
-  d,4^\markup\italic"Sing 4th verse slowly and with feeling." cis8. cis16 |
+  d,4^\markup\italic{ \halign #-0.625 "Sing 4th verse slowly and with feeling."} cis8. cis16 |
   d8 d d d |
   bes'4 a8 g |
   a a a4 |

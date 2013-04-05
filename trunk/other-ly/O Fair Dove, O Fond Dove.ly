@@ -17,7 +17,7 @@
        (minimum-distance . 0)
        (padding . -3)
        (stretchability . 100))
-  ragged-last-bottom = ##f
+  ragged-last-bottom = ##t
   ragged-bottom = ##f
   two-sided = ##t
   inner-margin = 1\in
@@ -45,6 +45,7 @@
 }
 #(set-global-staff-size 18) \paper{ #(define fonts (make-pango-font-tree "Garamond Premier Pro" "Garamond Premier Pro" "Garamond Premier Pro" (/ 18 20))) }
 global = {
+  \tempo 4 = 126
   \key g \major
   \time 4/4
   \dynamicUp
@@ -62,20 +63,21 @@ sopMusic = \relative c' {
     d, b'\rest e, b'\rest fis b\rest e,[ d] |
     g b\rest a b\rest b b\rest \teeny a g \normalsize |
     d4 e8[ e] fis4 e8[ d] |
-    g2 b4\rest g |
+    g2 b4\rest \bar"" g |
     
     e e8 fis g4 fis8[ e]
     a8 b\rest b b\rest c b\rest b[ a] |
     << {b~ b4.} {s4. \teeny b8} >> \normalsize b4 b8.~ b16 |
-    e,2 b'4\rest e,4 |
+    e,2 b'4\rest \bar"" e,4 |
     
     d8 b'\rest e, b'\rest fis b\rest e,[ d] |
     g b\rest a b\rest b b\rest  a[ g] |
     \slurDotted
     a4 a a( g8) e |
     \slurSolid
-    d2 b'4\rest d,8[ d] |
+    d2 b'4\rest \bar"" d,8[ d] |
     
+    \tempo 4 = 92
     c'4. c8 b4. b8 |
     a4 e g fis8[ e] |
     b'4. b8 fis4~ fis8 g |
@@ -84,7 +86,7 @@ sopMusic = \relative c' {
     
     d2 b'4 d, |
     c'4 c8 c c4 c ||
-    c2( b4) << b4\rest {s8 \teeny b} >> | \normalsize
+    c2( b4) \bar""\break << b4\rest {s8 \teeny b} >> | \normalsize
     b4 b8 b gis4 b8\rest gis |
     a4 b8[ b] c4 g8[ e] |
     d4. d8 d4. d8 |
@@ -95,19 +97,19 @@ sopMusic = \relative c' {
   b4 b8\rest b b4. b8 |
   c4. b8 b4 b8\rest b |
   b4. a8 g4 a |
-  fis2. b8\rest b |
+  fis2. \bar""\break b8\rest b |
   
   b4. b8 b4 b8\rest b |
   e4 d c b8\rest c |
   c4 cis d4. a8 |
   b2 b4\rest b |
-  a4. a8 g4 b8\rest g |
+  a4. a8 g4 \bar"" b8\rest g |
   
   c4 c b b8\rest b |
   e4 e a, g |
   d'2 b4\rest d, |
   c'8 c4. b4. b8 |
-  a4 e g\fermata b8\rest a |
+  a4 e g\fermata \bar""\break b8\rest a |
   
   b4 d, \acciaccatura b'8 a4. g8 |
   g2.\fermata \bar"" d4 |
@@ -115,7 +117,7 @@ sopMusic = \relative c' {
   d2 b'4 d, |
   c' c c c8 c |
   
-  c2( b4) b8\rest b |
+  c2( b4) \bar"" b8\rest b |
   b4 b8 b gis4 b8\rest gis |
   a4 b c4\fermata g8[ e] |
   d4 b'8\rest d,8 d4 b'8\rest d, |
@@ -298,7 +300,7 @@ tenorMusic = \relative c' {
     a2 fis4 fis |
     
     g2 g4 b |
-    a c8 c d4 d |
+    a c8 c e4 fis |
     e2( d4) s8 \teeny d \normalsize |
     gis,4 gis8 gis b4 s8 b |
     a4 gis8[ gis] a4 bes8[ bes] |
@@ -315,7 +317,7 @@ tenorMusic = \relative c' {
   
   g4. g8 g4 s8 g |
   b4 e e s8 e |
-  d4 d d4. d8 |
+  d4 d c4. c8 |
   d2 s4 g, |
   fis4. fis8 g4 s8 g |
   
@@ -329,7 +331,7 @@ tenorMusic = \relative c' {
   g2. g4 |
   fis2 fis4 fis |
   g2 g4 b |
-  a c d d8 d |
+  a c e fis8 fis |
   
   e2( d4) s8 d |
   gis,4 gis8 gis b4 s8 b |
@@ -375,7 +377,7 @@ bassMusic = \relative c' {
     fis2 d4 d |
     
     g2 g,4 g' |
-    d e8 e f4 fis |
+    d e8 e d4 d |
     g2. << d4\rest {s8 \teeny g} >> | \normalsize
     e4 e8 e e4 d8\rest d |
     c4 b8[ b] a4 cis8[ cis] |
@@ -406,7 +408,7 @@ bassMusic = \relative c' {
   g,2. g4 |
   d'2 d4 d |
   g,2 g'4 g |
-  d e f fis8 fis |
+  d e d d8 d |
   
   g2. d8\rest g |
   e4 e8 e e4 d8\rest d |
@@ -448,7 +450,6 @@ pianoLH = \relative c' {
 %    \new PianoStaff << \new Staff { \new Voice { \pianoRH } } \new Staff { \clef "bass" \pianoLH } >>
   >>
   \midi {
-    \tempo 4 = 105
     \set Staff.midiInstrument = "flute"
   
     \context {

@@ -27,7 +27,7 @@
        (minimum-distance . 0)
        (padding . -1.5)
        (stretchability . 0))
-  ragged-last-bottom = ##f
+  ragged-last-bottom = ##t
   ragged-bottom = ##f
   two-sided = ##t
   inner-margin = 1\in
@@ -65,24 +65,23 @@ global = {
 }
 
 sopMusic = \relative c' {
-	\partial 4 \slurDotted
-  g'8( g) |
-  c4 c b b |
-  a a g b\rest |
+	\partial 4 \slurDotted\tieDotted
+  g'8~ g~ |
+  c4 c b b8~ b |
+  a4 a g b\rest |
   e,8 d c d e4 a |
   g2 b4\rest g |
-  c c b b |
+  c c8~ c b4 b8~ b |
   
-  a a g e8[ f] |
-  g4 e8 d c4 a'8( a) |
-  \tieDotted
+  a4 a g e8[ f] |
+  g4 e8( d) c4 a'8~ a |
   << {g4. s8} {s4 \teeny e8~ \normalsize e} >> c4 b'\rest |
-  \tieSolid
   b8 b a g d'4 d |
   
-  g,2 b\rest |
-  g8 a a a a4 b8( a) |
-  g4. g8 g4 g8( g) |
+  g,2 << {b\rest} {s4 \teeny g8~ g} >> | \normalsize
+  g8( a) a~ a a4 b8( a) |
+  g8~ g8~ g8~ g8 g4 g8~ g |
+  \tieSolid
   a4 a a b8[ a] |
   g4 g g a8[ b] |
   
@@ -118,13 +117,13 @@ sopMusic = \relative c' {
 sopWords = \lyricmode {
   \set stanza = #"1. "
   \set ignoreMelismata = ##t
-	’Twas in fif -- ty -- five, on~a win -- ter’s night,
+	’Twas in fif -- ty -- five, on a win -- ter’s night,
   Cheer -- i -- ly my lads yo -- ho!
-  We’d got the Roo -- shan lines in sight,
+  We’d got the __ _ Roo -- shan _ lines in sight,
   When _ up comes a lit -- tle __ _ Mid -- _ ship -- mite,
   Cheer -- i -- ly my lads yo -- ho!
   
-  “Who -- ’ll go a -- shore to -- _ night,” says he,
+  "" "" “Who -- ’ll go a -- shore to -- _ night,” __ _ _ says he,
   “An’ _ spike their guns a -- _ long wi’ me?”
   “Why, _ bless ’ee, __ _ sir, come a -- long!” says we,
   
@@ -134,12 +133,12 @@ sopWords = \lyricmode {
 sopWordsII = \lyricmode {
   \set stanza = #"2. "
   \set ignoreMelismata = ##t
-  We _ launch’d for~the cutter and shoved her out,
+  We _ launch’d the cutter and _ shoved her out,
   Cheer -- i -- ly my lads yo -- ho!
-  The lub -- bers might ha’ heard us shout,
-  As __ _ the Mid -- dy cried, “Now, my lads, put a -- bout.”
+  The lub -- bers _ might ha’ _ heard us shout,
+  As the Mid -- dy __ _ cried, “Now, my lads, put a -- bout.”
   Cheer -- i -- ly my lads yo -- ho!
-  “We made for the guns, an’ we ram’d them tight,
+  “We _ made _ for the guns, an’ we ram’d _ ’em __ _ tight,
   But the mus -- ket shots came _ left and right,
   An’ _ down drops the poor lit -- tle Mid -- ship -- mite,
   
@@ -156,12 +155,12 @@ sopWordsII = \lyricmode {
 sopWordsIII = \lyricmode {
   \set stanza = #"3. "
   \set ignoreMelismata = ##t
-  “I’m _ done for now; good -- bye!” says he,
+  “I’m _ done for "now;" good -- _ bye!” says he,
   Stead -- i -- ly, my lads, yo -- ho!
-  “You make for~the boat, never mind for me!”
+  “You make for the boat, nev -- er mind for me!”
   “We’ll _ take ’ee __ _ back, sir or die,” "" says we,
   Cheer -- i -- ly, my lads, yo -- ho!
-  “So we hoist -- ed him~in, in a terri -- ble plight,
+  “So we hoist -- ed him __ _ in, in a ter -- ri -- ble __ _ plight,
   An’ we pull’d ev’ry man with _ all his might,
   An’ _ saved the __ _ poor lit -- tle Mid -- ship -- mite,
 }
@@ -177,23 +176,23 @@ sopWordsV = \lyricmode {
 altoMusic = \relative c' {
   \partial 4
   \slurDotted
-  e8( e) |
-  e4 e e e |
-  f f e s |
+  \tieDotted
+  e8~ e |
+  e4 e e e8~ e |
+  f4 f e s |
   e8 d c d e4 f |
   e2 s4 e |
-  e e e d |
+  e e8~ e e4 d8~ d |
   
-  c f e e8[ f] |
-  g4 e8 d c4 c8( c) |
-  \tieDotted
+  c4 f e e8[ f] |
+  g4 e8( d) c4 c8~ c |
   << {c4. s8} {s4 \teeny c8~ \normalsize c8} >> c4 s |
-  \tieSolid
   d8 d d d fis4 fis |
   
-  g2 s |
-  e8 e f f f4 f8( f) |
-  f4. f8 f4 f8( f) |
+  g2 \teeny s4 g8~ g \normalsize |
+  e8~ e f~ f f4 f8~ f |
+  f8~ f8~ f8~ f8 f4 f8~ f |
+  \tieSolid
   f4 f f f |
   f f f a8[ b] |
   
@@ -248,23 +247,23 @@ altoWordsVI = \lyricmode {
 tenorMusic = \relative c' {
   \partial 4
   \slurDotted
-  c8( c) |
-  a4 a g g |
-  f c' c s |
+  \tieDotted
+  c8~ c |
+  a4 a g g8~ g |
+  f4 c' c s |
   e,8 d c d e4 c' |
   c2 s4 c |
-  a a gis gis |
+  a a8~ a gis4 gis8~ gis |
   
-  f c' c e,8[ f] |
-  g4 e8 d c4 f8( f) |
-  \tieDotted
+  f4 c' c e,8[ f] |
+  g4 e8( d) c4 f8~ f |
   << {e4. s8} {s4 \teeny g8~ \normalsize g} >> e4 s |
-  \tieSolid
   g8 g c b a4 c |
   
-  b2 s |
-  c8 c c c c4 d8( c) |
-  b4. b8 b4 b8( b) |
+  b2 \teeny s4 b8~ b \normalsize |
+  c8~ c c~ c c4 d8( c) |
+  b8~ b~ b~ b8 b4 b8~ b |
+  \tieSolid
   c4 c c c |
   b b b a8[ b] |
   
@@ -310,23 +309,23 @@ tenorWordsIII = \lyricmode {
 bassMusic = \relative c' {
   \partial 4
   \slurDotted
-  c,8( c) |
-  a'4 a, e' e |
-  f f c d\rest |
+  \tieDotted
+  c,8~ c |
+  a'4 a, e' e8~ e |
+  f4 f c d\rest |
   e8 d c d e4 c |
   c2 d4\rest c |
-  a' a, e' e |
+  a' a,8~ a e'4 e8~ e |
   
-  f f c e8[ f] |
-  g4 e8 d c4 f,8( f) |
-  \tieDotted
+  f4 f c e8[ f] |
+  g4 e8( d) c4 f,8~ f |
   << {c'4. s8} {s4 \teeny c8~ \normalsize c} >> c4 d\rest |
-  \tieSolid
   d8 d d d d4 d |
   
-  g2 d\rest |
-  g8 g g g g4 g8( g) |
-  g4. g8 g4 g8( g) |
+  g2 << d\rest { \teeny s4 g8~ g} >> | \normalsize
+  g8~ g g g g4 g8~ g |
+  g8~ g~ g~ g8 g4 g8~ g |
+  \tieSolid
   g4 g g g |
   g g g a8[ b] |
   
