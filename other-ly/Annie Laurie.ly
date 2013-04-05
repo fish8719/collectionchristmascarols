@@ -15,7 +15,7 @@
   system-system-spacing =
     #'((basic-distance . 0)
        (minimum-distance . 0)
-       (padding . -3)
+       (padding . -1)
        (stretchability . 100))
   score-markup-spacing =
     #'((basic-distance . 0)
@@ -27,7 +27,7 @@
        (minimum-distance . 0)
        (padding . -1)
        (stretchability . 0))
-  ragged-last-bottom = ##f
+  ragged-last-bottom = ##t
   ragged-bottom = ##f
   two-sided = ##t
   inner-margin = 1\in
@@ -67,12 +67,12 @@ global = {
 sopMusic = \relative c' {
   \partial 4
 	e8[ d] |
-  c4. c8 c'4. b8 |
+  c4. c8 c'4. c8 |
   b4 a b\rest a |
   g4 e e d8[ c] |
-  d2 b'4\rest e,8[ d] |
+  \acciaccatura e8 d2 b'4\rest e,8[ d] |
   
-  c4. c8 c'4. b8 |
+  c4. c8 c'4. c8 |
   b4 a b\rest a |
   g4. e8 e4. d8 |
   c2 b'4\rest g |
