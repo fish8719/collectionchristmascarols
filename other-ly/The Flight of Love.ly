@@ -222,7 +222,7 @@ pianoLH = \relative c' {
   >>
   \midi {
     \tempo 4 = 115
-    \set Staff.midiInstrument = "grand piano"
+    \set Staff.midiInstrument = "Flute"
   
     \context {
       \Voice
