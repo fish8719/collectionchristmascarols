@@ -135,7 +135,7 @@ altoMusic = \relative c' {
   a4 fis8 e[ a] a |
   a4 a8 a4 a8 |
   
-  fis8.[ gis16] a8 gis4 e8 |
+  fis8.[ a16] a8 gis4 e8 |
   cis4 cis8 e4 e8 |
   e4 e8 e4 e8 |
   e4 e8 fis16[ d8.] cis8 |

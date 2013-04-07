@@ -147,7 +147,7 @@ altoMusic = \relative c' {
   d8. ees16 d8. bes16 d4 \bar"" d8. d16 |
   
   d8. d16 d8. c16 bes8. d16 f8. f16 |
-  f8. f16 f8. f16 d4 f |
+  f8. f16 f8. ees16 d4 d |
   g g f f |
   f1 |
   
@@ -156,8 +156,8 @@ altoMusic = \relative c' {
   ees4. f8 g8. f16 g8. ees16 |
   d2 bes |
   
-  d4. c8 bes8. d16 d8. ees16 |
-  f2 f4 f |
+  d4. c8 bes8. d16 f8. g16 |
+  fis2 d4 d |
   g g f f |
   f2. s8 \bar"|."
 }
@@ -200,8 +200,8 @@ tenorMusic = \relative c' {
   bes4. bes8 bes8. bes16 bes8. bes16 |
   bes2 f |
   
-  bes4. f8 f8. bes16 bes8. bes16 |
-  bes2 bes4 bes |
+  bes4. f8 f8. bes16 d8. c16 |
+  a2 bes4 bes |
   ees ees d c |
   d2. s8 \bar "|."
 }
@@ -223,8 +223,8 @@ bassMusic = \relative c' {
   ees8. ees16 ees8. ees16 ees8. ees16 ees8. ees16 |
   bes8. bes16 bes8. bes16 bes4 bes8. bes16 |
   
-  bes8. bes16 bes8. bes16 bes8. bes16 d8. f16 |
-  bes8. bes16 bes8. f16 bes,4 d |
+  bes8. bes16 bes8. bes16 bes8. bes16 d8. c16 |
+  bes8. d16 f8. fis16 g4 f |
   ees ees f f |
   bes,1 |
   
@@ -233,8 +233,8 @@ bassMusic = \relative c' {
   ees4. ees8 ees8. ees16 ees8. ees16 |
   bes2 bes |
   
-  bes4. bes8 bes8. bes16 bes8. bes16 |
-  bes2 d4 d |
+  bes4. bes8 bes8. bes16 bes8. ees16 |
+  d2 g4 f |
   ees ees f f |
   bes,2. d8\rest \bar"|."
 }
