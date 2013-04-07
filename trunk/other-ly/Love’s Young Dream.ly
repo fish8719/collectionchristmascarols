@@ -180,7 +180,7 @@ tenorMusic = \relative c' {
   \partial 4.
   d4 d8 |
   d4 b8 c4 g8 |
-  g4 g8 g4 d'8 |
+  g4 g8 g4 b8 |
   e4. e |
   d d4 d8 |
   d4 b8 c4 g8 |
