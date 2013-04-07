@@ -63,7 +63,7 @@ sopMusic = \relative c' {
   c8[ bes] a[ g] bes4 a |
   a4.\cresc bes8 c4 d |
   
-  d8[ bes] a[ g] bes4 a |
+  c8[ bes] a[ g] bes4 a |
   a4\f a g g8[ c] |
   e4 d c2 |
   

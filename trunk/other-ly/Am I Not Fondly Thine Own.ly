@@ -224,7 +224,7 @@ bassMusic = \relative c' {
   c4 d8\rest |
   g4 d8\rest |
   d4 d8\rest |
-  g,4 d'8\rest |
+  e4 d8\rest |
   d8 d d |
   d d d |
   g4 d8\rest \bar"|."
