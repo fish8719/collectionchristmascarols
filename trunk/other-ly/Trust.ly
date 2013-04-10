@@ -70,7 +70,7 @@ sopMusic = \relative c'' {
   
   c\p c bes |
   a2\< e'4 |
-  f8.[\! c16] c4 bes |
+  f8.[\! c16] c4 bes | \break
   a b\rest b\rest |
   
   %page2
@@ -174,7 +174,7 @@ altoMusic = \relative c' {
   d4 d s |
   bes'4 bes8[ a] g[ f] |
   e8.([ f32 e] dis8[ e f g] |
-  a4) g a |
+  a4) g a | \break
   
   s g a |
   f2.~ |
