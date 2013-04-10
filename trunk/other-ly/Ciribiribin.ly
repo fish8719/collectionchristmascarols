@@ -1,9 +1,9 @@
 ﻿\version "2.14.2"
 \include "util.ly"
 \header {
-  title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #18 \smallCapsOldStyle"When Jesus Wept"}}
-  subtitle = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #12.5 \smallCapsOldStyle"(Round)"}}
-  composer = \markup\oldStyleNum"William Billings (1746–1800)"
+  title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #18 \smallCapsOldStyle"Ciribiribin"}}
+  composer = \markup\oldStyleNum"Alberto Pestalozza (1858–1934)"
+  %poet = \markup\oldStyleNum"Italian lyrics, Carlo Tiochet (1863–1912)"
   tagline = ""
 }
 \paper {
@@ -18,7 +18,6 @@
        (padding . 1)
        (stretchability . 100))
   ragged-last-bottom = ##t
-  ragged-right = ##f
   ragged-bottom = ##f
   two-sided = ##t
   inner-margin = 1\in
@@ -46,9 +45,8 @@
 }
 #(set-global-staff-size 18) \paper{ #(define fonts (make-pango-font-tree "Garamond Premier Pro" "Garamond Premier Pro" "Garamond Premier Pro" (/ 18 20))) }
 global = {
-  \tempo 2 = 72
-  \key a \major
-  \time 3/2
+  \key f \major
+  \time 3/4
   \dynamicUp
   %\set crescendoSpanner = #'dashed-line
   %\set midiInstrument = "recorder"
@@ -58,38 +56,132 @@ global = {
 
 sopMusic = \relative c' {
 	\partial 2
-  fis2 |
-  cis'1 b2 |
-  cis4.( d8 e2) a, |
-  cis4.( b8 a2) gis |
-  fis1 \bar"||"
+  c'4 a |
+  g2 f4 |
+  e2 f4 |
+  d8[ e] c2~ |
+  c4 f g |
+  a2 c4 |
+  d2 f4 |
+  e2.~ |
+  e8 b\rest e4 g |
+  d2 f4 |
+  
+  e2 d4 |
+  e8[ d] g,2~ |
+  g8 b\rest g4 a |
+  bes2 c4 |
+  d2 e4 |
+  c2.~ |
+  c8 b\rest c4 a |
+  g2 f4 |
+  e2 f4 |
+  
+  d8[ e] c2~ |
+  c4 c' d |
+  ees2 d4 |
+  ees2 d4 |
+  d2.~ |
+  d8 b\rest\fermata g4 a |
+  bes2 a4 |
+  g2 d'4 |
+  c8[ a] f2~ |
+  
+  f8 b\rest f4 g |
+  a( c) a |
+  g2\fermata c4 |
+  f,2 b4\rest |
+  b\rest c8 b bes a |
+  c b\rest c b bes a |
+  c b\rest c b bes a |
+  
+  c2.~ |
+  c8 b\rest \bar"||"
+  c b bes a |
+  c2 a4 |
+  g2 f4 |
+  c2 f4 |
+  g2 f4 |
+  c2 a'4 |
+  g2 f4 |
+  
+  bes2.~ |
+  bes8 bes\rest d des c bes |
+  ees2 d4 |
+  bes2 a4 |
+  g2 g4 |
+  a2 g4 |
+  d'2 f4 |
+  e2 d4 |
+  d2.~ |
+  d8 b\rest c b bes a |
+  c2 a4 |
+  g2 f4 |
+  c2 f4 |
+  g2 f4 |
+  c2 a'4 |
+  g2 f4 |
+  d'2.~ |
+  d8 b\rest e d cis d |
+  
+  f2.~ |
+  f8 b,\rest e d cis d |
+  f2.~ |
+  f8 b,\rest a g fis g |
+  bes2 e,4 |
+  a2\fermata g4 |
+  f2.~ |
+  f8 b\rest \bar"|."
 }
 sopWords = \lyricmode {
-  When Je -- sus wept, __ the fall -- ing tear,
+  \set stanza = \markup\dynamic"p "
+	I am wait -- ing here for you love
+  As the eve -- ning breez -- es blow
+  Watch -- ing shad -- ows of the riv -- er
+  As they flit both to and fro.
+  I have come to see the love -- light
+  danc -- ing in your eyes of blue,
+  And to hear you soft -- ly whis -- per
+  that to me you’ll e’er be true.
+  
+  Ci -- ri -- bi -- ri -- bin,
+  Ci -- ri -- bi -- ri -- bin,
+  Ci -- ri -- bi -- ri -- bin,
+  
+  \set stanza = \markup\dynamic"mf "
+  Ci -- ri -- bi -- ri -- bin,
+  the moon looks down up -- on our hap -- pi -- ness se -- rene,
+  Ci -- ri -- bi -- ri -- bin,
+  the stars bow down be -- fore thee, O my ra -- diant queen.
+  
+  Ci -- ri -- bi -- ri -- bin,
+  more love than mine for thee the world has nev -- er seen.
+  Ci -- ri -- bi -- ri -- bin,
+  Ci -- ri -- bi -- ri -- bin,
+  Ci -- ri -- bi -- ri -- bin,
+  my ra -- diant queen.
 }
 
 sopWordsII = \lyricmode {
-  In mer -- cy flowed __ be -- yond all bound;
+  %\set stanza = #"2. "
+  
 }
 
 sopWordsIII = \lyricmode {
-  When Je -- sus groan’d __ a trem -- bling fear,
+  %\set stanza = #"3. "
+  
 }
 
 sopWordsIV = \lyricmode {
-  Siez’d all __ the guilt -- y world __ a -- round.
+  %\set stanza = #"4. "
 }
 
 sopWordsV = \lyricmode {
-  \set stanza = #"5. "
+  %\set stanza = #"5. "
 }
 
 altoMusic = \relative c' {
-  fis2 |
-  fis1 e2 |
-  a( gis) fis |
-  fis1 cis2 |
-  fis1 \bar"||"
+  
 }
 altoWords = \lyricmode {
 }
@@ -112,11 +204,7 @@ altoWordsVI = \lyricmode {
   \set ignoreMelismata = ##t
 }
 tenorMusic = \relative c' {
-  cis'2 |
-  fis( cis) e |
-  a,( b) cis |
-  cis1 cis2 |
-  cis1 \bar"||"
+  
 }
 
 tenorWords = \lyricmode {
@@ -129,11 +217,7 @@ tenorWordsIII = \lyricmode {
 }
 
 bassMusic = \relative c' {
-  a'2 |
-  cis4.( b8 a2) gis |
-  a( d) cis |
-  a4.( gis8 fis2) e |
-  fis1 \bar"||"
+  
 }
 bassWords = \lyricmode {
 }
@@ -145,29 +229,30 @@ pianoLH = \relative c' {
 
 \score {
 <<
+   \new ChoirStaff <<
     \new Staff = women <<
-      \new Voice = "sopranos" { << \global \sopMusic >> }
+      \new Voice = "sopranos" { \voiceOne << \global \sopMusic >> }
+      \new Voice = "altos" { \voiceTwo << \global \altoMusic >> }
     >>
     \new Lyrics = "altos"  \lyricsto "sopranos" \sopWords
-    \new Staff  <<
-      \new Voice = "altos" { << \global \altoMusic >> }
+    \new Lyrics = "altosII"  \lyricsto "sopranos" \sopWordsII
+    \new Lyrics = "altosIII"  \lyricsto "sopranos" \sopWordsIII
+    \new Lyrics = "altosIV"  \lyricsto "sopranos" \sopWordsIV
+    \new Lyrics = "altosV"  \lyricsto "sopranos" \sopWordsV
+   \new Staff = men <<
+      \clef bass
+      \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }
+      \new Voice = "basses" { \voiceTwo << \global \bassMusic >> }
     >>
-    \new Lyrics = "altosII"  \lyricsto "altos" \sopWordsII
-    \new Staff <<
-      \new Voice = "tenors" { << \global \tenorMusic >> }
-    >>
-    \new Lyrics = "altosIII"  \lyricsto "tenors" \sopWordsIII
-    \new Staff <<
-      \new Voice = "bass" { << \global \bassMusic >> }
-    >>
-    \new Lyrics = "altosIV"  \lyricsto "bass" \sopWordsIV
-    
+    \new Lyrics \with { alignAboveContext = #"tenors" } \lyricsto "tenors" \tenorWordsIII
+    \new Lyrics \with { alignAboveContext = #"tenors" } \lyricsto "tenors" \tenorWordsII
+    \new Lyrics \with { alignAboveContext = #"tenors" } \lyricsto "tenors" \tenorWords
+  >>
 %    \new PianoStaff << \new Staff { \new Voice { \pianoRH } } \new Staff { \clef "bass" \pianoLH } >>
   >>
   \midi {
-    \tempo 2 = 72
+    \tempo 4 = 180
     \set Staff.midiInstrument = "flute"
-  
     \context {
       \Voice
       \remove "Dynamic_performer"
@@ -196,4 +281,3 @@ pianoLH = \relative c' {
     }
   }
 }
-
