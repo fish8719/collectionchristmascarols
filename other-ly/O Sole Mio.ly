@@ -98,8 +98,8 @@ sopWords = \lyricmode {
   The fresh -- ’ning breez -- es, heav -- y airs will ban -- ish
   Be -- hold the bril -- liant sun in all its splen -- dor!
   
-  A sun I know of that’s bright -- er yet,
-  This sun, my dear -- est ’tis naught but thee
+  \dropLyricsXII A sun I know of that’s bright -- er yet,
+  This sun, my dear -- est ’tis naught but \raiseLyrics thee
   Thy face, so fair to see,
   That now my sun shall ev -- er be!
 }
