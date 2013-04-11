@@ -89,7 +89,7 @@ sopMusic = \relative c' {
   g2 a4 |
   
   g2 e4 |
-  \tieDotted << {d4 \normalsize g2} {s8 \teeny d2*1/4 s4 \teeny g4} >> | \normalsize
+  \tieDotted << {d4 \normalsize g2} {s32 \teeny d2*1/4 s16. s4 \teeny g4} >> | \normalsize
   c2\fermata b8~ b | \tieSolid |
   b2 a4 |
   e2 fis4 |
@@ -223,7 +223,7 @@ altoMusic = \relative c' {
   
   e2 e4 |
   cis2 cis4 |
-  \tieDotted << {d4 \normalsize b2} {s8 \teeny d2*1/4 s4 \teeny b4} >> | \normalsize
+  \tieDotted << {d4 \normalsize b2} {s32 \teeny d2*1/4 s16. s4 \teeny b4} >> | \normalsize
   d2 d8~ d | \tieSolid
   cis2 cis4 |
   c?2 c4 |
@@ -320,7 +320,7 @@ tenorMusic = \relative c' {
   
   g2 g4 |
   e2 g4 |
-  \tieDotted << {b \normalsize g2} {s8 \teeny b2*1/4 s4 \teeny g4} >> | \normalsize
+  \tieDotted << {b \normalsize g2} {s32 \teeny b2*1/4 s16. s4 \teeny g4} >> | \normalsize
   gis2 gis8~ gis  | \tieSolid
   g?2 g4 |
   fis2 a4 |
@@ -409,7 +409,7 @@ bassMusic = \relative c' {
   c,2 c4 |
   
   a2 a4 |
-  \tieDotted << {d \normalsize g,2} {s8 \teeny d'2*1/4 s4 \teeny g,4} >> | \normalsize
+  \tieDotted << {d \normalsize g,2} {s32 \teeny d'2*1/4 s16. s4 \teeny g,4} >> | \normalsize
   e'2 e8~ e | \tieSolid
   e2 e4 |
   d2 d4 |
