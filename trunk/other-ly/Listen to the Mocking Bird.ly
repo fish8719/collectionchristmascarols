@@ -74,7 +74,7 @@ sopMusic = \relative c' {
   
   a8 g4.~ g8 b\rest b b |
   c e e e e d c a |
-  g2 b4\rest d,4 |
+  g2 b4\rest \bar"" d,4 |
   d4. d8 fis4 e8. fis16 |
   
   a8 g4.~ g8 b\rest e,8. d16 |
@@ -83,7 +83,7 @@ sopMusic = \relative c' {
   d4. d8 fis4 e8. fis16 |
   a8 g4.~ g8 b\rest b b |
   
-  c e e e e d d fis, |
+  c e e e e d c a |
   g2.
   \repeat volta 2 {
     b16 b b b |
@@ -94,8 +94,8 @@ sopMusic = \relative c' {
     b2 b4\rest b16 b b b |
     
     b8 a a4 b\rest a16 a a a |
-    a8 g g4 b\rest g |
-    c8 e e e e d d fis, |
+    a8 g g4 b\rest b |
+    c8 e e e e d c a |
     g2 b4\rest
   }
 }
@@ -158,7 +158,7 @@ altoMusic = \relative c' {
   d4. d8 d4 e8. d16 |
   d8 d4.~ d8 s b8. d16 |
   d8 d4.~ d8 s c8. d16 |
-  d8 d4.~ d8 s d4 |
+  d8 d4.~ d8 s \bar"" d4 |
   d4. d8 d4 e8. d16 |
   
   d8 d4.~ d8 s g g |
@@ -172,7 +172,7 @@ altoMusic = \relative c' {
   d4. d8 d4 e8. d16 |
   d8 d4.~ d8 s g g |
   
-  g g g g fis fis fis d |
+  g g g g fis fis fis fis |
   d2.
   
   \repeat volta 2 {
@@ -185,8 +185,8 @@ altoMusic = \relative c' {
     
     d8 c c4 s c16 c c c |
     c8 b b4 s f' |
-    e8 g g g fis fis fis c |
-    b2 s4
+    e8 g g g fis fis fis fis |
+    d2 s4
   }
 }
 altoWords = \lyricmode {
@@ -240,9 +240,9 @@ tenorMusic = \relative c' {
     g2 s4 g16 g g g |
     
     g8 fis fis4 s fis16 fis fis fis |
-    g8 g g4 s b |
+    g8 g g4 s d' |
     c8 c c c c c c a |
-    g2 s4
+    b2 s4
   }
 }
 
@@ -286,7 +286,7 @@ bassMusic = \relative c' {
     g,2 d'4\rest g16 g g g |
     
     d8 d d4 d\rest d16 d d d |
-    g8 g, g4 d'\rest d |
+    g8 g, g4 d'\rest g, |
     c8 c c c d d d d g,2 d'4\rest 
   }
 }
