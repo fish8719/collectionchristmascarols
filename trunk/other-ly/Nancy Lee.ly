@@ -129,10 +129,10 @@ sopWords = \lyricmode {
   Yeo -- ho! lads, ho! Yeo -- ho! yeo -- ho!
   There’s none like Nan -- cy Lee, I trow, __
   Yeo -- ho! lads, ho! yeo -- ho!
-  See there she stands and waves her hands up -- on the quay,
+  See there she stands and waves her hands up -- on __ the quay,
   An’ ev -- ’ry day when I’m a -- way,
-  She’ll watch for me,
-  An’ whis -- per low, when tem -- pests blow, for Jack at sea,
+  She’ll watch for __ me,
+  An’ whis -- per low, when tem -- pests blow, for Jack __ at sea,
   Yeo -- ho! __ lads, ho! __ yeo -- ho!
 }
 
@@ -144,12 +144,12 @@ sopWordsII = \lyricmode {
   Yeo -- ho! lads, ho! yeo -- ho!
   But true and bright, from morn till night, my home will be,
   An’ all so neat, an’ snug, an’ sweet
-  For Jack at sea,
+  For Jack __ at __ sea,
   An’ Nan -- cy’s face to bless the place, an’ wel -- come me;
   Yeo -- ho! __ lads, ho! __ yeo -- ho!
   
-  The sail -- or’s wife the sail -- or’s star shall be,
-  Yeo -- ho! we go a -- cross the sea,
+  The sail -- or’s wife the sail -- or’s star __ shall be,
+  Yeo -- ho! __ we go a -- cross the sea, __
   The sail -- or’s wife the sail -- or’s star shall be,
   The sail -- or’s wife his star shall be.
 }
@@ -162,7 +162,7 @@ sopWordsIII = \lyricmode {
   Yeo -- ho! lads, ho! yeo -- ho!
   A long, long life to my sweet wife, and mates at sea;
   An’ keep his bones from Da -- vy Jones
-  Wher -- e’er you be,
+  Wher -- e’er __ you __ be,
   An’ may you meet a mate as sweet as Nan -- cy Lee,
   Yeo -- ho! __ lads, ho! __ yeo -- ho!
 }
@@ -327,7 +327,7 @@ bassMusic = \relative c' {
   ees4 ees8 ees4 ees8 |
   ees4.~ ees4.~ |
   ees4. ees4. |
-  bes'4.~ bes4 |
+  bes'4.~ bes4
   bes8 |
   bes4. bes |
   

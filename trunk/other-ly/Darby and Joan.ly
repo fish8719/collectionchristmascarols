@@ -66,7 +66,7 @@ sopMusic = \relative c' {
   c2. |
   c4 d8 e8. f16 g8 |
   a4 e8 e4. |
-  fis4 << e8 {s16 \tiny d16 \normalsize} >> d8. fis16 a8 |
+  fis4 << e8 {s16 \teeny d16 \normalsize} >> d8. fis16 a8 |
   
   b4 g8 g4. |
   c4. b8. g16 e8 |
@@ -145,7 +145,7 @@ altoMusic = \relative c' {
   c2. |
   c4 b8 bes8. a16 e'8 |
   e4 cis8 cis4. |
-  c?4 c8 c8. c16 d8 |
+  c?4 << c8 {s16 \teeny c16 \normalsize} >> c8. c16 d8 |
   
   d4 d8 d4. |
   e4. e8. e16 e8 |
@@ -192,7 +192,7 @@ tenorMusic = \relative c' {
   e2. |
   e4 f8 g8. f16 g8 |
   a4 a8 a4. |
-  a4 g8 fis8. a16 fis8 |
+  a4 << g8 {s16 \teeny fis} >> \normalsize fis!8. a16 fis8 |
   
   g4 b8 b4. |
   a4. g8. b16 g8 |
@@ -229,7 +229,7 @@ bassMusic = \relative c' {
   c2. |
   c4 c8 c8. c16 c8 |
   cis4 a8 a4. |
-  d4 d8 d8. d16 d8 |
+  d4 << d8 {s16 \teeny d} >> \normalsize d8. d16 d8 |
   
   g,4 g'8 g4. |
   a,4. e'8. e16 e8 |
