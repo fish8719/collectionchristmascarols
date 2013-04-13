@@ -70,17 +70,17 @@ sopMusic = \relative c' {
   a4 f d4. e8 |
   f4. f8 f[ g] a[ bes] |
   
-  c2 a4 f'8[ e] |
+  c2 a4 \bar"" f'8[ e] |
   d4 c a4. g8 |
   a4 f d f |
   e g c, e |
   
-  f2 f4 c'8[ bes] |
+  f2 f4 \bar"" c'8[ bes] |
   a4 c d e |
   f c a c8[ bes] |
   a4 c d e |
   
-  f2 e4 f8[ e] |
+  f2 e4 \bar"" f8[ e] |
   d4 bes a g |
   a f d e8 f |
   e[ f] g4 c, e |

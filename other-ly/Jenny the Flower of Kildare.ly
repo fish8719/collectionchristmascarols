@@ -71,18 +71,18 @@ sopMusic = \relative c' {
   
   c'4. b8\rest ees8. c16 |
   bes8. c16 bes8 g8. f16 ees8 |
-  f4.~ f8 b\rest \bar"" bes |
+  f4.~ f8 b\rest \bar""\break bes |
   
   bes8. c16 bes8 g8. f16 ees8 |
   c'4.~ c8 b\rest \tieDotted ees16~ ees |
   \tieSolid bes8. g16 ees8 f8. ees16 f8 |
-  ees4.~ ees8 b'\rest \bar"" ees, |
+  ees4.~ ees8 b'\rest \bar""\break ees, |
   
   %page2/77
   c'8. b16 c8 ees8. d16 c8 |
   bes g8. aes16 bes4\( b8\) |
   c8. b16 c8 ees8. d16 c8 |
-  d4.~ d8 b\rest \bar"" bes |
+  d4.~ d8 b\rest \bar""\break bes |
   
   bes8. c16 bes8 g8. f16 ees8 |
   c'4.~ c8 bes\rest ees |
@@ -94,12 +94,12 @@ sopMusic = \relative c' {
   c'8. b16 c8 ees8. d16 c8 |
   bes4.~ bes8 b\rest b |
   c8. b16 c8 ees8. d16 c8 |
-  d4.~ d8 b\rest \bar"" bes |
+  d4.~ d8 b\rest \bar""\break bes |
   
   bes8. c16 bes8 g8. f16 ees8 |
   c'4.~ c8 b\rest ees |
   bes16 g8. ees8 f8. ees16 f8 |
-  ees4.~ ees8 b'\rest \bar"" c |
+  ees4.~ ees8 b'\rest \bar""\break c |
   
   c8. bes16 aes8 g\fermata b\rest bes |
   bes c d ees\fermata b\rest c |
