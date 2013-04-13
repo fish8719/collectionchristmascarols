@@ -86,7 +86,7 @@ sopWords = \lyricmode {
   Now you are come, all my grief is re -- moved,
   Let me for -- get that so long you have roved,
   Let me be -- lieve that you love as you loved,
-  Long, long a -- go, long -- ago.
+  Long, long a -- go, long -- a -- go.
 }
 
 sopWordsII = \lyricmode {
@@ -96,11 +96,11 @@ sopWordsII = \lyricmode {
   Long, long a -- go?
   
   Ah, yes, you told me you ne’er would for -- get,
-  Long, long a -- go, long -- ago.
+  Long, long a -- go, long -- a -- go.
   
   Then, to all oth -- ers my smile you pre -- ferr’d,
   Love, when you spoke, gave a charm to each word,
-  Still my hear trea -- sures the prais -- es I heard,
+  Still my heart  trea -- sures the prais -- es I heard,
   Long, long a -- go, long a -- go.
 }
 
@@ -115,7 +115,7 @@ sopWordsIII = \lyricmode {
   
   But by long ab -- sence your truth has been tried,
   Still to your ac -- cents I lis -- ten with pride,
-  Bles as I was when I sat by your side,
+  Blest as I was when I sat by your side,
   Long, long a -- go, long a -- go.
 }
 
