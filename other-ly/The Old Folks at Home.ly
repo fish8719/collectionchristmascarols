@@ -112,13 +112,13 @@ sopWordsIII = \lyricmode {
   All round the lit -- tle farm I wan -- dered,
   When I was young,
   Then ma -- ny hap -- py days I squan -- dered,
-  Ma -- ny the songs I sung.
+  Ma -- ny the songs I __ sung.
 }
 sopWordsIV = \lyricmode {
   When I was play -- ing with my broth -- er,
   Hap -- py was I,
   Oh! take me to my kind, old moth -- er,
-  There let me live and die.
+  There let me live and __ die.
 }
 
 sopWordsV = \lyricmode {
@@ -126,7 +126,7 @@ sopWordsV = \lyricmode {
   One lit -- tle hut a -- mong the bush -- es,
   One that I love,
   Still sad -- ly to my mem -- ’ry rush -- es,
-  No mat -- ter where I rove.
+  No mat -- ter where I __ rove.
 }
 
 sopWordsVI = \lyricmode {
@@ -150,7 +150,7 @@ altoMusic = \relative c' {
   }
   aes4. aes8 aes4 aes |
   g4. aes8 g4 g |
-  c aes aes aes |
+  c aes aes ees |
   g2. s4 |
   
   
@@ -226,8 +226,8 @@ bassMusic = \relative c' {
   }
   bes4. bes8 bes4 bes |
   ees4. ees8 ees4 ees |
-  aes, aes aes aes |
-  ees'2. d4\rest |
+  aes, aes aes c |
+  ees2. d4\rest |
   
   
   ees2 ees8 ees ees ees |
