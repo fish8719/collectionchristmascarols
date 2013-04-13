@@ -69,22 +69,22 @@ sopMusic = \relative c' {
   ees8 aes |
   c4~ c4. bes8 aes f |
   
-  aes2. aes8 aes |
+  aes2. \bar"" aes8 aes |
   aes4~ aes4. g8 f ees |
-  bes'2. ees,8 aes |
+  bes'2. \bar"" ees,8 aes |
   c4~ c4. |
   bes8 aes f |
-  aes2. aes8 f |
+  aes2. \bar"" aes8 f |
   
   ees4~ ees4. ees8 ees16[ f] g8 |
-  aes2. bes8 bes |
+  aes2. \bar"" bes8 bes |
   bes4~ bes4. bes8 c16 c8. |
-  bes2. f8 f |
+  bes2. \bar"" f8 f |
   f4~ f4. f8 f g |
   
-  ees2. ees8 aes |
+  ees2. \bar"" ees8 aes |
   c4~ c4. bes8 aes f |
-  aes2. aes8 f' |
+  aes2. \bar"" aes8 f' |
   ees4~ ees4. c8 bes c |
   aes2. \bar"||"\break
   
@@ -165,8 +165,8 @@ altoMusic = \relative c' {
   
   c4~ c4. bes8 bes des |
   c2. ees8 ees |
-  g4~ g4. c,8 c16 c8. |
-  bes2. d8 d |
+  g4~ g4. ees8 ees16 ees8. |
+  ees2. d8 d |
   d4~ d4. d8 d d |
   
   ees2. c8 c |
@@ -219,9 +219,9 @@ tenorMusic = \relative c' {
   
   aes4~ aes4. g8 g g |
   ees2. g8 g |
-  bes4~ bes4. aes8 aes16 aes8. |
-  g2. f8 f |
-  bes4~ bes4. bes8 bes bes |
+  bes4~ bes4. g8 aes16 aes8. |
+  g2. bes8 bes |
+  bes4~ bes4. bes8 bes aes |
   
   g2. aes8 aes |
   aes4~ aes4. aes8 aes aes |

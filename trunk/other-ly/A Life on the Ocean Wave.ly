@@ -70,9 +70,9 @@ sopMusic = \relative c' {
   d g g g[ g] a |
   b4.~ b8 b\rest g16[ a] |
   b8[ b] b c4 b8 |
-  a4.~ a8 b\rest a16[ fis] |
+  a4.~ a8 b\rest \bar"" a16[ fis] |
   
-  d8[ d] fis a[ a] b16[ b] |
+  d8[ d] fis a[ a] b8 |
   c4.~ c8 b\rest c16[ d] |
   e8[ e] d16[ d] c8[ b] a |
   g4.~ g8 b\rest \bar"||"\break
@@ -97,13 +97,13 @@ sopWords = \lyricmode {
   \set stanza = #"1. "
 	\set ignoreMelismata = ##t
   A life on the o -- _ cean wave, _
-  A _ home on the roll -- ing deep, _
-  Where the scat -- _ tered wa -- _ ters _ rave, _
-  And the winds _ their _ rev -- _ els keep: _
+  A __ _ home on the roll -- ing deep, _
+  Where the scat -- _ tered wa -- _ ters rave, __ _
+  And the winds _ their _ rev -- _ els keep: __ _
   
-  Like an ea -- gle _ caged I pine _
+  Like an ea -- gle __ _ caged I pine __ _
   On this dull, un -- _ chang -- ing shore; _
-  Oh! _ give me the flash -- ing brine, _
+  Oh! __ _ give me the flash -- ing brine, _
   The spray and the tem -- _ pest roar! _
 }
 
@@ -111,14 +111,14 @@ sopWordsII = \lyricmode {
   \set stanza = #"2. "
 	\set ignoreMelismata = ##t
   Once more on the deck _ I stand _
-  Of my own _ swif -- glid -- ing craft, _ 
-  Set _ sail! _ fare -- well _ to the land, _
-  The _ gale _ fol -- lows far _ a -- baft. _
+  Of my own _ swift -- glid -- ing craft, _ 
+  Set __ _ sail! _ fare -- well to the land, __ _
+  The __ _ gale __ _ fol -- lows far __ _ a -- baft. __ _
   
-  We _ shoot thro’ the spark -- ling foam, _
-  Like an o -- cean _ bird set free; _
+  We __ _ shoot thro’ the spark -- ling foam, __ _
+  Like an o -- cean _ bird set free; __ _
   Like the o -- _ cean bird, our home _
-  We’ll find _ far out on the sea! _
+  We’ll find __ _ far out on the sea! __ _
 }
 
 sopWordsIII = \lyricmode {
@@ -126,12 +126,12 @@ sopWordsIII = \lyricmode {
   \set stanza = #"3. "
   The land is no long -- er in view, _
   The _ clouds have be -- gun to frown, _
-  But _ with a stout ves -- sel and _ crew _
-  We’ll _ say, “Let the _ storm _ come down!” _
+  But __ _ with a stout ves -- sel and crew __ _
+  We’ll _ say, “Let the __ _ storm _ come down!” _
   
-  And the song of our heart shall be, _
-  While the winds and the wa -- ters rave, _
-  A _ life on the heav -- ing sea, _
+  And the song of our heart shall be, __ _
+  While the winds and the wa -- ters rave, __ _
+  A __ _ life on the heav -- ing sea, __ _
   A home on the bound -- _ ding wave! _
 }
 
@@ -150,10 +150,10 @@ altoMusic = \relative c' {
   g8[ g] g a4 g8 |
   fis4.~ fis8 s d16[ d] |
   
-  d8[ d] d fis[ fis] g16[ g] |
+  d8[ d] d fis[ fis] g8 |
   a4.~ a8 s fis16[ fis] |
   fis8[ fis] fis16[ fis] fis8[ g] fis |
-  g4.~ g8 s |
+  g4.~ g8 s 
   
   d16[ d] |
   e4 dis16[ dis] e4 e8 |
@@ -193,10 +193,10 @@ tenorMusic = \relative c' {
   d8[ d] d d4 d8 |
   d4.~ d8 s fis,16[ fis] |
   
-  fis8[ fis] a d[ d] d16[ d] |
+  fis8[ fis] a d[ d] d8 |
   d4.~ d8 s a16[ b] |
   c8[ c] b16[ b] a8[ b] c |
-  b4.~ b8 s |
+  b4.~ b8 s 
   
   g16[ g] |
   g4 g16[ g] g4 e8 |
@@ -226,10 +226,10 @@ bassMusic = \relative c' {
   g8[ g] g fis4 g8 |
   d4.~ d8 d\rest d16[ d] |
   
-  d8[ d] d d[ d] d16[ d] |
+  d8[ d] d d[ d] d8 |
   d4.~ d8 d\rest d16[ d] |
   d8[ d] d16[ d] d4 d8 |
-  g4.~ g8 d\rest |
+  g4.~ g8 d\rest 
   
   b16[ b] |
   c4 c16[ c] c4 c8 |
