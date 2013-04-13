@@ -61,17 +61,17 @@ sopMusic = \relative c' {
   d8. cis16 c4 f, |
   c'8. b16 c4 d |
   
-  \times 2/3 {c8[ bes] g} f4 f |
+  \times 2/3 {c8[ bes] g} f4 \bar"" f |
   d'8. cis16 d4 f |
   f8. e16 ees4 ees |
   d8. cis16 d4 f,4 |
   
-  c'8. bes16 bes4 b8\rest bes |
+  c'8. bes16 bes4 \bar""\break b8\rest bes |
   c d ees4 g, |
   f8 bes d4 bes |
   c8 d f4 ees |
   
-  bes8 c d4 bes8\rest d |
+  bes8 c d4 bes8\rest \bar""\break d |
   d d ees4 d |
   c8 d g,4 a |
   bes8 bes c4 bes |
@@ -164,7 +164,7 @@ altoMusic = \relative c' {
   g8 g g4 g |
   g8 g g4 g |
   
-  a8 g fis8 f | \break
+  a8 g fis8 f \break
   
 %chorus
   f4 |
@@ -274,8 +274,8 @@ bassMusic = \relative c' {
   <g g,>8 q q4 q |
   q8 q q4 q |
   
-  ees8 ees |
-  d8\fermata c\fermata |
+  ees8 ees
+  d8\fermata c\fermata 
   
   %%Chorus
   f4\fermata |
