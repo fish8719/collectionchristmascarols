@@ -126,7 +126,7 @@ sopWordsIII = \lyricmode {
   Sought the God _ of storm _ in prayer.
   “She has struck on a rock!” the sea -- men cried,
   In the depth of their wild dis -- may;
-  And the ship when _ down with that fair young bride,
+  And the ship went _ down with that fair young bride,
   That _
 }
 
@@ -162,6 +162,7 @@ altoMusic = \relative c' {
   }
   \alternative {
     {
+      \partial 2.
       d8[ g] f ees4 ees8 |
       d4. s4 |
     }
@@ -215,7 +216,8 @@ tenorMusic = \relative c' {
   }
   \alternative {
     {
-      bes8[ a] bes a[ c] c |
+      \partial 2.
+      bes8[ c] bes a[ bes] c |
       bes4. s4
     }
     {
@@ -258,6 +260,7 @@ bassMusic = \relative c' {
   }
   \alternative {
     {
+      \partial 2.
       f4 f8 f4 f8 |
       bes,4. d4\rest |
     }

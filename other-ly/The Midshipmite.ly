@@ -27,6 +27,11 @@
        (minimum-distance . 0)
        (padding . -1.5)
        (stretchability . 0))
+  top-markup-spacing =
+    #'((basic-distance . 0)
+       (minimum-distance . 0)
+       (padding . -1)
+       (stretchability . 0))
   ragged-last-bottom = ##t
   ragged-bottom = ##f
   two-sided = ##t
@@ -66,8 +71,8 @@ global = {
 
 sopMusic = \relative c' {
 	\partial 4 \slurDotted\tieDotted
-  g'8~ g~ |
-  c4 c b b8~ b |
+  g'8~ g |
+  c4 c b8~ b b8~ b |
   a4 a g b\rest |
   e,8 d c d e4 a |
   g2 b4\rest g |
@@ -81,8 +86,8 @@ sopMusic = \relative c' {
   g,2 << {b\rest} {s4 \teeny g8~ g} >> | \normalsize
   g8( a) a~ a a4 b8( a) |
   g8~ g8~ g8~ g8 g4 g8~ g |
+  a4 a8~ a a4 b8[ a] |
   \tieSolid
-  a4 a a b8[ a] |
   g4 g g a8[ b] |
   
   c4 e,8( f) g4 a8 a |
@@ -117,14 +122,14 @@ sopMusic = \relative c' {
 sopWords = \lyricmode {
   \set stanza = #"1. "
   \set ignoreMelismata = ##t
-	’Twas in fif -- ty -- five, on a win -- ter’s night,
+	’Twas in fif -- ty -- five, _ on a win -- ter’s night,
   Cheer -- i -- ly my lads yo -- ho!
   We’d got the __ _ Roo -- shan _ lines in sight,
   When _ up comes a lit -- tle __ _ Mid -- _ ship -- mite,
   Cheer -- i -- ly my lads yo -- ho!
   
   "" "" “Who -- ’ll go a -- shore to -- _ night,” __ _ _ says he,
-  “An’ _ spike their guns a -- _ long wi’ me?”
+  “An’ _ spike their _ guns a -- _ long wi’ me?”
   “Why, _ bless ’ee, __ _ sir, come a -- long!” says we,
   
   
@@ -133,13 +138,13 @@ sopWords = \lyricmode {
 sopWordsII = \lyricmode {
   \set stanza = #"2. "
   \set ignoreMelismata = ##t
-  We _ launch’d the cutter and _ shoved her out,
+  We _ launch’d the cut -- ter and _ shoved her out,
   Cheer -- i -- ly my lads yo -- ho!
   The lub -- bers _ might ha’ _ heard us shout,
   As the Mid -- dy __ _ cried, “Now, my lads, put a -- bout.”
   Cheer -- i -- ly my lads yo -- ho!
   “We _ made _ for the guns, an’ we ram’d _ ’em __ _ tight,
-  But the mus -- ket shots came _ left and right,
+  But the mus -- ket _ shots came _ left and right,
   An’ _ down drops the poor lit -- tle Mid -- ship -- mite,
   
   \unset ignoreMelismata
@@ -155,13 +160,13 @@ sopWordsII = \lyricmode {
 sopWordsIII = \lyricmode {
   \set stanza = #"3. "
   \set ignoreMelismata = ##t
-  “I’m _ done for "now;" good -- _ bye!” says he,
+  “I’m _ done for "now;" _ good -- _ bye!” says he,
   Stead -- i -- ly, my lads, yo -- ho!
   “You make for the boat, nev -- er mind for me!”
   “We’ll _ take ’ee __ _ back, sir or die,” "" says we,
   Cheer -- i -- ly, my lads, yo -- ho!
   “So we hoist -- ed him __ _ in, in a ter -- ri -- ble __ _ plight,
-  An’ we pull’d ev’ry man with _ all his might,
+  An’ we pull’d ev -- ’ry man with _ all his might,
   An’ _ saved the __ _ poor lit -- tle Mid -- ship -- mite,
 }
 
@@ -178,7 +183,7 @@ altoMusic = \relative c' {
   \slurDotted
   \tieDotted
   e8~ e |
-  e4 e e e8~ e |
+  e4 e e8~ e e8~ e |
   f4 f e s |
   e8 d c d e4 f |
   e2 s4 e |
@@ -192,8 +197,8 @@ altoMusic = \relative c' {
   g2 \teeny s4 g8~ g \normalsize |
   e8~ e f~ f f4 f8~ f |
   f8~ f8~ f8~ f8 f4 f8~ f |
+  f4 f8~ f f4 f |
   \tieSolid
-  f4 f f f |
   f f f a8[ b] |
   
   c4 e,8( f) g4 a8 a |
@@ -249,7 +254,7 @@ tenorMusic = \relative c' {
   \slurDotted
   \tieDotted
   c8~ c |
-  a4 a g g8~ g |
+  a4 a g8~ g g8~ g |
   f4 c' c s |
   e,8 d c d e4 c' |
   c2 s4 c |
@@ -263,8 +268,8 @@ tenorMusic = \relative c' {
   b2 \teeny s4 b8~ b \normalsize |
   c8~ c c~ c c4 d8( c) |
   b8~ b~ b~ b8 b4 b8~ b |
+  c4 c8~ c c4 c |
   \tieSolid
-  c4 c c c |
   b b b a8[ b] |
   
   c4 e,8( f) g4 a8 a |
@@ -311,7 +316,7 @@ bassMusic = \relative c' {
   \slurDotted
   \tieDotted
   c,8~ c |
-  a'4 a, e' e8~ e |
+  a'4 a, e'8~ e e8~ e |
   f4 f c d\rest |
   e8 d c d e4 c |
   c2 d4\rest c |
@@ -325,8 +330,8 @@ bassMusic = \relative c' {
   g2 << d\rest { \teeny s4 g8~ g} >> | \normalsize
   g8~ g g g g4 g8~ g |
   g8~ g~ g~ g8 g4 g8~ g |
+  g4 g8~ g g4 g |
   \tieSolid
-  g4 g g g |
   g g g a8[ b] |
   
   c4 e,8( f) g4 a8 a |
