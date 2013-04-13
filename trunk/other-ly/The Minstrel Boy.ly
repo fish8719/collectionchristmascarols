@@ -178,8 +178,8 @@ tenorMusic = \relative c' {
   bes?4 a bes s8 d |
   
   c4. c8 b4 g |
-  g4. b8 c4 c |
-  bes4. aes8 f[ g] aes( g) |
+  \slurSolid g4.( b8) c4 c |
+  \slurDotted bes4. aes8 f[ g] aes( g) |
   bes4 bes g bes8( bes) |
   aes4. bes8 bes4. bes8 |
   \slurSolid
@@ -212,8 +212,8 @@ bassMusic = \relative c' {
   f4 < \tweak #'font-size #-3 f f,> bes, d8\rest f |
   
   c4. ees8 g4 f |
-  ees4. d8 c4 g'\fermata |
-  g4. f8 d[ ees] bes( ees) |
+  \slurSolid ees4.( d8) c4 g'\fermata |
+  \slurDotted g4. f8 d[ ees] bes( ees) |
   ees4 d c\fermata g8( g) |
   aes4. g8 ees'8.[ f16 g8] ees |
   bes2 ees4 \bar"|."
