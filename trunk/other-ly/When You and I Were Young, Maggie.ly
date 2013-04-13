@@ -73,7 +73,7 @@ sopMusic = \relative c' {
   f2 d8 f4 d8 |
   c4 f8.~ f16 a4 c8.~ c16 |
   
-  g2. c4 |
+  g2. \bar""\break c4 |
   c a8. g16 f4 g8. f16 |
   f2 d8 f4 d8 |
   c4 f8.( a16) c4 g8.( a16) |
@@ -109,14 +109,14 @@ sopWords = \lyricmode {
   \set stanza = #"1. "
   \set ignoreMelismata = ##t
 	I wan -- dered to day to the hill, Mag -- gie,
-  To watch the _ scene be -- _ low,
-  The creek and the old rust -- y mill, Mag -- gie,
-  Where we sat so long, long a -- go.
+  To watch the __ _ scene be -- _ low,
+  The creek and the creak -- ing old mill, Mag -- gie,
+  As we used to long, a -- _ go.
   
   The green grove is gone from the hill, Mag -- gie,
-  Where first the _ dai -- _ sies _ \set associatedVoice = "altos" sprung; __ _ _
+  Where first the __ _ dai -- _ sies __ _ \set associatedVoice = "altos" sprung; _ _
   \unset associatedVoice
-  The _ old rust -- y mill is _ still, Mag -- gie,
+  The _ creak -- ing old mill is __ _ still, Mag -- gie,
   Since you and _ I were _ young.
 }
 
@@ -125,13 +125,13 @@ sopWordsII = \lyricmode {
   \set ignoreMelismata = ##t
   A cit -- y so si -- lent and lone, Mag -- gie,
   Where young and the gay and the best,
-  In pol -- ish’d white man -- sions of stone, Mag -- gie,
-  Have each found a place of _ rest,
+  In pol -- ished white man -- sions of stone, Mag -- gie,
+  Have each found a place of __ _ rest,
   
   Is built where the birds used to play, Mag -- gie,
   And join in the songs _ that were \set associatedVoice = "altos" sung, __ _ _
   \unset associatedVoice
-  For we sang just as gay as _ they, Mag -- gie,
+  For we sang just as gay as __ _ they, Mag -- gie,
   When you and _ I were _ young.
   
   And now we are a -- ged and gray, Mag -- gie,
@@ -150,7 +150,7 @@ sopWordsIII = \lyricmode {
   But time a -- _ lone was the pen.
   
   They say we are a -- ged and gray, Mag -- gie,
-  As spray by the white _ break -- ers \set associatedVoice = "altos" flung, __ _ _
+  As sprays by the white _ break -- ers \set associatedVoice = "altos" flung, __ _ _
   \unset associatedVoice
   But to me you’re as fair as you were, Mag -- gie,
   When you and _ I were _ young.
@@ -186,7 +186,7 @@ altoMusic = \relative c' {
     f4 f8. f16 f4 ees8.~ ees16 |
     d2 bes8 d4 d8 |
     c4 c8.[ f16] e4 e |
-    f2. \bar""
+    f2. \bar""\break
     
     
     f4 |
