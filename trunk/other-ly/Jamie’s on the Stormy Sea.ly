@@ -153,7 +153,7 @@ altoMusic = \relative c' {
   bes bes16 bes8 bes |
   ees ees ees16 ees8. |
   ees16 ees8. ees ees16 |
-  d8. ees16 bes4 \bar"|."
+  d8. ees16 ees4 \bar"|."
 }
 altoWords = \lyricmode {
 }

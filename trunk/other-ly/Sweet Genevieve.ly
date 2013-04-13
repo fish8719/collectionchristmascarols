@@ -164,7 +164,7 @@ altoMusic = \relative c' {
   g8 g g4 g |
   g8 g g4 g |
   
-  a8 g fis8 f \break
+  a8 g fis8[ f] \break
   
 %chorus
   f4 |
@@ -224,7 +224,7 @@ tenorMusic = \relative c' {
   bes8 bes bes4 bes |
   bes8 bes bes4 bes |
   
-  c8 cis c a
+  c8 cis c[ a]
   
   %%Chorus
   c4 |
@@ -275,7 +275,7 @@ bassMusic = \relative c' {
   q8 q q4 q |
   
   ees8 ees
-  d8\fermata c\fermata 
+  d8\fermata[ c\fermata]
   
   %%Chorus
   f4\fermata |
