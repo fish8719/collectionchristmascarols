@@ -97,7 +97,7 @@ sopWords = \lyricmode {
   \set stanza = #"1. "
 	\set ignoreMelismata = ##t
   A life on the o -- _ cean wave, _
-  A __ _ home on the roll -- ing deep, _
+  A __ _ home on the roll -- ing deep, __ _
   Where the scat -- _ tered wa -- _ ters rave, __ _
   And the winds _ their _ rev -- _ els keep: __ _
   
@@ -111,7 +111,7 @@ sopWordsII = \lyricmode {
   \set stanza = #"2. "
 	\set ignoreMelismata = ##t
   Once more on the deck _ I stand _
-  Of my own _ swift -- glid -- ing craft, _ 
+  Of my own __ _ swift -- glid -- ing craft, __ _ 
   Set __ _ sail! _ fare -- well to the land, __ _
   The __ _ gale __ _ fol -- lows far __ _ a -- baft. __ _
   
