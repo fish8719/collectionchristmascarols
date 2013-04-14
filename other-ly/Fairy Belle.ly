@@ -57,7 +57,7 @@ sopMusic = \relative c' {
   \partial 8 
   g'8 |
   g4 g8 g a c c8. a16 |
-  g8 g e'8. c16 g4 b8\rest g16 g |
+  g8 g e'8. c16 g4 b8\rest \tieDotted g16~ g | \tieSolid
   
   a4 b8 c c4 d8 e |
   e d d c d4 b8\rest g |
@@ -83,7 +83,8 @@ sopMusic = \relative c' {
 sopWords = \lyricmode {
   \set stanza = #"1. "
 	The pride of the vil -- lage and the fair -- est in the dell
-  Is the queen of my song, and her name is Fair -- y Belle;
+  \set ignoreMelismata = ##t
+  Is the \unset ignoreMelismata queen of my song, and her name is Fair -- y Belle;
   The sound of her light step may be heard up -- on the hill
   Like the fall of the snow -- drop or the drip -- ping of the rill.
 }
@@ -91,7 +92,7 @@ sopWords = \lyricmode {
 sopWordsII = \lyricmode {
   \set stanza = #"2. "
   She sings to the mead -- ows and she car -- ols to the streams,
-  She _ laughs in the sun -- light and smiles while in her dreams,
+  She laughs in the sun -- light and smiles while in her dreams,
   Her hair like the this -- tle down is borne up -- on the air,
   And her heart, like the hum -- ming bird’s, is free from ev -- ’ry care.
   
@@ -104,7 +105,7 @@ sopWordsII = \lyricmode {
 sopWordsIII = \lyricmode {
   \set stanza = #"3. "
   Her soft notes of mel -- o -- dy a -- round me sweet -- ly fall,
-  Her _ eye full of love is now beam -- ing on my soul.
+  Her eye full of love is now beam -- ing on my soul.
   The sound of that gen -- tle voice, the glance _ of that eye,
   Sur -- _ round me with rap -- ture that no oth -- er heart could sigh.
 }
@@ -120,10 +121,10 @@ sopWordsV = \lyricmode {
 altoMusic = \relative c' {
   e8 |
   e4 e8 e f a a8. f16 |
-  e8 e g8. e16 e4 s8 e16 e |
+  e8 e g8. e16 e4 s8 \tieDotted e16~ e | \tieSolid
   
   f4 f8 f fis4 a8 a |
-  g g b a b4 s8 f |
+  g g g g g4 s8 f |
   e4 e8 e f a a8. f16 |
   
   e8e g8. e16 e4 s8 e16 e |
@@ -165,14 +166,14 @@ altoWordsVI = \lyricmode {
 tenorMusic = \relative c' {
   c8 |
   c4 c8 c c c c8. c16 |
-  c8 c c8. g16 c4 s8 c16 c |
+  c8 c c8. g16 c4 s8 \tieDotted c16~ c | \tieSolid
   
   c4 b8 c a4 fis8 fis |
-  b b b c b4 s8 b |
+  b b b a b4 s8 b |
   c4 c8 c c c c8. c16 |
   
   c8 c c8. g16 c4 s8 c16 c |
-  d4 a8 a c c c b |
+  d4 a8 a c b c b |
   c b a d c2 \bar"||"
   
   %Chorus
@@ -200,7 +201,7 @@ tenorWordsIII = \lyricmode {
 bassMusic = \relative c' {
   c,8 |
   c4 c8 c f f f8. f16 |
-  c8 c c8. c16 c4 d8\rest c16 c |
+  c8 c c8. c16 c4 d8\rest \tieDotted c16~ c | \tieSolid
   
   f4 g8 a d,4 d8 d |
   g g g g g4 d8\rest g |
