@@ -113,9 +113,10 @@ sopMusic = \relative c' {
   a[ fis] fis8 b\rest d^\markup\smallCapsOldStyle"Don G." |
   gis,4 b8\rest e |
   a,4 b8\rest fis'^\markup\smallCapsOldStyle"Zer." |
-  \acciaccatura e16 d4\fermata b8\rest\fermata \bar"||"\break
+  \acciaccatura e16 d4\fermata b8\rest\fermata \break
   
   \time 6/8 \tempo Allegro \partial 8
+  \bar"||:"
   \repeat volta 2 {
     b8^\markup\smallCapsOldStyle"Both" |
     cis4 b8 cis4 d8 |
@@ -386,7 +387,7 @@ tenorMusic = \relative c' {
   fis a s d |
   b4 s8 d |
   cis4 s8 d |
-  b4 s8 \bar"||"
+  b4 s8 \bar"||:"
   
   \time 6/8
   \repeat volta 2 {
@@ -483,7 +484,7 @@ bassMusic = \relative c' {
   d d d\rest d |
   e4 d8\rest e |
   fis4 d8\rest d |
-  e4\fermata d8\rest \fermata \bar"||"
+  e4\fermata d8\rest \fermata \bar"||:"
   
   \time 6/8
   \repeat volta 2 {
