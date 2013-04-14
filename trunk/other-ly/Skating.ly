@@ -111,7 +111,7 @@ altoWordsVI = \lyricmode {
 }
 tenorMusic = \relative c' {
   ees'4 c aes ees' |
-  ees bes g des' |
+  ees bes g ees' |
   des aes f des' |
   c aes ees2 \bar"||"
 }
