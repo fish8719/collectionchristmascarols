@@ -145,7 +145,7 @@ altoMusic = \relative c' {
   des c ees |
   f f des |
   c c ees |
-  ees ees ees |
+  g g g |
   ees2 \bar"||" \time 4/4 \partial 4 c8. des16 |
   ees2. aes8. bes16 |
   c2. aes8[ g] |
