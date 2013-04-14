@@ -91,7 +91,7 @@ sopMusic = \relative c' {
       f8 g a4 d |
       \partial 2 c2 |
     }
-    {
+    {\break
       g8 e c4 b'8\rest e, |
     }
   }
@@ -198,7 +198,7 @@ altoMusic = \relative c' {
   g b b2~ |
   b4 s8 d, d d |
   f2 f4 |
-  f( d8) d d16 d8. |
+  f( d8) d d16 b8. |
   c4 s4 \bar"|."
 }
 altoWords = \lyricmode {

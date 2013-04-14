@@ -95,7 +95,7 @@ sopWords = \lyricmode {
 	I sit me down by my own fire -- side
   When the win -- ter nights come on,
   And I calm -- ly dream as the dim hours glide,
-  Of man -- y plea -- sant scenes now gone;
+  Of ma -- ny plea -- sant scenes now gone;
   Of our health -- ful plays in my school -- boy days,
   That can nev -- er come a -- gain;
   Of our sum -- mer joys and our Christ -- mas toys,

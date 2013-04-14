@@ -78,7 +78,7 @@ sopMusic = \relative c' {
     a4. a8 fis' e |
     d4( fis,) a8 a |
     a8[ gis b] a g e |
-    \partial 8*3 d4. \break
+    d4. \break
   }
   \pageBreak
 }
@@ -91,8 +91,8 @@ sopWords = \lyricmode {
   \dropLyricsXI
   Ah, __ well -- a -- day! the sweet -- est \raiseLyrics mel -- o -- dy
   Could nev -- er, nev -- er say one half my love for thee,
-  Then let me si -- lent -- ly re -- veal
-  What my soul would wish to sigh.
+  Then let me si -- lent -- ly re -- veal __
+  What my soul __ would wish to sigh.
 }
 
 sopWordsII = \lyricmode {

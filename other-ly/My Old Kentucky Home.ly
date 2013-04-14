@@ -59,17 +59,17 @@ sopMusic = \relative c' {
     \partial 4
     b'8\rest b |
     b4 b g a8. b16 |
-    c8. b16 c8 e d4 \teeny d8 \normalsize c |
+    c8. b16 c8 e d4 \bar"" \teeny d8 \normalsize c |
     b a b\rest g g fis b\rest g |
     a2. \bar""
     
-    b8\rest a |
+    \teeny a8 \normalsize a |
     b4 b g a8. b16 |
-    c8 b c8. e16 d4 g,8. a16 
+    c8 b c8. e16 d4 \bar"" g,8. a16 
   }
   \alternative {
     {
-      b4  b8~ b a( g) b8. a16) |
+      b4  b8~ b a( g) b8.( a16) |
       g2.
     }
     
@@ -97,15 +97,15 @@ sopWords = \lyricmode {
   \set ignoreMelismata = ##t
 	The sun shines bright in the old Ken -- tuck -- y home, ""
   ’Tis sum -- mer, the dark -- ies are gay:
-  The corn -- top’s ripe and the mead -- ow’s in the bloom,
+  "" The corn -- top’s ripe and the mead -- ow’s in the bloom,
   While the birds make _ mu -- sic all the day.
   
 }
 sopWordsA = \lyricmode {
   The young folks roll on the lit -- tle cab -- in floor, ""
   All mer -- ry, all hap -- py and bright;
-  By’n -- by hard times comes a -- knock -- ing at the door,
-  Theny my
+  By -- ’n -- by hard times comes a -- knock -- ing at the door,
+  Then my
 }
 
 sopWordsII = \lyricmode {
@@ -113,7 +113,7 @@ sopWordsII = \lyricmode {
   \set stanza = #"2. "
   They hunt no more for the pos -- sum and the coon,
   On the mead -- ow, the hill, and the shore;
-  They sing no more by the glim -- mer of the moon,
+  "" They sing no more by the glim -- mer of the moon,
   On the bench by the old _ cab -- in door.
   
   old Ken -- tuck -- y home, good -- night!
@@ -126,7 +126,7 @@ sopWordsII = \lyricmode {
 sopWordsIIa = \lyricmode {
   The day goes by like a shad -- ow o’er the heart, ""
   With sor -- row where all was de -- light;
-  The time has come when the dark -- ies have to part,
+  "" The time has come when the dark -- ies have to part,
   Then my
 }
 
@@ -135,13 +135,13 @@ sopWordsIII = \lyricmode {
   \set stanza = #"3. "
   The head must bow and the back will have to bend, ""
   Wher -- ev -- er the dark -- ey may go;
-  A few more days, and the trou -- ble all will end,
+  "" A few more days, and the trou -- ble all will end,
   In the field where the su -- gar -- canes _ grow;
 }
 sopWordsIIIa = \lyricmode {
   A few more days for to tote the wea -- ry "    load—" ""
   No mat -- ter, ’twill nev -- er be light;
-  A few more days till we tot -- ter on the road,
+  "" A few more days till we tot -- ter on the road,
   Then my
 }
 
@@ -161,7 +161,7 @@ altoMusic = \relative c' {
     g d s d cis cis s cis |
     d2. \bar""
     
-    s8 fis |
+    \teeny fis8 \normalsize fis |
     g4 g d fis8. g16 |
     g8 g g8. g16 g4 g8. g16
   }
@@ -172,6 +172,7 @@ altoMusic = \relative c' {
     }
     
     {
+      \partial 1
       g8 g g g fis4. d8 |
       g2. s4 |
     }
@@ -180,7 +181,7 @@ altoMusic = \relative c' {
     g4. g8 g4. g8 |
     g g4. s4 fis |
     e4. e8 e4. c8 |
-    d2 s4 |
+    d2 s4
     
     g8 g |
     g4 g g g8 g |
@@ -217,7 +218,7 @@ tenorMusic = \relative c' {
     d c s b a a s g |
     fis2. \bar""
     
-    s8 d' |
+    \teeny d'8 \normalsize d |
     d4 d b c8. d16 |
     e8 d e8. c16 b4 b8. cis16 |
   }
@@ -228,6 +229,7 @@ tenorMusic = \relative c' {
     }
     
     {
+      \partial 1
       d8 b e d c4. c8 |
       b2. s4 |
     }
@@ -236,7 +238,7 @@ tenorMusic = \relative c' {
     b4. d8 e4. c8 |
     b d4. s4 c4 |
     b4. b8 c4. g8 |
-    b2 s4 |
+    b2 s4
     
     b8 c |
     d4 d b c8 d |
@@ -263,7 +265,7 @@ bassMusic = \relative c' {
     g g d\rest g e e d\rest e |
     d2. \bar""
     
-    d8\rest d |
+    \teeny d8 \normalsize d |
     g4 g g g8. g16 |
     g8 g g8. g16 g4 e8. e16 |
   }
@@ -274,6 +276,7 @@ bassMusic = \relative c' {
     }
     
     {
+      \partial 1
       d8 d d d d4. d8 |
       g2. d4\rest |
     }

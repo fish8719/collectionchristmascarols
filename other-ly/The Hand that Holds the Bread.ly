@@ -132,7 +132,7 @@ sopWordsIII = \lyricmode {
   \set stanza = #"3. "
   Broth -- ers of the plow,
   Come ral -- ly once a -- gain,
-  Come gat -- her from the prai -- rie wide,
+  Come gath -- er from the prai -- rie wide,
   The hill -- side and the plain;
   
   Not as in days of yore,
@@ -166,7 +166,7 @@ altoMusic = \relative c' {
   f8. f16 f8. f16 |
   f8 f f f |
   e e e8. e16 |
-  c4. |
+  c4.
   
   
   %chorus

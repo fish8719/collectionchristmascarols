@@ -108,7 +108,7 @@ sopWords = \lyricmode {
 
 sopWordsII = \lyricmode {
   \set stanza = #"2. "
-  By those tress --es un -- con -- fined,
+  By those tress -- es un -- con -- fined,
   Wooed by each Æ -- ge -- an wind,
   By those lids whose jet -- ty fringe,
   Kiss thy soft cheeks’ bloom -- ing tinge,

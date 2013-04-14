@@ -83,8 +83,8 @@ sopMusic = \relative c' {
   
   a2 a4. e8 |
   fis4 d b'\rest a |
-  d4. cis8 b4 a |
-  a2( gis4) e |
+  d4. cis8 b4. a8 |
+  a4( gis2) e4 |
   e'2 d |
   cis8[ a d b]( e4) d |
   cis2( b4.) a8 | a2 b\rest | \break
@@ -104,7 +104,7 @@ sopWords = \lyricmode {
   \set stanza = #"1. "
 	When Brit -- ain first at Heav’n’s com -- mand,
   A -- rose __ from out the a -- zure main,
-  A -- rose, a -- rose from out the a -- zure, a -- zure main,
+  A -- rose, a -- rose, a -- rose from out the a -- zure main,
   This was the char -- ter, the char -- ter of the land,
   And gaurd -- ian an -- gels sang this strain:
 }
@@ -156,7 +156,7 @@ altoMusic = \relative c' {
   
   cis e4. cis8 |
   d4 d s fis |
-  fis4. fis8 fis4 fis |
+  fis4. fis8 fis4. fis8 |
   e2. e4 |
   e2 gis |
   a8[ e d fis]( e4) fis |
@@ -212,7 +212,7 @@ tenorMusic = \relative c' {
   
   e a4. a8 |
   a4 fis s a |
-  b4. ais8 b4 b |
+  b4. ais8 b4. b8 |
   b2. gis4 |
   a2 e |
   e4( b' a) a |
@@ -258,7 +258,7 @@ bassMusic = \relative c' {
   
   a a4. a8 |
   d4 d d\rest d |
-  b4. cis8 d4 dis |
+  b4. cis8 d4. dis8 |
   e2. d4 |
   cis2 b |
   a4( b cis) d |

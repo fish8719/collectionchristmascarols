@@ -144,9 +144,9 @@ sopWordsII = \lyricmode {
   Who will think of him up -- on the wa -- ters blue!
   
   Sail -- ing, sail -- ing, o -- ver the bound -- ing main;
-  For man -- y a storm -- y wind shall blow, ere Jack comes home a -- gain!
+  For ma -- ny a storm -- y wind shall blow, ere Jack comes home a -- gain!
   Sail -- ing, sail -- ing, o -- ver the bound -- ing main;
-  For man -- y a storm -- y wind shall blow, ere Jack comes home a -- gain.
+  For ma -- ny a storm -- y wind shall blow, ere Jack comes home a -- gain.
 }
 
 sopWordsIII = \lyricmode {
