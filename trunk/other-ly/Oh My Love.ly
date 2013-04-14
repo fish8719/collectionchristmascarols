@@ -69,7 +69,7 @@ sopMusic = \relative c' {
 }
 sopWords = \lyricmode {
   Oh my Love
-  Lovst thou me,
+  Lov’st thou me,
   then Quick -- ly come and save him who dies for thee.
 }
 
