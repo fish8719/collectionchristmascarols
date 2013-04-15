@@ -103,7 +103,6 @@ altoMusic = \relative c' {
   d cis a2 \bar "|."
 }
 altoWords = \lyricmode {
-  \dropLyricsVII
   \set stanza = #"1. "
   Je -- sus, Lov -- er of my soul,
   Let me to Thy bos -- om fly,
@@ -115,7 +114,6 @@ altoWords = \lyricmode {
   O re -- ceive my soul at last!
 }
 altoWordsII = \lyricmode {
-  \dropLyricsVII
 %\markup\italic
   \set stanza = #"2. "
   Oth -- er ref -- uge have I none,
@@ -128,8 +126,18 @@ altoWordsII = \lyricmode {
   With the shad -- ow of Thy wing!
 }
 altoWordsIII = \lyricmode {
-  \dropLyricsVII
   \set stanza = #"3. "
+  Thou, oh, Christ, art all I want,
+  More than all in Thee I find;
+  Raise the fall -- en, cheer the faint,
+  Heal the sick, and lead the blind,
+  Just and ho -- ly is Thy Name,
+  I am all un -- right -- eous -- ness!
+  Vile and full of sin I am,
+  Thou art full of truth and grace.
+}
+altoWordsIV = \lyricmode {
+  \set stanza = #"4. "
   Plen -- teous grace with Thee is found,
   Grace to cov -- er all my sin;
   Let the heal -- ing streams a -- bound;
@@ -138,10 +146,6 @@ altoWordsIII = \lyricmode {
   Free -- ly let me take of Thee;
   Spring Thou up with -- in my heart,
   Rise to all e -- ter -- ni -- ty.
-}
-altoWordsIV = \lyricmode {
-  \set stanza = #"4. "
-  \set ignoreMelismata = ##t
 }
 altoWordsV = \lyricmode {
   \set stanza = #"5. "
