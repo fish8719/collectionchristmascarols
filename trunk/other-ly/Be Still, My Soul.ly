@@ -4,7 +4,7 @@
   title = \markup{\override #'(font-name . "Garamond Premier Pro Semibold"){ \abs-fontsize #18 \smallCapsOldStyle"Be Still, My Soul"}}
   composer = \markup\oldStyleNum{\concat{\italic"Finlandia" ", Jean Sibelius (1865–1957)"}}
   poet = \markup\oldStyleNum"Katharina von Schlegel (1697–1768)"
-  meter = \markup\oldStyleNum"Translated by Jane Borthwick (1813–1897)"
+  meter = \markup\oldStyleNum"Translated by Jane L. Borthwick (1813–1897)"
   tagline = ""
 }
 \paper {
@@ -87,41 +87,41 @@ sopMusic = \relative c' {
 }
 sopWords = \lyricmode {
   \set stanza = #"1. "
-	Be still, my soul; the Lord is on thy side;
-  Bear pa -- tient -- ly the cross of grief or pain;
-  Leave to thy God to or -- der and pro -- vide;
-  In eve -- ry change He faith -- ful will re -- main.
-  Be still, my soul; thy best, they heav’n -- ly, Friend
+	Be still, my soul; the Lord is on thy side; __
+  Bear pa -- tient -- ly the cross of grief or pain; __
+  Leave to thy God to or -- der and pro -- vide; __
+  In eve -- ry change He faith -- ful will re -- main. __
+  Be still, my soul; thy best, thy heav’n -- ly Friend __
   Through thorn -- y ways leads to a joy -- ful end. __
 }
 
 sopWordsII = \lyricmode {
   \set stanza = #"2. "
-  Be still, my soul; thy God doth un -- der -- take
-  To guide the fu -- ture as He has the past.
-  Thy hope, thy con -- fid -- ence, let no -- thing shake;
-  All now mys -- te -- rious shall be bright at last.
-  Be still, my soul; the waves and winds still know
+  Be still, my soul; thy God doth un -- der -- take __
+  To guide the fu -- ture as He has the past. __
+  Thy hope, thy con -- fid -- ence, let no -- thing shake; __
+  All now mys -- te -- rious shall be bright at last. __
+  Be still, my soul; the waves and winds still know __
   His voice who ruled them while He dwelt be -- low. __
 }
 
 sopWordsIII = \lyricmode {
   \set stanza = #"3. "
-  Be still, my soul, though dear -- est friends de -- part
-  And all is dark -- ened in the vale of tears;
-  The shalt thou bet -- ter know His love, His heart,
-  Who comes to soothe thy sor -- rows and thy fears.
-  Be still, my soul; thy Je -- sus can re -- pay
+  Be still, my soul, when dear -- est friends de -- part __
+  And all is dark -- ened in the vale of tears; __
+  Then shalt thou bet -- ter know His love, His heart, __
+  Who comes to soothe thy sor -- rows and thy fears. __
+  Be still, my soul; thy Je -- sus can re -- pay __
   From His own full -- ness all He takes a -- way. __
 }
 
 sopWordsIV = \lyricmode {
   \set stanza = #"4. "
-  Be still, my soul; th hour is hast -- ’ning on
-  When we shall be for -- ev -- er with the Lord,
-  When dis -- ap -- point -- ment, grief, and fear are gone,
-  Sor -- row for -- got, love’s pur -- est joys re -- stored.
-  Be still, my soul; when change and tears are past,
+  Be still, my soul; the hour is hast -- ’ning on __
+  When we shall be for -- ev -- er with the Lord, __
+  When dis -- ap -- point -- ment, grief, and fear are gone, __
+  Sor -- row for -- got, love’s pur -- est joys re -- stored. __
+  Be still, my soul; when change and tears are past, __
   All safe and bless -- ed we shall meet at last. __
 }
 
