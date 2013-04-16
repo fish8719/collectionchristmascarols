@@ -196,11 +196,11 @@ pianoRH = \relative c' {
   << {bes'4.( aes8 g4)} \\ {<f d bes>2 <ees bes>4} >> r4 |
   
   <g, ees des>2 <aes ees c> |
-  <a ees c> <bes d, bes>8 <d f>[ <ees g>( <f aes>]) |
+  <a ees c> <bes d, bes>8 <d f>[( <ees g> <f aes>]) |
   <g ees bes>2\arpeggio <aes f d bes>\arpeggio |
   <g ees bes>4 q8.[ q16] <bes d, bes>4 <d, bes aes>( |
-  <ees bes g>) <g, ees bes>8.[ q16] <aes f d bes>4 <d, aes>( |
-  <ees g,>4 <g bes,> <ees g,>2 \bar"||" \break
+  <ees bes g>) <g, ees bes>8.[ q16] <aes f d bes>4 <d, aes>^( |
+  <ees g,>4) <g bes,> <ees g,>2 \bar"||" \break
 }
 pianoLH = \relative c' {
   \key ees \major
@@ -209,9 +209,9 @@ pianoLH = \relative c' {
   <ees, ees,>2 <bes bes,> |
   <c c,>2. r4 |
   <g g'>2 q |
-  q( <c g'>4) r |
+  q_( <c g'>4) r |
   <bes bes'>2 q |
-  q( <ees bes'>4) r |
+  q_( <ees bes'>4) r |
   
   q2 <aes aes,> |
   <f f,>2 <f bes,>8 r r4 |
@@ -239,10 +239,10 @@ pianoWords = \lyricmode {
 <<
    \new ChoirStaff <<
     \new Staff = women {
-      \global \new Voice = "pianoRH" {\pianoRH}
+      \global \new Voice = "pianoRH" {\set midiInstrument = #"acoustic grand" \pianoRH}
       <<
-        \new Voice = "sopranos" { \voiceOne << \global \sopMusic >> }
-        \new Voice = "altos" { \voiceTwo << \global \altoMusic >> }
+        \new Voice = "sopranos" { \voiceOne << \global \set midiInstrument = #"flute" \sopMusic >> }
+        \new Voice = "altos" { \voiceTwo << \global \set midiInstrument = #"flute" \altoMusic >> }
       >>
     }
     \new Lyrics = "pianos"
@@ -253,10 +253,10 @@ pianoWords = \lyricmode {
     \new Lyrics = "altosV"  \lyricsto "sopranos" \sopWordsV
    \new Staff = men {
      \clef bass
-     \global \new Voice = "pianoLH" {\pianoLH}
+     \global \new Voice = "pianoLH" {\set midiInstrument = #"acoustic grand" \pianoLH}
      <<
-        \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }
-        \new Voice = "basses" { \voiceTwo << \global \bassMusic >> }
+        \new Voice = "tenors" { \voiceOne << \global \set midiInstrument = #"flute" \tenorMusic >> }
+        \new Voice = "basses" { \voiceTwo << \global \set midiInstrument = #"flute" \bassMusic >> }
       >>
     }
     \context Lyrics = "pianos"  \lyricsto "pianoLH" \pianoWords
@@ -268,11 +268,15 @@ pianoWords = \lyricmode {
   >>
   \midi {
     \tempo 4 = 90
-    \set Staff.midiInstrument = "flute"
   
     \context {
+      \Staff
+      \remove "Staff_performer"
+    }
+    \context {
       \Voice
-      \remove "Dynamic_performer"
+      \consists "Staff_performer"     
+      \remove "Dynamic_performer" 
     }
   }
   \layout {

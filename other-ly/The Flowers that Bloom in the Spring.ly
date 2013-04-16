@@ -79,7 +79,7 @@ sopMusic = \relative c' {
   f g aes des c des |
   bes aes bes g4 ees8 |
   f g aes des c des |
-  bes aes bes g4\fermata \bar""
+  bes aes bes g4\fermata \bar""\break
   
   ees8 |
   aes8. aes16 aes8 aes8[ ees'] ees, |
@@ -88,9 +88,9 @@ sopMusic = \relative c' {
   aes4. b4\rest \bar""
   
   ees,8 |
-  aes8. aes16 aes8 aes[ ees'] aes, |
-  aes8. aes16 aes8 aes8[ aes']\fermata aes, |
-  bes8. c16 des8 bes ees ees |
+  aes8. aes16 aes8 aes[ ees'] ees, |
+  aes8. aes16 aes8 aes8( aes'4) |
+  bes,8. c16 des8 bes4 ees8 |
   aes,4. b4\rest \bar"|."
 }
 sopWords = \lyricmode {
@@ -106,12 +106,13 @@ sopWords = \lyricmode {
   And that’s what we mean when we say that a thing
   Is wel -- come as flow -- ers that bloom in the spring.
   
-  Tra, la, la, la, la,
-  Tra, la, la, la, la,
-  The flow -- ers that bloom in the spring,
-  Tra, la, la, la, la,
-  Tra, la, la, la, la,
+  \unset ignoreMelismata
+  Tra la la la la,
+  Tra la la la la,
   The flow -- ers that bloom in the spring.
+  Tra la la la la,
+  Tra la la la la,
+  Tra la la la la la!
 }
 
 sopWordsII = \lyricmode {
@@ -143,7 +144,7 @@ altoMusic = \relative c' {
   ees8 |
   ees8. ees16 ees8 ees8. ees16 ees8
   ees8 s aes aes s ees |
-  ees8. des16 c8 des des des |
+  ees8. ees16 c8 des des des |
   c4. s4
   
   ees16~ ees |
@@ -162,18 +163,18 @@ altoMusic = \relative c' {
   f g aes des c des |
   bes aes bes g4 ees8 |
   f g aes des c des |
-  bes aes bes g4\fermata
+  bes aes bes g4
   
   ees8 |
   ees8. ees16 ees8 ees4 c8 |
   ees8. ees16 ees8 ees4 c8 |
-  ees8. des16 c8 des des des |
+  ees8. ees16 c8 des des des |
   c4. s4
   
-  c8 |
+  ees8 |
   ees8. ees16 ees8 ees4 ees8 |
-  f8. f16 f8 f4 f8 |
-  aes8. aes16 aes8 g g g |
+  f8. f16 f8 f8 r4 |
+  aes8. aes16 aes8 g4 g8 |
   aes4. s4 \bar"|."
 }
 altoWords = \lyricmode {
@@ -200,7 +201,7 @@ tenorMusic = \relative c' {
   c8 |
   c8. des16 c8 c8. des16 c8 |
   c8 s c c s aes |
-  aes8. g16 aes8 g g g |
+  aes8. c16 aes8 g g g |
   aes4. s4
   
   c16~ c |
@@ -211,26 +212,26 @@ tenorMusic = \relative c' {
   
   aes16 aes |
   aes8. aes16 aes8 aes8. aes16 aes8 |
-  g4. g4 aes8 |
-  g8. g16 g8 aes8. aes16 aes8 |
+  g4. ges4 ges8 |
+  g?8. g16 g8 aes8. aes16 aes8 |
   g4. s4
   
-  c,8 |
-  des ees f bes aes bes |
-  g f g ees4 c8 |
-  des ees f bes aes bes |
-  g f g ees4
+  ees8 |
+  f g aes des c des |
+  bes aes bes g4 ees8 |
+  f g aes des c des |
+  bes aes bes g4
   
   des'8 |
   c8. c16 c8 c4 aes8 |
   c8. c16 c8 c4 aes8 |
-  aes8. g16 aes8 g bes g |
+  aes8. c16 aes8 g bes g |
   aes4. s4
   
-  aes8 |
+  ees'8 |
   c8. c16 c8 c4 c8 |
-  c8. c16 c8 c4 c8 |
-  f8. f16 f8 ees ees des |
+  c8. c16 c8 c8 s4 |
+  f8. f16 f8 ees4 des8 |
   c4. s4 \bar"|."
 }
 
@@ -247,7 +248,7 @@ bassMusic = \relative c' {
   aes8 |
   aes8. aes16 aes8 aes8. aes16 aes8 |
   aes8 d,\rest aes' aes d,\rest aes |
-  ees'8. ees16 ees8 ees ees ees |
+  aes8. aes16 aes8 ees' ees ees |
   aes,4. d4\rest
   
   aes'16~ aes |
@@ -262,22 +263,22 @@ bassMusic = \relative c' {
   bes8. bes16 bes8 bes8. bes16 bes8 |
   ees4. d4\rest
   
-  c8 |
-  des ees f bes aes bes |
-  g f g ees4 c8 |
-  des ees f bes aes bes |
-  g f g ees4\fermata
+  ees8 |
+  f g aes des c des |
+  bes aes bes g4 ees8 |
+  f g aes des c des |
+  bes aes bes g4\fermata
   
   g8 |
   aes8. aes16 aes8 aes4 aes8 |
   aes8. aes16 aes8 aes4 aes8 |
-  ees8. ees16 ees8 ees ees ees |
+  aes,8. aes16 aes8 ees' ees ees |
   aes,4. d4\rest
   
-  aes8 |
-  aes'8. aes16 aes8 aes4 aes8 |
-  f8. f16 f8 f4\fermata f8 |
-  des'8. c16 bes8 ees, ees ees |
+  aes'8 |
+  aes8. aes16 aes8 aes4 aes8 |
+  f8. f16 f8 f8 d4\rest |
+  des'8. c16 bes8 ees,4 ees8 |
   aes4. d,4\rest \bar"|."
 }
 bassWords = \lyricmode {

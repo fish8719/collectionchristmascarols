@@ -57,11 +57,8 @@ global = {
 sopMusic = \relative c' {
   \repeat volta 2
   {
-    b'1\rest |
-    b\rest |
-    b\rest |
-    b\rest |
-    b2\rest f4. a8 |
+    s1*4
+    s2 f4. a8 |
     
     c4 c c c |
     c2 c4 d8[ e] |
@@ -73,15 +70,14 @@ sopMusic = \relative c' {
     b c d e |
     f2 f4 e8[ d] |
     e4 c d b |
-    c2 b\rest |
+    c2 s |
     
     %page2/125 Soprano
-    \break\oneVoice
-    \clef bass
-    d,,1\rest |
-    d2\rest c'4 c |
-    a bes8[ c] d4 d |
-    bes4 g \clef treble \stemDown bes' bes |
+    \break
+    s1 |
+    s2 s8 bes2*3/4\rest |
+    bes1\rest |
+    bes2\rest bes4 bes |
     g a8[ bes] c4 c |\break
     
     a f \stemNeutral \voiceOne a c 
@@ -91,8 +87,8 @@ sopMusic = \relative c' {
     ees d8[ c] d4 d~ |
     
     d c8[ bes] c4 c |
-    c bes8[ a] <<bes4 {s8. s16\p}>> d4(\< |
-    ees1)\> |
+    c bes8[ a] <<bes4 {s16 s8._\p_\<}>> d4( |
+    ees1)_\> |
     d2\! b4\rest d4(\< |
     ees1)\> |
     d2\! d4 bes |
@@ -112,12 +108,12 @@ sopMusic = \relative c' {
     %page4/127 soprano
     g,2 c |
     f, bes~ |
-    bes8 a\ff g f e4 c'~ |
+    bes8 a g f e4 c'~ |
     c8 bes a g f4 d'~ |
     
     d8 c bes a g4 g'~ |
     g8 f e d c bes a g |
-    a4 b\rest r c\dim |
+    a4 b\rest\dim r c |
     d c bes c8[ d] |
     c4 b\rest b\rest a |
     
@@ -144,37 +140,40 @@ sopWords = \lyricmode {
   Joy -- ous hour, we give thee greet -- ing!
   Whi -- ther, whi -- ther art thou fleet -- ing?
   Fick -- le mo -- ment, pri -- thee stay!
-  Fick -- le mo -- ment, pri -- thee stay!
+  Fick -- le mo -- ment, pri -- thee \set associatedVoice = "tenors" stay!
   
   %page2/125
-  What though mor -- tal joys be hol -- low?
+  
+  What though mor -- tal joys be hol -- \unset associatedVoice low?
+  
   Plea -- sures come, if sor -- rows fol -- low:
-  Though the toc -- sin sound ere long,
+  Though the toc -- sin sound ere \set associatedVoice = "tenors" long,
   
   Though the toc -- sin sound ere long,
-  Though the toc -- sin sound ere long,
-  Ding dong!
-  Ding dong!
+  sound ere \set associatedVoice = "altos" long,
+  Ding __ dong!
+  Ding __ dong!
   
   Yet un --
   
   %page3/126
   til the shad -- ows fall
-  O -- ver one and o -- ver all,
+  O -- ver one and o -- ver \unset associatedVoice all,
   \dropLyricsXII Sing a mer -- ry mad -- ri -- gal,
   Sing a mer -- ry mad -- ri -- gal,
-  Sing a \raiseLyrics mer -- ry mad -- ri -- gal,
-  Fa
+  Sing a \dropLyricsIX mer -- ry mad -- ri -- gal, \raiseLyrics 
+  \set associatedVoice = "altos" Fa
   
   %page4/127
-  la.
-  Fa la.
-  Fa la la la la,
-  Fa la la la la,
-  Fa la la la la,
-  Fa la la la la la la la la,
-  la la la la,
-  Fa la,
+  la la la la la,
+  Fa la la la la la la,
+  Fa la la,
+  Fa la, __
+  Fa la, __
+  Fa la la la la la,
+  Fa la la,
+  Fa __ la
+  la,
   Fa la la la,
   Fa la,
   Fa la la,
@@ -183,21 +182,49 @@ sopWords = \lyricmode {
   la.
 }
 
+sopWordsTop = \lyricmode {
+  \repeat unfold 52 \skip1
+  Though the toc -- sin sound ere long,
+  Though the toc -- sin sound ere long,
+  
+  \repeat unfold 39 \skip1
+  
+  Fa
+  
+  %page4/127
+  la.
+  Fa la.
+  Fa \set stanza = \markup\dynamic"ff  " la la la la,
+  Fa la la la la,
+  Fa la la la la,
+  Fa la la la la la la la la,
+  la la la la,
+  Fa 
+  %{la,
+  Fa la la la,
+  Fa la,
+  Fa la la,
+  Fa la la,
+  Fa la __ la.
+  la.%}
+}
+
 sopWordsII = \lyricmode {
   \set stanza = #"2. "
   Let us dry the rea -- dy tear,
   Though the hours are sure -- ly creep -- ing,
   Lit -- tle need for woe -- ful weep -- ing,
   Till the sad sun -- down is near,
-  Till the sad sun -- down is near.
+  Till the sad sun -- down is \set associatedVoice = "tenors" near.
   
   %page2/125
-  All must sip the cup of sor -- row
+  
+  All must sip the cup of sor -- \unset associatedVoice row
   I to day, and thou to -- mor -- row:
-  This the close of ev -- ’ry song,
+  This the close of ev -- ’ry \set associatedVoice = "tenors" song,
   
   This the close of ev -- ’ry song,
-  This the close of ev -- ’ry song,
+  this the \set associatedVoice = "altos" close,
   Ding dong!
   Ding dong!
   
@@ -208,18 +235,11 @@ sopWordsII = \lyricmode {
   Soon -- er, lat -- er, o -- ver all.
 }
 
-sopWordsIII = \lyricmode {
-  \set stanza = #"3. "
+sopWordsTopII = \lyricmode {
+  \repeat unfold 52 \skip1
+  This the close of ev -- ’ry song,
+  This the close of ev -- ’ry song,
 }
-
-sopWordsIV = \lyricmode {
-  \set stanza = #"4. "
-}
-
-sopWordsV = \lyricmode {
-  \set stanza = #"5. "
-}
-
 altoMusic = \relative c' {
     \repeat volta 2 {
     s1*5 |
@@ -294,6 +314,11 @@ altoMusic = \relative c' {
   }
 }
 altoWords = \lyricmode {
+  \repeat unfold 37 \skip1
+  Ding dong!
+  Ding dong!
+  Ding dong!
+  Ding dong!
 }
 altoWordsII = \lyricmode {
 %\markup\italic
@@ -330,11 +355,15 @@ tenorMusic = \relative c' {
     e2 s |
     
     %page2/125 tenor
-    s1*5 |
+    s1 |
+    s2 c4 c |
+    a bes8[ c] d4 d |
+    bes4 g s2 |
+    s1 |
     
     s2 c4 f |
     f f f g |
-    f( c) d2 |
+    f( c d2) |
     r4 g2 f8[ ees] |
     f4 f f ees8[ d] |
     
@@ -389,6 +418,17 @@ tenorMusic = \relative c' {
 }
 
 tenorWords = \lyricmode {
+  \repeat unfold 55 \skip1
+  \dropLyricsV Ding dong! Ding dong!
+  
+  \raiseLyrics
+  \repeat unfold 28 \skip1
+  Fa __ la la __ la la, __
+  Fa __ la la la la,
+  Fa __ la la la la,
+  Fa __ la la la la,
+  Fa la la la la,
+  Fa la la la la
 }
 
 tenorWordsII = \lyricmode {
@@ -399,13 +439,10 @@ tenorWordsIII = \lyricmode {
 
 bassMusic = \relative c' {
     \repeat volta 2 {
-    d,1\rest |
-    d\rest |
-    d\rest |
-    d\rest |
-    d\rest |
+    s1*4 |
+    s2 d,2\rest |
     
-    d\rest |
+    d1\rest |    
     d2\rest c'4 bes |
     a f e c |
     f a c bes |
@@ -415,13 +452,13 @@ bassMusic = \relative c' {
     g a b c |
     a2 b4 g |
     c a f g |
-    c,2 d\rest |
+    c,2 s2 |
     
     %page2/125 bass
-    d1\rest |
-    d1\rest |
-    d1\rest |
-    d1\rest |
+    s1 |
+    s2 s8 b2*3/4\rest |
+    b1\rest |
+    b2\rest d\rest |
     d1\rest |
     
     d2\rest f4 f |
@@ -480,33 +517,75 @@ bassMusic = \relative c' {
   }
 }
 bassWords = \lyricmode {
+  \repeat unfold 37 \skip1
+  Ding dong!
+  Ding dong!
+  Ding dong!
+  Ding dong!
+  
+  \repeat unfold 32 \skip1
+  Fa la la la la,
+  Fa la la la la la la,
+  Fa la la la la la la,
+  Fa la,
+  Fa la la la la,
+  Fa la la la la,
+  Fa la la la la la,
+  Fa __ la la,
 }
 
 pianoRH = \relative c' {
+  r2 <f d'>-> |
+  << {\set midiInstrument = #"acoustic grand" g2 c | f, bes~ | bes4^( a g4. f8)~ | f2} \\
+     {\set midiInstrument = #"acoustic grand" g8[ f e d] c4 d8[ e] |
+      f[ e d c] bes4 c8[ d] |
+      e4 f2 e4 |
+      s2} >> s2 |
+  s1*9 |
+  s2 g'4\( a8[ b] |
+  c4\) g <g g,> << {\set midiInstrument = #"acoustic grand" f} \\ {\set midiInstrument = #"acoustic grand" a,8[ b]}>>  |
+  e4 c <g ees c>2 |
 }
 pianoLH = \relative c' {
+  r2 << {\set midiInstrument = #"acoustic grand" bes2~ | bes4 bes a2~ | a4 a g2~ | g4 a bes c | <a f>2 } \\
+        {\set midiInstrument = #"acoustic grand" bes8[ a g f] |
+         e4 f8[ g] a[ g f e] |
+         d4 e8[ f] g[ f e d] |
+         c1 |
+         s2} >> s2 |
+  s1*9 |
+  \voiceThree <c c,>4 \oneVoice <e' g> <d f> <d g,> |
+  
+  <c e> <e g> <f d> <d g,> |
+  <c e g> c \voiceTwo c,2 | \oneVoice
 }
 
 \score {
 <<
    \new ChoirStaff <<
+    \new Lyrics = "sopAbove"
+    \new Lyrics = "sopAboveII"
     \new Staff = women <<
+      \global \new Voice = "pianoRH" {\set midiInstrument = #"acoustic grand" \pianoRH}
       \new Voice = "sopranos" { \voiceOne << \global \sopMusic >> }
       \new Voice = "altos" { \voiceTwo << \global \altoMusic >> }
     >>
-    \new Lyrics = "altos"  \lyricsto "sopranos" \sopWords
-    \new Lyrics = "altosII"  \lyricsto "sopranos" \sopWordsII
-    \new Lyrics = "altosIII"  \lyricsto "sopranos" \sopWordsIII
-    \new Lyrics = "altosIV"  \lyricsto "sopranos" \sopWordsIV
-    \new Lyrics = "altosV"  \lyricsto "sopranos" \sopWordsV
+    \new Lyrics = "trueAltos" \lyricsto "altos" \altoWords
+    \new Lyrics = "altos"
+    \new Lyrics = "altosII"
+    \new Lyrics = "tenors"
    \new Staff = men <<
       \clef bass
+      \global \new Voice = "pianoLH" {\set midiInstrument = #"acoustic grand" \pianoLH}
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }
       \new Voice = "basses" { \voiceTwo << \global \bassMusic >> }
     >>
-    \new Lyrics \with { alignAboveContext = #"tenors" } \lyricsto "tenors" \tenorWordsIII
-    \new Lyrics \with { alignAboveContext = #"tenors" } \lyricsto "tenors" \tenorWordsII
-    \new Lyrics \with { alignAboveContext = #"tenors" } \lyricsto "tenors" \tenorWords
+    \context Lyrics = "sopAbove" \lyricsto "sopranos" \sopWordsTop
+    \context Lyrics = "sopAboveII" \lyricsto "sopranos" \sopWordsTopII
+    \context Lyrics = "altos"  \lyricsto "sopranos" \sopWords
+    \context Lyrics = "altosII"  \lyricsto "sopranos" \sopWordsII
+    \context Lyrics = "tenors" \lyricsto "tenors" \tenorWords
+    \new Lyrics = "basses" \lyricsto "basses" \bassWords
   >>
 %    \new PianoStaff << \new Staff { \new Voice { \pianoRH } } \new Staff { \clef "bass" \pianoLH } >>
   >>
@@ -538,20 +617,25 @@ pianoLH = \relative c' {
   \unfoldRepeats
 <<
    \new ChoirStaff <<
-    \new Staff = women <<
-      \new Voice = "sopranos" { \voiceOne << \global \sopMusic >> }
-      \new Voice = "altos" { \voiceTwo << \global \altoMusic >> }
-    >>
-    \new Lyrics = "altos"  \lyricsto "sopranos" \sopWords
-    \new Lyrics = "altosII"  \lyricsto "sopranos" \sopWordsII
-    \new Lyrics = "altosIII"  \lyricsto "sopranos" \sopWordsIII
-    \new Lyrics = "altosIV"  \lyricsto "sopranos" \sopWordsIV
-    \new Lyrics = "altosV"  \lyricsto "sopranos" \sopWordsV
-   \new Staff = men <<
+    \new Staff = women {
+      <<
+        \global \new Voice = "pianoRH" {\set midiInstrument = #"acoustic grand" \pianoRH}
+        \new Voice = "sopranos" { \voiceOne << \global \set midiInstrument = #"flute" \sopMusic >> }
+        \new Voice = "altos" { \voiceTwo << \global \set midiInstrument = #"flute" \altoMusic >> }
+      >>
+    }
+    \new Lyrics = "altos"
+    \new Lyrics = "altosII"
+   \new Staff = men {
       \clef bass
-      \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }
-      \new Voice = "basses" { \voiceTwo << \global \bassMusic >> }
-    >>
+      <<
+        \global \new Voice = "pianoLH" {\set midiInstrument = #"acoustic grand" \pianoLH}
+        \new Voice = "tenors" { \voiceOne << \global \set midiInstrument = #"flute" \tenorMusic >> }
+        \new Voice = "basses" { \voiceTwo << \global \set midiInstrument = #"flute" \bassMusic >> }
+      >>
+    }
+    \context Lyrics = "altos"  \lyricsto "sopranos" \sopWords
+    \context Lyrics = "altosII"  \lyricsto "sopranos" \sopWordsII
     \new Lyrics \with { alignAboveContext = #"tenors" } \lyricsto "tenors" \tenorWordsIII
     \new Lyrics \with { alignAboveContext = #"tenors" } \lyricsto "tenors" \tenorWordsII
     \new Lyrics \with { alignAboveContext = #"tenors" } \lyricsto "tenors" \tenorWords
@@ -560,11 +644,15 @@ pianoLH = \relative c' {
   >>
   \midi {
     \tempo 4 = 120
-    \set Staff.midiInstrument = "flute"
   
     \context {
+      \Staff
+      \remove "Staff_performer"
+    }
+    \context {
       \Voice
-      \remove "Dynamic_performer"
+      \consists "Staff_performer"     
+      \remove "Dynamic_performer" 
     }
   }
 }
