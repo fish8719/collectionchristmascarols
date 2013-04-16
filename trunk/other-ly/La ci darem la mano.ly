@@ -151,7 +151,7 @@ sopWords = \lyricmode {
   \set stanza = \markup\smallCapsOldStyle"Don G."
 	“Nay, bid me not re -- sign, love,
   Cold -- ly the hand I press,
-  Oh! say thou wilt me mine, love,
+  Oh! say thou wilt be mine, love,
   Breathe but that one word, ‘Yes.’”
   
   “I would and yet I would not,
