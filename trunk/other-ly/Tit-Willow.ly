@@ -73,7 +73,7 @@ sopMusic = \relative c' {
   
   c' bes a bes b\rest bes16 c |
   des8. c16 bes8 aes f aes |
-  c8. bes16 a8 bes\fermata b8\rest ees, |
+  c8. bes16 aes8 bes\fermata b8\rest ees, |
   ees16 aes b8\rest ees, f16 aes b8\rest f |
   ees16 aes~ aes4 b4\rest \bar"|."
 }
@@ -97,7 +97,7 @@ sopWordsII = \lyricmode {
   Sing -- ing, “Wil -- low, tit -- wil -- low, tit -- wil -- low!” _
   And a cold per -- spi -- ra -- tion be -- span -- gled his brow,
   Oh, _ wil -- low, tit -- wil -- low, tit -- wil -- low! _
-  He _ sobbed and he sighed, and a gur -- gle he gave,
+  He __ _ sobbed and he sighed, and a gur -- gle he gave,
   Then he plunged him -- self in -- to the bil -- low -- y wave,
   And an ech -- o a -- rose from the su -- i -- cide’s grave:
   “Oh, wil -- low, tit -- wil -- low, tit -- wil -- low!” _
@@ -137,10 +137,10 @@ altoMusic = \relative c' {
   
   ees16 ees~ ees4 s ees16[ d] |
   ees8. ees16 ees8 d8. cis16 d8 |
-  ees d ees d s ees16[ d] |
+  ees d ees des s ees16[ d] |
   ees8. ees16 ees8 d8. cis16 d8 |
   
-  ees des ees d s des16 ees |
+  ees des ees f s des16 ees |
   f8. ees16 des8 des des des |
   d8. d16 d8 ees s des |
   c16 c s8 c des16 des s8 des |
@@ -182,8 +182,8 @@ tenorMusic = \relative c' {
   a bes c bes s g16[ aes] |
   bes8. bes16 bes8 bes8. bes16 bes8 |
   
-  a bes c bes s bes16 a? |
-  bes8. a16 ges8 f a f |
+  a bes c des s bes16 a? |
+  bes8. a16 ges8 f aes f |
   aes?8. aes16 bes8 g s g |
   aes16 aes s8 aes aes16 f s8 aes |
   aes16 ees~ ees4 s \bar"|."
