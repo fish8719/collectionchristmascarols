@@ -135,9 +135,9 @@ altoMusic = \relative c' {
   f f des c s ees16[ ees] |
   ees ees s8 ees d16 d s8 d |
   
-  ees16 ees~ ees4 s ees16[ d] |
+  ees16 ees~ ees4 s ees16[ bes] |
   ees8. ees16 ees8 d8. cis16 d8 |
-  ees d ees des s ees16[ d] |
+  ees des ees des s ees16[ bes] |
   ees8. ees16 ees8 d8. cis16 d8 |
   
   ees des ees f s des16 ees |
@@ -168,23 +168,23 @@ altoWordsVI = \lyricmode {
 }
 tenorMusic = \relative c' {
   aes16[ aes] |
-  aes8 g aes c c c |
+  aes8 aes aes c c c |
   des des aes aes s ees16[ ees] |
   ees ees s8 aes g16 g s8 g |
   
   aes16 aes~ aes4 s aes16 aes |
-  aes8 g aes c c c |
+  aes8 aes aes c c c |
   des des aes aes s c16[ c] |
   bes g s8 bes aes16 aes s8 bes |
   
-  bes16 g~ g4 s g16 aes |
+  bes16 g~ g4 s g16[ aes] |
   bes8. bes16 bes8 bes8. bes16 bes8 |
   a bes c bes s g16[ aes] |
   bes8. bes16 bes8 bes8. bes16 bes8 |
   
   a bes c des s bes16 a? |
-  bes8. a16 ges8 f aes f |
-  aes?8. aes16 bes8 g s g |
+  bes8. a16 bes8 f aes f |
+  aes8. aes16 bes8 g s g |
   aes16 aes s8 aes aes16 f s8 aes |
   aes16 ees~ ees4 s \bar"|."
 }
@@ -209,9 +209,9 @@ bassMusic = \relative c' {
   des, des des aes d\rest aes'16[ aes] |
   bes, bes d8\rest bes bes16 bes d8\rest bes |
   
-  ees16 ees~ ees4 d\rest ees16 ees |
+  ees16 ees~ ees4 d\rest ees16[ d] |
   ees8. ees16 ees8 bes8. bes16 bes8 |
-  f' f f bes, d\rest ees16[ ees] |
+  f' f f bes, d\rest ees16[ d] |
   ees8. ees16 ees8 bes8. bes16 bes8 |
   
   f' f f bes, d\rest bes16 f' |
