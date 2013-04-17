@@ -255,6 +255,7 @@ pianoLH = \relative c' {
       \Lyrics
       \override LyricText #'font-size = #0.9
       \override VerticalAxisGroup #'staff-affinity = #0
+      \override LyricText #'X-offset = #center-on-word
     }
     \context {
       \Score
@@ -273,4 +274,5 @@ pianoLH = \relative c' {
     }
   }
 }
+
 

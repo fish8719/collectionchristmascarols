@@ -54,6 +54,19 @@ foreach($_ in $map) {
         while($current.Length -gt 0) {
             $numScoreBlocks = 0;
             $scoreBlockEndBrace = -1;
+
+            #add LyricText override if not present
+            $pos = 0;
+            while( ($pos = $current.IndexOf('\context {',$pos+1)) -ge 0) {
+                $layoutBlock = getBlock $current $pos;
+                if($layoutBlock.Contains('\Lyrics')) {
+                    if(!$layoutBlock.Contains("\override LyricText #'X-offset = #center-on-word")) {
+                        $current = $current.Substring(0, $pos + $layoutBlock.Length - 1) + "  \override LyricText #'X-offset = #center-on-word
+    }" + $current.Substring($pos + $layoutBlock.Length);
+                        Set-Content -Path $file -Value $current -Encoding UTF8;
+                    }
+                }
+            }
                         
             #remove midi blocks
             $pos = 0;
