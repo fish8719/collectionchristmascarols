@@ -13,7 +13,7 @@
   system-system-spacing =
     #'((basic-distance . 0)
        (minimum-distance . 0)
-       (padding . -3)
+       (padding . 0)
        (stretchability . 100))
   score-markup-spacing =
     #'((basic-distance . 0)
@@ -25,7 +25,7 @@
        (minimum-distance . 0)
        (padding . -1)
        (stretchability . 0))
-  ragged-last-bottom = ##f
+  ragged-last-bottom = ##t
   ragged-bottom = ##f
   two-sided = ##t
   inner-margin = 1\in
@@ -75,7 +75,7 @@ sopMusic = \relative c' {
   f g ees d4 b'8\rest |
   bes bes bes c4 a8 bes4 b8\rest b4\rest b8\rest |
   
-  d8\ff d d d d d |
+  d8 d d d d d |
   ees ees ees ees4 b8\rest |
   c c c c c c |
   
@@ -100,7 +100,7 @@ sopWordsII = \lyricmode {
   The joy of his bo -- som and plage of his life.
     Vi -- ve la com -- pag -- nie.
     
-    
+  \set stanza = \markup\dynamic"ff "
   Vi -- ve la, vi -- ve la, vi -- ve l’a -- mour,
   Vi -- ve la, vi -- ve la, vi -- ve l’a -- mour,
   vi -- ve l’a -- mour,
@@ -121,17 +121,17 @@ sopWordsV = \lyricmode {
 }
 
 altoMusic = \relative c' {
-  \partial 8 s8 |
-  s2. |
-  s2. |
-  bes'8 bes bes a4 f8 |
-  f4 s4. \bar""
+  \partial 8 f8 |
+  d d d g f ees |
+  d ees c bes4 s8 |
+  ees8 ees d f4 ees8 |
+  d4 s4. \bar""
   
-  s8 |
-  s2. |
-  s2. |
-  bes8 bes bes a4 f8 |
-  f4 s2 |
+  f8 |
+  d d d g f ees |
+  d ees c bes4 s8 |
+  ees8 ees d f4 ees8 |
+  d4 s2 |
   
   f8 f f f f f |
   g g g g4 s8 |
@@ -165,19 +165,19 @@ altoWordsVI = \lyricmode {
 }
 tenorMusic = \relative c' {
   \partial 8
-  s8 |
-  s2. |
-  s2. |
-  bes8 bes bes f4 ees8 |
-  d4 s4. \bar""
+  f,8
+  f f f bes c bes |
+  bes bes a bes4 s8 |
+  bes8 bes bes a4 c8 |
+  bes4 s4. \bar""
   
-  s8 |
-  s2. |
-  s2. |
-  bes'8 bes bes f4 ees8 |
-  d4 s2 |
+  f8
+  f f f bes c bes |
+  bes bes a bes4 s8 |
+  bes8 bes bes a4 c8 |
+  bes4 s2 |
   
-  bes'8 bes bes bes bes bes |
+  bes8 bes bes bes bes bes |
   bes bes bes bes4 s8 |
   f f f f f f |
   
@@ -193,16 +193,16 @@ tenorWords = \lyricmode {
 
 bassMusic = \relative c' {
   \partial 8
-  d,8\rest |
-  d2.\rest |
-  d2.\rest |
-  bes'8 bes bes f4 f8 |
+  f,8 |
+  bes, bes bes ees ees ees |
+  f ees f bes,4 d8\rest |
+  g8 g f f4 f8 |
   bes,4 d8\rest d4\rest \bar""
   
-  d8\rest |
-  d2.\rest |
-  d2.\rest |
-  bes'8 bes bes f4 f8 |
+  f8 |
+  bes, bes bes ees ees ees |
+  f ees f bes,4 d8\rest |
+  g8 g f f4 f8 |
   bes,4 d8\rest d4\rest d8\rest |
   
   bes8 bes bes bes bes bes |
