@@ -28,6 +28,11 @@
        (minimum-distance . 0)
        (padding . -1)
        (stretchability . 0))
+  top-markup-spacing =
+    #'((basic-distance . 0)
+       (minimum-distance . 0)
+       (padding . -1)
+       (stretchability . 0))
   ragged-last-bottom = ##t
   ragged-bottom = ##f
   two-sided = ##t
