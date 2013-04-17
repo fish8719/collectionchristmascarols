@@ -249,7 +249,8 @@ pianoLH = \relative c' {
   \context {
     \Lyrics
     \override LyricText #'font-size = #1.3
-  }
+    \override LyricText #'X-offset = #center-on-word
+    }
     \context {
       \Score
       \override SpacingSpanner #'base-shortest-duration = #(ly:make-moment 1 8)
@@ -261,4 +262,5 @@ pianoLH = \relative c' {
     }
   }
 }
+
 
