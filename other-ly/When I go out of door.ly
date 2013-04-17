@@ -65,7 +65,7 @@ global = {
 }
 
 sopMusic = \relative c' {
-	\partial 8 |
+	\partial 8
   \repeat unfold 2 {
     d8 |
     b'4 b8 b4 g8 |
@@ -123,8 +123,8 @@ sopWordsII = \lyricmode {
   And does -- n’t get thin -- ner
   On bot -- _ tled beer and chops.
   
-  A com -- mon -- place young "    man—"
-  A mat -- ter -- of -- fact young "    man—"
+  A com -- mon -- place young man—
+  A mat -- ter -- of -- fact young man—
   A stea -- dy and stol -- id -- y,
   jol -- ly Bank -- hol -- i -- day,
   Ev -- e -- ry -- day young man.
@@ -132,14 +132,14 @@ sopWordsII = \lyricmode {
 
 sopWordsIII = \lyricmode {
   \set stanza = #"3. "
-  A Jap -- a -- nese young "    man—"
-  A blue and white young "    man—"
+  A Jap -- a -- nese young man—
+  A blue and white young man—
   Fran -- ces -- ca di Ri -- mi -- mi,
   mi -- mi -- ny, prim -- i -- ny,
   \markup\italic Je -- \markup\italic ne -- \markup\italic sais -- \markup\italic quoi young man.
   
-  A chance -- ry Lane young "    man—"
-  A Somer -- set House young "    man,—"
+  A chance -- ry Lane young man—
+  A Somer -- set House young man,—
   A ve -- ry de -- lec -- ta -- ble,
   High -- ly re -- spec -- ta -- ble
   Three -- pen -- ny -- bus young man!
@@ -152,16 +152,16 @@ sopWordsIII = \lyricmode {
 
 sopWordsIV = \lyricmode {
   \set stanza = #"4. "
-  A pallid and thin young "    man—"
-  A haggard and lank young "    man—"
+  A pallid and thin young man—
+  A haggard and lank young man—
   A green -- e -- ry -- yal -- le -- ry,
-  Gos -- ve -- nor Gal -- le -- ry,
+  Gros -- ve -- nor Gal -- le -- ry,
   Foot -- in -- the -- grave young man!
   
-  A Sewell and Cross young "    man—"
-  A Howell and James young "    man—"
-  A push -- ing young par -- ti -- "    cle—"
-  what’s the next ar -- ti -- "    cle—"
+  A Sewell and Cross young man—
+  A Howell and James young man—
+  A push -- ing young par -- ti -- cle—
+  what’s the next ar -- ti -- cle—
   Wa -- ter -- loo House young man!
   
   Con -- ceive me, if you can,
@@ -322,6 +322,7 @@ pianoLH = \relative c' {
       \Lyrics
       \override LyricText #'font-size = #1.3
       \override VerticalAxisGroup #'staff-affinity = #0
+      \override LyricText #'X-offset = #center-on-word
     }
     \context {
       \Score
