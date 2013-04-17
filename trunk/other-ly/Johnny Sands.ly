@@ -69,7 +69,7 @@ sopMusic = \relative c' {
   bes4 bes8 a[ g] a |
   bes4 f8 f4 f8 |
   g4 g8 bes[ a] g |
-  f4.~ f4 f8 |
+  f4. b4\rest \bar"" f8 |
   a4 a8 bes4 bes8 |
   
   c4 c8 d4\fermata bes8 |
@@ -79,22 +79,22 @@ sopMusic = \relative c' {
   bes4 f8 f4 f8 |
   
   g4 g8 bes[ a] g |
-  f4.~ f4 f8 |
+  f4. b4\rest f8 |
   a4 a8 bes4 bes8 |
-  c4 f8 d4\fermata bes8 |
+  c4 f8 d4\fermata \bar"" bes8 |
   g[ c] bes a[ g] a |
   
   bes4. d |
   g,8[ c] bes a[ g] a |
   bes4. d |
   ees4 c8 f4 a,8 |
-  bes4.~ bes4\fermata f8 |
+  bes4. bes4\rest f8 |
   
   f[ c'] a f4 f8 |
   f[ d'] bes f4 d'8 |
   ees4 c8 d4 bes8 |
-  c4.~ c4 d8 |
-  d4 d8 d4 c8 |
+  c4. b4\rest \bar"" d8 |
+  d4 d8 d4\fermata c8 |
   
   c4 bes8 g4 bes8 |
   d4 c8 bes4 a8 |
@@ -103,16 +103,16 @@ sopMusic = \relative c' {
   bes4 f8 f4 f8 |
   
   g4 g8 bes[ a] g |
-  f4.~ f4 f8 |
+  f4. b4\rest f8 |
   a4 a8 bes4 bes8 |
-  c4 f8 d4 bes8 |
+  c4 f8 d4\fermata bes8 |
   g[ c] bes a[ g] a |
   
   bes4. d |
   g,8[ c] bes a[ g] a |
   bes4. d |
   ees4 c8 f4\fermata a,8 |
-  bes4.~ bes4 \bar"|."
+  bes4. bes4\rest \bar"|."
 }
 sopWords = \lyricmode {
   \set stanza = #"1. "
@@ -146,10 +146,10 @@ sopWordsII = \lyricmode {
   “For fear that I should cour -- age lack,
   And try to save my life,
   Pray, tie my hands be -- hind my back,”
-  “I will,” re -- plied his wife,
+  “I will,” re -- plied his wife, __
   She tied them fast, as you may think,
   And when se -- cure -- ly done,
-  “Now stand,” she says, “up --on the brink,
+  “Now stand,” she says, “up -- on the brink,
   And I’ll pre -- pare to run,
   And I’ll pre -- pare to run,
   And I’ll pre -- pare to run.”
@@ -183,17 +183,17 @@ altoMusic = \relative c' {
   d4 d8 ees4 ees8 |
   d4 d8 d4 d8 |
   ees4 ees8 g[ f] ees |
-  d4.~ d4 d8 |
+  d4. s4 d8 |
   ees4 ees8 d4 d8 |
   
   f4 f8 f4 f8 |
-  g4 g8 ees4 ees8 |
+  g4 g8 g4 g8 |
   f4.~ f4 ees8 |
   d4 d8 ees4 ees8 |
   d4 d8 d4 d8 |
   
   ees4 ees8 g[ f] ees |
-  d4.~ d4 d8 |
+  d4. s4 d8 |
   ees4 ees8 d4 d8 |
   f4 a8 bes4 f8 |
   g4 g8 ees4 ees8 |
@@ -202,22 +202,22 @@ altoMusic = \relative c' {
   g4 g8 ees4 ees8 |
   d4. f |
   g4 g8 a4 ees8 |
-  d4.~ d4 f8 |
+  d4. s4 \bar"" f8 |
   
   f4 f8 ees4 ees8 |
   d[ f] d d4 f8 |
   g4 g8 f4 d8 |
-  f4.~ f4 f8 |
-  f4 f8 f4 f8 |
+  f4. s4 f8 |
+  fis4 fis8 fis4 fis8 |
   
-  g4 g8 ees4 f8 |
-  f4 ees8 d4 d8 |
-  ees4. ees |
+  g4 d8 d4 g8 |
+  fis4 fis8 fis4 fis8 |
+  d4. ees |
   d4 d8 ees4 ees8 |
   d4 d8 d4 d8 |
   
   ees4 ees8 g[ f] ees |
-  d4.~ d4 d8 |
+  d4. s4 d8 |
   ees4 ees8 d4 d8 |
   f4 a8 bes4 f8 |
   g4 g8 f4 ees8 |
@@ -226,7 +226,7 @@ altoMusic = \relative c' {
   ees4 g8 f4 ees8 |
   d4. f |
   g4 g8 a4 ees8 |
-  d4.~ d4 \bar"|."
+  d4. s4 \bar"|."
 }
 altoWords = \lyricmode {
 }
@@ -253,17 +253,17 @@ tenorMusic = \relative c' {
   bes4 bes8 c4 c8 |
   bes4 bes8 bes4 bes8 |
   bes4 bes8 bes4 bes8 |
-  bes4.~ bes4 bes8 |
+  bes4. s4 bes8 |
   c4 c8 bes4 bes8 |
   
   a4 a8 bes4 bes8 |
-  bes4 bes8 c4 c8 |
-  d4.~ d4 a8 |
+  c4 c8 c4 c8 |
+  d4.( c4) a8 |
   bes4 bes8 c4 c8 |
   bes4 bes8 bes4 bes8 |
   
   bes4 bes8 bes4 bes8 |
-  bes4.~ bes4 bes8 |
+  bes4. s4 bes8 |
   c4 c8 bes4 bes8 |
   a4 c8 bes4 bes8 |
   bes4 bes8 c4 c8 |
@@ -272,22 +272,22 @@ tenorMusic = \relative c' {
   bes4 bes8 c4 c8 |
   bes4. bes |
   bes4 c8 c4 c8 |
-  bes4.~ bes4 f8 |
+  bes4. s4 f8 |
   
   a4 c8 a4 a8 |
   bes4 bes8 bes4 bes8 |
   bes4 bes8 bes4 bes8 |
-  a4.~ a4 bes8 |
-  bes4 bes8 bes4 a8 |
+  a4. s4 bes8 |
+  a4 a8 a4 a8 |
   
   bes4 bes8 bes4 bes8 |
-  bes4 g8 g4 fis8 |
-  ees4. c' |
+  a4 a8 a4 a8 |
+  bes4. c |
   bes4 bes8 c4 c8 |
   bes4 bes8 bes4 bes8 |
   
   bes4 bes8 bes4 bes8 |
-  bes4.~ bes4 bes8 |
+  bes4. s4 bes8 |
   c4 c8 bes4 bes8 |
   a4 c8 bes4 bes8 |
   bes4 c8 c4 c8 |
@@ -296,7 +296,7 @@ tenorMusic = \relative c' {
   bes4 c8 c4 c8 |
   bes4. bes |
   bes4 c8 c4 c8 |
-  bes4.~ bes4 \bar"|."
+  bes4. s4 \bar"|."
 }
 
 tenorWords = \lyricmode {
@@ -313,17 +313,17 @@ bassMusic = \relative c' {
   bes,4 bes8 f'4 f8 |
   bes,4 bes8 bes4 bes8 |
   ees4 ees8 ees4 ees8 |
-  bes4.~ bes4 bes8 |
+  bes4. d4\rest bes8 |
   f'4 f8 f4 f8 |
   
   f4 f8 bes,4\fermata d8 |
-  ees4 c8 f4 f8 |
+  ees4 ees8 e4 e8 |
   f4.~ f4 f8 |
   bes,4 bes8 f'4 f8 |
   bes,4 bes8 bes4 bes8 |
   
   ees4 ees8 ees4 ees8 |
-  bes4.~ bes4 bes8 |
+  bes4. d4\rest bes8 |
   f'4 f8 f4 f8 |
   f4 f8 bes,4 d8 |
   ees4 c8 f4 f8 |
@@ -332,22 +332,22 @@ bassMusic = \relative c' {
   ees,4 c8 f4 f8 |
   bes,4. bes |
   ees4 ees8 f4 f8 |
-  bes,4.~ bes4 f'8 |
+  bes,4. d4\rest f8 |
   
   f4 f8 f4 f8 |
   bes,4 bes8 bes4 bes8 |
   ees4 ees8 f4 f8 |
-  f4.~ f4 bes8 |
-  bes4 bes8 bes4 f8 |
+  f4. d4\rest bes8 |
+  d4 d8 d4 d8 |
   
-  ees4 ees8 ees4 d8 |
-  bes4 c8 d4 d8 |
-  ees4.\fermata f\fermata |
+  g4 g8 g4 g,8 |
+  d'4 d8 d4 d8 |
+  g4.\fermata f\fermata |
   bes,4 bes8 f'4 f8 |
   bes,4 bes8 bes4 bes8 |
   
   ees4 ees8 ees4 ees8 |
-  bes4.~ bes4 bes8 |
+  bes4. d4\rest bes8 |
   f'4 f8 f4 f8 |
   f4 f8 bes,4 d8 |
   ees4 ees8 f4 f8 |
@@ -356,7 +356,7 @@ bassMusic = \relative c' {
   ees,4 ees8 f4 f8 |
   bes4. bes, |
   ees4 ees8 f4\fermata f8 |
-  bes,4.~ bes4 \bar"|."
+  bes,4. d4\rest \bar"|."
 }
 bassWords = \lyricmode {
 }
