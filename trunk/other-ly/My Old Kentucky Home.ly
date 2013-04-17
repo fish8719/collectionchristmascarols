@@ -139,7 +139,7 @@ sopWordsIII = \lyricmode {
   In the field where the su -- gar -- canes _ grow;
 }
 sopWordsIIIa = \lyricmode {
-  A few more days for to tote the wea -- ry "    load—" ""
+  A few more days for to tote the wea -- ry load— ""
   No mat -- ter, ’twill nev -- er be light;
   "" A few more days till we tot -- ter on the road,
   Then my
@@ -333,6 +333,7 @@ pianoLH = \relative c' {
       \Lyrics
       \override LyricText #'font-size = #1.3
       \override VerticalAxisGroup #'staff-affinity = #0
+      \override LyricText #'X-offset = #center-on-word
     }
     \context {
       \Score

@@ -72,7 +72,7 @@ sopMusic = \relative c' {
   aes2. \bar"" aes8 aes |
   aes4~ aes4. g8 f ees |
   bes'2. \bar"" ees,8 aes |
-  c4~ c4. |
+  c4~ c4.
   bes8 aes f |
   aes2. \bar"" aes8 f |
   
@@ -109,7 +109,7 @@ sopWords = \lyricmode {
   Time has changed to sil -- v’ry hair;
   
   Yes, I’ve neared the riv -- er side,
-  Soon I’ll launch up -- on its "    tide—"
+  Soon I’ll launch up -- on its tide—
   Soon my boat, with noise -- less oar,
   Safe will pass to yon -- der shore.
 }
@@ -117,17 +117,17 @@ sopWords = \lyricmode {
 sopWordsII = \lyricmode {
   \set stanza = #"2. "
   Oh! those chords with mag -- ic pow’r!
-  Take me back to child -- hood’s "    hour—"
+  Take me back to child -- hood’s hour—
   To that cot be -- side the sea,
   Where I knelt at moth -- er’s knee;
   
-  But that moth -- er, she has "    gone—"
+  But that moth -- er, she has gone—
   Calm she sleeps be -- neath the stone,
   While I wan -- der here a -- lone,
   Sigh -- ing for a bright -- er home.
   
   Bring my Harp to me a -- gain,
-  Let me sing a gen -- tle "    strain—"
+  Let me sing a gen -- tle strain—
   Let me hear its chords once more,
   Ere I pass to yon bright shore.
 }
@@ -135,13 +135,13 @@ sopWordsII = \lyricmode {
 sopWordsIII = \lyricmode {
   \set stanza = #"3. "
   Soon I’ll be a -- mong the blest,
-  Where the wea -- ry are at "    rest—"
+  Where the wea -- ry are at rest—
   Soon I’ll tread the gold -- en shore,
   Sing -- ing prais -- es ev -- er -- more.
   
   Now my boat is on the stream,
-  I can see its wa -- ters "    gleam—"
-  Soon I’ll be where an -- gels "    roam—"
+  I can see its wa -- ters gleam—
+  Soon I’ll be where an -- gels roam—
   Dear old Harp, I’m go -- ing home.
 }
 
@@ -330,6 +330,7 @@ pianoLH = \relative c' {
       \Lyrics
       \override LyricText #'font-size = #1.3
       \override VerticalAxisGroup #'staff-affinity = #0
+      \override LyricText #'X-offset = #center-on-word
     }
     \context {
       \Score
