@@ -14,13 +14,13 @@
   system-system-spacing =
     #'((basic-distance . 0)
        (minimum-distance . 0)
-       (padding . -3)
+       (padding . 0)
        (stretchability . 100))
-  ragged-last-bottom = ##f
+  ragged-last-bottom = ##t
   ragged-bottom = ##f
   two-sided = ##t
-  inner-margin = 1\in
-  outer-margin = 0.75\in
+  inner-margin = 0.95\in
+  outer-margin = 0.7\in
   top-margin = 0.26\in
   bottom-margin = 0.25\in
   first-page-number = #196
