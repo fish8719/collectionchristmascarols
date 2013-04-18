@@ -81,16 +81,17 @@
 116:A British Tar
 118:Brightly dawns our wedding day
 120:When I go out of door;Merrily Greet the Morn;Catch Round the Table
-122:Tit-Willow
-123:Mister Speaker, though ’tis late
-124:Soldier’s Hymn;When Jesus Wept
-125:When I in pain and sorrow moan;Jesus! the very thought of Thee
-126:The Spacious Firmament on High
-127:Ode to Joy
-128:Glorious Things of Thee Are Spoken
-129:Come, Thou Fount of Every Blessing
-130:Jesus, Lover of my soul
-131:The Battle Prayer
-132:Lead Kindly Light;Glory be to Jesus;Oh, happy is the man that hears
-134:God so loved the world;Abide with me
-136:Be Still, My Soul
+122:The criminal cried
+124:Tit-Willow
+125:Mister Speaker, though ’tis late
+126:Soldier’s Hymn;When Jesus Wept
+127:When I in pain and sorrow moan;Jesus! the very thought of Thee
+128:The Spacious Firmament on High
+129:Ode to Joy
+130:Glorious Things of Thee Are Spoken
+131:Come, Thou Fount of Every Blessing
+132:Jesus, Lover of my soul
+133:The Battle Prayer
+134:Lead Kindly Light;Glory be to Jesus;Oh, happy is the man that hears
+136:God so loved the world;Abide with me
+138:Be Still, My Soul
