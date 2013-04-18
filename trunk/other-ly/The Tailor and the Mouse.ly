@@ -76,8 +76,8 @@ sopMusic = \relative c' {
   c4 c8 c c4 c' |
   aes2 f4 b\rest |\break
   
-  aes4 f8 f c'4 f, |
-  aes f c' f, |
+  aes4 f8 f f4 f |
+  aes f f f |
   g bes bes bes |
   g2 bes4 d\rest^\markup\italic"rit." |
   
@@ -90,7 +90,7 @@ sopWords = \lyricmode {
   \set stanza = #"1. "
 	There was a tai -- lor had a mouse,
   \repeat unfold 7""
-  The lived to -- geth -- er in one house,
+  They lived to -- geth -- er in one house,
   \repeat unfold 7""
   
 }
@@ -181,7 +181,7 @@ tenorMusic = \relative c' {
   aes2 f4 g |
   
   c4 c8[ bes] aes4 aes |
-  g aes g2 |
+  g g g2 |
   c,4 c8 c c4 c' |
   aes2 f4 s |
   
@@ -213,7 +213,7 @@ bassMusic = \relative c' {
   aes2 f4 c |
   
   f c aes bes |
-  c aes c2 |
+  c ees c2 |
   c4 c8 c c4 c' |
   aes2 f4 d\rest |
   
@@ -222,7 +222,7 @@ bassMusic = \relative c' {
   f4 f f f |
   f2 f4 d\rest |
   
-  aes ees'8 ees ees4 aes,8[ bes] |
+  aes f'8 f f4 aes,8[ bes] |
   c4 f8 f ees2 |
   c4 c8 c c4 c' |
   aes2 f4 \bar"|."
