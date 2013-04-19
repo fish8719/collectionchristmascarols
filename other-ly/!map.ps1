@@ -7,6 +7,11 @@ $regexRaggedLast = [regex]'(?<=ragged-last-bottom\s+=\s+##)t';
 
 $map = Get-Content !map.txt;
 
+$allFiles = New-Object Collections.ArrayList;
+foreach($_ in (dir *.ly)) {
+    $allFiles.Add($_.Name);
+}
+
 Function getBlock([string]$haystack, [long]$index) {
     $open = 0;
     $pos = $haystack.IndexOf('{',$index);
@@ -43,6 +48,7 @@ foreach($_ in $map) {
             $files = $null;
             $file = $lys[0].Value + '.ly';
         }
+        $allFiles.remove($file);
         $current = Get-Content -Path $file -Encoding UTF8 -Raw
         $result = '';
         #update Page number
@@ -151,6 +157,7 @@ foreach($_ in $map) {
                 if($i -ge $files.Count) {
                     break;
                 }
+                $allFiles.remove($files[$i]);
                 $current = Get-Content -Path $files[$i] -Encoding UTF8 -Raw
                 continue;
             }
@@ -158,6 +165,7 @@ foreach($_ in $map) {
                 break;
             }
             $file = $lys[$i].Value + '.ly';
+            $allFiles.remove($file);
             $current = Get-Content -Path $file -Encoding UTF8 -Raw
         }
         Set-Content -Path "mapped\$page.ly" -Value $result -Encoding UTF8
@@ -166,6 +174,10 @@ foreach($_ in $map) {
 }
 #iex "&'c:\Program Files\gs\gs9.06\bin\gswin64c.exe' -q -dSAFER -dDEVICEWIDTHPOINTS=612 -dDEVICEHEIGHTPOINTS=792 -dCompatibilityLevel='1.4' -dNOPAUSE -dBATCH -r1200 -sDEVICE=pdfwrite -dEmbedAllFonts=true -dSubsetFonts=true -sOutputFile=""!full.pdf"" -c.setpdfwrite -f$pages";
 
+if($allFiles.Count -gt 0) {
+    echo "Warning: The following files were not used.";
+    echo $allFiles;
+}
 
 $files = (dir *.ly)
 foreach ($_ in $files) {
