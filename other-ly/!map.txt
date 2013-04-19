@@ -41,9 +41,8 @@
 56:Dixie
 57:The Lorelei
 58:Santa Lucia
-59:Boating Song
-60:Long, Long Ago
-61:The Hazel Dell
+59:The Hazel Dell
+60:Boating Song;A Hot Time in the Old Town;Long, Long Ago
 62:Scotch Lassie Jean;Love’s Chidings
 64:The Old Musician and His Harp;A Life on the Ocean Wave
 66:Jenny the Flower of Kildare;Come Follow;Come Follow Me Merrily
