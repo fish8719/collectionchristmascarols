@@ -124,13 +124,13 @@ altoMusic = \relative c' {
   \partial 8 f8 |
   d d d g f ees |
   d ees c bes4 s8 |
-  ees8 ees d f4 ees8 |
+  d8 d d f4 ees8 |
   d4 s4. \bar""
   
   f8 |
   d d d g f ees |
   d ees c bes4 s8 |
-  ees8 ees d f4 ees8 |
+  d8 d d f4 ees8 |
   d4 s2 |
   
   f8 f f f f f |
@@ -210,7 +210,7 @@ bassMusic = \relative c' {
   f f f f f f |
   bes, bes bes bes4 d8\rest |
   g g g g4 d8\rest |
-  ees ees ees ees4 d8\rest |
+  c c c c4 d8\rest |
   f f f f4 f8 |
   bes,4.~ bes4 \bar "|."
 }
