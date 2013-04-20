@@ -83,8 +83,8 @@ sopMusic = \relative c' {
   c d e f e d |
   
   %page2
-  e8 d c d4\fermata c8 |
-  c d e f4 d8 |
+  e8 d c d4\fermata c16[ c] |
+  c8 d e f4 d8 |
   e d c d4 e16[ f] |
   
   f,8. g16 f8 f8. g16 a8 |
@@ -175,9 +175,9 @@ altoMusic = \relative c' {
   e f g f f f |
   
   %page 2 alto
-  e8 e g f[ d]^\fermata f8 |
+  e8 e g f[ d]^\fermata f16[ f] |
   e8 f g  f4 a8 |
-  g4 g8 f4 c8 |
+  g g g8 f4 c8 |
   
   a8. a16 a8 c8. c16 f8 
   f8. f16 f8 f8. f16 f8
@@ -230,9 +230,9 @@ tenorMusic = \relative c' {
   bes bes bes a a a |
   
   %page2 tenor
-  bes8 bes bes a4 a8 |
+  bes8 bes bes a4 a16[ a] |
   g8 g c a4 a8 |
-  bes4 bes8 a4 bes16[ a] |
+  bes bes bes8 a4 bes16[ a] |
   
   f8. f16 f8 a8. bes16 c8
   a8. bes16 a8 a8. c16 a8
@@ -275,9 +275,9 @@ bassMusic = \relative c' {
   c c c d d d |
   
   %page2 bass
-  g8 g e f4\fermata f8 |
-  c c c d4 f8 |
-  g4 e8 f4 g16[ f] |
+  g8 g e f4\fermata f16[ f] |
+  c8 c c d4 f8 |
+  g g e8 f4 g16[ f] |
   
   f,8. f16 f8 f'8. f16 f8
   f8. f16 f8 f8. f16 f8
