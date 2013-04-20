@@ -316,7 +316,7 @@ tenorMusic = \relative c' {
     
     gis4 b8 b s gis |
     gis[ gis] fis8 e8 s e |
-    e[ e] e8 fis4 fis8 |
+    e[ e] e8 a4 fis8 |
     gis4.~ gis8 s
     
     
