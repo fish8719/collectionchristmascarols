@@ -65,6 +65,7 @@ sopMusic = \relative c' {
     g8 fis e |
     b' a4 |
   } \break
+  \bar "||"
   fis'8 e d |
   cis16 b e4 |
   
@@ -163,8 +164,8 @@ altoMusic = \relative c' {
   cis8 b g |
   
   eis16 fis fis4 |
-  a8 fis d |
-  e g4 |
+  a8 fis fis16[ d] |
+  e8 g4 |
   g8 a8. g16 |
   g8 fis4 \bar"|."
 }
@@ -197,29 +198,29 @@ tenorMusic = \relative c' {
     a8 a a |
     
     a8 a4 |
-    cis8 cis a |
+    a8 a a |
     b8 d4 |
   }
-  a8 g a |
-  e'16 e b4 |
+  a8 g b |
+  e16 b b4 |
   
-  g8 fis g |
-  b16 b a4 |
-  d,8 a' d, |
-  a' cis4 |
+  g8 g b |
+  b16 d a4 |
+  d8 a d |
+  a cis4 |
   a8 e'8. cis16 |
   d8 a4 |
   
   
-  a8 a a |
-  g16 g g4 |
+  a8 g b |
+  e16 b b4 |
   g8 g b |
   
-  d16 d d4 |
-  a8 a a |
-  a a4 |
+  b16 d a4 |
+  d8 a d |
+  a cis4 |
   cis8 cis8. cis16 |
-  d8 d4 \bar"|."
+  d8 a4 \bar"|."
 }
 
 tenorWords = \lyricmode {
@@ -240,13 +241,13 @@ bassMusic = \relative c' {
     d,8 d d |
     
     cis8 cis4 |
-    cis8 a a |
+    cis8 d a |
     d a'4 |
   }
-  d,8 e fis |
+  d,8 e g |
   g16 g e4 |
   
-  g,8 b cis |
+  g8 g g |
   d16 d d4 |
   d8 d d |
   a a'4 |
@@ -254,14 +255,14 @@ bassMusic = \relative c' {
   d,8 d4 |
   
   
-  d8 d d |
-  g16 g g4 |
+  d8 e g |
+  g16 g e4 |
   g8 g g |
   
-  a16 a a4 |
-  a8 a a |
-  a a4 |
-  a8 a8.\fermata a16 |
+  d16 d d4 |
+  d8 d d |
+  a a'4 |
+  a,8 a'8.\fermata a16 |
   d,8 d4 \bar"|."
 }
 bassWords = \lyricmode {
