@@ -220,7 +220,7 @@ bassMusic = \relative c' {
   f4 aes8 g f4 aes8[ g] |
   f4 aes8[ g] f4 aes8[ g] |
   f4 f f f |
-  f2 f4 d\rest |
+  ees2 ees4 d\rest |
   
   aes f'8 f f4 aes,8[ bes] |
   c4 f8 f ees2 |
