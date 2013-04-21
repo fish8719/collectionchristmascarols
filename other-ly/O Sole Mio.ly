@@ -129,7 +129,7 @@ altoMusic = \relative c' {
   e4 d |
   c8 c f c |
   c4 bes4~ |
-  bes8 bes bes d |
+  bes8 bes d d |
   bes8. bes16 bes4~ |
   bes8 c c e |
   
@@ -138,7 +138,7 @@ altoMusic = \relative c' {
   e4 d |
   c8 c f c |
   c4 bes4~ |
-  bes8 d8 d d |
+  bes8 d8 c e |
   f8 f e c |
   e4. c8 |
   c8 c4.~ |
@@ -150,8 +150,8 @@ altoMusic = \relative c' {
   a8 c c bes |
   g2~ |
   g8 c c bes |
-  g4 g~ |
-  g8 e f g |
+  g4 e~ |
+  e8 e f g |
   
   a2~ |
   a4 s8 a |
@@ -186,20 +186,20 @@ altoWordsVI = \lyricmode {
 }
 tenorMusic = \relative c' {
   a8 bes c |
-  bes4 bes |
-  a8 a c a |
+  bes4 a |
+  a8 bes c a |
   f4 f~ |
-  f8 d d g |
-  g8. e16 e4~ |
-  e8 g a bes |
+  f8 g bes bes |
+  g8. bes16 f4~ |
+  f8 g a bes |
   
   a4 a~ |
   a8 a8 bes c |
-  bes4 bes |
-  a8 a c a |
+  bes4 a |
+  a8 bes c a |
   f4 f~ |
-  f8 g8 a bes |
-  a c c a |
+  f8 g8 f bes |
+  a c bes a |
   bes4. bes8 |
   bes8 a4.~ |
   a8
@@ -210,11 +210,11 @@ tenorMusic = \relative c' {
   f8 a a f |
   e2~ |
   e8 g g e |
-  e4 e~ |
-  e8 e e e |
+  e4 g~ |
+  g8 bes c bes |
   
-  f2~ |
-  f4 s8 f |
+  a2~ |
+  a4 s8 f |
   f2~ |
   f8 bes8 bes8. f16 |
   f2~ |
@@ -236,19 +236,19 @@ tenorWordsIII = \lyricmode {
 
 bassMusic = \relative c' {
   f,8 f f |
-  bes,4 bes |
-  f'8 f f f |
+  c4 d |
+  f8 f f f |
   bes,4 bes~ |
-  bes8 g g g |
-  c8. c16 c4~ |
-  c8 c c c |
+  bes8 c bes g |
+  c8. bes16 bes4~ |
+  bes8 c c c |
   
   f4 f~ |
   f8 f f f |
-  bes,4 bes |
-  f'8 f f f |
+  c4 d |
+  f8 f f f |
   bes,4 bes~ |
-  bes8 g g g |
+  bes8 g a c |
   c c c c |
   c4. c8 |
   
@@ -259,7 +259,7 @@ bassMusic = \relative c' {
   c2~ |
   c8 c c c |
   c4 c~ |
-  c8 c c c |
+  c8 c f f |
   
   f2~ |
   f4 d8\rest f |
