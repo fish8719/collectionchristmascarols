@@ -146,10 +146,10 @@ altoMusic = \relative c' {
   fis4. |
   d4. |
   
-  d4. |
-  f4 f8 |
   g4. |
-  c,4 s8 |
+  f4 f8 |
+  e4. |
+  c4 s8 |
   b4. |
   c4 d8 |
   d4.~ |
@@ -204,7 +204,7 @@ tenorMusic = \relative c' {
   
   b4. |
   d4 d8 |
-  e4. |
+  c4. |
   c4 s8 |
   b4. |
   a4 c8 |
