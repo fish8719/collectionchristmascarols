@@ -68,7 +68,7 @@ sopMusic = \relative c' {
 	\partial 4
   e8[ fis] |
   gis4.( a8) a4 cis |
-  b4. gis8 gis4( b) |
+  \slurDotted b4.( gis8) gis4( b) | \slurSolid
   a4.( gis8) a4 fis |
   gis2 b4\rest e,8[ fis] |
   gis4.( a8) a4 cis |
@@ -97,8 +97,8 @@ sopMusic = \relative c' {
 }
 sopWords = \lyricmode {
   \set stanza = #"1. "
-	’Mid plea -- sures and pal -- a -- ces though we may roam,
-  \set ignoreMelismata = ##t
+	’Mid plea -- sures and \set ignoreMelismata = ##t
+  pal -- a -- ces __ _ though _ we may roam,
   Be it ev -- _ er so hum -- ble, there’s no __ _ place like home;
   \unset ignoreMelismata
   A __ charm from the skies seems to hal -- low us there,
@@ -108,7 +108,7 @@ sopWords = \lyricmode {
 
 sopWordsII = \lyricmode {
   \set stanza = #"2. "
-  I __ gaze on the moon as I __ tread the drear wild,
+  I __ gaze on the moon \set ignoreMelismata = ##t as I \unset ignoreMelismata tread __ the drear wild,
   And feel that my moth -- er now thinks of her child;
   \set ignoreMelismata = ##t
   As she \unset ignoreMelismata looks on that moon from our own cot -- tage door
@@ -122,7 +122,7 @@ sopWordsII = \lyricmode {
 
 sopWordsIII = \lyricmode {
   \set stanza = #"3. "
-  An ex -- ile from home, splen -- dor daz -- zles in vain;
+  An ex -- ile from home, \set ignoreMelismata = ##t splen -- dor \unset ignoreMelismata daz -- zles in vain;
   Oh! give me my low -- ly thatched cot -- tage a -- gain;
   The birds sing -- ing gai -- ly, that came at my call;
   \set ignoreMelismata = ##t
@@ -140,7 +140,7 @@ sopWordsV = \lyricmode {
 altoMusic = \relative c' {
   e8[ dis] |
   e4.( fis8) fis4 a |
-  gis4. e8 e4( gis) |
+  \slurDotted gis4.( e8) e4( gis) | \slurSolid
   fis4.( e8) fis4 dis |
   e2 s4 e8[ dis] |
   e4.( fis8) fis4 a |
@@ -190,7 +190,7 @@ altoWordsVI = \lyricmode {
 tenorMusic = \relative c' {
   gis8[ a] |
   b2 b4 e |
-  e4. b8 b2 |
+  \tieDotted \slurDotted e4.( b8) b4~ b | \slurSolid \tieSolid
   b2 b4 b |
   b2 s4 gis8[ a] |
   b2 b4 e |
@@ -230,7 +230,7 @@ tenorWordsIII = \lyricmode {
 bassMusic = \relative c' {
   e,4 |
   e2 e4 e |
-  e4. e8 e2 |
+  \tieDotted e4.~ e8 e4~ e | \tieSolid
   b2 b4 b |
   e2 d4\rest e |
   e2 e4 e |
