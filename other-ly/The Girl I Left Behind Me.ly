@@ -67,71 +67,75 @@ sopMusic = \relative c' {
 	\partial 4
   f'8[ e] |
   d4 bes a4. g8 |
-  a4 f d4. e8 |
+  a4 f d e |
   f4. f8 f[ g] a[ bes] |
   
-  c2 a4 \bar"" f'8[ e] |
-  d4 c a4. g8 |
+  c4.( bes8) a4 \bar"" f'8[ e] |
+  d4 c8[ bes] a4. g8 |
   a4 f d f |
-  e g c, e |
+  e g c, d8[ e] |
   
   f2 f4 \bar"" c'8[ bes] |
   a4 c d e |
-  f c a c8[ bes] |
-  a4 c d e |
+  f c a f8[ g] |
+  \slurDotted a4( c) \slurSolid d e |
   
   f2 e4 \bar"" f8[ e] |
-  d4 bes a g |
-  a f d e8 f |
-  e[ f] g4 c, e |
+  d4 c8[ bes] a4 \tieDotted g8~ g |
+  a4 f d\fermata e8 f |
+  e4 g c, d8[ e] |
   f2 f4 \bar"|."
 }
 sopWords = \lyricmode {
   \set stanza = #"1. "
-	I’m lone -- some since I crossed the hill,
-  And o’er the moor and val -- ley;
-  Such heav -- y thoughts my heart do fill,
-  Since part -- ing with my Sal -- ly.
-  I seek no more the fine and gay,
-  For each does but re -- mind me
-  How swift the hours did pass a -- way,
-  With the girl I’ve left be -- hind me.
+	The dames of France are fond and free,
+  And Flem -- ish lips are will -- ing,
+  And soft the maids of It -- a -- ly,
+  And Span -- ish eyes are thrill -- ing;
+
+  Still, though I bask be -- neath their smile,
+  Their charms fail to bind me,
+  \set ignoreMelismata = ##t And my \unset ignoreMelismata heart falls back to E -- rin’s Isle
+  To the girl I left be -- hind me.
 }
 
 sopWordsII = \lyricmode {
   \set stanza = #"2. "
-  Oh! ne’er shall I for -- get the night,
-  The stars were bright a -- bove me,
-  And gen -- tly lent their sil -- v’ry light,
-  When first she vowed she loved me.
-  But now I’m bound to Brigh -- ton camp,
-  Kind heav’n, may fa -- vor find me,
-  And send me safe -- ly back a -- gain
-  To the girl I’ve left be -- hind me.
+  For she’s as fair as Shan -- non’s side,
+  And pur -- er than its wa -- ter,
+  But she re -- fused to be my bride,
+  Though man -- y~a year I sought her;
+
+  Yet, since to France I sailed a -- way,
+  Her \set ignoreMelismata = ##t let -- ters \unset ignoreMelismata oft re -- mind me,
+  \set ignoreMelismata = ##t That I \unset ignoreMelismata prom -- ised nev -- er to gain -- say
+  "" The girl I left be -- hind me.
 }
 
 sopWordsIII = \lyricmode {
   \set stanza = #"3. "
-  The bee shall hon -- ey taste no more,
-  The dove be -- come a ran -- ger,
-  The dash -- ing waves shall cease to roar,
-  Ere she’s to me a stran -- ger;
-  The vows we’ve reg -- is -- ter’d a -- bove
-  Shall ev -- er cheer and bind me,
-  In con -- stan -- cy to her I love,
-  To the girl I’ve left be -- hind me.
+  She says, “My own dear love, come home,
+  My friends are rich and man -- y,
+  Or else, a -- broad with you I’ll roam,
+  A sol -- dier stout as an -- y;
+
+  If you’ll not come nor let me go,
+  I’ll \set ignoreMelismata = ##t think you \unset ignoreMelismata have re -- signed me.”
+  My heart nigh broke \set ignoreMelismata = ##t when I \unset ignoreMelismata an -- swered, “No,”
+  To the girl I left be -- hind me.
 }
 
 sopWordsIV = \lyricmode {
   \set stanza = #"4. "
-  My mind her form shall still re -- tain,
-  In sleep -- ing or in wak -- ing,
-  Un -- til I see my love a -- gain,
-  For whom my heart is break -- ing.
-  If ev -- er I should see the day,
-  When Mars shall have re -- signed me,
-  For ev -- er -- more I’ll glad -- ly stay
-  With the girl I’ve left be -- hind me.
+  For nev -- er shall my true love brave
+  A life of war and toil -- ing,
+  And nev -- er as a skulk -- ing slave
+  I’ll tread my na -- tive soil on;
+
+  But, were it free or to be freed,
+  The \set ignoreMelismata = ##t bat -- tle’s \unset ignoreMelismata close would find me
+  To Ire -- land bound, nor mes -- sage need
+  From the girl I left be -- hind me.
 }
 
 sopWordsV = \lyricmode {
@@ -141,7 +145,7 @@ sopWordsV = \lyricmode {
 altoMusic = \relative c' {
   a'4 |
   f f f4. e8 |
-  f4 c d4. c8 |
+  f4 c d c |
   c4. c8 c4 f 
   
   f2 f4 a4 
@@ -151,13 +155,13 @@ altoMusic = \relative c' {
   
   c2 c4 e |
   f f f g |
-  a f f e |
-  f f f g |
+  a f f c |
+  \tieDotted f~ f \tieSolid f g |
   
   a2 g4 a8[ c] |
-  bes4 f f e |
-  f c d c8 c |
-  c4 e c c |
+  bes4 f f4 \tieDotted e8~ e |
+  f4 c d c8 c |
+  c8[ d] e4 c c |
   c2 c4 \bar"|."
 }
 altoWords = \lyricmode {
@@ -183,7 +187,7 @@ altoWordsVI = \lyricmode {
 tenorMusic = \relative c' {
   c4 |
   bes d c4. bes8 |
-  c4 a bes4. bes8 |
+  c4 a bes bes |
   a4. a8 a4 c |
   
   a2 c4 c |
@@ -193,13 +197,13 @@ tenorMusic = \relative c' {
   
   a2 a4 g |
   f a bes c |
-  c a c c |
-  c a bes c |
+  c a c a |
+  \slurDotted c( a) \slurSolid bes c |
   
   c2 c4 c8[ a] |
-  bes4 d c bes |
-  c a bes g8 a |
-  g[ a] bes4 g bes |
+  bes4 d c4 \tieDotted bes8~ bes |
+  c4 a bes g8 a |
+  g4 bes g bes |
   a2 a4 \bar"|."
 }
 
@@ -215,7 +219,7 @@ tenorWordsIII = \lyricmode {
 bassMusic = \relative c' {
   f,4 |
   bes4 bes f4. f8 |
-  f4 f f4. f8 |
+  f4 f f f |
   f4. f8 f4 f
   
   f2 f4 f
@@ -225,12 +229,12 @@ bassMusic = \relative c' {
   
   f2 f4 c |
   f f f f |
-  f f f g |
   f f f f |
+  \tieDotted f~ f \tieSolid f f |
   
   f2 c4 f |
-  f f f f |
-  f f f c8 c |
+  f f f4 \tieDotted f8~ f |
+  f4 f f\fermata c8 c |
   c4 c e c |
   f2 f4 \bar"|."
 }
