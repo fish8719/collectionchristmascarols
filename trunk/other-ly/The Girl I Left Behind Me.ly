@@ -200,7 +200,7 @@ tenorMusic = \relative c' {
   c a c a |
   \slurDotted c( a) \slurSolid bes c |
   
-  c2 c4 c8[ a] |
+  c2 c4 c |
   bes4 d c4 \tieDotted bes8~ bes |
   c4 a bes g8 a |
   g4 bes g bes |
@@ -219,7 +219,7 @@ tenorWordsIII = \lyricmode {
 bassMusic = \relative c' {
   f,4 |
   bes4 bes f4. f8 |
-  f4 f f f |
+  f4 f f g |
   f4. f8 f4 f
   
   f2 f4 f
