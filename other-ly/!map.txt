@@ -42,55 +42,57 @@
 57:The Lorelei
 58:Santa Lucia
 59:The Hazel Dell
-60:Boating Song;A Hot Time in the Old Town;Long, Long Ago
-62:Scotch Lassie Jean;Love’s Chidings
-64:The Old Musician and His Harp;A Life on the Ocean Wave
-66:Jenny the Flower of Kildare;Come Follow;Come Follow Me Merrily
-68:When You and I Were Young, Maggie;The Girl I Left Behind Me
-70:Dublin Bay
-71:Darby and Joan
-72:The Midshipmite;Home Sweet Home
-74:Nancy Lee;The Blue Bells of Scotland
-76:Punchinello;Old Dog Tray
-78:Saved From the Storm
-80:The Little Tin Soldier
-81:Sweet Genevieve
-82:Bride Bells;Gaudeamus Hodie;Ego sum pauper
-84:Jamie’s on the Stormy Sea
-85:The Birds’ Ball
-86:Listen to the Mocking Bird;The Old Folks at Home
-88:Fairy Belle
-89:My Old Kentucky Home
-90:Hard Times
-91:Happy Hours at Home
-92:’Twere vain to tell
-93:The Hand that Holds the Bread
-94:Merrily Sing;Good Night Ladies;Oh My Love
-96:The March of Prohibition;God be with you till we meet again
-98:A Warrior Bold;Rule Britannia
-100:The Sidewalks of New York;For he’s a jolly good fellow
-102:A Capital Ship;America
-104:The Tailor and the Mouse;Maid of Athens;Come Let Us All A-Maying Go
-106:Saint Patrick’s Day;The bell doth toll
-108:Johnny Sands;He that Will an Alehouse Keep;Skating
-110:Where There’s a Will There’s a Way
-111:The Flowers that Bloom in the Spring
-112:La ci darem la mano
-114:The Distant Shore
-116:A British Tar
-118:Brightly dawns our wedding day
-120:When I go out of door;Merrily Greet the Morn;Catch Round the Table
-122:The criminal cried
-124:Tit-Willow
-125:Mister Speaker, though ’tis late
-126:Soldier’s Hymn;When Jesus Wept
-127:When I in pain and sorrow moan;Jesus! the very thought of Thee
-128:The Spacious Firmament on High
-129:Ode to Joy
-130:Glorious Things of Thee Are Spoken
-131:Come, Thou Fount of Every Blessing
-132:Jesus, Lover of my soul
-133:The Battle Prayer
-134:Lead Kindly Light;Glory be to Jesus;Oh, happy is the man that hears
-136:God so loved the world;Abide with me
-138:Be Still, My Soul
+60:On the Banks of the Wabash, Far Away;A Hot Time in the Old Town
+62:Boating Song
+63:Long, Long Ago
+64:Scotch Lassie Jean;Love’s Chidings
+66:The Old Musician and His Harp;A Life on the Ocean Wave
+68:Jenny the Flower of Kildare;Come Follow;Come Follow Me Merrily
+70:When You and I Were Young, Maggie;The Girl I Left Behind Me
+72:Dublin Bay
+73:Darby and Joan
+74:The Midshipmite;Home Sweet Home
+76:Nancy Lee;The Blue Bells of Scotland
+78:Punchinello;Old Dog Tray
+80:Saved From the Storm
+82:The Little Tin Soldier
+83:Sweet Genevieve
+84:Bride Bells;Gaudeamus Hodie;Ego sum pauper
+86:Jamie’s on the Stormy Sea
+87:The Birds’ Ball
+88:Listen to the Mocking Bird;The Old Folks at Home
+90:Fairy Belle
+91:My Old Kentucky Home
+92:Hard Times
+93:Happy Hours at Home
+94:’Twere vain to tell
+95:The Hand that Holds the Bread
+96:Merrily Sing;Good Night Ladies;Oh My Love
+98:The March of Prohibition;God be with you till we meet again
+100:A Warrior Bold;Rule Britannia
+102:The Sidewalks of New York;For he’s a jolly good fellow
+104:A Capital Ship;America
+106:The Tailor and the Mouse;Maid of Athens;Come Let Us All A-Maying Go
+108:Saint Patrick’s Day;The bell doth toll
+110:Johnny Sands;He that Will an Alehouse Keep;Skating
+112:Where There’s a Will There’s a Way
+113:The Flowers that Bloom in the Spring
+114:La ci darem la mano
+116:The Distant Shore
+118:A British Tar
+120:Brightly dawns our wedding day
+122:When I go out of door;Merrily Greet the Morn;Catch Round the Table
+124:The criminal cried
+126:Tit-Willow
+127:Mister Speaker, though ’tis late
+128:Soldier’s Hymn;When Jesus Wept
+129:When I in pain and sorrow moan;Jesus! the very thought of Thee
+130:The Spacious Firmament on High
+131:Ode to Joy
+132:Glorious Things of Thee Are Spoken
+133:Come, Thou Fount of Every Blessing
+134:Jesus, Lover of my soul
+135:The Battle Prayer
+136:Lead Kindly Light;Glory be to Jesus;Oh, happy is the man that hears
+138:God so loved the world;Abide with me
+140:Be Still, My Soul
