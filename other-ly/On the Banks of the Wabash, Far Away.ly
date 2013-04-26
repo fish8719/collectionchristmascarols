@@ -100,30 +100,35 @@ sopMusic = \relative c' {
 sopWords = \lyricmode {
   \set stanza = #"1. "
 	Round my In -- di -- an -- a home -- stead wave the corn -- fields,
-  In the dis -- tance loom the wood -- lands clear and cool.
+  In the dis -- tance loom the wood -- lands clear \set associatedVoice = "altos" and cool,
+    \markup\italic clear \markup\italic and \markup\italic cool. \unset associatedVoice
   Of -- ten -- times my thoughts re -- vert to scenes of child -- hood,
-  Where I first re -- ceived my les -- sons, na -- ture’s school.
+  Where I first re -- ceived my les -- sons, \set associatedVoice = "altos" na -- ture’s school,
+    \markup\italic na -- \markup\italic ture’s \markup\italic school. \unset associatedVoice
   But one thing there is mis -- sing from the pic -- ture,
   With -- out her face it seems so in -- com -- plete.
   I long to see my moth -- er in the door -- way,
-  As she stood there years a -- go, her boy to greet.
+  As she stood there years a -- go, her boy \set associatedVoice = "altos" to greet.
   
+  \unset associatedVoice
   Oh, the moon -- light’s fair to -- night a -- long the Wa -- bash,
-  From the fields there comes the breath of new -- mown hay.
+  From the fields there comes the breath of new -- mown hay. __
   Through the syc -- a -- mores the can -- dle lights are gleam -- ing,
-  On the banks of the Wa -- bash, far a -- way.
+  On the banks of the Wa -- bash, far a -- way. __
 }
 
 sopWordsII = \lyricmode {
   \set stanza = #"2. "
   Man -- y years have passed since I strolled by the riv -- er,
-  Arm in arm, with sweet -- heart Mar -- y by my side,
+  Arm in arm, with sweet -- heart Mar -- y by \set associatedVoice = "altos" my side,
+    \markup\italic by \markup\italic my \markup\italic side. \unset associatedVoice
   It was there I tried to tell her that I loved her,
-  It was there I begged of her to be my bride.
+  It was there I begged of her to be \set associatedVoice = "altos" my bride,
+    \set ignoreMelismata = ##t \markup\italic to \markup\italic be \markup\italic my \markup\italic bride. \unset ignoreMelismata \unset associatedVoice
   Long years have passed since I strolled through the church -- yard.
   She’s sleep -- ing there, my an -- gel, Mar -- y dear,
   I loved her, but she thought I did -- n’t mean it,
-  Still I’d give my fu -- ture were she on -- ly here.
+  Still I’d give my fu -- ture were she \set associatedVoice = "altos" on -- ly here.
 }
 
 sopWordsIII = \lyricmode {
@@ -140,14 +145,14 @@ sopWordsV = \lyricmode {
 
 altoMusic = \relative c' {
   c8 bes |
-  c c c c des8. des16 des8 des |
+  c c c c des8. des16 f8 des |
   ees4 ees2 d8 des |
   
   c c ees ees d16 d8. des8 des |
   c4 ees8 des c s c bes |
   
   %page2
-  c8. c16 c8 c des des des des |
+  c8. c16 c8 c des des f des |
   ees4 ees2 d8 des |
   
   c c ees ees d16 d8. des8 des |
@@ -160,7 +165,7 @@ altoMusic = \relative c' {
   bes8 bes bes bes d d d d |
   ees2~ ees8 s ees4 |
   
-  c8 c c c des des des8. des16 |
+  c8 c c c des des f8. des16 |
   ees4 ees2 d8 des |
   
   c c ees ees d8. d16 des8. des16 |
@@ -171,20 +176,24 @@ altoMusic = \relative c' {
   ees8. ees16 ees8. ees16 e8. e16 e8. e16 |
   f4 des4. s8 des8 ees |
   
-  d8. d16 d8 d d8. d16 d8 d |
+  d8. d16 d8 d d?8. d16 d8 d |
   bes4( a bes8) s c des |
   
   ees8. ees16 ees8. ees16 e8. e16 e8. e16 |
   f4 des4. s8 des8 b |
   
-  c4 c8 c d16 d8. des8. des16 |
+  c4 c8 ees d16 d8. des8. des16 |
   c4( des c8) s \bar"|."
 }
 altoWords = \lyricmode {
+  \repeat unfold 49 ""
+  na -- ture’s school.
 }
 altoWordsII = \lyricmode {
 %\markup\italic
-  \set stanza = #"2. "
+  \repeat unfold 49 ""
+  \set ignoreMelismata = ##t
+  to be my bride.
 }
 altoWordsIII = \lyricmode {
   \set stanza = #"3. "
@@ -216,7 +225,7 @@ tenorMusic = \relative c' {
   \slurDashed ees8 ges( f) \slurSolid fes ees s ees4 |
   
   c'8 c c c g g aes bes |
-  aes4 aes2 aes4 |
+  c4 aes2 aes4 |
   
   %page3
   aes8 aes aes aes bes bes bes aes |
@@ -230,16 +239,16 @@ tenorMusic = \relative c' {
   
   %page4/chorus
   aes8 aes |
-  c8. c16 c8. c16 c8. c16 c8. c16 |
+  c8. c16 c8. c16 c8. c16 c8. bes16 |
   aes4 aes4. s8 aes a |
   
   bes8. bes16 bes8 bes bes8. bes16 bes8 bes |
   g4( fis g8) s aes aes |
   
-  c8. c16 c8. c16 c8. c16 c8. c16 |
+  c8. c16 c8. c16 c8. c16 c8. bes16 |
   aes4 aes4. s8 aes aes |
   
-  aes4 g8 ees f16 f8. bes8. g16 |
+  aes4 g8 aes f16 f8. bes8. g16 |
   ees4( fes ees8) s \bar"|."
 }
 
@@ -255,14 +264,14 @@ tenorWordsIII = \lyricmode {
 bassMusic = \relative c' {
   aes,8 aes |
   aes aes aes aes des8. des16 des8 des |
-  ees4 aes2 f8 fes |
+  aes4 aes2 f'8 fes |
   
   ees c aes c f16 f8. ees8 ees |
   aes,2~ aes8 d\rest c bes |
   
   %page2
   aes8. aes16 aes8 aes des des des des |
-  ees4 aes2 f8 fes |
+  aes4 aes2 f'8 fes |
   
   ees c aes c f16 f8. ees8 ees |
   aes,2~ aes8 d\rest aes4 |
@@ -275,7 +284,7 @@ bassMusic = \relative c' {
   ees2~ ees8 d\rest ees4 |
   
   aes,8 aes aes aes des des des8. des16 |
-  ees4 aes2 f8 fes |
+  aes4 aes2 f'8 fes |
   
   ees8 c aes c bes8. bes16 ees8. ees16 |
   aes,2. \bar"||"
@@ -291,7 +300,7 @@ bassMusic = \relative c' {
   aes8. aes16 aes8. aes16 g8. g16 g8. g16 |
   f4 des'4. d8\rest des d |
   
-  ees4 ees8 ees bes16 bes8.\fermata ees8. ees16 |
+  ees4 ees8 c bes16 bes8.\fermata ees8. ees16 |
   aes,2~ aes8 d\rest \bar"|."
 }
 bassWords = \lyricmode {
@@ -305,6 +314,8 @@ pianoLH = \relative c' {
 \score {
 <<
    \new ChoirStaff <<
+    %\new Lyrics = "trueAltos"
+    %\new Lyrics = "trueAltosII"
     \new Staff = women <<
       \new Voice = "sopranos" { \voiceOne << \global \sopMusic >> }
       \new Voice = "altos" { \voiceTwo << \global \altoMusic >> }
@@ -319,9 +330,6 @@ pianoLH = \relative c' {
       \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }
       \new Voice = "basses" { \voiceTwo << \global \bassMusic >> }
     >>
-    \new Lyrics \with { alignAboveContext = #"tenors" } \lyricsto "tenors" \tenorWordsIII
-    \new Lyrics \with { alignAboveContext = #"tenors" } \lyricsto "tenors" \tenorWordsII
-    \new Lyrics \with { alignAboveContext = #"tenors" } \lyricsto "tenors" \tenorWords
   >>
 %    \new PianoStaff << \new Staff { \new Voice { \pianoRH } } \new Staff { \clef "bass" \pianoLH } >>
   >>
