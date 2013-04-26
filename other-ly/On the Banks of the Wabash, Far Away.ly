@@ -113,7 +113,7 @@ sopWords = \lyricmode {
   \unset associatedVoice
   Oh, the moon -- light’s fair to -- night a -- long the Wa -- bash,
   From the fields there comes the breath of new -- mown hay. __
-  Through the syc -- a -- mores the can -- dle lights are gleam -- ing,
+  Through the syc -- a --  mores the can -- dle lights are gleam -- ing,
   On the banks of the Wa -- bash, far a -- way. __
 }
 
@@ -158,7 +158,7 @@ altoMusic = \relative c' {
   c c ees ees d16 d8. des8 des |
   c \slurDashed ees( d) \slurSolid des c s c4 |
   
-  ees8 ees ees ees c c c ees |
+  ees8 ees ees ees c c c e |
   f4 c2 c4 |
   
   %page3
@@ -168,7 +168,7 @@ altoMusic = \relative c' {
   c8 c c c des des f8. des16 |
   ees4 ees2 d8 des |
   
-  c c ees ees d8. d16 des8. des16 |
+  c c ees ees d8. d16 des8. c16 |
   c4( des c) \bar"||"
   
   %page4/chorus
@@ -221,7 +221,7 @@ tenorMusic = \relative c' {
   aes8. aes16 aes8 aes aes aes aes aes |
   c4 c2 aes8 aes |
   
-  aes aes c aes bes16 a8. g8 g |
+  aes aes c aes bes16 f8. g8 g |
   \slurDashed ees8 ges( f) \slurSolid fes ees s ees4 |
   
   c'8 c c c g g aes bes |
@@ -234,7 +234,7 @@ tenorMusic = \relative c' {
   aes8 aes aes aes aes aes aes8. aes16 |
   c4 c2 aes8 aes |
   
-  aes aes c aes bes8. bes16 g8. g16 |
+  aes aes c aes aes8. aes16 g8. aes16 |
   ees4( f ees) \bar"||"
   
   %page4/chorus
@@ -242,7 +242,7 @@ tenorMusic = \relative c' {
   c8. c16 c8. c16 c8. c16 c8. bes16 |
   aes4 aes4. s8 aes a |
   
-  bes8. bes16 bes8 bes bes8. bes16 bes8 bes |
+  bes8. bes16 aes8 aes bes8. aes16 bes8 aes |
   g4( fis g8) s aes aes |
   
   c8. c16 c8. c16 c8. c16 c8. bes16 |
@@ -291,14 +291,14 @@ bassMusic = \relative c' {
   
   %page4/chorus
   aes8 aes |
-  aes8. aes16 aes8. aes16 g8. g16 g8. g16 |
-  f4 des'4. d8\rest des c |
+  aes8. aes16 aes8. aes16 g8. g16 g8. c16 |
+  f,4 des'4. d8\rest des c |
   
   bes8. bes16 bes8 bes bes8. bes16 bes8 bes |
   ees2~ ees8 d\rest aes8 aes |
   
-  aes8. aes16 aes8. aes16 g8. g16 g8. g16 |
-  f4 des'4. d8\rest des d |
+  aes8. aes16 aes8. aes16 g8. g16 g8. c16 |
+  f,4 des'4. d8\rest des d |
   
   ees4 ees8 c bes16 bes8.\fermata ees8. ees16 |
   aes,2~ aes8 d\rest \bar"|."
