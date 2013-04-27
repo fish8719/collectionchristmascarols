@@ -20,7 +20,7 @@
   score-markup-spacing =
     #'((basic-distance . 0)
        (minimum-distance . 0)
-       (padding . 3)
+       (padding . 0)
        (stretchability . 80))
   ragged-last-bottom = ##f
   ragged-bottom = ##f

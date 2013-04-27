@@ -131,18 +131,18 @@ altoMusic = \relative c' {
   
   e e dis fis |
   e d cis cis |
-  b b b2 |
+  b b8[ a] gis2 |
   \repeat volta 2 {
     gis'4 fis gis gis |
     fis dis e gis |
     
     gis fis gis gis |
-    e( dis) e2 |
+    fis( dis) e2 |
   }
-  b4. b8 b4 b |
-  dis4. dis8 dis4 dis |
-  e dis cis cis |
-  b b b2 \bar"|."
+  b4. b8 cis4 b |
+  e4. e8 dis4 dis |
+  e d cis cis |
+  b b8[ a] gis2 \bar"|."
 }
 altoWords = \lyricmode {
 }
@@ -173,18 +173,18 @@ tenorMusic = \relative c' {
   
   b gis b b |
   b b a a |
-  gis fis gis2 |
+  gis fis e2 |
   \repeat volta 2 {
-    b4 b b b |
+    b'4 b b b |
     b b b b |
     
     b b b b |
     cis( a) gis2 |
   }
   gis4. gis8 gis4 gis |
-  b4. b8 b4 b |
+  cis4. cis8 b4 b |
   gis gis a a |
-  gis fis gis2 \bar"|."
+  gis fis e2 \bar"|."
 }
 
 tenorWords = \lyricmode {
@@ -213,8 +213,8 @@ bassMusic = \relative c' {
     e b e gis |
     fis( b,) e2 |
   }
-  e4. e8 e4 e |
-  b4. b8 b4 b |
+  e4 dis cis b |
+  a ais b4 b |
   e4 e e a, |
   b b e2 \bar"|."
 }
