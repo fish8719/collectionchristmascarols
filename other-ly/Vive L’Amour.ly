@@ -97,7 +97,7 @@ sopWordsII = \lyricmode {
   \set stanza = #"2."
   Now let ev -- ’ry mar -- ried man drink to his wife.
     Vi -- ve la com -- pag -- nie,
-  The joy of his bo -- som and plage of his life.
+  The joy of his bo -- som and plague of his life.
     Vi -- ve la com -- pag -- nie.
     
   \set stanza = \markup\dynamic"ff "
