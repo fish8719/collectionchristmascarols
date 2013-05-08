@@ -52,8 +52,8 @@ global = {
   %\set midiInstrument = "recorder"
   \autoBeamOff
   \override DynamicTextSpanner #'style = #'none
-  \slurDotted
-  \tieDotted
+  \slurDashed
+  \tieDashed
 }
 
 sopMusic = \relative c' {
