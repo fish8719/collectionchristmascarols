@@ -53,7 +53,7 @@ global = {
   %\set midiInstrument = "recorder"
   \autoBeamOff
   \override DynamicTextSpanner #'style = #'none
-  \tieDotted
+  \tieDashed
 }
 
 sopMusic = \relative c' {
@@ -72,7 +72,7 @@ sopMusic = \relative c' {
     
     d8 b'\rest e, b'\rest fis b\rest e,[ d] |
     g b\rest a b\rest b b\rest  a[ g] |
-    \slurDotted
+    \slurDashed
     a4 a a( g8) e |
     \slurSolid
     d2 b'4\rest \bar"" d,8[ d] |

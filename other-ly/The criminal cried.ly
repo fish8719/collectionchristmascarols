@@ -59,7 +59,7 @@ sopMusic = \relative c' {
   \repeat volta 3 {
     \oneVoice
     b8 |
-    e e g \tieDotted e~ e g | \tieSolid
+    e e g \tieDashed e~ e g | \tieSolid
     e4 g8 e4 fis16 fis |
     
     g8[ fis] e d[ d] c8 |
@@ -361,7 +361,7 @@ bassMusic = \relative c' {
   \repeat volta 3 {
     \oneVoice
     b,8 |
-    e e g \tieDotted e~ e g | \tieSolid
+    e e g \tieDashed e~ e g | \tieSolid
     e4 g8 e4 fis16 fis |
     
     g8[ fis] e d[ d] c8 |

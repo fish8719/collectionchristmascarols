@@ -57,7 +57,7 @@ sopMusic = \relative c' {
   \partial 8 
   g'8 |
   g4 g8 g a c c8. a16 |
-  g8 g e'8. c16 g4 b8\rest \tieDotted g16~ g | \tieSolid
+  g8 g e'8. c16 g4 b8\rest \tieDashed g16~ g | \tieSolid
   
   a4 b8 c c4 d8 e |
   e d d c d4 b8\rest g |
@@ -121,7 +121,7 @@ sopWordsV = \lyricmode {
 altoMusic = \relative c' {
   e8 |
   e4 e8 e f a a8. f16 |
-  e8 e g8. e16 e4 s8 \tieDotted e16~ e | \tieSolid
+  e8 e g8. e16 e4 s8 \tieDashed e16~ e | \tieSolid
   
   f4 f8 f fis4 a8 a |
   g g g g g4 s8 f |
@@ -166,7 +166,7 @@ altoWordsVI = \lyricmode {
 tenorMusic = \relative c' {
   c8 |
   c4 c8 c c c c8. c16 |
-  c8 c c8. g16 c4 s8 \tieDotted c16~ c | \tieSolid
+  c8 c c8. g16 c4 s8 \tieDashed c16~ c | \tieSolid
   
   c4 b8 c a4 fis8 fis |
   b b b a b4 s8 b |
@@ -201,7 +201,7 @@ tenorWordsIII = \lyricmode {
 bassMusic = \relative c' {
   c,8 |
   c4 c8 c f f f8. f16 |
-  c8 c c8. c16 c4 d8\rest \tieDotted c16~ c | \tieSolid
+  c8 c c8. c16 c4 d8\rest \tieDashed c16~ c | \tieSolid
   
   f4 g8 a d,4 d8 d |
   g g g g g4 d8\rest g |
