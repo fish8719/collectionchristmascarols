@@ -57,8 +57,10 @@ sopMusic = \relative c' {
 	\partial 8
   ees8 |
   g4 f8 g4 aes8 |
-  bes4. c8 bes4 |
-  ees,8 d ees aes4 g8 |
+  bes4. c8 << bes4 {s8 \teeny g8} >> \normalsize |
+  \slurDashed
+  ees8( d) ees aes4 g8 |
+  \slurSolid
   f4.~ f4 \bar"" d8 |
   
   %page2
@@ -79,8 +81,9 @@ sopMusic = \relative c' {
 }
 sopWords = \lyricmode {
   \set stanza = #"1. "
-	’Twas when the hay was mown, Mag -- gie,
-  In the long years a -- go, __
+	’Twas when the hay was mown, Mag -- gie, ""
+  \set ignoreMelismata = ##t
+  In the long \unset ignoreMelismata years a -- go, __
   And while the wes -- tern sky was rich
   With sun -- set’s ros -- y glow, __
   Then hand in hand close linked we passed
@@ -133,8 +136,10 @@ altoMusic = \relative c' {
   ees8 |
   
   ees4 d8 ees4 f8 |
-  g4. ees8 g4 |
-  c,8 c c ees4 ees8 |
+  g4. ees8 << g4 {s8 \teeny ees} >> \normalsize |
+  \tieDashed
+  c8~ c c ees4 ees8 |
+  \tieSolid
   d4.~ d4 d8 |
   
   %page2
@@ -176,8 +181,10 @@ altoWordsVI = \lyricmode {
 tenorMusic = \relative c' {
   ees,8 |
   bes'4 bes8 bes4 bes8 |
-  bes4. aes8 bes4 |
-  g8 g g c4 bes8 |
+  bes4. aes8 << bes4 { s8 \teeny bes8 } >> \normalsize |
+  \tieDashed
+  g8~ g g c4 bes8 |
+  \tieSolid
   bes4.~ bes4 aes8 |
   
   %page2
@@ -209,8 +216,10 @@ tenorWordsIII = \lyricmode {
 bassMusic = \relative c' {
   ees,8 |
   ees4 bes8 ees4 d8 |
-  ees4. ees8 ees4 |
-  c8 c c aes4 g8 |
+  ees4. ees8 << ees4 { s8 \teeny ees8 } >> \normalsize |
+  \tieDashed
+  c8~ c c aes4 g8 |
+  \tieSolid
   bes4.~ bes4 bes8 |
   
   %page2
