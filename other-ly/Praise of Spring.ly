@@ -18,6 +18,16 @@
        (minimum-distance . 0)
        (padding . -3)
        (stretchability . 100))
+  top-system-spacing =
+    #'((basic-distance . 0)
+       (minimum-distance . 0)
+       (padding . 0)
+       (stretchability . 67))
+  last-bottom-spacing =
+    #'((basic-distance . 0)
+       (minimum-distance . 0)
+       (padding . 0)
+       (stretchability . 67))
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   two-sided = ##t
