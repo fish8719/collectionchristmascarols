@@ -142,8 +142,8 @@ sopWords = \lyricmode {
   Op -- ’ning buds,
   black -- bird’s call,
   Lark’s sweet car -- ol,
-  sun -- ny \dropLyricsXII days,
-  Fruit -- ful show -- ers,
+  sun -- ny days,
+  Fruit -- ful \dropLyricsXII show -- ers,
   balm -- y \raiseLyrics gale,
   balm -- y gale!
   
