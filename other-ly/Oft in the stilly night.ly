@@ -97,8 +97,9 @@ sopWords = \lyricmode {
   The eyes that shone, now dimm’d and gone,
   The cheer -- ful hearts now bro -- ken!
   
+  \dropLyricsXV
   Thus, in the stil -- ly night,
-  Ere slum -- ber’s chain hath bound me,
+  Ere slum -- ber’s chain hath \raiseLyrics bound me,
   Sad mem -- ’ry brings the light
   Of oth -- er days a -- round me.
 }
