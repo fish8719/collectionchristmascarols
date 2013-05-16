@@ -89,7 +89,7 @@ sopWords = \lyricmode {
 sopWordsII = \lyricmode {
   \set stanza = #"2. "
   But since we have learned from ef -- fem -- in -- ate France
-  To __ eat their rag -- outs __ as well as to dance,
+  To __ eat their ra -- gouts __ as well as to dance,
   We’re fed up with noth -- ing but vain com -- plais -- sance.
 }
 
