@@ -129,7 +129,7 @@ sopWords = \lyricmode {
   Cheer -- i -- ly my lads yo -- ho!
   
   "" "" “Who -- ’ll go a -- shore to -- _ night,” __ _ _ says he,
-  “An’ _ spike their _ guns a -- _ long wi’ me?”
+  “An’ __ _ spike their _ guns a -- _ long wi’ me?”
   “Why, _ bless ’ee, __ _ sir, come a -- long!” says we,
   
   
@@ -138,7 +138,7 @@ sopWords = \lyricmode {
 sopWordsII = \lyricmode {
   \set stanza = #"2. "
   \set ignoreMelismata = ##t
-  We _ launch’d the cut -- ter and _ shoved her out,
+  We __ _ launch’d the cut -- ter and _ shoved her out,
   Cheer -- i -- ly my lads yo -- ho!
   The lub -- bers _ might ha’ _ heard us shout,
   As the Mid -- dy __ _ cried, “Now, my lads, put a -- bout.”
@@ -160,7 +160,7 @@ sopWordsII = \lyricmode {
 sopWordsIII = \lyricmode {
   \set stanza = #"3. "
   \set ignoreMelismata = ##t
-  “I’m _ done for "now;" _ good -- _ bye!” says he,
+  “I’m __ _ done for "now;" _ good -- _ bye!” says he,
   Stead -- i -- ly, my lads, yo -- ho!
   “You make for the boat, nev -- er mind for me!”
   “We’ll _ take ’ee __ _ back, sir or die,” "" says we,
