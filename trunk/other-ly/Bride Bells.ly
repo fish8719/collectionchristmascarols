@@ -166,7 +166,7 @@ sopWordsII = \lyricmode {
   A year since then has died.
   And El -- sie at the al -- tar stands,
   Her sai -- lor at her side,
-  Her sai -- lor at her side,
+  Her __ sai -- lor at her side,
   While Kling, lang, ling,
   Their bon -- nie bride bells gai -- ly ring,
   Kling, lang, ling,
