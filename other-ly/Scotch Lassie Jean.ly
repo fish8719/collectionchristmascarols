@@ -88,7 +88,7 @@ sopMusic = \relative c' {
   c' bes8 aes c4 bes8 aes |
   
   bes aes aes f aes4 aes8 bes |
-  c c bes aes ees~ ees g g |
+  c c bes aes ees~ ees g g
   \partial 2. aes2. \bar"||"\break
   
   %Chorus
@@ -120,7 +120,7 @@ sopWords = \lyricmode {
   They
   \set stanza = \markup\dynamic"p  "
   say that you are false, but I still be -- lieve you mine,
-  You are my bon -- nie blue -- eyed Scotch las -- sie, Jean.
+  You are my bon -- nie \once \override LyricHyphen #'minimum-distance = #0.7 blue -- eyed Scotch las -- sie, Jean.
 }
 
 sopWordsII = \lyricmode {
@@ -223,7 +223,7 @@ tenorMusic = \relative c' {
   \slurSolid g4( aes bes) des |
   \slurDashed c4 des8 c c4 c8 c |
   des8 des des aes aes4 aes8 aes |
-  aes aes des c aes~ aes bes bes |
+  aes aes des c aes~ aes bes bes
   aes2. \bar"||"
   
   
@@ -268,7 +268,7 @@ bassMusic = \relative c' {
   \slurSolid ees4( f g) ees4 |
   aes4 aes8 aes g4 f8 f |
   des des des des c4 c8 des |
-  ees ees ees ees ees~ ees ees8 ees |
+  ees ees ees ees ees~ ees ees8 ees
   aes2. \bar"||"
   
   
