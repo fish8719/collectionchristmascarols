@@ -111,7 +111,7 @@ sopWords = \lyricmode {
 	I’m think -- ing of Er -- in to -- night,
   And the lit -- tle white cot by the sea, __
   Where Jen -- ny my dar -- ling now dwells,
-  The fair -- est and dear -- est to me; __
+  The __ fair -- est and dear -- est to me; __
   
   I know that she waits for me day af -- ter day,
   My heart ev -- er longs to be there,
@@ -315,9 +315,10 @@ pianoLH = \relative c' {
       \new Voice = "sopranos" { \voiceOne << \global \sopMusic >> }
       \new Voice = "altos" { \voiceTwo << \global \altoMusic >> }
     >>
+    \new Lyrics \lyricsto "altos" \altoWords
     \new Lyrics = "sop"  \lyricsto "sopranos" \sopWords
     \new Lyrics = "sopII"  \lyricsto "sopranos" \sopWordsII
-    \new Lyrics = "altosII"  \lyricsto "altos" \altoWords
+    \new Lyrics \lyricsto "altos" \altoWords
     \new Lyrics = "altosIII"  \lyricsto "sopranos" \sopWordsIII
     \new Lyrics = "altosIV"  \lyricsto "sopranos" \sopWordsIV
     \new Lyrics = "altosV"  \lyricsto "sopranos" \sopWordsV
