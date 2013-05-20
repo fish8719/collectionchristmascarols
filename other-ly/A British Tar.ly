@@ -115,7 +115,7 @@ sopWords = \lyricmode {
   As free as a moun -- tain _ bird; _
   His en -- er -- get -- ic fist
   Should be rea -- dy to re -- sist
-  A _ dic -- _ ta -- _ tor -- ial word.
+  A __ _ dic -- _ ta -- _ tor -- ial word.
   
   \set associatedVoice = "altos" 
   His nose should \set associatedVoice = "sopranos" pant,
